@@ -35,7 +35,7 @@ namespace Turnera_Medica__TP_Final.Controller
         //Consultar un Turno especifico por fecha
         public override void ConsultarTurnos(DateTime fecha)
         {
-            Console.WriteLine("Hola mundo");
+            //Console.WriteLine("Hola mundo");
         }
 
         //Consultar todos los turnos
