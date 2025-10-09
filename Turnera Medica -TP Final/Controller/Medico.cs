@@ -16,7 +16,6 @@ namespace Turnera_Medica__TP_Final.Controller
         
         //Lista de turnos que añadio el medico
         public List<Turno> ListaTurnos { get; set; } = new List<Turno>();
-        public List<Turno> listaTurnosPorAceptar { get; set; } = new List<Turno>();
         
         //Consultorio/lugar donde trabaja
         public Consultorio ConsultorioAsignado { get; set; }
@@ -40,12 +39,6 @@ namespace Turnera_Medica__TP_Final.Controller
 
         //Consultar todos los turnos
         public override void ConsultarTurnos()
-        {
-
-        }
-
-        //Aceptar turno del paciente, para que se guarde en nuestra lista de turnos
-        public void AceptarTurno()
         {
 
         }
