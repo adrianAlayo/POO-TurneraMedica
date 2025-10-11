@@ -29,6 +29,8 @@ namespace Turnera_Medica__TP_Final.Controller
 
         }
 
+        //Seleccionar un turno disponible, esta informacion se guardara en la lista 
+        // de TURNOS del paciente y del Medico asignado
         public void SolicitarTurno()
         {
             // Medico m, DateTime fecha, DateTime hora, Consultorio c
