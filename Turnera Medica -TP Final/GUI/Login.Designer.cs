@@ -28,38 +28,105 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.lnkOlvide = new System.Windows.Forms.LinkLabel();
+            this.lnkRegistro = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
-            // button1
+            // btnLogin
             // 
-            this.button1.Location = new System.Drawing.Point(314, 266);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Enviar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLogin.Location = new System.Drawing.Point(313, 323);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(91, 40);
+            this.btnLogin.TabIndex = 0;
+            this.btnLogin.Text = "Confirmar";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // label1
+            // lblTitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(294, 127);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Porfavor Logueate";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Location = new System.Drawing.Point(317, 183);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(87, 13);
+            this.lblTitulo.TabIndex = 1;
+            this.lblTitulo.Text = "PLEASE LOG IN";
+            this.lblTitulo.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(272, 232);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(35, 13);
+            this.lblEmail.TabIndex = 2;
+            this.lblEmail.Text = "Email:";
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(243, 292);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(64, 13);
+            this.lblPassword.TabIndex = 3;
+            this.lblPassword.Text = "Contraseña:";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(313, 232);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(149, 20);
+            this.txtEmail.TabIndex = 4;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(313, 285);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(149, 20);
+            this.txtPassword.TabIndex = 5;
+            this.txtPassword.UseSystemPasswordChar = true;
+            // 
+            // lnkOlvide
+            // 
+            this.lnkOlvide.AutoSize = true;
+            this.lnkOlvide.Location = new System.Drawing.Point(294, 366);
+            this.lnkOlvide.Name = "lnkOlvide";
+            this.lnkOlvide.Size = new System.Drawing.Size(122, 13);
+            this.lnkOlvide.TabIndex = 6;
+            this.lnkOlvide.TabStop = true;
+            this.lnkOlvide.Text = "Me olvidé mi contraseña";
+            // 
+            // lnkRegistro
+            // 
+            this.lnkRegistro.AutoSize = true;
+            this.lnkRegistro.Location = new System.Drawing.Point(501, 323);
+            this.lnkRegistro.Name = "lnkRegistro";
+            this.lnkRegistro.Size = new System.Drawing.Size(60, 13);
+            this.lnkRegistro.TabIndex = 7;
+            this.lnkRegistro.TabStop = true;
+            this.lnkRegistro.Text = "Registrarse";
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lnkRegistro);
+            this.Controls.Add(this.lnkOlvide);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.lblTitulo);
+            this.Controls.Add(this.btnLogin);
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -67,7 +134,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.LinkLabel lnkOlvide;
+        private System.Windows.Forms.LinkLabel lnkRegistro;
     }
 }

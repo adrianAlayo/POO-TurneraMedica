@@ -21,5 +21,37 @@ namespace Turnera_Medica__TP_Final.GUI
         {
 
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string email = txtEmail.Text;
+            string password = txtPassword.Text;
+
+            // Reviso que los campos no estén vacíos
+            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Por favor, complete todos los campos.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Login de prueba (por ahora sin base de datos)
+            if (email == "admin@gmail.com" && password == "1234")
+            {
+                MessageBox.Show("Inicio de sesión exitoso.", "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Más adelante acá se va a abrir el menú principal
+                // Ejemplo: new MenuPrincipal().Show();
+                // this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Email o contraseña incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
