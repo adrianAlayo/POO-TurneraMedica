@@ -16,6 +16,10 @@ namespace Turnera_Medica__TP_Final.GUI
         {
             InitializeComponent();
         }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -27,10 +31,35 @@ namespace Turnera_Medica__TP_Final.GUI
 
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            Login iniciarsesion = new Login();
-            iniciarsesion.Show(); //abre de vuelta el form de iniciar sesion
+            string email = update_email_user.Text;
+            string newPass = update_newPass_user.Text;
+            string confirmPass = update_confirmPass_user.Text;
+
+            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(newPass) || string.IsNullOrWhiteSpace(confirmPass))
+            {
+                MessageBox.Show("Complete todos los campos por favor");
+               
+            }
+            //Faltaria hacer la parte del codigo donde se haria la comparacion del email para luego cambiar la contraseña
+            /* 
+             buscaremail = SELECT email IN users WHERE email == email (o algo parecido)
+
+            if (newPass == confirmpass && buscaremail == true) {
+                hacer el codigo para hacer el update de la password usando confirmPass
+            }
+             
+             
+             
+             */
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Login login_form = new Login();
+            login_form.Show(); //abre de vuelta el form de iniciar sesion
             this.Hide(); // quitamos el form de actualizar contraseña
         }
     }

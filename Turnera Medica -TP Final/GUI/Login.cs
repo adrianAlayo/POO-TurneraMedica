@@ -69,5 +69,10 @@ namespace Turnera_Medica__TP_Final.GUI
             actualizar.Show(); //Abre este form
             this.Hide(); // Oculto el Login
         }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
