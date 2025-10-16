@@ -26,5 +26,20 @@ namespace Turnera_Medica__TP_Final.GUI
         {
 
         }
+
+        private void Medico_option_user_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void paciente_option_user_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void volver_login_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
