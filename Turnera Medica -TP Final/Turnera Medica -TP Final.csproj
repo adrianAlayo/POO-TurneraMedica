@@ -134,6 +134,42 @@
     <Compile Include="GUI\GUI_Medico\M_Start.Designer.cs">
       <DependentUpon>M_Start.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\GUI_Paciente\P_AvailableShifts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI_Paciente\P_AvailableShifts.Designer.cs">
+      <DependentUpon>P_AvailableShifts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUI_Paciente\P_AvailableShiftsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI_Paciente\P_AvailableShiftsForm.Designer.cs">
+      <DependentUpon>P_AvailableShiftsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUI_Paciente\P_MyInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI_Paciente\P_MyInfo.Designer.cs">
+      <DependentUpon>P_MyInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUI_Paciente\P_Shifts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI_Paciente\P_Shifts.Designer.cs">
+      <DependentUpon>P_Shifts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUI_Paciente\P_SpecificShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI_Paciente\P_SpecificShift.Designer.cs">
+      <DependentUpon>P_SpecificShift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUI_Paciente\P_Start.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI_Paciente\P_Start.Designer.cs">
+      <DependentUpon>P_Start.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,8 +246,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GUI\GUI_Paciente\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -49,6 +49,9 @@ namespace Turnera_Medica__TP_Final.GUI
 
             if (newPass == confirmpass && buscaremail == true) {
                 hacer el codigo para hacer el update de la password usando confirmPass
+
+            si el update se logro hacer entonces hay que hacer un mensaje que diga "contraseña actualizada con exito"
+
             }
              
              
