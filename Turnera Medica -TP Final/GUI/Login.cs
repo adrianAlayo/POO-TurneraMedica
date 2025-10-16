@@ -57,16 +57,16 @@ namespace Turnera_Medica__TP_Final.GUI
         private void lnkRegistro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         { 
             //Llamo el form o ventana PreRegister
-            PreRegister registro = new PreRegister();
-            registro.Show(); //Abre este form
+            PreRegister preregistro_form = new PreRegister();
+            preregistro_form.Show(); //Abre este form
             this.Hide(); // Oculto el Login
         }
 
         private void lnkOlvide_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //Llamo el form o ventana UpdatePassword
-            UpdatePassword actualizar = new UpdatePassword();
-            actualizar.Show(); //Abre este form
+            UpdatePassword updatepassword_form = new UpdatePassword();
+            updatepassword_form.Show(); //Abre este form
             this.Hide(); // Oculto el Login
         }
     }

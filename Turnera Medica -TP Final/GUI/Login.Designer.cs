@@ -40,52 +40,59 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(313, 323);
+            this.btnLogin.BackColor = System.Drawing.Color.LightGreen;
+            this.btnLogin.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Location = new System.Drawing.Point(352, 290);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(91, 40);
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Confirmar";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(317, 183);
+            this.lblTitulo.Font = new System.Drawing.Font("Arial Black", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(313, 91);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(87, 13);
+            this.lblTitulo.Size = new System.Drawing.Size(153, 52);
             this.lblTitulo.TabIndex = 1;
-            this.lblTitulo.Text = "PLEASE LOG IN";
+            this.lblTitulo.Text = "LOGIN";
             this.lblTitulo.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(272, 232);
+            this.lblEmail.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(251, 191);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(35, 13);
+            this.lblEmail.Size = new System.Drawing.Size(41, 15);
             this.lblEmail.TabIndex = 2;
             this.lblEmail.Text = "Email:";
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(243, 292);
+            this.lblPassword.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(231, 236);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(64, 13);
+            this.lblPassword.Size = new System.Drawing.Size(76, 15);
             this.lblPassword.TabIndex = 3;
             this.lblPassword.Text = "Contraseña:";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(313, 232);
+            this.txtEmail.BackColor = System.Drawing.Color.LightPink;
+            this.txtEmail.Location = new System.Drawing.Point(322, 186);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(149, 20);
             this.txtEmail.TabIndex = 4;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(313, 285);
+            this.txtPassword.BackColor = System.Drawing.Color.LightPink;
+            this.txtPassword.Location = new System.Drawing.Point(322, 231);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(149, 20);
             this.txtPassword.TabIndex = 5;
@@ -94,20 +101,24 @@
             // lnkOlvide
             // 
             this.lnkOlvide.AutoSize = true;
-            this.lnkOlvide.Location = new System.Drawing.Point(294, 366);
+            this.lnkOlvide.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkOlvide.LinkColor = System.Drawing.Color.Black;
+            this.lnkOlvide.Location = new System.Drawing.Point(330, 344);
             this.lnkOlvide.Name = "lnkOlvide";
-            this.lnkOlvide.Size = new System.Drawing.Size(122, 13);
+            this.lnkOlvide.Size = new System.Drawing.Size(141, 15);
             this.lnkOlvide.TabIndex = 6;
             this.lnkOlvide.TabStop = true;
-            this.lnkOlvide.Text = "Me olvidé mi contraseña";
+            this.lnkOlvide.Text = "Me olvidé la contraseña";
             this.lnkOlvide.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkOlvide_LinkClicked);
             // 
             // lnkRegistro
             // 
             this.lnkRegistro.AutoSize = true;
-            this.lnkRegistro.Location = new System.Drawing.Point(501, 323);
+            this.lnkRegistro.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkRegistro.LinkColor = System.Drawing.Color.Black;
+            this.lnkRegistro.Location = new System.Drawing.Point(464, 275);
             this.lnkRegistro.Name = "lnkRegistro";
-            this.lnkRegistro.Size = new System.Drawing.Size(60, 13);
+            this.lnkRegistro.Size = new System.Drawing.Size(74, 15);
             this.lnkRegistro.TabIndex = 7;
             this.lnkRegistro.TabStop = true;
             this.lnkRegistro.Text = "Registrarse";
@@ -127,7 +138,7 @@
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnLogin);
             this.Name = "Login";
-            this.Text = "Login";
+            this.Text = "Confirmar";
             this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
