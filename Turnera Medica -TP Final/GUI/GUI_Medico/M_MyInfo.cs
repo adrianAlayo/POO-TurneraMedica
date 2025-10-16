@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 {
-    public partial class AddSocialWork : Form
+    public partial class M_MyInfo : Form
     {
-        public AddSocialWork()
+        public M_MyInfo()
         {
             InitializeComponent();
         }

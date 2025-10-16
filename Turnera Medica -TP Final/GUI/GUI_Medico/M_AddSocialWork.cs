@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 {
-    public partial class Shifts : Form
+    public partial class M_AddSocialWork : Form
     {
-        public Shifts()
+        public M_AddSocialWork()
         {
             InitializeComponent();
+        }
+
+        private void M_AddSocialWork_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

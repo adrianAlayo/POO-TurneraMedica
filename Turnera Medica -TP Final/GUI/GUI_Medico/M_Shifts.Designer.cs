@@ -1,6 +1,6 @@
 ﻿namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 {
-    partial class Start
+    partial class M_Shifts
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Start";
+            this.Text = "Shifts";
         }
 
         #endregion

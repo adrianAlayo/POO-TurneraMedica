@@ -1,6 +1,6 @@
 ﻿namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 {
-    partial class MyInfo
+    partial class M_MyInfo
     {
         /// <summary>
         /// Required designer variable.

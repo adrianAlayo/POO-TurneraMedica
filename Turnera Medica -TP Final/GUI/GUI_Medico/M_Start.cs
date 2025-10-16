@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 {
-    public partial class SpecificShift : Form
+    public partial class M_Start : Form
     {
-        public SpecificShift()
+        public M_Start()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 {
-    partial class SpecificShift
+    partial class M_SpecificShift
     {
         /// <summary>
         /// Required designer variable.

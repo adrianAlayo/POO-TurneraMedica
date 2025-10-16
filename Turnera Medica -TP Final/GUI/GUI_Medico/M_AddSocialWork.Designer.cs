@@ -1,6 +1,6 @@
 ﻿namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 {
-    partial class AddSocialWork
+    partial class M_AddSocialWork
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // M_AddSocialWork
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "M_AddSocialWork";
             this.Text = "AddSocialWork";
+            this.Load += new System.EventHandler(this.M_AddSocialWork_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
