@@ -116,6 +116,12 @@
     <Compile Include="GUI\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UpdatePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UpdatePassword.Designer.cs">
+      <DependentUpon>UpdatePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\Login.resx">
