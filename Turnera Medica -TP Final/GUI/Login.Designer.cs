@@ -102,7 +102,8 @@
             // 
             this.lnkOlvide.AutoSize = true;
             this.lnkOlvide.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkOlvide.LinkColor = System.Drawing.Color.Black;
+            this.lnkOlvide.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lnkOlvide.LinkColor = System.Drawing.Color.DarkBlue;
             this.lnkOlvide.Location = new System.Drawing.Point(330, 344);
             this.lnkOlvide.Name = "lnkOlvide";
             this.lnkOlvide.Size = new System.Drawing.Size(141, 15);
@@ -115,7 +116,8 @@
             // 
             this.lnkRegistro.AutoSize = true;
             this.lnkRegistro.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkRegistro.LinkColor = System.Drawing.Color.Black;
+            this.lnkRegistro.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lnkRegistro.LinkColor = System.Drawing.Color.DarkBlue;
             this.lnkRegistro.Location = new System.Drawing.Point(464, 275);
             this.lnkRegistro.Name = "lnkRegistro";
             this.lnkRegistro.Size = new System.Drawing.Size(74, 15);
