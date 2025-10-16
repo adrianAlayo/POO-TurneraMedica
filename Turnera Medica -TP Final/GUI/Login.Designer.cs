@@ -32,8 +32,8 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.login_email_user = new System.Windows.Forms.TextBox();
+            this.login_email_password = new System.Windows.Forms.TextBox();
             this.lnkOlvide = new System.Windows.Forms.LinkLabel();
             this.lnkRegistro = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
@@ -81,22 +81,22 @@
             this.lblPassword.TabIndex = 3;
             this.lblPassword.Text = "Contraseña:";
             // 
-            // txtEmail
+            // login_email_user
             // 
-            this.txtEmail.BackColor = System.Drawing.Color.LightPink;
-            this.txtEmail.Location = new System.Drawing.Point(322, 186);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(149, 20);
-            this.txtEmail.TabIndex = 4;
+            this.login_email_user.BackColor = System.Drawing.Color.LightPink;
+            this.login_email_user.Location = new System.Drawing.Point(322, 186);
+            this.login_email_user.Name = "login_email_user";
+            this.login_email_user.Size = new System.Drawing.Size(149, 20);
+            this.login_email_user.TabIndex = 4;
             // 
-            // txtPassword
+            // login_email_password
             // 
-            this.txtPassword.BackColor = System.Drawing.Color.LightPink;
-            this.txtPassword.Location = new System.Drawing.Point(322, 231);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(149, 20);
-            this.txtPassword.TabIndex = 5;
-            this.txtPassword.UseSystemPasswordChar = true;
+            this.login_email_password.BackColor = System.Drawing.Color.LightPink;
+            this.login_email_password.Location = new System.Drawing.Point(322, 231);
+            this.login_email_password.Name = "login_email_password";
+            this.login_email_password.Size = new System.Drawing.Size(149, 20);
+            this.login_email_password.TabIndex = 5;
+            this.login_email_password.UseSystemPasswordChar = true;
             // 
             // lnkOlvide
             // 
@@ -133,8 +133,8 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lnkRegistro);
             this.Controls.Add(this.lnkOlvide);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.login_email_password);
+            this.Controls.Add(this.login_email_user);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblTitulo);
@@ -153,8 +153,8 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox login_email_user;
+        private System.Windows.Forms.TextBox login_email_password;
         private System.Windows.Forms.LinkLabel lnkOlvide;
         private System.Windows.Forms.LinkLabel lnkRegistro;
     }

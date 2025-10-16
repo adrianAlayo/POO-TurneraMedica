@@ -29,8 +29,8 @@ namespace Turnera_Medica__TP_Final.GUI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string email = txtEmail.Text;
-            string password = txtPassword.Text;
+            string email = login_email_user.Text;
+            string password = login_email_password.Text;
 
             // Reviso que los campos no estén vacíos
             if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
@@ -59,7 +59,7 @@ namespace Turnera_Medica__TP_Final.GUI
             //Llamo el form o ventana PreRegister
             PreRegister preregistro_form = new PreRegister();
             preregistro_form.Show(); //Abre este form
-            this.Hide(); // Oculto el Login
+            this.Hide(); // Oculto el Logi_n
         }
 
         private void lnkOlvide_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
