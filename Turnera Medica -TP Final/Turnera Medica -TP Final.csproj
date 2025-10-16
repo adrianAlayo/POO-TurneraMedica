@@ -142,6 +142,9 @@
     <EmbeddedResource Include="GUI\PreRegister.resx">
       <DependentUpon>PreRegister.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\RegisterMedic.resx">
+      <DependentUpon>RegisterMedic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\UpdatePassword.resx">
       <DependentUpon>UpdatePassword.cs</DependentUpon>
     </EmbeddedResource>

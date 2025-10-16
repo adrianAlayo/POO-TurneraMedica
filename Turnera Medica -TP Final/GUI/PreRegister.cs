@@ -50,5 +50,10 @@ namespace Turnera_Medica__TP_Final.GUI
             login_form.Show(); //Abre este form
             this.Hide(); // Oculto el Login
         }
+
+        private void PreRegister_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
