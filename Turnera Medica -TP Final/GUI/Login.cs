@@ -38,7 +38,7 @@ namespace Turnera_Medica__TP_Final.GUI
             preregistro_form.Show(); //Abre este form
             this.Hide(); // Oculto el Logi_n
         }
-
+        
         private void lnkOlvide_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //Llamo el form o ventana UpdatePassword
