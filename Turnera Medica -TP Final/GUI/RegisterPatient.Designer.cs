@@ -213,9 +213,9 @@
             this.label1.Font = new System.Drawing.Font("Arial Black", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(235, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(400, 52);
+            this.label1.Size = new System.Drawing.Size(432, 52);
             this.label1.TabIndex = 37;
-            this.label1.Text = "Formulario Medico";
+            this.label1.Text = "Formulario Paciente";
             // 
             // s
             // 
