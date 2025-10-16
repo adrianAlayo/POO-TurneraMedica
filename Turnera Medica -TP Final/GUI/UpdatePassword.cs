@@ -26,5 +26,12 @@ namespace Turnera_Medica__TP_Final.GUI
         {
 
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Login iniciarsesion = new Login();
+            iniciarsesion.Show(); //abre de vuelta el form de iniciar sesion
+            this.Hide(); // quitamos el form de actualizar contraseña
+        }
     }
 }
