@@ -16,5 +16,10 @@ namespace Turnera_Medica__TP_Final.GUI
         {
             InitializeComponent();
         }
+
+        private void PreRegister_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

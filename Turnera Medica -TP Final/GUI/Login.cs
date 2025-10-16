@@ -53,5 +53,21 @@ namespace Turnera_Medica__TP_Final.GUI
                 MessageBox.Show("Email o contraseña incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void lnkRegistro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        { 
+            //Llamo el form o ventana PreRegister
+            PreRegister registro = new PreRegister();
+            registro.Show(); //Abre este form
+            this.Hide(); // Oculto el Login
+        }
+
+        private void lnkOlvide_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //Llamo el form o ventana UpdatePassword
+            UpdatePassword actualizar = new UpdatePassword();
+            actualizar.Show(); //Abre este form
+            this.Hide(); // Oculto el Login
+        }
     }
 }
