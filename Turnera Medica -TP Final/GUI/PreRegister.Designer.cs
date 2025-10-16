@@ -82,7 +82,7 @@
             this.volver_login.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SpringGreen;
             this.volver_login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
             this.volver_login.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.volver_login.Location = new System.Drawing.Point(363, 374);
+            this.volver_login.Location = new System.Drawing.Point(363, 364);
             this.volver_login.Name = "volver_login";
             this.volver_login.Size = new System.Drawing.Size(113, 37);
             this.volver_login.TabIndex = 3;
@@ -101,6 +101,7 @@
             this.Controls.Add(this.label1);
             this.Name = "PreRegister";
             this.Text = "PreRegister";
+            this.Load += new System.EventHandler(this.PreRegister_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
