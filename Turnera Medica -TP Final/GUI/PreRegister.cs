@@ -39,7 +39,10 @@ namespace Turnera_Medica__TP_Final.GUI
 
         private void volver_login_Click(object sender, EventArgs e)
         {
-
+            //Llamo el form o ventana Login
+            Login login_form = new Login();
+            login_form.Show(); //Abre este form
+            this.Hide(); // Oculto el Login
         }
     }
 }
