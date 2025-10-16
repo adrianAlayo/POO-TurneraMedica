@@ -116,11 +116,17 @@
     <Compile Include="GUI\PreRegister.Designer.cs">
       <DependentUpon>PreRegister.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Register.cs">
+    <Compile Include="GUI\RegisterMedic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Register.Designer.cs">
-      <DependentUpon>Register.cs</DependentUpon>
+    <Compile Include="GUI\RegisterMedic.Designer.cs">
+      <DependentUpon>RegisterMedic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\RegisterPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\RegisterPatient.Designer.cs">
+      <DependentUpon>RegisterPatient.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UpdatePassword.cs">
       <SubType>Form</SubType>
@@ -136,8 +142,8 @@
     <EmbeddedResource Include="GUI\PreRegister.resx">
       <DependentUpon>PreRegister.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Register.resx">
-      <DependentUpon>Register.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UpdatePassword.resx">
+      <DependentUpon>UpdatePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

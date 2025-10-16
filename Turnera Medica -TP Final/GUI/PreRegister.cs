@@ -17,9 +17,38 @@ namespace Turnera_Medica__TP_Final.GUI
             InitializeComponent();
         }
 
-        private void PreRegister_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Medico_option_user_Click(object sender, EventArgs e)
+        {
+            //Llamo el form o ventana Login
+            RegisterMedic registerMedic_form = new RegisterMedic();
+            registerMedic_form.Show(); //Abre este form
+            this.Hide(); // Oculto el Login
+        }
+
+        private void paciente_option_user_Click(object sender, EventArgs e)
+        {
+            //Llamo el form o ventana Login
+            RegisterPatient registerPatient_form = new RegisterPatient();
+            registerPatient_form.Show(); //Abre este form
+            this.Hide(); // Oculto el Login
+        }
+
+        private void volver_login_Click(object sender, EventArgs e)
+        {
+            //Llamo el form o ventana Login
+            Login login_form = new Login();
+            login_form.Show(); //Abre este form
+            this.Hide(); // Oculto el Login
         }
     }
 }

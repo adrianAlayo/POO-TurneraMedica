@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Turnera_Medica__TP_Final.GUI
 {
-    public partial class Register : Form
+    public partial class RegisterMedic : Form
     {
-        public Register()
+        public RegisterMedic()
         {
             InitializeComponent();
         }
