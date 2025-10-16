@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,19 +36,8 @@
             this.update_newPass_user = new System.Windows.Forms.TextBox();
             this.update_confirmPass_user = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.update_password = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
-            this.button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(275, 316);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Cambiar Contraseña";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -127,11 +115,23 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // update_password
+            // 
+            this.update_password.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update_password.Location = new System.Drawing.Point(276, 316);
+            this.update_password.Name = "update_password";
+            this.update_password.Size = new System.Drawing.Size(150, 30);
+            this.update_password.TabIndex = 10;
+            this.update_password.Text = "Cambiar Contraseña";
+            this.update_password.UseVisualStyleBackColor = true;
+            this.update_password.Click += new System.EventHandler(this.update_password_Click);
+            // 
             // UpdatePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(710, 380);
+            this.Controls.Add(this.update_password);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.update_confirmPass_user);
             this.Controls.Add(this.update_newPass_user);
@@ -140,7 +140,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
             this.Name = "UpdatePassword";
             this.Text = "UpdatePassword";
             this.ResumeLayout(false);
@@ -149,8 +148,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -159,5 +156,6 @@
         private System.Windows.Forms.TextBox update_newPass_user;
         private System.Windows.Forms.TextBox update_confirmPass_user;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button update_password;
     }
 }

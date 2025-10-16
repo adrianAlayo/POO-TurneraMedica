@@ -32,7 +32,7 @@ namespace Turnera_Medica__TP_Final.GUI
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void update_password_Click(object sender, EventArgs e)
         {
             string email = update_email_user.Text;
             string newPass = update_newPass_user.Text;
@@ -41,7 +41,7 @@ namespace Turnera_Medica__TP_Final.GUI
             if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(newPass) || string.IsNullOrWhiteSpace(confirmPass))
             {
                 MessageBox.Show("Complete todos los campos por favor");
-               
+
             }
             //Faltaria hacer la parte del codigo donde se haria la comparacion del email para luego cambiar la contraseña
             /* 
@@ -62,5 +62,7 @@ namespace Turnera_Medica__TP_Final.GUI
             login_form.Show(); //abre de vuelta el form de iniciar sesion
             this.Hide(); // quitamos el form de actualizar contraseña
         }
+
+
     }
 }
