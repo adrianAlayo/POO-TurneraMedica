@@ -56,13 +56,11 @@ namespace Turnera_Medica__TP_Final.GUI
              */
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void return_login_Click(object sender, EventArgs e)
         {
             Login login_form = new Login();
             login_form.Show(); //abre de vuelta el form de iniciar sesion
             this.Hide(); // quitamos el form de actualizar contraseña
         }
-
-
     }
 }

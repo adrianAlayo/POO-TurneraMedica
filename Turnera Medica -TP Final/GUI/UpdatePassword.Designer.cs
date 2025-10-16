@@ -35,8 +35,8 @@
             this.update_email_user = new System.Windows.Forms.TextBox();
             this.update_newPass_user = new System.Windows.Forms.TextBox();
             this.update_confirmPass_user = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.update_password = new System.Windows.Forms.Button();
+            this.return_login = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -82,6 +82,7 @@
             // 
             // update_email_user
             // 
+            this.update_email_user.BackColor = System.Drawing.Color.LightPink;
             this.update_email_user.Location = new System.Drawing.Point(228, 164);
             this.update_email_user.Name = "update_email_user";
             this.update_email_user.Size = new System.Drawing.Size(245, 20);
@@ -90,6 +91,7 @@
             // 
             // update_newPass_user
             // 
+            this.update_newPass_user.BackColor = System.Drawing.Color.LightPink;
             this.update_newPass_user.Location = new System.Drawing.Point(228, 201);
             this.update_newPass_user.Name = "update_newPass_user";
             this.update_newPass_user.Size = new System.Drawing.Size(245, 20);
@@ -98,41 +100,44 @@
             // 
             // update_confirmPass_user
             // 
+            this.update_confirmPass_user.BackColor = System.Drawing.Color.LightPink;
             this.update_confirmPass_user.Location = new System.Drawing.Point(228, 238);
             this.update_confirmPass_user.Name = "update_confirmPass_user";
             this.update_confirmPass_user.Size = new System.Drawing.Size(245, 20);
             this.update_confirmPass_user.TabIndex = 7;
             this.update_confirmPass_user.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(380, 276);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 25);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Volver Atrás";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // update_password
             // 
-            this.update_password.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.update_password.Location = new System.Drawing.Point(276, 316);
+            this.update_password.BackColor = System.Drawing.Color.LightGreen;
+            this.update_password.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update_password.Location = new System.Drawing.Point(228, 284);
             this.update_password.Name = "update_password";
-            this.update_password.Size = new System.Drawing.Size(150, 30);
+            this.update_password.Size = new System.Drawing.Size(245, 40);
             this.update_password.TabIndex = 10;
             this.update_password.Text = "Cambiar Contraseña";
-            this.update_password.UseVisualStyleBackColor = true;
+            this.update_password.UseVisualStyleBackColor = false;
             this.update_password.Click += new System.EventHandler(this.update_password_Click);
+            // 
+            // return_login
+            // 
+            this.return_login.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.return_login.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.return_login.Location = new System.Drawing.Point(40, 308);
+            this.return_login.Name = "return_login";
+            this.return_login.Size = new System.Drawing.Size(100, 40);
+            this.return_login.TabIndex = 11;
+            this.return_login.Text = "Volver";
+            this.return_login.UseVisualStyleBackColor = false;
+            this.return_login.Click += new System.EventHandler(this.return_login_Click);
             // 
             // UpdatePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(710, 380);
+            this.Controls.Add(this.return_login);
             this.Controls.Add(this.update_password);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.update_confirmPass_user);
             this.Controls.Add(this.update_newPass_user);
             this.Controls.Add(this.update_email_user);
@@ -155,7 +160,7 @@
         private System.Windows.Forms.TextBox update_email_user;
         private System.Windows.Forms.TextBox update_newPass_user;
         private System.Windows.Forms.TextBox update_confirmPass_user;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button update_password;
+        private System.Windows.Forms.Button return_login;
     }
 }
