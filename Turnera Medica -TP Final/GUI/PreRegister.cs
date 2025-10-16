@@ -17,7 +17,27 @@ namespace Turnera_Medica__TP_Final.GUI
             InitializeComponent();
         }
 
-        private void PreRegister_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Medico_option_user_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void paciente_option_user_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void volver_login_Click(object sender, EventArgs e)
         {
 
         }
