@@ -21,5 +21,22 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
         {
 
         }
+
+        private void socialwork_name_user_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sent_socialwork_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void return_start_M_Click(object sender, EventArgs e)
+        {
+            M_Start m_start_form = new M_Start();
+            m_start_form.Show(); //abre de vuelta el form de inicio del medico
+            this.Hide(); // quitamos el form de añadir obra social
+        }
     }
 }
