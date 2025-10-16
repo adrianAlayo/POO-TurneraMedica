@@ -100,6 +100,7 @@
             this.lnkOlvide.TabIndex = 6;
             this.lnkOlvide.TabStop = true;
             this.lnkOlvide.Text = "Me olvidé mi contraseña";
+            this.lnkOlvide.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkOlvide_LinkClicked);
             // 
             // lnkRegistro
             // 
@@ -110,6 +111,7 @@
             this.lnkRegistro.TabIndex = 7;
             this.lnkRegistro.TabStop = true;
             this.lnkRegistro.Text = "Registrarse";
+            this.lnkRegistro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkRegistro_LinkClicked);
             // 
             // Login
             // 
