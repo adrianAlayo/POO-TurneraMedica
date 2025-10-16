@@ -104,6 +104,36 @@
     <Compile Include="Controller\Paciente.cs" />
     <Compile Include="Controller\Turno.cs" />
     <Compile Include="Controller\User.cs" />
+    <Compile Include="GUI\GUI_Medico\AddSocialWork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI_Medico\AddSocialWork.Designer.cs">
+      <DependentUpon>AddSocialWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUI_Medico\MyInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI_Medico\MyInfo.Designer.cs">
+      <DependentUpon>MyInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUI_Medico\Shifts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI_Medico\Shifts.Designer.cs">
+      <DependentUpon>Shifts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUI_Medico\SpecificShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI_Medico\SpecificShift.Designer.cs">
+      <DependentUpon>SpecificShift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUI_Medico\Start.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI_Medico\Start.Designer.cs">
+      <DependentUpon>Start.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +175,9 @@
     <EmbeddedResource Include="GUI\RegisterMedic.resx">
       <DependentUpon>RegisterMedic.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\RegisterPatient.resx">
+      <DependentUpon>RegisterPatient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\UpdatePassword.resx">
       <DependentUpon>UpdatePassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,7 +205,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="GUI\GUI_Medico\" />
     <Folder Include="GUI\GUI_Paciente\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

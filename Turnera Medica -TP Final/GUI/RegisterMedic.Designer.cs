@@ -56,7 +56,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.registerM_departureTime_user = new System.Windows.Forms.TextBox();
             this.RegisterM_send = new System.Windows.Forms.Button();
-            this.Volver_login = new System.Windows.Forms.Button();
+            this.ReturnPreRegister = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // registerM_name_user
@@ -320,28 +320,28 @@
             this.RegisterM_send.UseVisualStyleBackColor = false;
             this.RegisterM_send.Click += new System.EventHandler(this.RegisterM_send_Click);
             // 
-            // Volver_login
+            // ReturnPreRegister
             // 
-            this.Volver_login.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Volver_login.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.Volver_login.FlatAppearance.BorderSize = 10;
-            this.Volver_login.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SpringGreen;
-            this.Volver_login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
-            this.Volver_login.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Volver_login.Location = new System.Drawing.Point(83, 316);
-            this.Volver_login.Name = "Volver_login";
-            this.Volver_login.Size = new System.Drawing.Size(113, 37);
-            this.Volver_login.TabIndex = 34;
-            this.Volver_login.Text = "Volver";
-            this.Volver_login.UseVisualStyleBackColor = false;
-            this.Volver_login.Click += new System.EventHandler(this.Volver_login_Click);
+            this.ReturnPreRegister.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ReturnPreRegister.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.ReturnPreRegister.FlatAppearance.BorderSize = 10;
+            this.ReturnPreRegister.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SpringGreen;
+            this.ReturnPreRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.ReturnPreRegister.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReturnPreRegister.Location = new System.Drawing.Point(129, 316);
+            this.ReturnPreRegister.Name = "ReturnPreRegister";
+            this.ReturnPreRegister.Size = new System.Drawing.Size(113, 37);
+            this.ReturnPreRegister.TabIndex = 35;
+            this.ReturnPreRegister.Text = "Volver";
+            this.ReturnPreRegister.UseVisualStyleBackColor = false;
+            this.ReturnPreRegister.Click += new System.EventHandler(this.ReturnPreRegister_Click);
             // 
             // RegisterMedic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Volver_login);
+            this.Controls.Add(this.ReturnPreRegister);
             this.Controls.Add(this.RegisterM_send);
             this.Controls.Add(this.registerM_departureTime_user);
             this.Controls.Add(this.label13);
@@ -372,6 +372,7 @@
             this.Controls.Add(this.registerM_name_user);
             this.Name = "RegisterMedic";
             this.Text = "RegisterMedic";
+            this.Load += new System.EventHandler(this.RegisterMedic_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -407,6 +408,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox registerM_departureTime_user;
         private System.Windows.Forms.Button RegisterM_send;
-        private System.Windows.Forms.Button Volver_login;
+        private System.Windows.Forms.Button ReturnPreRegister;
     }
 }

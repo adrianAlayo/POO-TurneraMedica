@@ -54,5 +54,18 @@ namespace Turnera_Medica__TP_Final.GUI
         {
             //Aca hay que hacer toda la logica de como ver la informacion si es correcta para poder guardarla en a base de datos
         }
+
+        private void RegisterMedic_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ReturnPreRegister_Click(object sender, EventArgs e)
+        {
+            //Llamo el form o ventana Login
+            PreRegister PreRegister_form = new PreRegister();
+            PreRegister_form.Show(); //Abre este form
+            this.Hide(); // Oculto el Login
+        }
     }
 }

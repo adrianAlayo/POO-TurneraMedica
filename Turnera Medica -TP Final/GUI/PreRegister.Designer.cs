@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.medico_option_user = new System.Windows.Forms.Button();
             this.paciente_option_user = new System.Windows.Forms.Button();
-            this.volver_login = new System.Windows.Forms.Button();
+            this.ReturnLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -75,27 +75,28 @@
             this.paciente_option_user.UseVisualStyleBackColor = true;
             this.paciente_option_user.Click += new System.EventHandler(this.paciente_option_user_Click);
             // 
-            // volver_login
+            // ReturnLogin
             // 
-            this.volver_login.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.volver_login.FlatAppearance.BorderSize = 10;
-            this.volver_login.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SpringGreen;
-            this.volver_login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
-            this.volver_login.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.volver_login.Location = new System.Drawing.Point(363, 364);
-            this.volver_login.Name = "volver_login";
-            this.volver_login.Size = new System.Drawing.Size(113, 37);
-            this.volver_login.TabIndex = 3;
-            this.volver_login.Text = "Volver";
-            this.volver_login.UseVisualStyleBackColor = true;
-            this.volver_login.Click += new System.EventHandler(this.volver_login_Click);
+            this.ReturnLogin.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ReturnLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.ReturnLogin.FlatAppearance.BorderSize = 10;
+            this.ReturnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SpringGreen;
+            this.ReturnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.ReturnLogin.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReturnLogin.Location = new System.Drawing.Point(363, 372);
+            this.ReturnLogin.Name = "ReturnLogin";
+            this.ReturnLogin.Size = new System.Drawing.Size(113, 37);
+            this.ReturnLogin.TabIndex = 4;
+            this.ReturnLogin.Text = "Volver";
+            this.ReturnLogin.UseVisualStyleBackColor = false;
+            this.ReturnLogin.Click += new System.EventHandler(this.ReturnLogin_Click);
             // 
             // PreRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.volver_login);
+            this.Controls.Add(this.ReturnLogin);
             this.Controls.Add(this.paciente_option_user);
             this.Controls.Add(this.medico_option_user);
             this.Controls.Add(this.label1);
@@ -112,6 +113,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button medico_option_user;
         private System.Windows.Forms.Button paciente_option_user;
-        private System.Windows.Forms.Button volver_login;
+        private System.Windows.Forms.Button ReturnLogin;
     }
 }
