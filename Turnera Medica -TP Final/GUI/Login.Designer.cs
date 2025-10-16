@@ -33,7 +33,7 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.login_email_user = new System.Windows.Forms.TextBox();
-            this.login_email_password = new System.Windows.Forms.TextBox();
+            this.login_password_user = new System.Windows.Forms.TextBox();
             this.lnkOlvide = new System.Windows.Forms.LinkLabel();
             this.lnkRegistro = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
@@ -89,14 +89,14 @@
             this.login_email_user.Size = new System.Drawing.Size(149, 20);
             this.login_email_user.TabIndex = 4;
             // 
-            // login_email_password
+            // login_password_user
             // 
-            this.login_email_password.BackColor = System.Drawing.Color.LightPink;
-            this.login_email_password.Location = new System.Drawing.Point(322, 231);
-            this.login_email_password.Name = "login_email_password";
-            this.login_email_password.Size = new System.Drawing.Size(149, 20);
-            this.login_email_password.TabIndex = 5;
-            this.login_email_password.UseSystemPasswordChar = true;
+            this.login_password_user.BackColor = System.Drawing.Color.LightPink;
+            this.login_password_user.Location = new System.Drawing.Point(322, 231);
+            this.login_password_user.Name = "login_password_user";
+            this.login_password_user.Size = new System.Drawing.Size(149, 20);
+            this.login_password_user.TabIndex = 5;
+            this.login_password_user.UseSystemPasswordChar = true;
             // 
             // lnkOlvide
             // 
@@ -133,7 +133,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lnkRegistro);
             this.Controls.Add(this.lnkOlvide);
-            this.Controls.Add(this.login_email_password);
+            this.Controls.Add(this.login_password_user);
             this.Controls.Add(this.login_email_user);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblEmail);
@@ -154,7 +154,7 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox login_email_user;
-        private System.Windows.Forms.TextBox login_email_password;
+        private System.Windows.Forms.TextBox login_password_user;
         private System.Windows.Forms.LinkLabel lnkOlvide;
         private System.Windows.Forms.LinkLabel lnkRegistro;
     }

@@ -30,7 +30,7 @@ namespace Turnera_Medica__TP_Final.GUI
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string email = login_email_user.Text;
-            string password = login_email_password.Text;
+            string password = login_password_user.Text;
 
             // Reviso que los campos no estén vacíos
             if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
