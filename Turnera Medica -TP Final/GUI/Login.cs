@@ -26,8 +26,28 @@ namespace Turnera_Medica__TP_Final.GUI
         {
 
         }
-
         private void btnLogin_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void lnkRegistro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        { 
+            //Llamo el form o ventana PreRegister
+            PreRegister preregistro_form = new PreRegister();
+            preregistro_form.Show(); //Abre este form
+            this.Hide(); // Oculto el Logi_n
+        }
+
+        private void lnkOlvide_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //Llamo el form o ventana UpdatePassword
+            UpdatePassword updatepassword_form = new UpdatePassword();
+            updatepassword_form.Show(); //Abre este form
+            this.Hide(); // Oculto el Login
+        }
+
+        private void SendLogin_Click(object sender, EventArgs e)
         {
             string email = login_email_user.Text;
             string password = login_password_user.Text;
@@ -52,22 +72,6 @@ namespace Turnera_Medica__TP_Final.GUI
             {
                 MessageBox.Show("Email o contraseña incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void lnkRegistro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        { 
-            //Llamo el form o ventana PreRegister
-            PreRegister preregistro_form = new PreRegister();
-            preregistro_form.Show(); //Abre este form
-            this.Hide(); // Oculto el Logi_n
-        }
-
-        private void lnkOlvide_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            //Llamo el form o ventana UpdatePassword
-            UpdatePassword updatepassword_form = new UpdatePassword();
-            updatepassword_form.Show(); //Abre este form
-            this.Hide(); // Oculto el Login
         }
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnLogin = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
@@ -36,19 +35,8 @@
             this.login_password_user = new System.Windows.Forms.TextBox();
             this.lnkOlvide = new System.Windows.Forms.LinkLabel();
             this.lnkRegistro = new System.Windows.Forms.LinkLabel();
+            this.SendLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.LightGreen;
-            this.btnLogin.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(352, 290);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(91, 40);
-            this.btnLogin.TabIndex = 0;
-            this.btnLogin.Text = "Confirmar";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblTitulo
             // 
@@ -126,11 +114,24 @@
             this.lnkRegistro.Text = "Registrarse";
             this.lnkRegistro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkRegistro_LinkClicked);
             // 
+            // SendLogin
+            // 
+            this.SendLogin.BackColor = System.Drawing.Color.LightGreen;
+            this.SendLogin.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SendLogin.Location = new System.Drawing.Point(343, 289);
+            this.SendLogin.Name = "SendLogin";
+            this.SendLogin.Size = new System.Drawing.Size(91, 40);
+            this.SendLogin.TabIndex = 8;
+            this.SendLogin.Text = "Confirmar";
+            this.SendLogin.UseVisualStyleBackColor = false;
+            this.SendLogin.Click += new System.EventHandler(this.SendLogin_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.SendLogin);
             this.Controls.Add(this.lnkRegistro);
             this.Controls.Add(this.lnkOlvide);
             this.Controls.Add(this.login_password_user);
@@ -138,7 +139,6 @@
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblTitulo);
-            this.Controls.Add(this.btnLogin);
             this.Name = "Login";
             this.Text = "Confirmar";
             this.Load += new System.EventHandler(this.Login_Load);
@@ -148,8 +148,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblPassword;
@@ -157,5 +155,6 @@
         private System.Windows.Forms.TextBox login_password_user;
         private System.Windows.Forms.LinkLabel lnkOlvide;
         private System.Windows.Forms.LinkLabel lnkRegistro;
+        private System.Windows.Forms.Button SendLogin;
     }
 }
