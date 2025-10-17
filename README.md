@@ -42,7 +42,7 @@ El sistema desarrollado permite gestionar de manera integral la turnería médic
 
 A continuación se muestra un bosquejo de las vistas principales del sistema, que sirve como guía para el diseño y desarrollo de la interfaz.
 
-![Boceto de la interfaz](./Assets/img/)
+![Boceto de la interfaz](./Assets/img/Bosquejo-Ventanas-TP-POO-TurneraMedica.drawio.png)
 
 ---
 
