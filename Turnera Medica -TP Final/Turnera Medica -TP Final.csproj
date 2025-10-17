@@ -170,34 +170,34 @@
     <Compile Include="GUI\GUI_Paciente\P_Start.Designer.cs">
       <DependentUpon>P_Start.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Login.cs">
+    <Compile Include="GUI\GUI_General\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Login.Designer.cs">
+    <Compile Include="GUI\GUI_General\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\PreRegister.cs">
+    <Compile Include="GUI\GUI_General\PreRegister.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\PreRegister.Designer.cs">
+    <Compile Include="GUI\GUI_General\PreRegister.Designer.cs">
       <DependentUpon>PreRegister.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\RegisterMedic.cs">
+    <Compile Include="GUI\GUI_General\RegisterMedic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\RegisterMedic.Designer.cs">
+    <Compile Include="GUI\GUI_General\RegisterMedic.Designer.cs">
       <DependentUpon>RegisterMedic.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\RegisterPatient.cs">
+    <Compile Include="GUI\GUI_General\RegisterPatient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\RegisterPatient.Designer.cs">
+    <Compile Include="GUI\GUI_General\RegisterPatient.Designer.cs">
       <DependentUpon>RegisterPatient.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UpdatePassword.cs">
+    <Compile Include="GUI\GUI_General\UpdatePassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\UpdatePassword.Designer.cs">
+    <Compile Include="GUI\GUI_General\UpdatePassword.Designer.cs">
       <DependentUpon>UpdatePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -220,19 +220,19 @@
     <EmbeddedResource Include="GUI\GUI_Paciente\P_MyInfo.resx">
       <DependentUpon>P_MyInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Login.resx">
+    <EmbeddedResource Include="GUI\GUI_General\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\PreRegister.resx">
+    <EmbeddedResource Include="GUI\GUI_General\PreRegister.resx">
       <DependentUpon>PreRegister.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\RegisterMedic.resx">
+    <EmbeddedResource Include="GUI\GUI_General\RegisterMedic.resx">
       <DependentUpon>RegisterMedic.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\RegisterPatient.resx">
+    <EmbeddedResource Include="GUI\GUI_General\RegisterPatient.resx">
       <DependentUpon>RegisterPatient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UpdatePassword.resx">
+    <EmbeddedResource Include="GUI\GUI_General\UpdatePassword.resx">
       <DependentUpon>UpdatePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -259,7 +259,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="db\tp_turneriamedica_db.sql" />
+    <Content Include="Assets\db\tp_turneriamedica_db.sql" />
+    <Content Include="Assets\img\Bosquejo-Ventanas-TP-POO-TurneraMedica.drawio.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
