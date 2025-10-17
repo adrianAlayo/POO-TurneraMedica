@@ -16,5 +16,15 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
         {
             InitializeComponent();
         }
+
+        private void return_start_P_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void get_info_P_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

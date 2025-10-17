@@ -60,9 +60,9 @@
             // 
             this.get_info_M.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.get_info_M.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.get_info_M.Location = new System.Drawing.Point(235, 96);
+            this.get_info_M.Location = new System.Drawing.Point(218, 93);
             this.get_info_M.Name = "get_info_M";
-            this.get_info_M.Size = new System.Drawing.Size(325, 271);
+            this.get_info_M.Size = new System.Drawing.Size(360, 280);
             this.get_info_M.TabIndex = 3;
             this.get_info_M.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.get_info_M_CellContentClick);
             // 

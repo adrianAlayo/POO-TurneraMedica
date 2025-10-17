@@ -211,6 +211,9 @@
     <EmbeddedResource Include="GUI\GUI_Medico\M_Start.resx">
       <DependentUpon>M_Start.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_Paciente\P_MyInfo.resx">
+      <DependentUpon>P_MyInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

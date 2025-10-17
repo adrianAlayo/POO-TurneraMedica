@@ -28,12 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.return_start_P = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.get_info_P = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.get_info_P)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // return_start_P
+            // 
+            this.return_start_P.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.return_start_P.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.return_start_P.Location = new System.Drawing.Point(325, 398);
+            this.return_start_P.Name = "return_start_P";
+            this.return_start_P.Size = new System.Drawing.Size(150, 40);
+            this.return_start_P.TabIndex = 0;
+            this.return_start_P.Text = "Volver";
+            this.return_start_P.UseVisualStyleBackColor = false;
+            this.return_start_P.Click += new System.EventHandler(this.return_start_P_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Black", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(236, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(323, 52);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Mi información";
+            // 
+            // get_info_P
+            // 
+            this.get_info_P.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.get_info_P.Location = new System.Drawing.Point(217, 90);
+            this.get_info_P.Name = "get_info_P";
+            this.get_info_P.Size = new System.Drawing.Size(360, 280);
+            this.get_info_P.TabIndex = 2;
+            this.get_info_P.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.get_info_P_CellContentClick);
+            // 
+            // P_MyInfo
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.get_info_P);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.return_start_P);
+            this.Name = "P_MyInfo";
             this.Text = "P_MyInfo";
+            ((System.ComponentModel.ISupportInitialize)(this.get_info_P)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button return_start_P;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView get_info_P;
     }
 }
