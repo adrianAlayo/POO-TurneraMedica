@@ -167,6 +167,7 @@
             this.Controls.Add(this.GetShifts);
             this.Name = "M_Start";
             this.Text = "Start";
+            this.Load += new System.EventHandler(this.M_Start_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

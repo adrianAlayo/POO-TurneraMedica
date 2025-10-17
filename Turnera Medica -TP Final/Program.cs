@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient; //Paquete de la coneccion de la base de datos
 using System.Data;
-using Turnera_Medica__TP_Final.GUI; //paquete de la coneccion de la base de datos
+using Turnera_Medica__TP_Final.GUI;
+using Turnera_Medica__TP_Final.GUI.GUI_Medico; //paquete de la coneccion de la base de datos
 
 namespace Turnera_Medica__TP_Final
 {
