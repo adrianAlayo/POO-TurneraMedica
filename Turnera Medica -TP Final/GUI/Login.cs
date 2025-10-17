@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Turnera_Medica__TP_Final.GUI.GUI_Medico;
 
 namespace Turnera_Medica__TP_Final.GUI
 {
@@ -62,6 +63,11 @@ namespace Turnera_Medica__TP_Final.GUI
             // Login de prueba (por ahora sin base de datos)
             if (email == "admin@gmail.com" && password == "1234")
             {
+                //Llamo el form o ventana UpdatePassword
+                M_Start M_Start_form = new M_Start();
+                M_Start_form.Show(); //Abre este form
+                this.Hide(); // Oculto el Login
+
                 MessageBox.Show("Inicio de sesión exitoso.", "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Más adelante acá se va a abrir el menú principal
