@@ -208,6 +208,12 @@
     <EmbeddedResource Include="GUI\GUI_Medico\M_MyInfo.resx">
       <DependentUpon>M_MyInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_Medico\M_Shifts.resx">
+      <DependentUpon>M_Shifts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_Medico\M_SpecificShift.resx">
+      <DependentUpon>M_SpecificShift.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GUI_Medico\M_Start.resx">
       <DependentUpon>M_Start.cs</DependentUpon>
     </EmbeddedResource>
