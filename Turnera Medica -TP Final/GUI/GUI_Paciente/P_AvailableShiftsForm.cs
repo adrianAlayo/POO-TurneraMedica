@@ -16,5 +16,5 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
         {
             InitializeComponent();
         }
-    }
+
 }
