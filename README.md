@@ -38,14 +38,6 @@ El sistema desarrollado permite gestionar de manera integral la turnería médic
 
 ---
 
-## Boceto de la interfaz
-
-A continuación se muestra un bosquejo de las vistas principales del sistema, que sirve como guía para el diseño y desarrollo de la interfaz.
-
-![Boceto de la interfaz](./Assets/img/Bosquejo-Ventanas-TP-POO-TurneraMedica.drawio.png)
-
----
-
 ## Base de datos
 
 En la carpeta `/models` encontrarás el archivo comprimido con la estructura y datos iniciales de la base de datos utilizada para el proyecto.
