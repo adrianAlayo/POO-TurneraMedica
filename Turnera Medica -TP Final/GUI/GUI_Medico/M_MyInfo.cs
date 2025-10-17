@@ -28,7 +28,7 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
         {
             M_Start m_start_form = new M_Start();
             m_start_form.Show(); //abre de vuelta el form de inicio del medico
-            this.Hide(); // quitamos el form de añadir obra social
+            this.Hide(); // quitamos el form de ver mi informacion
         }
     }
 }
