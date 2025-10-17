@@ -28,7 +28,7 @@ CREATE TABLE `consultorios` (
   `hora_abierto` time NOT NULL,
   `hora_cerrado` time NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,6 +39,37 @@ LOCK TABLES `consultorios` WRITE;
 /*!40000 ALTER TABLE `consultorios` DISABLE KEYS */;
 /*!40000 ALTER TABLE `consultorios` ENABLE KEYS */;
 UNLOCK TABLES;
+
+
+
+
+--
+-- Table structure for table `medicos`
+--
+
+DROP TABLE IF EXISTS `medicos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `medicos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `especialidad` varchar(100) NOT NULL,
+  `monto_consulta` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `user_id` (`user_id`),
+  CONSTRAINT `medicos_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `medicos`
+--
+
+LOCK TABLES `medicos` WRITE;
+/*!40000 ALTER TABLE `medicos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `medicos` ENABLE KEYS */;
+UNLOCK TABLES;
+
 
 --
 -- Table structure for table `medico_consultorio_asignado`
@@ -58,17 +89,43 @@ CREATE TABLE `medico_consultorio_asignado` (
   KEY `consultorio_id` (`consultorio_id`),
   CONSTRAINT `medico_consultorio_asignado_ibfk_1` FOREIGN KEY (`medico_id`) REFERENCES `medicos` (`id`) ON DELETE CASCADE,
   CONSTRAINT `medico_consultorio_asignado_ibfk_2` FOREIGN KEY (`consultorio_id`) REFERENCES `consultorios` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `medico_consultorio_asignado`
 --
 
+
 LOCK TABLES `medico_consultorio_asignado` WRITE;
 /*!40000 ALTER TABLE `medico_consultorio_asignado` DISABLE KEYS */;
 /*!40000 ALTER TABLE `medico_consultorio_asignado` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `obras_sociales`
+--
+
+DROP TABLE IF EXISTS `obras_sociales`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `obras_sociales` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(150) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `nombre` (`nombre`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `obras_sociales`
+--
+
+LOCK TABLES `obras_sociales` WRITE;
+/*!40000 ALTER TABLE `obras_sociales` DISABLE KEYS */;
+/*!40000 ALTER TABLE `obras_sociales` ENABLE KEYS */;
+UNLOCK TABLES;
+
 
 --
 -- Table structure for table `medico_obra_social`
@@ -84,7 +141,7 @@ CREATE TABLE `medico_obra_social` (
   KEY `obra_social_id` (`obra_social_id`),
   CONSTRAINT `medico_obra_social_ibfk_1` FOREIGN KEY (`medico_id`) REFERENCES `medicos` (`id`) ON DELETE CASCADE,
   CONSTRAINT `medico_obra_social_ibfk_2` FOREIGN KEY (`obra_social_id`) REFERENCES `obras_sociales` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,57 +151,6 @@ CREATE TABLE `medico_obra_social` (
 LOCK TABLES `medico_obra_social` WRITE;
 /*!40000 ALTER TABLE `medico_obra_social` DISABLE KEYS */;
 /*!40000 ALTER TABLE `medico_obra_social` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `medicos`
---
-
-DROP TABLE IF EXISTS `medicos`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `medicos` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `user_id` int NOT NULL,
-  `especialidad` varchar(100) NOT NULL,
-  `monto_consulta` decimal(10,2) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `user_id` (`user_id`),
-  CONSTRAINT `medicos_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `medicos`
---
-
-LOCK TABLES `medicos` WRITE;
-/*!40000 ALTER TABLE `medicos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `medicos` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `obras_sociales`
---
-
-DROP TABLE IF EXISTS `obras_sociales`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `obras_sociales` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(150) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `nombre` (`nombre`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `obras_sociales`
---
-
-LOCK TABLES `obras_sociales` WRITE;
-/*!40000 ALTER TABLE `obras_sociales` DISABLE KEYS */;
-/*!40000 ALTER TABLE `obras_sociales` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -163,7 +169,7 @@ CREATE TABLE `pacientes` (
   KEY `obra_social_id` (`obra_social_id`),
   CONSTRAINT `pacientes_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
   CONSTRAINT `pacientes_ibfk_2` FOREIGN KEY (`obra_social_id`) REFERENCES `obras_sociales` (`id`) ON DELETE SET NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -200,7 +206,7 @@ CREATE TABLE `turnos` (
   CONSTRAINT `turnos_ibfk_1` FOREIGN KEY (`medico_id`) REFERENCES `medicos` (`id`) ON DELETE RESTRICT,
   CONSTRAINT `turnos_ibfk_2` FOREIGN KEY (`paciente_id`) REFERENCES `pacientes` (`id`) ON DELETE RESTRICT,
   CONSTRAINT `turnos_ibfk_3` FOREIGN KEY (`consultorio_id`) REFERENCES `consultorios` (`id`) ON DELETE RESTRICT
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -231,7 +237,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `dni` (`dni`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
