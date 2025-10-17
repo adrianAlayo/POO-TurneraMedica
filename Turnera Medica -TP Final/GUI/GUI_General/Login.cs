@@ -35,8 +35,8 @@ namespace Turnera_Medica__TP_Final.GUI
         private void lnkRegistro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         { 
             //Llamo el form o ventana PreRegister
-            PreRegister preregistro_form = new PreRegister();
-            preregistro_form.Show(); //Abre este form
+            PreRegister preregister_form = new PreRegister();
+            preregister_form.Show(); //Abre este form
             this.Hide(); // Oculto el Logi_n
         }
         

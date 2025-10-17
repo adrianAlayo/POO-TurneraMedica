@@ -9,17 +9,17 @@ namespace Turnera_Medica__TP_Final.Controller
     internal class ObraSocial
     {
         public int Id { get; set; }
-        public string Nombre { get; set; }
-        public double Descuento { get; set; }
+        public string Name { get; set; }
+        public double Discount { get; set; }
 
-        public ObraSocial(int id, string nombre, double descuento)
+        public ObraSocial(int id, string name, double discount)
         {
             Id = id;
-            Nombre = nombre;
-            Descuento = descuento;
+            Name = name;
+            Discount = discount;
         }
 
-        public double AplicarDescuento(decimal montoOriginal)
+        public double ApplyDiscount(decimal originalAmount)
         {
             return 0;
         }

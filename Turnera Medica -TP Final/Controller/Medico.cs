@@ -9,48 +9,48 @@ namespace Turnera_Medica__TP_Final.Controller
     class Medico : User
     {
         //Saber la especialidad del Medico
-        public string Especialidad { get; set; }
+        public string Specialty { get; set; }
         
         //Saber Cuando cobra la consulta
-        public double MontoConsulta { get; set; }
+        public double ConsultationAmount { get; set; }
         
         //Lista de turnos que añadio el medico
-        public List<Turno> ListaTurnos { get; set; } = new List<Turno>();
+        public List<Turno> ShiftList { get; set; } = new List<Turno>();
         
         //Consultorio/lugar donde trabaja
-        public Consultorio ConsultorioAsignado { get; set; }
+        public Consultorio OfficeAssigned { get; set; }
 
         //Las multiples obras sociales que tiene
-        public List<ObraSocial> ObrasSocialesAtendidas { get; set; } = new List<ObraSocial>();
+        public List<ObraSocial> Social_Works_Attended { get; set; } = new List<ObraSocial>();
 
-        public Medico (int id, int dni, string nombre, string apellido, string email, string numerotel, string password, string especialidad, double montoConsulta, Consultorio consultorioAsignado) 
-            : base(id, dni, nombre, apellido, email, numerotel, password)
+        public Medico (int id, int dni, string name, string lastname, string email, string telnumber, string password, string specialty, double consultationamount, Consultorio officeassigned) 
+            : base(id, dni, name, lastname, email, telnumber, password)
         {
-            Especialidad = especialidad;
-            MontoConsulta = montoConsulta;
-            ConsultorioAsignado = consultorioAsignado;
+            Specialty = specialty;
+            ConsultationAmount = consultationamount;
+            OfficeAssigned = officeassigned;
         }
 
         //Consultar un Turno especifico por fecha
-        public override void ConsultarTurnos(DateTime fecha)
+        public override void ConsultShifts(DateTime date)
         {
             //Console.WriteLine("Hola mundo");
         }
 
         //Consultar todos los turnos
-        public override void ConsultarTurnos()
+        public override void ConsultShifts()
         {
 
         }
 
         //Calcular cuanto recaudo El medico en un rango de una fecha. 
-        public double CalcularRecaudacion(DateTime desde, DateTime hasta)
+        public double CalculateReceipt(DateTime from, DateTime until)
         {
             return 0;
         }
 
         //Sirve para que el medico agrega una obra social a su lista de Obras Sociales.
-        public void AgregarObraSocial(ObraSocial Os)
+        public void AddSocialWork(ObraSocial Os)
         {
 
         }
