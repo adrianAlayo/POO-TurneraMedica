@@ -16,5 +16,17 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
         {
             InitializeComponent();
         }
+
+        private void P_SpecificShift_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void return_start_P_Click(object sender, EventArgs e)
+        {
+            P_Start p_start_form = new P_Start();
+            p_start_form.Show(); //abre de vuelta el form del inicio de paciente
+            this.Hide(); // quitamos el form de ver todos los turnos
+        }
     }
 }
