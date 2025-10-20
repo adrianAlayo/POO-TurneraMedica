@@ -217,6 +217,12 @@
     <EmbeddedResource Include="GUI\GUI_Medico\M_Start.resx">
       <DependentUpon>M_Start.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_Paciente\P_AvailableShifts.resx">
+      <DependentUpon>P_AvailableShifts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_Paciente\P_AvailableShiftsForm.resx">
+      <DependentUpon>P_AvailableShiftsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GUI_Paciente\P_MyInfo.resx">
       <DependentUpon>P_MyInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +240,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GUI_General\UpdatePassword.resx">
       <DependentUpon>UpdatePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_Paciente\P_Shifts.resx">
+      <DependentUpon>P_Shifts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_Paciente\P_SpecificShift.resx">
+      <DependentUpon>P_SpecificShift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_Paciente\P_Start.resx">
+      <DependentUpon>P_Start.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
