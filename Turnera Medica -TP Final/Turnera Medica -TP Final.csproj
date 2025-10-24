@@ -98,6 +98,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\Connection.cs" />
     <Compile Include="Controller\Consultorio.cs" />
     <Compile Include="Controller\Medico.cs" />
     <Compile Include="Controller\ObraSocial.cs" />
