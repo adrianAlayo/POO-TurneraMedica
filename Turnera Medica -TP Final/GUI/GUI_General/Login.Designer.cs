@@ -86,6 +86,7 @@
             this.login_password_user.Size = new System.Drawing.Size(149, 20);
             this.login_password_user.TabIndex = 5;
             this.login_password_user.UseSystemPasswordChar = true;
+            this.login_password_user.TextChanged += new System.EventHandler(this.login_password_user_TextChanged);
             // 
             // lnkOlvide
             // 

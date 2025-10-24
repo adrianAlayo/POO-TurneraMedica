@@ -17,7 +17,8 @@ namespace Turnera_Medica__TP_Final.Controller
             string usuario = "root";
             string password = "1234";
 
-            string cadenaConexion = "Database" + bd + "; Data Source" + servidor + "; User Id=" + usuario + "; Password=" + password+"";
+            string cadenaConexion = "Database=" + bd + "; Data Source=" + servidor + "; User ID=" + usuario + "; Password=" + password + ";";
+
 
             try
             {

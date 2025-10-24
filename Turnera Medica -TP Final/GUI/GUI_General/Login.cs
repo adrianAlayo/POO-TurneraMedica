@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Turnera_Medica__TP_Final.Controller;
 using Turnera_Medica__TP_Final.GUI.GUI_Medico;
+using Turnera_Medica__TP_Final.GUI.GUI_Paciente;
 
 namespace Turnera_Medica__TP_Final.GUI
 {
@@ -53,34 +54,63 @@ namespace Turnera_Medica__TP_Final.GUI
 
         private void SendLogin_Click(object sender, EventArgs e)
         {
-            string email = login_email_user.Text;
-            string password = login_password_user.Text;
-
-            // Reviso que los campos no estén vacíos
-            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+            try
             {
-                MessageBox.Show("Por favor, complete todos los campos.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                conexionDB.Open();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
-            // Login de prueba (por ahora sin base de datos)
-            if (email == "admin@gmail.com" && password == "1234")
+            MySqlCommand codigo = new MySqlCommand();
+            codigo.Connection = conexionDB;
+
+            codigo.CommandText = ("SELECT * FROM  users WHERE email = '" + login_email_user.Text + "'AND password_hash = '" + login_password_user.Text + "'");
+
+            MySqlDataReader leer = codigo.ExecuteReader();
+
+            if (leer.Read() == true) 
             {
-                //Llamo el form o ventana UpdatePassword
-                M_Start M_Start_form = new M_Start();
-                M_Start_form.Show(); //Abre este form
+                P_Start P_Start_form = new P_Start();
+                P_Start_form.Show(); //Abre este form
                 this.Hide(); // Oculto el Login
-
-                MessageBox.Show("Inicio de sesión exitoso.", "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Más adelante acá se va a abrir el menú principal
-                // Ejemplo: new MenuPrincipal().Show();
-                // this.Hide();
             }
-            else
+            else 
             {
-                MessageBox.Show("Email o contraseña incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Usuario o Contraseña incorrecta");
+                login_email_user.Clear();
+                login_password_user.Clear();
             }
+            conexionDB.Close();
+            //string email = login_email_user.Text;
+            //string password = login_password_user.Text;
+
+            //// Reviso que los campos no estén vacíos
+            //if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+            //{
+            //    MessageBox.Show("Por favor, complete todos los campos.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
+
+            //// Login de prueba (por ahora sin base de datos)
+            //if (email == "admin@gmail.com" && password == "1234")
+            //{
+            //    //Llamo el form o ventana UpdatePassword
+            //    M_Start M_Start_form = new M_Start();
+            //    M_Start_form.Show(); //Abre este form
+            //    this.Hide(); // Oculto el Login
+
+            //    MessageBox.Show("Inicio de sesión exitoso.", "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            //    // Más adelante acá se va a abrir el menú principal
+            //    // Ejemplo: new MenuPrincipal().Show();
+            //    // this.Hide();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Email o contraseña incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
@@ -89,6 +119,11 @@ namespace Turnera_Medica__TP_Final.GUI
         }
 
         private void login_email_user_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void login_password_user_TextChanged(object sender, EventArgs e)
         {
 
         }
