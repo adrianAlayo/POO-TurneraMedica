@@ -16,5 +16,10 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
         {
             InitializeComponent();
         }
+
+        private void P_Start_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

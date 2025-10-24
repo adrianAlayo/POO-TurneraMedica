@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Turnera_Medica__TP_Final.Controller;
 using Turnera_Medica__TP_Final.GUI.GUI_Medico;
 
 namespace Turnera_Medica__TP_Final.GUI
@@ -17,6 +19,7 @@ namespace Turnera_Medica__TP_Final.GUI
         {
             InitializeComponent();
         }
+        MySqlConnection conexionDB = Connection.conexion();
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -81,6 +84,11 @@ namespace Turnera_Medica__TP_Final.GUI
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void login_email_user_TextChanged(object sender, EventArgs e)
         {
 
         }

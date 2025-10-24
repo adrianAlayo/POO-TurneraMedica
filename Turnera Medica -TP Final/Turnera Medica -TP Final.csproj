@@ -98,6 +98,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\Connection.cs" />
     <Compile Include="Controller\Consultorio.cs" />
     <Compile Include="Controller\Medico.cs" />
     <Compile Include="Controller\ObraSocial.cs" />
@@ -246,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GUI_Paciente\P_SpecificShift.resx">
       <DependentUpon>P_SpecificShift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_Paciente\P_Start.resx">
+      <DependentUpon>P_Start.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
