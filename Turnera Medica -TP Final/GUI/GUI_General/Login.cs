@@ -56,33 +56,70 @@ namespace Turnera_Medica__TP_Final.GUI
         {
             try
             {
+                // Abro la conexión con la base de datos
                 conexionDB.Open();
+
+                // Guardo los datos escritos por el usuario en los TextBox
+                string email = login_email_user.Text.Trim();
+                string password = login_password_user.Text.Trim();
+
+                // Consulta SQL para buscar un usuario con ese email y contraseña
+                string query = "SELECT * FROM users WHERE email = @Email AND password_hash = @Password";
+
+                // Creo el comando SQL y paso los valores a los parámetros
+                MySqlCommand codigo = new MySqlCommand(query, conexionDB);
+                codigo.Parameters.AddWithValue("@Email", email);
+                codigo.Parameters.AddWithValue("@Password", password);
+
+                // Ejecuto la consulta y guardo el resultado
+                MySqlDataReader leer = codigo.ExecuteReader();
+
+                // Si encontró un usuario, entra al if
+                if (leer.Read())
+                {
+                    // Leo el rol del usuario (medico o paciente)
+                    string rolUsuario = leer["rol"].ToString().Trim();
+
+                    // Si el rol es médico, abre la interfaz del médico
+                    if (rolUsuario == "medico")
+                    {
+                        MessageBox.Show("Inicio de sesión correcto: Médico");
+                        M_Start mStartForm = new M_Start();
+                        mStartForm.Show();
+                        this.Hide();
+                    }
+                    // Si el rol es paciente, abre la interfaz del paciente
+                    else if (rolUsuario == "paciente")
+                    {
+                        MessageBox.Show("Inicio de sesión correcto: Paciente");
+                        P_Start pStartForm = new P_Start();
+                        pStartForm.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        // Si tiene otro rol, muestra un aviso
+                        MessageBox.Show("Rol desconocido. Contacte al administrador.");
+                    }
+                }
+                else
+                {
+                    // Si no encontró usuario, limpia los campos y muestra error
+                    MessageBox.Show("Usuario o contraseña incorrecta.");
+                    login_email_user.Clear();
+                    login_password_user.Clear();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                // Si hubo un error (por ejemplo, de conexión), lo muestra
+                MessageBox.Show("Error al iniciar sesión: " + ex.Message);
             }
-
-            MySqlCommand codigo = new MySqlCommand();
-            codigo.Connection = conexionDB;
-
-            codigo.CommandText = ("SELECT * FROM  users WHERE email = '" + login_email_user.Text + "'AND password_hash = '" + login_password_user.Text + "'");
-
-            MySqlDataReader leer = codigo.ExecuteReader();
-
-            if (leer.Read() == true) 
+            finally
             {
-                P_Start P_Start_form = new P_Start();
-                P_Start_form.Show(); //Abre este form
-                this.Hide(); // Oculto el Login
+                // Cierro la conexión pase lo que pase
+                conexionDB.Close();
             }
-            else 
-            {
-                MessageBox.Show("Usuario o Contraseña incorrecta");
-                login_email_user.Clear();
-                login_password_user.Clear();
-            }
-            conexionDB.Close();
             //string email = login_email_user.Text;
             //string password = login_password_user.Text;
 
