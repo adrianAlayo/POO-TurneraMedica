@@ -30,12 +30,6 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 
         private void M_Shifts_Load(object sender, EventArgs e)
         {
-
-        }
-
-        //GRID PARA MOSTRAR LA LISTA DE LOS TURNOS DEL MEDICO
-        private void M_Shfts_list_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
             try
             {
                 conexionDB.Open();
@@ -50,14 +44,15 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 
                 if (read.Read())
                 {
-                    //Mostrar la lista
+                    
                 }
                 else
                 {
                     MessageBox.Show("Lamento informarle que usted no tiene Turnos Disponibles por el momento");
 
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Error !!! al mostrar el listado de los turnos: " + ex.Message);
 
