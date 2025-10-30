@@ -186,28 +186,27 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `turnos`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE `turnos` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `medico_id` int NOT NULL,
-  `paciente_id` int NOT NULL,
-  `consultorio_id` int NOT NULL,
-  `fecha_hora` datetime NOT NULL,
-  `duracion` int NOT NULL DEFAULT '30',
-  `precio_original` decimal(10,2) NOT NULL,
-  `descuento` decimal(5,2) NOT NULL DEFAULT '0.00',
-  `precio_final` decimal(10,2) NOT NULL,
-  `estado` enum('programado','asistido','cancelado','aucente') NOT NULL DEFAULT 'programado',
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `medico_id` INT NOT NULL,
+  `paciente_id` INT NULL,
+  `consultorio_id` INT NOT NULL,
+  `fecha_hora` DATETIME NOT NULL,
+  `duracion` INT NOT NULL DEFAULT 30,
+  `precio_original` DECIMAL(10,2) NOT NULL,
+  `descuento` DECIMAL(5,2) NOT NULL DEFAULT 0.00,
+  `precio_final` DECIMAL(10,2) NOT NULL,
+  `estado` ENUM('programado','asistido','libre','cancelado') NOT NULL DEFAULT 'libre',
   PRIMARY KEY (`id`),
   UNIQUE KEY `uq_turno_medico_fecha` (`medico_id`,`fecha_hora`),
   KEY `paciente_id` (`paciente_id`),
   KEY `consultorio_id` (`consultorio_id`),
   CONSTRAINT `turnos_ibfk_1` FOREIGN KEY (`medico_id`) REFERENCES `medicos` (`id`) ON DELETE RESTRICT,
-  CONSTRAINT `turnos_ibfk_2` FOREIGN KEY (`paciente_id`) REFERENCES `pacientes` (`id`) ON DELETE RESTRICT,
+  CONSTRAINT `turnos_ibfk_2` FOREIGN KEY (`paciente_id`) REFERENCES `pacientes` (`id`) ON DELETE SET NULL,
   CONSTRAINT `turnos_ibfk_3` FOREIGN KEY (`consultorio_id`) REFERENCES `consultorios` (`id`) ON DELETE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
 
 --
 -- Dumping data for table `turnos`
@@ -259,3 +258,83 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2025-10-10 23:54:10
+
+USE tp_turneriamedica_db; 
+-- ============================================ 
+-- USERS 
+-- ============================================ 
+INSERT INTO users (dni, nombre, apellido, email, numero_tel, password_hash, rol) VALUES 
+(30111222, 'Juan', 'Pérez', 'juan.perez@hospital.com', '1122334455', '1234', 'medico'), 
+(30999888, 'María', 'López', 'maria.lopez@hospital.com', '1133445566', '1234', 'medico'),
+(40111222, 'Carlos', 'Gómez', 'carlos.gomez@gmail.com', '1144556677', '1234', 'paciente'), 
+(40999888, 'Lucía', 'Fernández', 'lucia.fernandez@gmail.com', '1155667788', '1234', 'paciente'); 
+-- ============================================ 
+-- CONSULTORIOS 
+-- ============================================ 
+INSERT INTO consultorios (ubicacion, hora_abierto, hora_cerrado) VALUES
+('Corrientes 1500', '08:00:00', '16:00:00'),
+('Carabobo 3000', '08:00:00', '16:00:00'),
+('Mexico 2500', '09:00:00', '17:00:00'), 
+('Uruguay 4000', '09:00:00', '17:00:00'), 
+('Yrigoyen 3500 ', '07:00:00', '15:00:00'), 
+('Corrientes 3200 - Edificio B', '07:00:00', '15:00:00'); 
+-- ============================================ 
+-- OBRAS SOCIALES 
+-- ============================================ 
+INSERT INTO obras_sociales (nombre) VALUES 
+('OSDE'), 
+('Swiss Medical'), 
+('Galeno'), 
+('PAMI'), 
+('IOMA'), 
+('Medife'); 
+
+-- ============================================ 
+-- MÉDICOS 
+-- ============================================ 
+INSERT INTO medicos (user_id, especialidad, monto_consulta) VALUES 
+(1, 'Cardiologia', 5000.00), 
+(2, 'Pediatria', 6000.00);
+ 
+-- ============================================ 
+-- PACIENTES 
+-- ============================================ 
+INSERT INTO pacientes (user_id, obra_social_id) VALUES 
+(3, 1), 
+(4, 4);
+
+-- ============================================ 
+-- MÉDICO - CONSULTORIO ASIGNADO 
+-- ============================================ 
+INSERT INTO medico_consultorio_asignado (medico_id, consultorio_id, horario_desde, horario_hasta) VALUES 
+(1, 1, '08:00:00', '12:00:00'), 
+(1, 2, '13:00:00', '16:00:00'), 
+(2, 3, '09:00:00', '13:00:00'), 
+(2, 4, '14:00:00', '17:00:00'); 
+
+-- ============================================ 
+-- MÉDICO - OBRA SOCIAL 
+-- ============================================ 
+INSERT INTO medico_obra_social (medico_id, obra_social_id) VALUES 
+(1, 1), 
+(1, 2), 
+(1, 3), 
+(2, 4), 
+(2, 5), 
+(2, 6); 
+
+-- ============================================ 
+-- TURNOS (a partir del 15 de noviembre de 2025) 
+-- ============================================ 
+INSERT INTO turnos (medico_id, paciente_id, consultorio_id, fecha_hora, duracion, precio_original, descuento, precio_final, estado)
+VALUES
+-- Médico 1 (Cardiología)
+(1, 1, 1, '2025-11-15 09:00:00', 30, 5000.00, 0.00, 5000.00, 'programado'),
+(1, 2, 1, '2025-11-15 09:30:00', 30, 5000.00, 10.00, 4500.00, 'programado'),
+(1, 1, 1, '2025-11-15 10:00:00', 30, 5000.00, 0.00, 5000.00, 'asistido'),
+(1, NULL, 1, '2025-11-15 10:30:00', 30, 5000.00, 0.00, 5000.00, 'libre'),
+(1, NULL, 2, '2025-11-15 11:00:00', 30, 5000.00, 0.00, 5000.00, 'libre'),
+
+-- Médico 2 (Pediatría)
+(2, NULL, 3, '2025-11-16 09:30:00', 30, 6000.00, 0.00, 6000.00, 'libre'),
+(2, NULL, 4, '2025-11-16 10:00:00', 30, 6000.00, 0.00, 6000.00, 'libre');

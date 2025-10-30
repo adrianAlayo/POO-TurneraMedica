@@ -34,7 +34,7 @@ namespace Turnera_Medica__TP_Final.GUI
         {
 
         }
-
+       
         private void RegisterP_send_Click(object sender, EventArgs e)
         {
             string nombre = registerP_name_user.Text.Trim();
