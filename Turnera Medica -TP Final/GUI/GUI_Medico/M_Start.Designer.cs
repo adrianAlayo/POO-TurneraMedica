@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.GetShifts = new System.Windows.Forms.Button();
-            this.GetInfo = new System.Windows.Forms.Button();
             this.GetShift = new System.Windows.Forms.Button();
             this.GetSocialWork = new System.Windows.Forms.Button();
             this.SendLogin = new System.Windows.Forms.Button();
@@ -38,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.GetInfo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // GetShifts
@@ -51,18 +51,6 @@
             this.GetShifts.Text = "Ver";
             this.GetShifts.UseVisualStyleBackColor = false;
             this.GetShifts.Click += new System.EventHandler(this.GetShifts_Click);
-            // 
-            // GetInfo
-            // 
-            this.GetInfo.BackColor = System.Drawing.Color.LightGreen;
-            this.GetInfo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GetInfo.Location = new System.Drawing.Point(478, 151);
-            this.GetInfo.Name = "GetInfo";
-            this.GetInfo.Size = new System.Drawing.Size(91, 40);
-            this.GetInfo.TabIndex = 10;
-            this.GetInfo.Text = "Ver";
-            this.GetInfo.UseVisualStyleBackColor = false;
-            this.GetInfo.Click += new System.EventHandler(this.GetInfo_Click);
             // 
             // GetShift
             // 
@@ -150,6 +138,18 @@
             this.label3.TabIndex = 18;
             this.label3.Text = "Añadir obra social";
             // 
+            // GetInfo
+            // 
+            this.GetInfo.BackColor = System.Drawing.Color.LightGreen;
+            this.GetInfo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GetInfo.Location = new System.Drawing.Point(478, 151);
+            this.GetInfo.Name = "GetInfo";
+            this.GetInfo.Size = new System.Drawing.Size(91, 40);
+            this.GetInfo.TabIndex = 10;
+            this.GetInfo.Text = "Ver";
+            this.GetInfo.UseVisualStyleBackColor = false;
+            this.GetInfo.Click += new System.EventHandler(this.GetInfo_Click);
+            // 
             // M_Start
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,6 +167,7 @@
             this.Controls.Add(this.GetShifts);
             this.Name = "M_Start";
             this.Text = "Start";
+            this.Load += new System.EventHandler(this.M_Start_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,7 +176,6 @@
         #endregion
 
         private System.Windows.Forms.Button GetShifts;
-        private System.Windows.Forms.Button GetInfo;
         private System.Windows.Forms.Button GetShift;
         private System.Windows.Forms.Button GetSocialWork;
         private System.Windows.Forms.Button SendLogin;
@@ -184,5 +184,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button GetInfo;
     }
 }

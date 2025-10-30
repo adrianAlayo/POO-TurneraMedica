@@ -10,37 +10,37 @@ namespace Turnera_Medica__TP_Final.Controller
     {
         public int Id { get; set; }
         public int Dni { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
+        public string Name { get; set; }
+        public string LastName { get; set; }
         public string Email { get; set; }
-        public string NumeroTel { get; set; }
+        public string TelNumber { get; set; }
         public string Password { get; set; }
         
-        public User (int id, int dni, string nombre, string apellido, string email, string numerotel,string password)
+        public User (int id, int dni, string name, string lastname, string email, string telnumber,string password)
         {
             Id = id;
             Dni = dni;
-            Nombre = nombre;
-            Apellido = apellido;
+            Name = name;
+            LastName = lastname;
             Email = email;
-            NumeroTel = numerotel;
+            TelNumber = telnumber;
             Password = password;
         }
 
         //Sobre cargar de metodo (1) - Consultar turno especifico
-        public abstract void ConsultarTurnos(DateTime fecha);
+        public abstract void ConsultShifts(DateTime date);
         //Sobre cargar de metodo (2) -Consultar todos los turnos
-        public abstract void ConsultarTurnos();
+        public abstract void ConsultShifts();
        
         public void Login()
         {
             //Aca hacer la logica de si la informacion existe en la base de datos, Si es asi moverlo a otra venta
-            Console.WriteLine($"Hola {Nombre}, has iniciado sesion");
+            Console.WriteLine($"Hola {Name}, has iniciado sesion");
         }
         public void Logout()
         {
             //Cuando el usuario cierra sesion le envia a la ventana de "inicio sesion"
-            Console.WriteLine($"Hola {Nombre}, has cerrado sesion");
+            Console.WriteLine($"Hola {Name}, has cerrado sesion");
         }
 
     }

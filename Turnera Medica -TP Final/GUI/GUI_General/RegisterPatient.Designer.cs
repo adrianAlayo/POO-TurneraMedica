@@ -33,13 +33,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.registerP_confirPassword_user = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.registerP_socialWork_user = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.registerP_numberPhone_user = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.registerP_lastName_user = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.registerP_password_user = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.registerP_email_user = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,6 +45,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.s = new System.Windows.Forms.Label();
             this.registerP_name_user = new System.Windows.Forms.TextBox();
+            this.registerP_socialWork_user = new System.Windows.Forms.TextBox();
+            this.registerP_password_user = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // ReturnPreRegister
@@ -94,6 +94,7 @@
             this.registerP_confirPassword_user.Name = "registerP_confirPassword_user";
             this.registerP_confirPassword_user.Size = new System.Drawing.Size(149, 20);
             this.registerP_confirPassword_user.TabIndex = 50;
+            this.registerP_confirPassword_user.TextChanged += new System.EventHandler(this.registerP_confirPassword_user_TextChanged);
             // 
             // label9
             // 
@@ -105,15 +106,6 @@
             this.label9.TabIndex = 49;
             this.label9.Text = "Obra Social:";
             this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // registerP_socialWork_user
-            // 
-            this.registerP_socialWork_user.BackColor = System.Drawing.Color.LightPink;
-            this.registerP_socialWork_user.Location = new System.Drawing.Point(538, 211);
-            this.registerP_socialWork_user.Name = "registerP_socialWork_user";
-            this.registerP_socialWork_user.Size = new System.Drawing.Size(149, 20);
-            this.registerP_socialWork_user.TabIndex = 48;
-            this.registerP_socialWork_user.TextChanged += new System.EventHandler(this.registerM_socialWork_user_TextChanged);
             // 
             // label11
             // 
@@ -132,6 +124,7 @@
             this.registerP_numberPhone_user.Name = "registerP_numberPhone_user";
             this.registerP_numberPhone_user.Size = new System.Drawing.Size(149, 20);
             this.registerP_numberPhone_user.TabIndex = 46;
+            this.registerP_numberPhone_user.TextChanged += new System.EventHandler(this.registerP_numberPhone_user_TextChanged);
             // 
             // label12
             // 
@@ -150,6 +143,7 @@
             this.registerP_lastName_user.Name = "registerP_lastName_user";
             this.registerP_lastName_user.Size = new System.Drawing.Size(149, 20);
             this.registerP_lastName_user.TabIndex = 44;
+            this.registerP_lastName_user.TextChanged += new System.EventHandler(this.registerP_lastName_user_TextChanged);
             // 
             // label5
             // 
@@ -161,15 +155,6 @@
             this.label5.TabIndex = 43;
             this.label5.Text = "Contraseña:";
             this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // registerP_password_user
-            // 
-            this.registerP_password_user.BackColor = System.Drawing.Color.LightPink;
-            this.registerP_password_user.Location = new System.Drawing.Point(538, 246);
-            this.registerP_password_user.Name = "registerP_password_user";
-            this.registerP_password_user.Size = new System.Drawing.Size(149, 20);
-            this.registerP_password_user.TabIndex = 42;
-            this.registerP_password_user.TextChanged += new System.EventHandler(this.registerM_password_user_TextChanged);
             // 
             // label4
             // 
@@ -188,6 +173,7 @@
             this.registerP_email_user.Name = "registerP_email_user";
             this.registerP_email_user.Size = new System.Drawing.Size(149, 20);
             this.registerP_email_user.TabIndex = 40;
+            this.registerP_email_user.TextChanged += new System.EventHandler(this.registerP_email_user_TextChanged);
             // 
             // label2
             // 
@@ -206,6 +192,7 @@
             this.registerP_dni_user.Name = "registerP_dni_user";
             this.registerP_dni_user.Size = new System.Drawing.Size(149, 20);
             this.registerP_dni_user.TabIndex = 38;
+            this.registerP_dni_user.TextChanged += new System.EventHandler(this.registerP_dni_user_TextChanged);
             // 
             // label1
             // 
@@ -234,24 +221,43 @@
             this.registerP_name_user.Name = "registerP_name_user";
             this.registerP_name_user.Size = new System.Drawing.Size(149, 20);
             this.registerP_name_user.TabIndex = 35;
+            this.registerP_name_user.TextChanged += new System.EventHandler(this.registerP_name_user_TextChanged);
+            // 
+            // registerP_socialWork_user
+            // 
+            this.registerP_socialWork_user.BackColor = System.Drawing.Color.LightPink;
+            this.registerP_socialWork_user.Location = new System.Drawing.Point(538, 211);
+            this.registerP_socialWork_user.Name = "registerP_socialWork_user";
+            this.registerP_socialWork_user.Size = new System.Drawing.Size(149, 20);
+            this.registerP_socialWork_user.TabIndex = 54;
+            this.registerP_socialWork_user.TextChanged += new System.EventHandler(this.registerP_socialWork_user_TextChanged);
+            // 
+            // registerP_password_user
+            // 
+            this.registerP_password_user.BackColor = System.Drawing.Color.LightPink;
+            this.registerP_password_user.Location = new System.Drawing.Point(538, 248);
+            this.registerP_password_user.Name = "registerP_password_user";
+            this.registerP_password_user.Size = new System.Drawing.Size(149, 20);
+            this.registerP_password_user.TabIndex = 55;
+            this.registerP_password_user.TextChanged += new System.EventHandler(this.registerP_password_user_TextChanged);
             // 
             // RegisterPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.registerP_password_user);
+            this.Controls.Add(this.registerP_socialWork_user);
             this.Controls.Add(this.ReturnPreRegister);
             this.Controls.Add(this.RegisterP_send);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.registerP_confirPassword_user);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.registerP_socialWork_user);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.registerP_numberPhone_user);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.registerP_lastName_user);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.registerP_password_user);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.registerP_email_user);
             this.Controls.Add(this.label2);
@@ -274,13 +280,11 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox registerP_confirPassword_user;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox registerP_socialWork_user;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox registerP_numberPhone_user;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox registerP_lastName_user;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox registerP_password_user;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox registerP_email_user;
         private System.Windows.Forms.Label label2;
@@ -288,5 +292,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label s;
         private System.Windows.Forms.TextBox registerP_name_user;
+        private System.Windows.Forms.TextBox registerP_socialWork_user;
+        private System.Windows.Forms.TextBox registerP_password_user;
     }
 }

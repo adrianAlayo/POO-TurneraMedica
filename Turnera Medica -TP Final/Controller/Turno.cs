@@ -9,28 +9,28 @@ namespace Turnera_Medica__TP_Final.Controller
     class Turno
     {
         public int Id { get; set; }
-        public DateTime Fecha { get; set; }
-        public TimeSpan Hora { get; set; }
-        public Medico MedicoAsignado { get; set; }
-        public Paciente PacienteAsignado { get; set; } 
-        public Consultorio ConsultorioAsignado { get; set; }
+        public DateTime Date { get; set; }
+        public TimeSpan Hour { get; set; }
+        public Medico Assigned_Doctor { get; set; }
+        public Paciente PatientAssigned { get; set; } 
+        public Consultorio OfficeAssigned { get; set; }
 
-        public Turno (int id, DateTime fecha, TimeSpan hora, Medico medicoAsignado, Paciente pacienteAsignado, Consultorio consultorioAsignado)
+        public Turno (int id, DateTime date, TimeSpan hour, Medico assigned_doctor, Paciente patientassigned, Consultorio officeassigned)
         {
             Id = id;
-            Fecha = fecha;
-            Hora = hora;
-            MedicoAsignado = medicoAsignado;
-            PacienteAsignado = pacienteAsignado;
-            ConsultorioAsignado = consultorioAsignado;
+            Date = date;
+            Hour = hour;
+            Assigned_Doctor = assigned_doctor;
+            PatientAssigned = patientassigned;
+            OfficeAssigned = officeassigned;
         }
 
-        public bool ValidarDisponibilidad()
+        public bool ValidateAvailability()
         {
             return true;
         }
 
-        public void CalcularCosto()
+        public void CalculateCost()
         {
 
         }
