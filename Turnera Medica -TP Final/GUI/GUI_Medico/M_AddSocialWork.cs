@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Turnera_Medica__TP_Final.Controller;
 
 namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 {
@@ -16,6 +18,8 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
         {
             InitializeComponent();
         }
+
+        MySqlConnection conexionDB = Connection.conexion();
 
         private void M_AddSocialWork_Load(object sender, EventArgs e)
         {
@@ -30,8 +34,7 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
         // ES PARA AÑADIR LA OBRA SOCIAL 
         private void sent_socialwork_Click(object sender, EventArgs e)
         {
-            string socialWork = socialwork_name_user.Text.Trim();
-            MessageBox.Show(socialWork);
+        
         }
 
         private void return_start_M_Click(object sender, EventArgs e)
