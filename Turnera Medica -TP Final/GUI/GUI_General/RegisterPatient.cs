@@ -27,17 +27,7 @@ namespace Turnera_Medica__TP_Final.GUI
 
         }
 
-        private void registerM_socialWork_user_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void registerM_password_user_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -53,6 +43,46 @@ namespace Turnera_Medica__TP_Final.GUI
             PreRegister PreRegister_form = new PreRegister();
             PreRegister_form.Show(); //Abre este form
             this.Hide(); // Oculto el Login
+        }
+
+        private void registerP_name_user_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registerP_dni_user_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registerP_email_user_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registerP_confirPassword_user_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registerP_lastName_user_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registerP_numberPhone_user_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registerP_socialWork_user_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registerP_password_user_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

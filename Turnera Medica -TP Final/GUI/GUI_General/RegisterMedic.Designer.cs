@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.registerM_name_user = new System.Windows.Forms.TextBox();
             this.s = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,21 +51,13 @@
             this.registerM_numberPhone_user = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.registerM_lastName_user = new System.Windows.Forms.TextBox();
-            this.registerM_entryTime_user = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.registerM_departureTime_user = new System.Windows.Forms.TextBox();
             this.RegisterM_send = new System.Windows.Forms.Button();
             this.ReturnPreRegister = new System.Windows.Forms.Button();
+            this.registerM_entryTime_user = new System.Windows.Forms.TextBox();
+            this.registerM_departureTime_user = new System.Windows.Forms.TextBox();
+            this.registerM_name_user = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // registerM_name_user
-            // 
-            this.registerM_name_user.BackColor = System.Drawing.Color.LightPink;
-            this.registerM_name_user.Location = new System.Drawing.Point(161, 76);
-            this.registerM_name_user.Name = "registerM_name_user";
-            this.registerM_name_user.Size = new System.Drawing.Size(149, 20);
-            this.registerM_name_user.TabIndex = 5;
-            this.registerM_name_user.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // s
             // 
@@ -106,6 +97,7 @@
             this.registerM_dni_user.Name = "registerM_dni_user";
             this.registerM_dni_user.Size = new System.Drawing.Size(149, 20);
             this.registerM_dni_user.TabIndex = 8;
+            this.registerM_dni_user.TextChanged += new System.EventHandler(this.registerM_dni_user_TextChanged);
             // 
             // label3
             // 
@@ -124,6 +116,7 @@
             this.registerM_montConsul_user.Name = "registerM_montConsul_user";
             this.registerM_montConsul_user.Size = new System.Drawing.Size(149, 20);
             this.registerM_montConsul_user.TabIndex = 12;
+            this.registerM_montConsul_user.TextChanged += new System.EventHandler(this.registerM_montConsul_user_TextChanged);
             // 
             // label4
             // 
@@ -142,6 +135,7 @@
             this.registerM_email_user.Name = "registerM_email_user";
             this.registerM_email_user.Size = new System.Drawing.Size(149, 20);
             this.registerM_email_user.TabIndex = 10;
+            this.registerM_email_user.TextChanged += new System.EventHandler(this.registerM_email_user_TextChanged);
             // 
             // label5
             // 
@@ -160,6 +154,7 @@
             this.registerM_password_user.Name = "registerM_password_user";
             this.registerM_password_user.Size = new System.Drawing.Size(149, 20);
             this.registerM_password_user.TabIndex = 16;
+            this.registerM_password_user.TextChanged += new System.EventHandler(this.registerM_password_user_TextChanged);
             // 
             // label6
             // 
@@ -178,6 +173,7 @@
             this.registerM_office_user.Name = "registerM_office_user";
             this.registerM_office_user.Size = new System.Drawing.Size(149, 20);
             this.registerM_office_user.TabIndex = 14;
+            this.registerM_office_user.TextChanged += new System.EventHandler(this.registerM_office_user_TextChanged);
             // 
             // label7
             // 
@@ -196,6 +192,7 @@
             this.registerM_confirPassword_user.Name = "registerM_confirPassword_user";
             this.registerM_confirPassword_user.Size = new System.Drawing.Size(149, 20);
             this.registerM_confirPassword_user.TabIndex = 28;
+            this.registerM_confirPassword_user.TextChanged += new System.EventHandler(this.registerM_confirPassword_user_TextChanged);
             // 
             // label8
             // 
@@ -224,6 +221,7 @@
             this.registerM_socialWork_user.Name = "registerM_socialWork_user";
             this.registerM_socialWork_user.Size = new System.Drawing.Size(149, 20);
             this.registerM_socialWork_user.TabIndex = 24;
+            this.registerM_socialWork_user.TextChanged += new System.EventHandler(this.registerM_socialWork_user_TextChanged);
             // 
             // label10
             // 
@@ -242,6 +240,7 @@
             this.registerM_especialty_user.Name = "registerM_especialty_user";
             this.registerM_especialty_user.Size = new System.Drawing.Size(149, 20);
             this.registerM_especialty_user.TabIndex = 22;
+            this.registerM_especialty_user.TextChanged += new System.EventHandler(this.registerM_especialty_user_TextChanged);
             // 
             // label11
             // 
@@ -260,6 +259,7 @@
             this.registerM_numberPhone_user.Name = "registerM_numberPhone_user";
             this.registerM_numberPhone_user.Size = new System.Drawing.Size(149, 20);
             this.registerM_numberPhone_user.TabIndex = 20;
+            this.registerM_numberPhone_user.TextChanged += new System.EventHandler(this.registerM_numberPhone_user_TextChanged);
             // 
             // label12
             // 
@@ -278,15 +278,7 @@
             this.registerM_lastName_user.Name = "registerM_lastName_user";
             this.registerM_lastName_user.Size = new System.Drawing.Size(149, 20);
             this.registerM_lastName_user.TabIndex = 18;
-            // 
-            // registerM_entryTime_user
-            // 
-            this.registerM_entryTime_user.BackColor = System.Drawing.Color.LightPink;
-            this.registerM_entryTime_user.Location = new System.Drawing.Point(478, 265);
-            this.registerM_entryTime_user.Name = "registerM_entryTime_user";
-            this.registerM_entryTime_user.Size = new System.Drawing.Size(87, 20);
-            this.registerM_entryTime_user.TabIndex = 30;
-            this.registerM_entryTime_user.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
+            this.registerM_lastName_user.TextChanged += new System.EventHandler(this.registerM_lastName_user_TextChanged);
             // 
             // label13
             // 
@@ -298,15 +290,6 @@
             this.label13.TabIndex = 31;
             this.label13.Text = "Horario de Salida:";
             this.label13.Click += new System.EventHandler(this.label13_Click);
-            // 
-            // registerM_departureTime_user
-            // 
-            this.registerM_departureTime_user.BackColor = System.Drawing.Color.LightPink;
-            this.registerM_departureTime_user.Location = new System.Drawing.Point(695, 267);
-            this.registerM_departureTime_user.Name = "registerM_departureTime_user";
-            this.registerM_departureTime_user.Size = new System.Drawing.Size(87, 20);
-            this.registerM_departureTime_user.TabIndex = 32;
-            this.registerM_departureTime_user.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // RegisterM_send
             // 
@@ -336,16 +319,44 @@
             this.ReturnPreRegister.UseVisualStyleBackColor = false;
             this.ReturnPreRegister.Click += new System.EventHandler(this.ReturnPreRegister_Click);
             // 
+            // registerM_entryTime_user
+            // 
+            this.registerM_entryTime_user.BackColor = System.Drawing.Color.LightPink;
+            this.registerM_entryTime_user.Location = new System.Drawing.Point(478, 265);
+            this.registerM_entryTime_user.Name = "registerM_entryTime_user";
+            this.registerM_entryTime_user.Size = new System.Drawing.Size(87, 20);
+            this.registerM_entryTime_user.TabIndex = 36;
+            this.registerM_entryTime_user.TextChanged += new System.EventHandler(this.registerM_entryTime_user_TextChanged);
+            // 
+            // registerM_departureTime_user
+            // 
+            this.registerM_departureTime_user.BackColor = System.Drawing.Color.LightPink;
+            this.registerM_departureTime_user.Location = new System.Drawing.Point(695, 267);
+            this.registerM_departureTime_user.Name = "registerM_departureTime_user";
+            this.registerM_departureTime_user.Size = new System.Drawing.Size(87, 20);
+            this.registerM_departureTime_user.TabIndex = 38;
+            this.registerM_departureTime_user.TextChanged += new System.EventHandler(this.registerM_departureTime_user_TextChanged);
+            // 
+            // registerM_name_user
+            // 
+            this.registerM_name_user.BackColor = System.Drawing.Color.LightPink;
+            this.registerM_name_user.Location = new System.Drawing.Point(161, 76);
+            this.registerM_name_user.Name = "registerM_name_user";
+            this.registerM_name_user.Size = new System.Drawing.Size(149, 20);
+            this.registerM_name_user.TabIndex = 39;
+            this.registerM_name_user.TextChanged += new System.EventHandler(this.registerM_name_user_TextChanged);
+            // 
             // RegisterMedic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.registerM_name_user);
+            this.Controls.Add(this.registerM_departureTime_user);
+            this.Controls.Add(this.registerM_entryTime_user);
             this.Controls.Add(this.ReturnPreRegister);
             this.Controls.Add(this.RegisterM_send);
-            this.Controls.Add(this.registerM_departureTime_user);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.registerM_entryTime_user);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.registerM_confirPassword_user);
             this.Controls.Add(this.label8);
@@ -369,7 +380,6 @@
             this.Controls.Add(this.registerM_dni_user);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.s);
-            this.Controls.Add(this.registerM_name_user);
             this.Name = "RegisterMedic";
             this.Text = "RegisterMedic";
             this.Load += new System.EventHandler(this.RegisterMedic_Load);
@@ -379,8 +389,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox registerM_name_user;
         private System.Windows.Forms.Label s;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -404,10 +412,11 @@
         private System.Windows.Forms.TextBox registerM_numberPhone_user;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox registerM_lastName_user;
-        private System.Windows.Forms.TextBox registerM_entryTime_user;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox registerM_departureTime_user;
         private System.Windows.Forms.Button RegisterM_send;
         private System.Windows.Forms.Button ReturnPreRegister;
+        private System.Windows.Forms.TextBox registerM_entryTime_user;
+        private System.Windows.Forms.TextBox registerM_departureTime_user;
+        private System.Windows.Forms.TextBox registerM_name_user;
     }
 }
