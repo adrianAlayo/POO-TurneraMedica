@@ -14,11 +14,10 @@ namespace Turnera_Medica__TP_Final.Controller
         //Saber Cuando cobra la consulta
         public double ConsultationAmount { get; set; }
         
-        
         //Consultorio/lugar donde trabaja
-        public Consultorio OfficeAssigned { get; set; }
+        public int OfficeAssigned { get; set; } //Guarda el ID del consultario, en la tabla que relaciona medico con consultorio
 
-        public Medico (int id, int dni, string name, string lastname, string email, string telnumber, string password, string specialty, double consultationamount, Consultorio officeassigned) 
+        public Medico (int id, int dni, string name, string lastname, string email, string telnumber, string password, string specialty, double consultationamount, int officeassigned) 
             : base(id, dni, name, lastname, email, telnumber, password)
         {
             Specialty = specialty;
@@ -27,13 +26,13 @@ namespace Turnera_Medica__TP_Final.Controller
         }
 
         //Consultar un Turno especifico por fecha
-        public override void ConsultShifts(DateTime date)
+        public override void specificShift(DateTime date)
         {
-            //Console.WriteLine("Hola mundo");
+            //CREAR LA LOGICA DE HACER LAS CONSULTAS
         }
 
         //Consultar todos los turnos
-        public override void ConsultShifts()
+        public override void Shifts()
         {
 
         }
@@ -49,6 +48,16 @@ namespace Turnera_Medica__TP_Final.Controller
         {
 
         }
+        //Cuando el usuario elegiga que quiere hacer el turno con este medico, a el ese turno especifico se le actualizara el estado del turno
+        public void ActualizarTurnoPorUsuario()
+        {
 
+        }
+
+        //Cuando el paciente no asista al turno el emdico tendra que actualizar el turno como no asistido de parte del paciente
+        public void ActulizarUsuarioNoAsistido()
+        {
+
+        }
     }
 }

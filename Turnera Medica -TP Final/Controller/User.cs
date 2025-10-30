@@ -15,6 +15,9 @@ namespace Turnera_Medica__TP_Final.Controller
         public string Email { get; set; }
         public string TelNumber { get; set; }
         public string Password { get; set; }
+        public List<ObraSocial> listObraSocial { get; set; }
+        public List<Turno> listTurno { get; set; }
+
         
         public User (int id, int dni, string name, string lastname, string email, string telnumber,string password)
         {
@@ -28,19 +31,17 @@ namespace Turnera_Medica__TP_Final.Controller
         }
 
         //Sobre cargar de metodo (1) - Consultar turno especifico
-        public abstract void ConsultShifts(DateTime date);
+        public abstract void specificShift(DateTime date);
         //Sobre cargar de metodo (2) -Consultar todos los turnos
-        public abstract void ConsultShifts();
+        public abstract void Shifts();
        
-        public void Login()
+        public string Login()
         {
-            //Aca hacer la logica de si la informacion existe en la base de datos, Si es asi moverlo a otra venta
-            Console.WriteLine($"Hola {Name}, has iniciado sesion");
+            return $"Hola {Name}, has iniciado sesion";
         }
-        public void Logout()
+        public string Logout()
         {
-            //Cuando el usuario cierra sesion le envia a la ventana de "inicio sesion"
-            Console.WriteLine($"Hola {Name}, has cerrado sesion");
+            return $"Hola {Name}, has cerrado sesion";
         }
 
     }
