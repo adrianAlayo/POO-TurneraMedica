@@ -14,14 +14,9 @@ namespace Turnera_Medica__TP_Final.Controller
         //Saber Cuando cobra la consulta
         public double ConsultationAmount { get; set; }
         
-        //Lista de turnos que añadio el medico
-        public List<Turno> ShiftList { get; set; } = new List<Turno>();
         
         //Consultorio/lugar donde trabaja
         public Consultorio OfficeAssigned { get; set; }
-
-        //Las multiples obras sociales que tiene
-        public List<ObraSocial> Social_Works_Attended { get; set; } = new List<ObraSocial>();
 
         public Medico (int id, int dni, string name, string lastname, string email, string telnumber, string password, string specialty, double consultationamount, Consultorio officeassigned) 
             : base(id, dni, name, lastname, email, telnumber, password)

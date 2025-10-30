@@ -14,7 +14,6 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 {
     public partial class M_Shifts : Form
     {
-        
         public M_Shifts()
         {
             InitializeComponent();
@@ -33,34 +32,42 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 
         }
 
-        //GRID PARA MOSTRAR LA LISTA DE LOS TURNOS DEL MEDICO
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void M_Shfts_list_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 conexionDB.Open();
-                string objecMedico = "1";
 
-                string query = "SELECT * FROM turnos WHERE medico_id = @1";
+                string query = "SELECT * FROM turnos WHERE medico_id = @id";
+                MySqlCommand cmd = new MySqlCommand(query, conexionDB);
+                cmd.Parameters.AddWithValue("@id", 1);
 
-                MySqlCommand codigo = new MySqlCommand(query, conexionDB);
-                codigo.Parameters.AddWithValue("@1", objecMedico);
+                // Creamos el adaptador y la tabla
+                MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
+                DataTable table = new DataTable();
 
-                MySqlDataReader read = codigo.ExecuteReader();
+                // Llenamos la tabla con los datos que trajo el adaptador
+                sda.Fill(table);
 
-                if (read.Read())
+                // Enlazamos la tabla al DataGridView
+                M_Shfts_list.DataSource = table;
+
+                // Si querés ajustar el ancho automáticamente
+                M_Shfts_list.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                if (table.Rows.Count == 0)
                 {
-                    //Mostrar la lista
+                    MessageBox.Show("No hay turnos disponibles por el momento.");
                 }
-                else
-                {
-                    MessageBox.Show("Lamento informarle que usted no tiene Turnos Disponibles por el momento");
-
-                }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Error !!! al mostrar el listado de los turnos: " + ex.Message);
-
+                MessageBox.Show("Error al mostrar el listado de los turnos: " + ex.Message);
             }
             finally
             {

@@ -54,6 +54,7 @@ namespace Turnera_Medica__TP_Final.GUI
 
         private void SendLogin_Click(object sender, EventArgs e)
         {
+            /*
             try
             {
                 // Abro la conexión con la base de datos
@@ -72,21 +73,41 @@ namespace Turnera_Medica__TP_Final.GUI
                 codigo.Parameters.AddWithValue("@Password", password);
 
                 // Ejecuto la consulta y guardo el resultado
-                MySqlDataReader leer = codigo.ExecuteReader();
+                MySqlDataReader read = codigo.ExecuteReader();
 
                 // Si encontró un usuario, entra al if
-                if (leer.Read())
+                if (read.Read())
                 {
                     // Leo el rol del usuario (medico o paciente)
-                    string rolUsuario = leer["rol"].ToString().Trim();
+                    string rolUsuario = read["rol"].ToString().Trim();
 
                     // Si el rol es médico, abre la interfaz del médico
                     if (rolUsuario == "medico")
                     {
-                        MessageBox.Show("Inicio de sesión correcto: Médico");
-                        M_Start mStartForm = new M_Start();
-                        mStartForm.Show();
-                        this.Hide();
+                        int userId_m = Convert.ToInt32(read["id"]);
+                        int dni_m = Convert.ToInt32(read["dni"]);
+                        string name_m = read["nombre"].ToString();
+                        string lastName_m = read["apellido"].ToString();
+                        string email_m = read["email"].ToString();
+                        string tel_m = read["numero_tel"].ToString();
+                        string password_m = read["password_hash"].ToString();
+
+                        // Obtener datos de la tabla medicos
+                        string queryMedico = "SELECT * FROM medicos WHERE user_id = @userId";
+                        MySqlCommand cmdMed = new MySqlCommand(queryMedico, conexionDB);
+                        cmdMed.Parameters.AddWithValue("@userId", userId_m);
+                        MySqlDataReader leerMed = cmdMed.ExecuteReader();
+                        if (leerMed.Read())
+                        {
+                            string specialty = leerMed["especialidad"].ToString();
+                            double consultationAmount = Convert.ToDouble(leerMed["monto_consulta"]);
+                            Medico currentUser = new Medico(userId_m, dni_m, name_m, lastName_m, email_m, tel_m, password_m, specialty, consultationAmount, null);
+
+                            // Ahora puedes pasar currentUser a M_Start
+                            M_Start mStartForm = new M_Start(currentUser);
+                            mStartForm.Show();
+                            this.Hide();
+                        }
                     }
                     // Si el rol es paciente, abre la interfaz del paciente
                     else if (rolUsuario == "paciente")
@@ -120,6 +141,7 @@ namespace Turnera_Medica__TP_Final.GUI
                 // Cierro la conexión pase lo que pase
                 conexionDB.Close();
             }
+            */
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)

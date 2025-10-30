@@ -147,6 +147,7 @@
             this.Controls.Add(this.label1);
             this.Name = "UpdatePassword";
             this.Text = "UpdatePassword";
+            this.Load += new System.EventHandler(this.UpdatePassword_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
