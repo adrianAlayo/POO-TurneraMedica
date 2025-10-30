@@ -27,9 +27,11 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 
         }
 
+        // ES PARA AÑADIR LA OBRA SOCIAL 
         private void sent_socialwork_Click(object sender, EventArgs e)
         {
-
+            string socialWork = socialwork_name_user.Text.Trim();
+            MessageBox.Show(socialWork);
         }
 
         private void return_start_M_Click(object sender, EventArgs e)
