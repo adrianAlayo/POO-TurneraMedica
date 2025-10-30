@@ -308,9 +308,7 @@ INSERT INTO pacientes (user_id, obra_social_id) VALUES
 -- ============================================ 
 INSERT INTO medico_consultorio_asignado (medico_id, consultorio_id, horario_desde, horario_hasta) VALUES 
 (1, 1, '08:00:00', '12:00:00'), 
-(1, 2, '13:00:00', '16:00:00'), 
 (2, 3, '09:00:00', '13:00:00'), 
-(2, 4, '14:00:00', '17:00:00'); 
 
 -- ============================================ 
 -- MÉDICO - OBRA SOCIAL 
