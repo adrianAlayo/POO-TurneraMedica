@@ -195,7 +195,6 @@
     <Compile Include="GUI\GUI_General\UpdatePassword.Designer.cs">
       <DependentUpon>UpdatePassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Conexion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\GUI_Medico\M_AddSocialWork.resx">
