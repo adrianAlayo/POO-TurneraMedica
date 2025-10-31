@@ -65,5 +65,10 @@ namespace Turnera_Medica__TP_Final.GUI
             login_form.Show(); //abre de vuelta el form de iniciar sesion
             this.Hide(); // quitamos el form de actualizar contraseña
         }
+
+        private void UpdatePassword_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
