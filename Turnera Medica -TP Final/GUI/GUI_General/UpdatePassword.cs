@@ -43,20 +43,6 @@ namespace Turnera_Medica__TP_Final.GUI
                 MessageBox.Show("Complete todos los campos por favor");
 
             }
-            //Faltaria hacer la parte del codigo donde se haria la comparacion del email para luego cambiar la contraseña
-            /* 
-             buscaremail = SELECT email IN users WHERE email == email (o algo parecido)
-
-            if (newPass == confirmpass && buscaremail == true) {
-                hacer el codigo para hacer el update de la password usando confirmPass
-
-            si el update se logro hacer entonces hay que hacer un mensaje que diga "contraseña actualizada con exito"
-
-            }
-             
-             
-             
-             */
         }
 
         private void return_login_Click(object sender, EventArgs e)
