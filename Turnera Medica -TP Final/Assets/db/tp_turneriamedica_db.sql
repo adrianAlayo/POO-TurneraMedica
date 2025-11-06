@@ -3,6 +3,7 @@
 CREATE DATABASE IF NOT EXISTS tp_turneriamedica_db CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE tp_turneriamedica_db;
 
+-- Eliminación de tablas en orden correcto
 DROP TABLE IF EXISTS medic_social_work;
 DROP TABLE IF EXISTS assigned_doctors_office;
 DROP TABLE IF EXISTS shifts;
@@ -10,13 +11,16 @@ DROP TABLE IF EXISTS patients;
 DROP TABLE IF EXISTS medics;
 DROP TABLE IF EXISTS social_works;
 DROP TABLE IF EXISTS offices;
+DROP TABLE IF EXISTS specialities;
 DROP TABLE IF EXISTS users;
 
+-- Tabla usuarios
 CREATE TABLE users (
   id INT NOT NULL AUTO_INCREMENT,
   dni INT DEFAULT NULL,
   name VARCHAR(100) NOT NULL,
   last_name VARCHAR(100) NOT NULL,
+  age INT DEFAULT NULL,
   email VARCHAR(150) DEFAULT NULL,
   telephone_number VARCHAR(50) DEFAULT NULL,
   password_hash VARCHAR(255) NOT NULL,
@@ -26,6 +30,15 @@ CREATE TABLE users (
   UNIQUE KEY email (email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- Tabla especialidades
+CREATE TABLE specialities (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
+  PRIMARY KEY (id),
+  UNIQUE KEY name (name)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Tabla consultorios
 CREATE TABLE offices (
   id INT NOT NULL AUTO_INCREMENT,
   ubication VARCHAR(250) NOT NULL,
@@ -34,6 +47,7 @@ CREATE TABLE offices (
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- Tabla obras sociales
 CREATE TABLE social_works (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(150) NOT NULL,
@@ -41,16 +55,19 @@ CREATE TABLE social_works (
   UNIQUE KEY name (name)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- Tabla médicos
 CREATE TABLE medics (
   id INT NOT NULL AUTO_INCREMENT,
   user_id INT NOT NULL,
-  speciality VARCHAR(100) NOT NULL,
+  speciality_id INT NOT NULL,
   consult_amount DECIMAL(10,2) NOT NULL,
   PRIMARY KEY (id),
   UNIQUE KEY user_id (user_id),
-  FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
+  FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE,
+  FOREIGN KEY (speciality_id) REFERENCES specialities (id) ON DELETE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- Tabla pacientes
 CREATE TABLE patients (
   id INT NOT NULL AUTO_INCREMENT,
   user_id INT NOT NULL,
@@ -61,6 +78,7 @@ CREATE TABLE patients (
   FOREIGN KEY (social_work_id) REFERENCES social_works (id) ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- Tabla asignación de médicos a consultorios
 CREATE TABLE assigned_doctors_office (
   id INT NOT NULL AUTO_INCREMENT,
   medic_id INT NOT NULL,
@@ -72,6 +90,7 @@ CREATE TABLE assigned_doctors_office (
   FOREIGN KEY (office_id) REFERENCES offices (id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- Tabla médico - obra social
 CREATE TABLE medic_social_work (
   medic_id INT NOT NULL,
   social_work_id INT NOT NULL,
@@ -80,6 +99,7 @@ CREATE TABLE medic_social_work (
   FOREIGN KEY (social_work_id) REFERENCES social_works (id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- Tabla turnos
 CREATE TABLE shifts (
   id INT NOT NULL AUTO_INCREMENT,
   medic_id INT NOT NULL,
@@ -98,14 +118,26 @@ CREATE TABLE shifts (
   FOREIGN KEY (office_id) REFERENCES offices (id) ON DELETE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- ===================
 -- INSERTS
+-- ===================
 
-INSERT INTO users (dni, name, last_name, email, telephone_number, password_hash, rol) VALUES 
-(30111222, 'Juan', 'Pérez', 'juan.perez@hospital.com', '1122334455', '1234', 'medico'), 
-(30999888, 'María', 'López', 'maria.lopez@hospital.com', '1133445566', '1234', 'medico'),
-(40111222, 'Carlos', 'Gómez', 'carlos.gomez@gmail.com', '1144556677', '1234', 'paciente'), 
-(40999888, 'Lucía', 'Fernández', 'lucia.fernandez@gmail.com', '1155667788', '1234', 'paciente');
+-- Usuarios
+INSERT INTO users (dni, name, last_name, age,email, telephone_number, password_hash, rol) VALUES 
+(30111222, 'Juan', 'Pérez', 45,'juan.perez@hospital.com', '1122334455', '1234', 'medico'), 
+(30999888, 'María', 'López', 38, 'maria.lopez@hospital.com', '1133445566', '1234', 'medico'),
+(40111222, 'Carlos', 'Gómez', 29,'carlos.gomez@gmail.com', '1144556677', '1234', 'paciente'), 
+(40999888, 'Lucía', 'Fernández', 35,'lucia.fernandez@gmail.com', '1155667788', '1234', 'paciente');
 
+-- Especialidades
+INSERT INTO specialities (name) VALUES 
+('Cardiología'),
+('Pediatría'),
+('Dermatología'),
+('Traumatología'),
+('Clínica Médica');
+
+-- Consultorios
 INSERT INTO offices (ubication, open_time, close_time) VALUES
 ('Corrientes 1500', '08:00:00', '16:00:00'),
 ('Carabobo 3000', '08:00:00', '16:00:00'),
@@ -114,6 +146,7 @@ INSERT INTO offices (ubication, open_time, close_time) VALUES
 ('Yrigoyen 3500', '07:00:00', '15:00:00'), 
 ('Corrientes 3200 - Edificio B', '07:00:00', '15:00:00');
 
+-- Obras sociales
 INSERT INTO social_works (name) VALUES 
 ('OSDE'), 
 ('Swiss Medical'), 
@@ -122,18 +155,22 @@ INSERT INTO social_works (name) VALUES
 ('IOMA'), 
 ('Medife');
 
-INSERT INTO medics (user_id, speciality, consult_amount) VALUES 
-(1, 'Cardiología', 5000.00), 
-(2, 'Pediatría', 6000.00);
+-- Médicos (usando id de especialidades)
+INSERT INTO medics (user_id, speciality_id, consult_amount) VALUES 
+(1, 1, 5000.00),  -- Cardiología
+(2, 2, 6000.00);  -- Pediatría
 
+-- Pacientes
 INSERT INTO patients (user_id, social_work_id) VALUES 
 (3, 1), 
 (4, 4);
 
+-- Asignación de consultorios
 INSERT INTO assigned_doctors_office (medic_id, office_id, open_from, close_after) VALUES 
 (1, 1, '08:00:00', '12:00:00'), 
 (2, 3, '09:00:00', '13:00:00');
 
+-- Médico - Obra social
 INSERT INTO medic_social_work (medic_id, social_work_id) VALUES 
 (1, 1), 
 (1, 2), 
@@ -142,6 +179,7 @@ INSERT INTO medic_social_work (medic_id, social_work_id) VALUES
 (2, 5), 
 (2, 6);
 
+-- Turnos
 INSERT INTO shifts (medic_id, patient_id, office_id, date_time, duration, original_price, discount, final_price, state)
 VALUES
 (1, 1, 1, '2025-11-15 09:00:00', 30, 5000.00, 0.00, 5000.00, 'programado'),
