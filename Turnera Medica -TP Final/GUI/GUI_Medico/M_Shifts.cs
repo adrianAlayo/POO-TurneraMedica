@@ -14,15 +14,17 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 {
     public partial class M_Shifts : Form
     {
-        public M_Shifts()
+        private Medico usermedico;
+        public M_Shifts(Medico usermedico)
         {
             InitializeComponent();
+            this.usermedico = usermedico;
         }
         MySqlConnection conexionDB = Connection.conexion();
 
         private void return_start_M_Click(object sender, EventArgs e)
         {
-            M_Start m_start_form = new M_Start();
+            M_Start m_start_form = new M_Start(usermedico);
             m_start_form.Show(); //abre de vuelta el form de inicio del medico
             this.Hide(); // quitamos el form de ver todos los turnos
         }

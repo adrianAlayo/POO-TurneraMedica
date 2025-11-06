@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Turnera_Medica__TP_Final.Controller
 {
-    class Paciente : User
+    public class Paciente : User
     {
-        public Paciente(int id, int dni, string name, string lastname, string email, string telnumber, string password, ObraSocial socialworkassigned)
+        public Paciente(int id, int dni, string name, string lastname, string email, string telnumber, string password, int id_socialwork)
             : base(id, dni, name, lastname, email, telnumber, password)
         {
             

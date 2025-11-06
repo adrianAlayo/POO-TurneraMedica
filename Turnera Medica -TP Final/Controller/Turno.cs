@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Turnera_Medica__TP_Final.Controller
 {
-    class Turno
+    public class Turno
     {
         public int Id { get; set; }
         public DateTime Date { get; set; }
