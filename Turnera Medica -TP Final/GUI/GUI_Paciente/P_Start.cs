@@ -18,7 +18,7 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
         public P_Start(Patient userpatient)
         {
             InitializeComponent();
-            this .userpatient = userpatient;
+            this.userpatient = userpatient;
         }
 
         private void P_Start_Load(object sender, EventArgs e)
@@ -49,8 +49,8 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
 
         private void RequestAppointment_Click(object sender, EventArgs e)
         {
-            P_AvailableShifts p_availableshifts_form = new P_AvailableShifts(userpatient);
-            p_availableshifts_form.Show(); // Abro la ventana de turnos disponibles
+            P_AvailableShiftsForm p_availableshiftsForm_form = new P_AvailableShiftsForm(userpatient);
+            p_availableshiftsForm_form.Show(); // Abro la ventana de turnos disponibles
             this.Hide();
         }
 
