@@ -166,7 +166,7 @@ namespace Turnera_Medica__TP_Final.GUI
                         {
                             if (read4.Read())
                             {
-                                Patient userpaciente = new Patient(
+                                Patient userpatient = new Patient(
                                     Convert.ToInt32(read4["id"]),
                                     dni,
                                     name,

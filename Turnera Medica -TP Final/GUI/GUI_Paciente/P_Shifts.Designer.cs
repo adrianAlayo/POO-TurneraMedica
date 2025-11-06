@@ -51,6 +51,7 @@
             this.Controls.Add(this.return_start_P);
             this.Name = "P_Shifts";
             this.Text = "P_Shifts";
+            this.Load += new System.EventHandler(this.P_Shifts_Load);
             this.ResumeLayout(false);
 
         }
