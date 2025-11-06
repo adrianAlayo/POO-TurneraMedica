@@ -26,5 +26,10 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
             m_start_form.Show(); //abre de vuelta el form de inicio del medico
             this.Hide(); // quitamos el form de ver turno especifico
         }
+
+        private void M_SpecificShift_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

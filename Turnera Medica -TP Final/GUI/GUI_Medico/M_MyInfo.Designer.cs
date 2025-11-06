@@ -30,8 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.return_start_M = new System.Windows.Forms.Button();
-            this.get_info_M = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.get_info_M)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -52,31 +50,19 @@
             this.return_start_M.Name = "return_start_M";
             this.return_start_M.Size = new System.Drawing.Size(150, 40);
             this.return_start_M.TabIndex = 2;
-            this.return_start_M.Text = "Volver";
+            this.return_start_M.Text = "x|";
             this.return_start_M.UseVisualStyleBackColor = false;
             this.return_start_M.Click += new System.EventHandler(this.return_start_M_Click);
-            // 
-            // get_info_M
-            // 
-            this.get_info_M.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.get_info_M.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.get_info_M.Location = new System.Drawing.Point(218, 93);
-            this.get_info_M.Name = "get_info_M";
-            this.get_info_M.Size = new System.Drawing.Size(360, 280);
-            this.get_info_M.TabIndex = 3;
-            this.get_info_M.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.get_info_M_CellContentClick);
             // 
             // M_MyInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.get_info_M);
             this.Controls.Add(this.return_start_M);
             this.Controls.Add(this.label1);
             this.Name = "M_MyInfo";
             this.Text = "MyInfo";
-            ((System.ComponentModel.ISupportInitialize)(this.get_info_M)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -85,6 +71,5 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button return_start_M;
-        private System.Windows.Forms.DataGridView get_info_M;
     }
 }
