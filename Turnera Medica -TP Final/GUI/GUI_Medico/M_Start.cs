@@ -13,23 +13,23 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 {
     public partial class M_Start : Form
     {
-        private Medico usermedico { get; set; }
-        public M_Start(Medico usermedico)
+        private Medico usermedic { get; set; }
+        public M_Start(Medico usermedic)
         {
             InitializeComponent();
-            this.usermedico = usermedico;
+            this.usermedic = usermedic;
         }
 
         private void GetShifts_Click(object sender, EventArgs e)
         {
-            M_Shifts mshifts_form = new M_Shifts(usermedico);
+            M_Shifts mshifts_form = new M_Shifts(usermedic);
             mshifts_form.Show(); //Abre este form
             this.Hide();
         }
 
         private void GetInfo_Click(object sender, EventArgs e)
         {
-            M_MyInfo myinfo_form = new M_MyInfo(usermedico);
+            M_MyInfo myinfo_form = new M_MyInfo(usermedic);
             myinfo_form.Show(); //Abre este form
             this.Hide();
 
@@ -37,14 +37,14 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 
         private void GetShift_Click(object sender, EventArgs e)
         {
-            M_SpecificShift mspecificshift_form = new M_SpecificShift(usermedico);
+            M_SpecificShift mspecificshift_form = new M_SpecificShift(usermedic);
             mspecificshift_form.Show(); //Abre este form
             this.Hide();
         }
 
         private void GetSocialWork_Click(object sender, EventArgs e)
         {
-            M_AddSocialWork maddsocialwork_form = new M_AddSocialWork(usermedico);
+            M_AddSocialWork maddsocialwork_form = new M_AddSocialWork(usermedic);
             maddsocialwork_form.Show(); //Abre este form
             this.Hide();
         }
