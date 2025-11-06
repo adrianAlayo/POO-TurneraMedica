@@ -135,7 +135,7 @@ namespace Turnera_Medica__TP_Final.GUI
                         }
 
                         // Crear objeto del médico y abrir interfaz
-                        Medico usermedico = new Medico(
+                        Medic usermedico = new Medic(
                             idmedic,
                             dni,
                             name,

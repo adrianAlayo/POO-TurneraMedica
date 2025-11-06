@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Turnera_Medica__TP_Final.Controller
 {
-    public class Consultorio
+    public class Office
     {
         public int Id { get; set; }
         public string Location { get; set; }
         public TimeSpan HourOpen { get; set; }
         public TimeSpan TimeClosed { get; set; }
-        public List<Medico> Assigned_Doctors { get; set; }
+        public List<Medic> Assigned_Doctors { get; set; }
 
-        public Consultorio(int id, string location, TimeSpan houropen, TimeSpan timeclosed, List<Medico> assigned_doctors)
+        public Office(int id, string location, TimeSpan houropen, TimeSpan timeclosed, List<Medic> assigned_doctors)
         {
             Id = id;
             Location = location;
@@ -28,7 +28,7 @@ namespace Turnera_Medica__TP_Final.Controller
             return true;
         }
 
-        public void AssignDoctor(Medico m)
+        public void AssignDoctor(Medic m)
         {
 
         }

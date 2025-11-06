@@ -14,8 +14,8 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 {
     public partial class M_AddSocialWork : Form
     {
-        private Medico usermedico { get; set; }
-        public M_AddSocialWork(Medico usermedico)
+        private Medic usermedico { get; set; }
+        public M_AddSocialWork(Medic usermedico)
         {
             InitializeComponent();
             this.usermedico = usermedico;

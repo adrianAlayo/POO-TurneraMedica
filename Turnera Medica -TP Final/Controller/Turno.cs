@@ -11,11 +11,11 @@ namespace Turnera_Medica__TP_Final.Controller
         public int Id { get; set; }
         public DateTime Date { get; set; }
         public TimeSpan Hour { get; set; }
-        public Medico Assigned_Doctor { get; set; }
+        public Medic Assigned_Doctor { get; set; }
         public Paciente PatientAssigned { get; set; } 
-        public Consultorio OfficeAssigned { get; set; }
+        public Office OfficeAssigned { get; set; }
 
-        public Turno (int id, DateTime date, TimeSpan hour, Medico assigned_doctor, Paciente patientassigned, Consultorio officeassigned)
+        public Turno (int id, DateTime date, TimeSpan hour, Medic assigned_doctor, Paciente patientassigned, Office officeassigned)
         {
             Id = id;
             Date = date;

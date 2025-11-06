@@ -14,8 +14,8 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 {
     public partial class M_Shifts : Form
     {
-        private Medico usermedico;
-        public M_Shifts(Medico usermedico)
+        private Medic usermedico;
+        public M_Shifts(Medic usermedico)
         {
             InitializeComponent();
             this.usermedico = usermedico;

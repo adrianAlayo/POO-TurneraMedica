@@ -13,8 +13,8 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 {
     public partial class M_MyInfo : Form
     {
-        private Medico usermedico;
-        public M_MyInfo(Medico usermedico)
+        private Medic usermedico;
+        public M_MyInfo(Medic usermedico)
         {
             InitializeComponent();
             this.usermedico = usermedico;

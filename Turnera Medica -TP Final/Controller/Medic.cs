@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Turnera_Medica__TP_Final.Controller
 {
-    public class Medico : User
+    public class Medic : User
     {
         //Saber la especialidad del Medico
         public string Speciality { get; set; }
@@ -17,7 +17,7 @@ namespace Turnera_Medica__TP_Final.Controller
         //Consultorio/lugar donde trabaja
         public int OfficeAssigned { get; set; } //Guarda el ID del consultario, en la tabla que relaciona medico con consultorio
 
-        public Medico (int id, int dni, string name, string lastname, string email, string telnumber, string password, string specialty, double consultationamount, int officeassigned) 
+        public Medic (int id, int dni, string name, string lastname, string email, string telnumber, string password, string specialty, double consultationamount, int officeassigned) 
             : base(id, dni, name, lastname, email, telnumber, password)
         {
             Speciality = specialty;
