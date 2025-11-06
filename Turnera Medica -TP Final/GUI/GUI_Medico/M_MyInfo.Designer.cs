@@ -35,13 +35,18 @@
             this.M_MyInfo_socialWorck = new System.Windows.Forms.Label();
             this.M_MyInfo_email = new System.Windows.Forms.Label();
             this.M_MyInfo_age = new System.Windows.Forms.Label();
-            this.M_MyInfo_dni = new System.Windows.Forms.Label();
-            this.M_MyInfo_phone = new System.Windows.Forms.Label();
-            this.M_MyInfo_speciality = new System.Windows.Forms.Label();
-            this.M_MyInfo_office = new System.Windows.Forms.Label();
-            this.M_MyInfo_consultAmount = new System.Windows.Forms.Label();
-            this.M_MyInfo_ChekInTime = new System.Windows.Forms.Label();
+            this.phone = new System.Windows.Forms.Label();
+            this.speciality = new System.Windows.Forms.Label();
+            this.office = new System.Windows.Forms.Label();
+            this.consult_amount = new System.Windows.Forms.Label();
             this.M_MyInfo_ChekOutTime = new System.Windows.Forms.Label();
+            this.dni = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.M_MyInfo_office = new System.Windows.Forms.TextBox();
+            this.M_MyInfo_speciality = new System.Windows.Forms.TextBox();
+            this.M_MyInfo_ChekInTime = new System.Windows.Forms.Label();
+            this.M_MyInfo_phone = new System.Windows.Forms.TextBox();
+            this.M_MyInfo_dni = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -118,56 +123,88 @@
             this.M_MyInfo_age.TabIndex = 9;
             this.M_MyInfo_age.Text = "Edad:";
             // 
-            // M_MyInfo_dni
+            // phone
             // 
-            this.M_MyInfo_dni.AutoSize = true;
-            this.M_MyInfo_dni.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.M_MyInfo_dni.Location = new System.Drawing.Point(166, 173);
-            this.M_MyInfo_dni.Name = "M_MyInfo_dni";
-            this.M_MyInfo_dni.Size = new System.Drawing.Size(43, 19);
-            this.M_MyInfo_dni.TabIndex = 8;
-            this.M_MyInfo_dni.Text = "DNI:";
+            this.phone.AutoSize = true;
+            this.phone.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phone.Location = new System.Drawing.Point(160, 214);
+            this.phone.Name = "phone";
+            this.phone.Size = new System.Drawing.Size(80, 19);
+            this.phone.TabIndex = 10;
+            this.phone.Text = "Telefeno:";
             // 
-            // M_MyInfo_phone
+            // speciality
             // 
-            this.M_MyInfo_phone.AutoSize = true;
-            this.M_MyInfo_phone.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.M_MyInfo_phone.Location = new System.Drawing.Point(166, 212);
-            this.M_MyInfo_phone.Name = "M_MyInfo_phone";
-            this.M_MyInfo_phone.Size = new System.Drawing.Size(80, 19);
-            this.M_MyInfo_phone.TabIndex = 10;
-            this.M_MyInfo_phone.Text = "Telefeno:";
+            this.speciality.AutoSize = true;
+            this.speciality.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.speciality.Location = new System.Drawing.Point(127, 254);
+            this.speciality.Name = "speciality";
+            this.speciality.Size = new System.Drawing.Size(107, 19);
+            this.speciality.TabIndex = 12;
+            this.speciality.Text = "Especialidad";
+            this.speciality.Click += new System.EventHandler(this.label8_Click);
             // 
-            // M_MyInfo_speciality
+            // office
             // 
-            this.M_MyInfo_speciality.AutoSize = true;
-            this.M_MyInfo_speciality.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.M_MyInfo_speciality.Location = new System.Drawing.Point(166, 254);
-            this.M_MyInfo_speciality.Name = "M_MyInfo_speciality";
-            this.M_MyInfo_speciality.Size = new System.Drawing.Size(107, 19);
-            this.M_MyInfo_speciality.TabIndex = 12;
-            this.M_MyInfo_speciality.Text = "Especialidad";
-            this.M_MyInfo_speciality.Click += new System.EventHandler(this.label8_Click);
+            this.office.AutoSize = true;
+            this.office.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.office.Location = new System.Drawing.Point(127, 291);
+            this.office.Name = "office";
+            this.office.Size = new System.Drawing.Size(105, 19);
+            this.office.TabIndex = 11;
+            this.office.Text = "Consultorio:";
+            this.office.Click += new System.EventHandler(this.M_MyInfo_office_Click);
+            // 
+            // consult_amount
+            // 
+            this.consult_amount.AutoSize = true;
+            this.consult_amount.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.consult_amount.Location = new System.Drawing.Point(68, 327);
+            this.consult_amount.Name = "consult_amount";
+            this.consult_amount.Size = new System.Drawing.Size(166, 19);
+            this.consult_amount.TabIndex = 13;
+            this.consult_amount.Text = "Cobro por Consulta:";
+            // 
+            // M_MyInfo_ChekOutTime
+            // 
+            this.M_MyInfo_ChekOutTime.AutoSize = true;
+            this.M_MyInfo_ChekOutTime.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.M_MyInfo_ChekOutTime.Location = new System.Drawing.Point(489, 327);
+            this.M_MyInfo_ChekOutTime.Name = "M_MyInfo_ChekOutTime";
+            this.M_MyInfo_ChekOutTime.Size = new System.Drawing.Size(146, 19);
+            this.M_MyInfo_ChekOutTime.TabIndex = 15;
+            this.M_MyInfo_ChekOutTime.Text = "Horario de Salida:";
+            // 
+            // dni
+            // 
+            this.dni.AutoSize = true;
+            this.dni.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dni.Location = new System.Drawing.Point(166, 173);
+            this.dni.Name = "dni";
+            this.dni.Size = new System.Drawing.Size(43, 19);
+            this.dni.TabIndex = 8;
+            this.dni.Text = "DNI:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(246, 329);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(162, 20);
+            this.textBox1.TabIndex = 21;
             // 
             // M_MyInfo_office
             // 
-            this.M_MyInfo_office.AutoSize = true;
-            this.M_MyInfo_office.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.M_MyInfo_office.Location = new System.Drawing.Point(166, 291);
+            this.M_MyInfo_office.Location = new System.Drawing.Point(246, 290);
             this.M_MyInfo_office.Name = "M_MyInfo_office";
-            this.M_MyInfo_office.Size = new System.Drawing.Size(105, 19);
-            this.M_MyInfo_office.TabIndex = 11;
-            this.M_MyInfo_office.Text = "Consultorio:";
+            this.M_MyInfo_office.Size = new System.Drawing.Size(162, 20);
+            this.M_MyInfo_office.TabIndex = 20;
             // 
-            // M_MyInfo_consultAmount
+            // M_MyInfo_speciality
             // 
-            this.M_MyInfo_consultAmount.AutoSize = true;
-            this.M_MyInfo_consultAmount.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.M_MyInfo_consultAmount.Location = new System.Drawing.Point(166, 327);
-            this.M_MyInfo_consultAmount.Name = "M_MyInfo_consultAmount";
-            this.M_MyInfo_consultAmount.Size = new System.Drawing.Size(166, 19);
-            this.M_MyInfo_consultAmount.TabIndex = 13;
-            this.M_MyInfo_consultAmount.Text = "Cobro por Consulta:";
+            this.M_MyInfo_speciality.Location = new System.Drawing.Point(246, 249);
+            this.M_MyInfo_speciality.Name = "M_MyInfo_speciality";
+            this.M_MyInfo_speciality.Size = new System.Drawing.Size(162, 20);
+            this.M_MyInfo_speciality.TabIndex = 19;
             // 
             // M_MyInfo_ChekInTime
             // 
@@ -180,29 +217,38 @@
             this.M_MyInfo_ChekInTime.Text = "Horario de Entrada:";
             this.M_MyInfo_ChekInTime.Click += new System.EventHandler(this.label11_Click);
             // 
-            // M_MyInfo_ChekOutTime
+            // M_MyInfo_phone
             // 
-            this.M_MyInfo_ChekOutTime.AutoSize = true;
-            this.M_MyInfo_ChekOutTime.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.M_MyInfo_ChekOutTime.Location = new System.Drawing.Point(489, 327);
-            this.M_MyInfo_ChekOutTime.Name = "M_MyInfo_ChekOutTime";
-            this.M_MyInfo_ChekOutTime.Size = new System.Drawing.Size(146, 19);
-            this.M_MyInfo_ChekOutTime.TabIndex = 15;
-            this.M_MyInfo_ChekOutTime.Text = "Horario de Salida:";
+            this.M_MyInfo_phone.Location = new System.Drawing.Point(246, 213);
+            this.M_MyInfo_phone.Name = "M_MyInfo_phone";
+            this.M_MyInfo_phone.Size = new System.Drawing.Size(162, 20);
+            this.M_MyInfo_phone.TabIndex = 18;
+            // 
+            // M_MyInfo_dni
+            // 
+            this.M_MyInfo_dni.Location = new System.Drawing.Point(246, 174);
+            this.M_MyInfo_dni.Name = "M_MyInfo_dni";
+            this.M_MyInfo_dni.Size = new System.Drawing.Size(162, 20);
+            this.M_MyInfo_dni.TabIndex = 17;
             // 
             // M_MyInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.M_MyInfo_office);
+            this.Controls.Add(this.M_MyInfo_speciality);
+            this.Controls.Add(this.M_MyInfo_phone);
+            this.Controls.Add(this.M_MyInfo_dni);
             this.Controls.Add(this.M_MyInfo_ChekOutTime);
             this.Controls.Add(this.M_MyInfo_ChekInTime);
-            this.Controls.Add(this.M_MyInfo_consultAmount);
-            this.Controls.Add(this.M_MyInfo_speciality);
-            this.Controls.Add(this.M_MyInfo_office);
-            this.Controls.Add(this.M_MyInfo_phone);
+            this.Controls.Add(this.consult_amount);
+            this.Controls.Add(this.speciality);
+            this.Controls.Add(this.office);
+            this.Controls.Add(this.phone);
             this.Controls.Add(this.M_MyInfo_age);
-            this.Controls.Add(this.M_MyInfo_dni);
+            this.Controls.Add(this.dni);
             this.Controls.Add(this.M_MyInfo_socialWorck);
             this.Controls.Add(this.M_MyInfo_email);
             this.Controls.Add(this.M_MyInfo_lastName);
@@ -220,17 +266,22 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button return_start_M;
-        private System.Windows.Forms.Label M_MyInfo_name;
         private System.Windows.Forms.Label M_MyInfo_lastName;
         private System.Windows.Forms.Label M_MyInfo_socialWorck;
         private System.Windows.Forms.Label M_MyInfo_email;
         private System.Windows.Forms.Label M_MyInfo_age;
-        private System.Windows.Forms.Label M_MyInfo_dni;
-        private System.Windows.Forms.Label M_MyInfo_phone;
-        private System.Windows.Forms.Label M_MyInfo_speciality;
-        private System.Windows.Forms.Label M_MyInfo_office;
-        private System.Windows.Forms.Label M_MyInfo_consultAmount;
-        private System.Windows.Forms.Label M_MyInfo_ChekInTime;
+        private System.Windows.Forms.Label phone;
+        private System.Windows.Forms.Label speciality;
+        private System.Windows.Forms.Label office;
+        private System.Windows.Forms.Label consult_amount;
         private System.Windows.Forms.Label M_MyInfo_ChekOutTime;
+        private System.Windows.Forms.Label dni;
+        private System.Windows.Forms.TextBox M_MyInfo_office;
+        private System.Windows.Forms.TextBox M_MyInfo_speciality;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label M_MyInfo_ChekInTime;
+        private System.Windows.Forms.TextBox M_MyInfo_phone;
+        private System.Windows.Forms.TextBox M_MyInfo_dni;
+        private System.Windows.Forms.Label M_MyInfo_name;
     }
 }
