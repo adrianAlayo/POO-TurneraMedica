@@ -51,6 +51,7 @@
             this.Controls.Add(this.return_start_P);
             this.Name = "P_AvailableShifts";
             this.Text = "P_AvailableShifts";
+            this.Load += new System.EventHandler(this.P_AvailableShifts_Load);
             this.ResumeLayout(false);
 
         }
