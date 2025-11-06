@@ -9,7 +9,7 @@ namespace Turnera_Medica__TP_Final.Controller
     public class Medic : User
     {
         //Saber la especialidad del Medico
-        public string Speciality { get; set; }
+        public int Speciality_Id { get; set; }
         
         //Saber Cuando cobra la consulta
         public double ConsultationAmount { get; set; }
@@ -17,10 +17,10 @@ namespace Turnera_Medica__TP_Final.Controller
         //Consultorio/lugar donde trabaja
         public int OfficeAssigned { get; set; } //Guarda el ID del consultario, en la tabla que relaciona medico con consultorio
 
-        public Medic (int id, int dni, string name, string lastname, int age,string email, string telnumber, string password, string specialty, double consultationamount, int officeassigned) 
+        public Medic (int id, int dni, string name, string lastname, int age,string email, string telnumber, string password, int speciality_id, double consultationamount, int officeassigned) 
             : base(id, dni, name, lastname, age, email, telnumber, password)
         {
-            Speciality = specialty;
+            Speciality_Id = speciality_id;
             ConsultationAmount = consultationamount;
             OfficeAssigned = officeassigned;
         }

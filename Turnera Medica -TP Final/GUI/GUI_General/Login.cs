@@ -98,7 +98,7 @@ namespace Turnera_Medica__TP_Final.GUI
                         cmdMedico.Parameters.AddWithValue("@userid", iduser);
 
                         int idmedic;
-                        string speciality;
+                        int idspeciality;
                         double consultamount;
 
                         using (MySqlDataReader read2 = cmdMedico.ExecuteReader())
@@ -106,7 +106,7 @@ namespace Turnera_Medica__TP_Final.GUI
                             if (read2.Read())
                             {
                                 idmedic = Convert.ToInt32(read2["id"]);
-                                speciality = read2["speciality"].ToString().Trim();
+                                idspeciality = Convert.ToInt32(read2["speciality_id"]);                            
                                 consultamount = Convert.ToDouble(read2["consult_amount"]);
                             }
                             else
@@ -145,7 +145,7 @@ namespace Turnera_Medica__TP_Final.GUI
                             emailUser,
                             telephone,
                             passwordHash,
-                            speciality,
+                            idspeciality,
                             consultamount,
                             officeId
                         );
@@ -158,7 +158,7 @@ namespace Turnera_Medica__TP_Final.GUI
                     // 🔹 Lógica para paciente
                     else if (roluser == "paciente")
                     {
-                        string queryPaciente = "SELECT * FROM patient WHERE user_id = @userid";
+                        string queryPaciente = "SELECT * FROM patients WHERE user_id = @userid";
                         MySqlCommand cmdPaciente = new MySqlCommand(queryPaciente, conexionDB);
                         cmdPaciente.Parameters.AddWithValue("@userid", iduser);
 
