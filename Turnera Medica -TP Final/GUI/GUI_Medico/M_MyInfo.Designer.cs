@@ -76,6 +76,7 @@
             this.Controls.Add(this.label1);
             this.Name = "M_MyInfo";
             this.Text = "MyInfo";
+            this.Load += new System.EventHandler(this.M_MyInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.get_info_M)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
