@@ -36,10 +36,25 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 
         private void lblEmail_Click(object sender, EventArgs e)
         {
-
+            M_MyInfo_name.Text += usermedic.Name;
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M_MyInfo_Load(object sender, EventArgs e)
         {
 
         }
