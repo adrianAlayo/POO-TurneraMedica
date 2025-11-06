@@ -30,8 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.return_start_M = new System.Windows.Forms.Button();
-            this.get_info_M = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.get_info_M)).BeginInit();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -56,28 +56,38 @@
             this.return_start_M.UseVisualStyleBackColor = false;
             this.return_start_M.Click += new System.EventHandler(this.return_start_M_Click);
             // 
-            // get_info_M
+            // lblPassword
             // 
-            this.get_info_M.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.get_info_M.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.get_info_M.Location = new System.Drawing.Point(218, 93);
-            this.get_info_M.Name = "get_info_M";
-            this.get_info_M.Size = new System.Drawing.Size(360, 280);
-            this.get_info_M.TabIndex = 3;
-            this.get_info_M.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.get_info_M_CellContentClick);
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(149, 207);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(76, 15);
+            this.lblPassword.TabIndex = 5;
+            this.lblPassword.Text = "Contraseña:";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(167, 144);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(41, 15);
+            this.lblEmail.TabIndex = 4;
+            this.lblEmail.Text = "Email:";
+            this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
             // 
             // M_MyInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.get_info_M);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.return_start_M);
             this.Controls.Add(this.label1);
             this.Name = "M_MyInfo";
             this.Text = "MyInfo";
-            this.Load += new System.EventHandler(this.M_MyInfo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.get_info_M)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -86,6 +96,7 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button return_start_M;
-        private System.Windows.Forms.DataGridView get_info_M;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblEmail;
     }
 }
