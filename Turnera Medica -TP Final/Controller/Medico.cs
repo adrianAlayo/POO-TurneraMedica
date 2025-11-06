@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Turnera_Medica__TP_Final.Controller
 {
-    class Medico : User
+    public class Medico : User
     {
         //Saber la especialidad del Medico
-        public string Specialty { get; set; }
+        public string Speciality { get; set; }
         
         //Saber Cuando cobra la consulta
         public double ConsultationAmount { get; set; }
@@ -20,7 +20,7 @@ namespace Turnera_Medica__TP_Final.Controller
         public Medico (int id, int dni, string name, string lastname, string email, string telnumber, string password, string specialty, double consultationamount, int officeassigned) 
             : base(id, dni, name, lastname, email, telnumber, password)
         {
-            Specialty = specialty;
+            Speciality = specialty;
             ConsultationAmount = consultationamount;
             OfficeAssigned = officeassigned;
         }

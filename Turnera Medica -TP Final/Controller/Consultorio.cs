@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Turnera_Medica__TP_Final.Controller
 {
-    class Consultorio
+    public class Consultorio
     {
         public int Id { get; set; }
         public string Location { get; set; }

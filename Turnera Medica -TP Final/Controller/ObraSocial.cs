@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Turnera_Medica__TP_Final.Controller
 {
-    internal class ObraSocial
+    public class ObraSocial
     {
         public int Id { get; set; }
         public string Name { get; set; }

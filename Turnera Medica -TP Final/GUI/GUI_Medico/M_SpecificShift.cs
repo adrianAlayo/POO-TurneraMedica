@@ -7,19 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Turnera_Medica__TP_Final.Controller;
 
 namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 {
     public partial class M_SpecificShift : Form
     {
-        public M_SpecificShift()
+        private Medico usermedico;
+        public M_SpecificShift(Medico usermedico)
         {
             InitializeComponent();
+            this.usermedico = usermedico;
         }
 
         private void return_start_M_Click(object sender, EventArgs e)
         {
-            M_Start m_start_form = new M_Start();
+            M_Start m_start_form = new M_Start(usermedico);
             m_start_form.Show(); //abre de vuelta el form de inicio del medico
             this.Hide(); // quitamos el form de ver turno especifico
         }

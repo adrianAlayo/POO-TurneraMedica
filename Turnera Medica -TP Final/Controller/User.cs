@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Turnera_Medica__TP_Final.Controller
 {
-    abstract class User
+    public abstract class User
     {
         public int Id { get; set; }
         public int Dni { get; set; }

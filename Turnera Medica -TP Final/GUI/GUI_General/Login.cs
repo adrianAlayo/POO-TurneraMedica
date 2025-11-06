@@ -54,6 +54,153 @@ namespace Turnera_Medica__TP_Final.GUI
 
         private void SendLogin_Click(object sender, EventArgs e)
         {
+
+            try
+            {
+                conexionDB.Open();
+
+                string email = login_email_user.Text.Trim();
+                string password = login_password_user.Text.Trim();
+
+                // aca buscamons al usuario en la base de datos
+                string querylogin = "SELECT * FROM users WHERE email = @Email AND password_hash = @Password";
+
+                MySqlCommand cmdlogin = new MySqlCommand(querylogin, conexionDB);
+                cmdlogin.Parameters.AddWithValue("@Email", email);
+                cmdlogin.Parameters.AddWithValue("@Password", password);
+
+                using (MySqlDataReader read = cmdlogin.ExecuteReader())
+                {
+                    if (!read.Read())
+                    {
+                        MessageBox.Show("Usuario o contraseña incorrecta.");
+                        return;
+                    }
+
+                    string roluser = read["rol"].ToString().Trim();
+                    int iduser = Convert.ToInt32(read["id"]);
+                    int dni = Convert.ToInt32(read["dni"]);
+                    string name = read["name"].ToString().Trim();
+                    string lastname = read["last_name"].ToString().Trim();
+                    string emailUser = read["email"].ToString().Trim();
+                    string telephone = read["telephone_number"].ToString().Trim();
+                    string passwordHash = read["password_hash"].ToString().Trim();
+
+                    read.Close(); // Cerramos este reader antes de abrir otro
+
+                    // logica para usuario si es medico
+                    if (roluser == "medico")
+                    {
+                        // Obtener info del médico
+                        string queryMedico = "SELECT * FROM medics WHERE user_id = @userid";
+                        MySqlCommand cmdMedico = new MySqlCommand(queryMedico, conexionDB);
+                        cmdMedico.Parameters.AddWithValue("@userid", iduser);
+
+                        int idmedic;
+                        string speciality;
+                        double consultamount;
+
+                        using (MySqlDataReader read2 = cmdMedico.ExecuteReader())
+                        {
+                            if (read2.Read())
+                            {
+                                idmedic = Convert.ToInt32(read2["id"]);
+                                speciality = read2["speciality"].ToString().Trim();
+                                consultamount = Convert.ToDouble(read2["consult_amount"]);
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se encontró información del médico.");
+                                return;
+                            }
+                        }
+
+                        // Obtener office_id desde assigned_doctors_office
+                        string queryOffice = "SELECT office_id FROM assigned_doctors_office WHERE medic_id = @medicid";
+                        MySqlCommand cmdOffice = new MySqlCommand(queryOffice, conexionDB);
+                        cmdOffice.Parameters.AddWithValue("@medicid", idmedic);
+
+                        int officeId;
+                        using (MySqlDataReader read3 = cmdOffice.ExecuteReader())
+                        {
+                            if (read3.Read())
+                            {
+                                officeId = Convert.ToInt32(read3["office_id"]);
+                            }
+                            else
+                            {
+                                MessageBox.Show("El médico no tiene consultorio asignado.");
+                                return;
+                            }
+                        }
+
+                        // Crear objeto del médico y abrir interfaz
+                        Medico usermedico = new Medico(
+                            idmedic,
+                            dni,
+                            name,
+                            lastname,
+                            emailUser,
+                            telephone,
+                            passwordHash,
+                            speciality,
+                            consultamount,
+                            officeId
+                        );
+
+                        M_Start mStartForm = new M_Start(usermedico);
+                        mStartForm.Show();
+                        this.Hide();
+                    }
+
+                    // 🔹 Lógica para paciente
+                    else if (roluser == "paciente")
+                    {
+                        string queryPaciente = "SELECT * FROM patient WHERE user_id = @userid";
+                        MySqlCommand cmdPaciente = new MySqlCommand(queryPaciente, conexionDB);
+                        cmdPaciente.Parameters.AddWithValue("@userid", iduser);
+
+                        using (MySqlDataReader read4 = cmdPaciente.ExecuteReader())
+                        {
+                            if (read4.Read())
+                            {
+                                Paciente userpaciente = new Paciente(
+                                    Convert.ToInt32(read4["id"]),
+                                    dni,
+                                    name,
+                                    lastname,
+                                    emailUser,
+                                    telephone,
+                                    passwordHash,
+                                    Convert.ToInt32(read4["social_work_id"])
+                                );
+
+                                P_Start pStartForm = new P_Start();
+                                pStartForm.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se encontró información del paciente.");
+                            }
+                        }
+                    }
+
+                    // SI tiene otro rol que no es reconocido
+                    else
+                    {
+                        MessageBox.Show("Rol desconocido. Contacte al administrador.");
+                    }
+                }
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("Error al iniciar sesion:" + ex.Message);
+            }
+            finally 
+            { 
+                conexionDB.Close(); 
+            }
             /*
             try
             {
