@@ -44,7 +44,7 @@ namespace Turnera_Medica__TP_Final.Controller
         }
 
         //Sirve para que el medico agrega una obra social a su lista de Obras Sociales.
-        public void AddSocialWork(ObraSocial Os)
+        public void AddSocialWork(SocialWork Os)
         {
 
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Turnera_Medica__TP_Final.Controller
 {
-    public class Office
+    public class Consultation
     {
         public int Id { get; set; }
         public string Location { get; set; }
@@ -14,7 +14,7 @@ namespace Turnera_Medica__TP_Final.Controller
         public TimeSpan TimeClosed { get; set; }
         public List<Medic> Assigned_Doctors { get; set; }
 
-        public Office(int id, string location, TimeSpan houropen, TimeSpan timeclosed, List<Medic> assigned_doctors)
+        public Consultation(int id, string location, TimeSpan houropen, TimeSpan timeclosed, List<Medic> assigned_doctors)
         {
             Id = id;
             Location = location;

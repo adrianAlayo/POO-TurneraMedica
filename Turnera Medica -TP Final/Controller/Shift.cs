@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Turnera_Medica__TP_Final.Controller
 {
-    public class Turno
+    public class Shift
     {
         public int Id { get; set; }
         public DateTime Date { get; set; }
         public TimeSpan Hour { get; set; }
         public Medic Assigned_Doctor { get; set; }
-        public Paciente PatientAssigned { get; set; } 
-        public Office OfficeAssigned { get; set; }
+        public Patient PatientAssigned { get; set; } 
+        public Consultation OfficeAssigned { get; set; }
 
-        public Turno (int id, DateTime date, TimeSpan hour, Medic assigned_doctor, Paciente patientassigned, Office officeassigned)
+        public Shift (int id, DateTime date, TimeSpan hour, Medic assigned_doctor, Patient patientassigned, Consultation officeassigned)
         {
             Id = id;
             Date = date;
