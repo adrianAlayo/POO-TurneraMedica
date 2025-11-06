@@ -135,7 +135,7 @@ namespace Turnera_Medica__TP_Final.GUI
                         }
 
                         // Crear objeto del médico y abrir interfaz
-                        Medic usermedico = new Medic(
+                        Medic usermedic = new Medic(
                             idmedic,
                             dni,
                             name,
@@ -148,7 +148,7 @@ namespace Turnera_Medica__TP_Final.GUI
                             officeId
                         );
 
-                        M_Start mStartForm = new M_Start(usermedico);
+                        M_Start mStartForm = new M_Start(usermedic);
                         mStartForm.Show();
                         this.Hide();
                     }
@@ -175,7 +175,7 @@ namespace Turnera_Medica__TP_Final.GUI
                                     Convert.ToInt32(read4["social_work_id"])
                                 );
 
-                                P_Start pStartForm = new P_Start();
+                                P_Start pStartForm = new P_Start(userpatient);
                                 pStartForm.Show();
                                 this.Hide();
                             }

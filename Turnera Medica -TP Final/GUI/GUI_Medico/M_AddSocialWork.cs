@@ -14,11 +14,11 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 {
     public partial class M_AddSocialWork : Form
     {
-        private Medic usermedico { get; set; }
-        public M_AddSocialWork(Medic usermedico)
+        private Medico usermedic { get; set; }
+        public M_AddSocialWork(Medico usermedic)
         {
             InitializeComponent();
-            this.usermedico = usermedico;
+            this.usermedic = usermedic;
         }
 
         MySqlConnection conexionDB = Connection.conexion();
@@ -85,7 +85,7 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 
                 //aca se verifica si el médico ya tiene esta obra social
                 MySqlCommand cmdCheck = new MySqlCommand(queryCheckRel, conexionDB);
-                cmdCheck.Parameters.AddWithValue("@idmedic", usermedico.Id);
+                cmdCheck.Parameters.AddWithValue("@idmedic", usermedic.Id);
                 cmdCheck.Parameters.AddWithValue("@idsocial", idsocial);
 
                 int existeRelacion = Convert.ToInt32(cmdCheck.ExecuteScalar());
@@ -98,7 +98,7 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 
                 //aca relacionamos la obra social con el médico
                 MySqlCommand cmdAddRel = new MySqlCommand(queryAddRel, conexionDB);
-                cmdAddRel.Parameters.AddWithValue("@idmedic", usermedico.Id);
+                cmdAddRel.Parameters.AddWithValue("@idmedic", usermedic.Id);
                 cmdAddRel.Parameters.AddWithValue("@idsocial", idsocial);
 
                 int filas = cmdAddRel.ExecuteNonQuery();
@@ -124,7 +124,7 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 
         private void return_start_M_Click(object sender, EventArgs e)
         {
-            M_Start m_start_form = new M_Start(usermedico);
+            M_Start m_start_form = new M_Start(usermedic);
             m_start_form.Show(); //abre de vuelta el form de inicio del medico
             this.Hide(); // quitamos el form de añadir obra social
         }
