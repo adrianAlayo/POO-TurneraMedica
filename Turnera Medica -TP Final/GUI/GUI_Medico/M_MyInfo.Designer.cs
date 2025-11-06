@@ -30,6 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.return_start_M = new System.Windows.Forms.Button();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -50,15 +52,38 @@
             this.return_start_M.Name = "return_start_M";
             this.return_start_M.Size = new System.Drawing.Size(150, 40);
             this.return_start_M.TabIndex = 2;
-            this.return_start_M.Text = "x|";
+            this.return_start_M.Text = "Volver";
             this.return_start_M.UseVisualStyleBackColor = false;
             this.return_start_M.Click += new System.EventHandler(this.return_start_M_Click);
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(149, 207);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(76, 15);
+            this.lblPassword.TabIndex = 5;
+            this.lblPassword.Text = "Contraseña:";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(167, 144);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(41, 15);
+            this.lblEmail.TabIndex = 4;
+            this.lblEmail.Text = "Email:";
+            this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
             // 
             // M_MyInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.return_start_M);
             this.Controls.Add(this.label1);
             this.Name = "M_MyInfo";
@@ -71,5 +96,7 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button return_start_M;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblEmail;
     }
 }

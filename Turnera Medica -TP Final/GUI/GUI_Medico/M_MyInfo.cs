@@ -33,5 +33,10 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
             m_start_form.Show(); //abre de vuelta el form de inicio del medico
             this.Hide(); // quitamos el form de ver mi informacion
         }
+
+        private void lblEmail_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
