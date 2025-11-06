@@ -51,6 +51,7 @@
             this.Controls.Add(this.return_start_M);
             this.Name = "M_SpecificShift";
             this.Text = "SpecificShift";
+            this.Load += new System.EventHandler(this.M_SpecificShift_Load);
             this.ResumeLayout(false);
 
         }
