@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Turnera_Medica__TP_Final.Controller
 {
-    public class ObraSocial
+    public class SocialWork
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public double Discount { get; set; }
 
-        public ObraSocial(int id, string name, double discount)
+        public SocialWork(int id, string name, double discount)
         {
             Id = id;
             Name = name;

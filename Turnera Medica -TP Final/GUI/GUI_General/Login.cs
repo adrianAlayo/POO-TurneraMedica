@@ -135,7 +135,7 @@ namespace Turnera_Medica__TP_Final.GUI
                         }
 
                         // Crear objeto del médico y abrir interfaz
-                        Medico usermedic = new Medico(
+                        Medic usermedic = new Medic(
                             idmedic,
                             dni,
                             name,
@@ -164,7 +164,7 @@ namespace Turnera_Medica__TP_Final.GUI
                         {
                             if (read4.Read())
                             {
-                                Paciente userpaciente = new Paciente(
+                                Patient userpaciente = new Patient(
                                     Convert.ToInt32(read4["id"]),
                                     dni,
                                     name,

@@ -15,8 +15,8 @@ namespace Turnera_Medica__TP_Final.Controller
         public string Email { get; set; }
         public string TelNumber { get; set; }
         public string Password { get; set; }
-        public List<ObraSocial> listObraSocial { get; set; }
-        public List<Turno> listTurno { get; set; }
+        public List<SocialWork> listObraSocial { get; set; }
+        public List<Shift> listTurno { get; set; }
 
         
         public User (int id, int dni, string name, string lastname, string email, string telnumber,string password)
