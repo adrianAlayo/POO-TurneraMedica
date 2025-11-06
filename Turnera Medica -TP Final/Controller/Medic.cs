@@ -17,8 +17,8 @@ namespace Turnera_Medica__TP_Final.Controller
         //Consultorio/lugar donde trabaja
         public int OfficeAssigned { get; set; } //Guarda el ID del consultario, en la tabla que relaciona medico con consultorio
 
-        public Medic (int id, int dni, string name, string lastname, string email, string telnumber, string password, string specialty, double consultationamount, int officeassigned) 
-            : base(id, dni, name, lastname, email, telnumber, password)
+        public Medic (int id, int dni, string name, string lastname, int age,string email, string telnumber, string password, string specialty, double consultationamount, int officeassigned) 
+            : base(id, dni, name, lastname, age, email, telnumber, password)
         {
             Speciality = specialty;
             ConsultationAmount = consultationamount;

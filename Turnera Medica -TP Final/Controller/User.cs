@@ -12,6 +12,7 @@ namespace Turnera_Medica__TP_Final.Controller
         public int Dni { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
+        public int Age { get; set; }
         public string Email { get; set; }
         public string TelNumber { get; set; }
         public string Password { get; set; }
@@ -19,12 +20,13 @@ namespace Turnera_Medica__TP_Final.Controller
         public List<Shift> listTurno { get; set; }
 
         
-        public User (int id, int dni, string name, string lastname, string email, string telnumber,string password)
+        public User (int id, int dni, string name, string lastname, int age, string email, string telnumber,string password)
         {
             Id = id;
             Dni = dni;
             Name = name;
             LastName = lastname;
+            Age = age;
             Email = email;
             TelNumber = telnumber;
             Password = password;

@@ -8,8 +8,8 @@ namespace Turnera_Medica__TP_Final.Controller
 {
     public class Patient : User
     {
-        public Patient(int id, int dni, string name, string lastname, string email, string telnumber, string password, int id_socialwork)
-            : base(id, dni, name, lastname, email, telnumber, password)
+        public Patient(int id, int dni, string name, string lastname, int age,string email, string telnumber, string password, int id_socialwork)
+            : base(id, dni, name, lastname, age ,email, telnumber, password)
         {
             
         }

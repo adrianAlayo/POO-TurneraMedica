@@ -82,6 +82,7 @@ namespace Turnera_Medica__TP_Final.GUI
                     int dni = Convert.ToInt32(read["dni"]);
                     string name = read["name"].ToString().Trim();
                     string lastname = read["last_name"].ToString().Trim();
+                    int age = Convert.ToInt32(read["age"]);
                     string emailUser = read["email"].ToString().Trim();
                     string telephone = read["telephone_number"].ToString().Trim();
                     string passwordHash = read["password_hash"].ToString().Trim();
@@ -140,6 +141,7 @@ namespace Turnera_Medica__TP_Final.GUI
                             dni,
                             name,
                             lastname,
+                            age,
                             emailUser,
                             telephone,
                             passwordHash,
@@ -169,6 +171,7 @@ namespace Turnera_Medica__TP_Final.GUI
                                     dni,
                                     name,
                                     lastname,
+                                    age,
                                     emailUser,
                                     telephone,
                                     passwordHash,
