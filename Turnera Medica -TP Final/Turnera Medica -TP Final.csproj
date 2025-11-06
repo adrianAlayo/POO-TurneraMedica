@@ -93,11 +93,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Connection.cs" />
-    <Compile Include="Controller\Consultorio.cs" />
-    <Compile Include="Controller\Medico.cs" />
-    <Compile Include="Controller\ObraSocial.cs" />
-    <Compile Include="Controller\Paciente.cs" />
-    <Compile Include="Controller\Turno.cs" />
+    <Compile Include="Controller\Consultation.cs" />
+    <Compile Include="Controller\Medic.cs" />
+    <Compile Include="Controller\SocialWork.cs" />
+    <Compile Include="Controller\Patient.cs" />
+    <Compile Include="Controller\Shift.cs" />
     <Compile Include="Controller\User.cs" />
     <Compile Include="Controller\userLogin.cs" />
     <Compile Include="Controller\Utils.cs" />

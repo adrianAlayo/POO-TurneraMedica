@@ -10,11 +10,11 @@ namespace Turnera_Medica__TP_Final.Controller
     {
         
         //En caso de ser Medico que GUARDAR
-        Medico InfoGeneralM { get; set; } = null;
+        Medic InfoGeneralM { get; set; } = null;
         
 
         //En caso de ser Paciente que GUARDAR
-        Paciente InfoGeneralP { get; set; } = null;
+        Patient InfoGeneralP { get; set; } = null;
         
 
     }

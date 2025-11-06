@@ -13,8 +13,8 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
 {
     public partial class P_Shifts : Form
     {
-        private Paciente userpatient { get; set; }
-        public P_Shifts(Paciente userpatient)
+        private Patient userpatient { get; set; }
+        public P_Shifts(Patient userpatient)
         {
             InitializeComponent();
             this.userpatient = userpatient;
