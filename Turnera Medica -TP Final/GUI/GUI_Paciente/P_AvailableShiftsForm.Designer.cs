@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.login_email_user = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.ReturnPreRegister = new System.Windows.Forms.Button();
@@ -37,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.RegisterP_send = new System.Windows.Forms.Button();
+            this.SelectSpeciality = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -48,15 +48,6 @@
             this.lblTitulo.Size = new System.Drawing.Size(491, 52);
             this.lblTitulo.TabIndex = 16;
             this.lblTitulo.Text = "TURNOS DISPONIBLES";
-            // 
-            // login_email_user
-            // 
-            this.login_email_user.BackColor = System.Drawing.Color.LightPink;
-            this.login_email_user.Location = new System.Drawing.Point(370, 146);
-            this.login_email_user.Name = "login_email_user";
-            this.login_email_user.Size = new System.Drawing.Size(149, 20);
-            this.login_email_user.TabIndex = 17;
-            this.login_email_user.TextChanged += new System.EventHandler(this.login_email_user_TextChanged);
             // 
             // textBox1
             // 
@@ -133,11 +124,29 @@
             this.RegisterP_send.UseVisualStyleBackColor = false;
             this.RegisterP_send.Click += new System.EventHandler(this.RegisterP_send_Click);
             // 
+            // SelectSpeciality
+            // 
+            this.SelectSpeciality.BackColor = System.Drawing.Color.LightPink;
+            this.SelectSpeciality.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelectSpeciality.FormattingEnabled = true;
+            this.SelectSpeciality.Items.AddRange(new object[] {
+            "Cardiología",
+            "Pediatría",
+            "Dermatología",
+            "Traumatología",
+            "Clínica Médica"});
+            this.SelectSpeciality.Location = new System.Drawing.Point(370, 147);
+            this.SelectSpeciality.Name = "SelectSpeciality";
+            this.SelectSpeciality.Size = new System.Drawing.Size(149, 24);
+            this.SelectSpeciality.TabIndex = 54;
+            this.SelectSpeciality.SelectedIndexChanged += new System.EventHandler(this.SelectSpeciality_SelectedIndexChanged);
+            // 
             // P_AvailableShiftsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.SelectSpeciality);
             this.Controls.Add(this.RegisterP_send);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -145,7 +154,6 @@
             this.Controls.Add(this.ReturnPreRegister);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.login_email_user);
             this.Controls.Add(this.lblTitulo);
             this.Name = "P_AvailableShiftsForm";
             this.Text = "P_AvailableShiftsForm";
@@ -158,7 +166,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.TextBox login_email_user;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button ReturnPreRegister;
@@ -166,5 +173,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button RegisterP_send;
+        private System.Windows.Forms.ComboBox SelectSpeciality;
     }
 }
