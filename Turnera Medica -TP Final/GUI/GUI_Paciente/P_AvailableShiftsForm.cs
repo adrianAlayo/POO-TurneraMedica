@@ -37,12 +37,6 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
             this.Hide(); 
         }
 
-        private void RegisterP_send_Click(object sender, EventArgs e)
-        {
-            P_AvailableShifts p_availableshifts = new P_AvailableShifts(userpatient);  // Abre la otra ventana de turnos
-            p_availableshifts.Show();
-            this.Hide();
-        }
 
         private void login_email_user_TextChanged(object sender, EventArgs e)
         {
@@ -52,6 +46,13 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
         private void SelectSpeciality_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void SearchShift_Send_Click(object sender, EventArgs e)
+        {
+            P_AvailableShifts p_availableshifts = new P_AvailableShifts(userpatient);  // Abre la otra ventana de turnos
+            p_availableshifts.Show();
+            this.Hide();
         }
     }
 }

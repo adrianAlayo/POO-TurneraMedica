@@ -35,8 +35,8 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.RegisterP_send = new System.Windows.Forms.Button();
             this.SelectSpeciality = new System.Windows.Forms.ComboBox();
+            this.SearchShift_Send = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -112,18 +112,6 @@
             this.label2.Text = "Consultorio:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // RegisterP_send
-            // 
-            this.RegisterP_send.BackColor = System.Drawing.Color.LightGreen;
-            this.RegisterP_send.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegisterP_send.Location = new System.Drawing.Point(468, 335);
-            this.RegisterP_send.Name = "RegisterP_send";
-            this.RegisterP_send.Size = new System.Drawing.Size(122, 37);
-            this.RegisterP_send.TabIndex = 53;
-            this.RegisterP_send.Text = "Buscar";
-            this.RegisterP_send.UseVisualStyleBackColor = false;
-            this.RegisterP_send.Click += new System.EventHandler(this.RegisterP_send_Click);
-            // 
             // SelectSpeciality
             // 
             this.SelectSpeciality.BackColor = System.Drawing.Color.LightPink;
@@ -141,13 +129,25 @@
             this.SelectSpeciality.TabIndex = 54;
             this.SelectSpeciality.SelectedIndexChanged += new System.EventHandler(this.SelectSpeciality_SelectedIndexChanged);
             // 
+            // SearchShift_Send
+            // 
+            this.SearchShift_Send.BackColor = System.Drawing.Color.LightGreen;
+            this.SearchShift_Send.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchShift_Send.Location = new System.Drawing.Point(463, 335);
+            this.SearchShift_Send.Name = "SearchShift_Send";
+            this.SearchShift_Send.Size = new System.Drawing.Size(122, 37);
+            this.SearchShift_Send.TabIndex = 55;
+            this.SearchShift_Send.Text = "Buscar";
+            this.SearchShift_Send.UseVisualStyleBackColor = false;
+            this.SearchShift_Send.Click += new System.EventHandler(this.SearchShift_Send_Click);
+            // 
             // P_AvailableShiftsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.SearchShift_Send);
             this.Controls.Add(this.SelectSpeciality);
-            this.Controls.Add(this.RegisterP_send);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblEmail);
@@ -172,7 +172,7 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button RegisterP_send;
         private System.Windows.Forms.ComboBox SelectSpeciality;
+        private System.Windows.Forms.Button SearchShift_Send;
     }
 }
