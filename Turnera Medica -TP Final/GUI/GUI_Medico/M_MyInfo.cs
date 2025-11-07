@@ -36,10 +36,97 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 
         private void lblEmail_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M_MyInfo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M_MyInfo_name_TextChanged(object sender, EventArgs e)
+        {
+            M_MyInfo_name.Text += " " + usermedic.Name;
+        }
+
+        private void M_MyInfo_office_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M_MyInfo_lastName_TextChanged(object sender, EventArgs e)
+        {
+            textBox6.Text += " " + usermedic.LastName;
+        }
+
+        private void M_MyInfo_dni_TextChanged(object sender, EventArgs e)
+        {
+            M_MyInfo_dni.Text += " " + usermedic.Dni;
+        }
+
+        private void M_MyInfo_age_TextChanged(object sender, EventArgs e)
+        {
+            textBox5.Text += " " + usermedic.Age;
+        }
+
+        private void M_MyInfo_phone_TextChanged(object sender, EventArgs e)
+        {
+            M_MyInfo_phone.Text += " " + usermedic.TelNumber;
+        }
+
+        private void M_MyInfo_email_TextChanged(object sender, EventArgs e)
+        {
+            textBox4.Text += " " + usermedic.Email;
+        }
+
+        private void M_MyInfo_speciality_TextChanged(object sender, EventArgs e)
+        {
+            //Hacer una consulta apropiada para que te muestre el nombre de la ESPECIALIDAD
+            M_MyInfo_speciality.Text += " " + usermedic.Speciality_Id;
+        }
+
+        private void M_MyInfo_socialWorck_TextChanged(object sender, EventArgs e)
+        {
+            //hay que hacer la consulta apropiada para quie te muestre todas las obras sociales
+        }
+
+        private void M_MyInfo_office_TextChanged(object sender, EventArgs e)
+        {
+            //hay que hacer la consulta apropiada para que me muestre el CONSULTORIO donde trabaja
+            M_MyInfo_office.Text += " " + usermedic.OfficeAssigned;
+        }
+
+        private void M_MyInfo_ChekInTime_TextChanged(object sender, EventArgs e)
+        {
+            //hay que hacer la consulta apropiada para quie te muestre horario de entrada 
+        }
+
+        private void M_MyInfo_ChekOutTime_TextChanged(object sender, EventArgs e)
+        {
+            //hay que hacer la consulta apropiada para quie te muestre horario de salida
+        }
+
+        private void M_MyInfo_consultAmount_TextChanged(object sender, EventArgs e)
+        {
+            textBox1.Text += " " + usermedic.ConsultationAmount;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

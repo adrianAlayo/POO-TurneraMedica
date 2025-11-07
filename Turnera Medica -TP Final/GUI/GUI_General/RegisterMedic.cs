@@ -44,21 +44,22 @@ namespace Turnera_Medica__TP_Final.GUI
 
         private void RegisterM_send_Click(object sender, EventArgs e)
         {
-            string nombre = registerM_name_user.Text.Trim();
-            string apellido = registerM_lastName_user.Text.Trim();
+            string name = registerM_name_user.Text.Trim();
+            string last_name = registerM_lastName_user.Text.Trim();
+            double age = Convert.ToDouble(registerM_age_user.Text.Trim());
             string dni = registerM_dni_user.Text.Trim();
-            string telefono = registerM_numberPhone_user.Text.Trim();
+            string telephone_number = registerM_numberPhone_user.Text.Trim();
             string email = registerM_email_user.Text.Trim();
             string password = registerM_password_user.Text.Trim();
-            string confirmar = registerM_confirPassword_user.Text.Trim();
-            string especialidad = registerM_especialty_user.Text.Trim();
-            string montoConsulta = registerM_montConsul_user.Text.Trim();
-            string consultorio = registerM_office_user.Text.Trim();
-            string obraSocial = registerM_socialWork_user.Text.Trim();
-            string horaEntrada = registerM_entryTime_user.Text.Trim();
-            string horaSalida = registerM_departureTime_user.Text.Trim();
+            string confirmation = registerM_confirPassword_user.Text.Trim();
+            string speciality = registerM_especialty_user.Text.Trim();
+            string consult_amount = registerM_montConsul_user.Text.Trim();
+            string offices = registerM_office_user.Text.Trim();
+            string social_works = registerM_socialWork_user.Text.Trim();
+            string timeEntry = registerM_entryTime_user.Text.Trim();
+            string timeDeparture = registerM_departureTime_user.Text.Trim();
 
-            if (password != confirmar)
+            if (password != confirmation)
             {
                 MessageBox.Show("Las contraseñas no coinciden.");
                 return;
@@ -71,49 +72,50 @@ namespace Turnera_Medica__TP_Final.GUI
                 string hash = Utils.HashPassword(password);
 
                 // Insertar en tabla users
-                string insertUser = "INSERT INTO users (dni, nombre, apellido, email, numero_tel, password_hash, rol) VALUES (@dni, @nombre, @apellido, @correo, @telefono, @password, 'medico')";
+                string insertUser = "INSERT INTO users (dni, name, last_name, age, email, telephone_number, password_hash, rol) VALUES (@dni, @name, @last_name, @age, @email, @telephone_number, @password, 'medic')";
                 MySqlCommand cmdUser = new MySqlCommand(insertUser, conexionDB);
                 cmdUser.Parameters.AddWithValue("@dni", dni);
-                cmdUser.Parameters.AddWithValue("@nombre", nombre);
-                cmdUser.Parameters.AddWithValue("@apellido", apellido);
-                cmdUser.Parameters.AddWithValue("@correo", email);
-                cmdUser.Parameters.AddWithValue("@telefono", telefono);
+                cmdUser.Parameters.AddWithValue("@name", name);
+                cmdUser.Parameters.AddWithValue("@last_name", last_name);
+                cmdUser.Parameters.AddWithValue("@age", age);
+                cmdUser.Parameters.AddWithValue("@email", email);
+                cmdUser.Parameters.AddWithValue("@telephone_number", telephone_number);
                 cmdUser.Parameters.AddWithValue("@password", hash);
                 cmdUser.ExecuteNonQuery();
 
                 int userId = (int)cmdUser.LastInsertedId;
 
                 // Insertar en tabla medicos
-                string insertMedico = "INSERT INTO medicos (user_id, especialidad, monto_consulta) VALUES (@userId, @especialidad, @monto)";
-                MySqlCommand cmdMedico = new MySqlCommand(insertMedico, conexionDB);
-                cmdMedico.Parameters.AddWithValue("@userId", userId);
-                cmdMedico.Parameters.AddWithValue("@especialidad", especialidad);
-                cmdMedico.Parameters.AddWithValue("@monto", montoConsulta);
-                cmdMedico.ExecuteNonQuery();
+                string insertMedic = "INSERT INTO medics (user_id, speciality_id, consult_amount) VALUES (@userId, @speciality, @mount)";
+                MySqlCommand cmdMedic = new MySqlCommand(insertMedic, conexionDB);
+                cmdMedic.Parameters.AddWithValue("@userId", userId);
+                cmdMedic.Parameters.AddWithValue("@speciality", speciality);
+                cmdMedic.Parameters.AddWithValue("@mount", consult_amount);
+                cmdMedic.ExecuteNonQuery();
 
-                int medicoId = (int)cmdMedico.LastInsertedId;
+                int medicId = (int)cmdMedic.LastInsertedId;
 
                 // Insertar consultorio asignado (simplificado)
-                string insertConsultorio = "INSERT INTO medico_consultorio_asignado (medico_id, consultorio_id, horario_desde, horario_hasta) VALUES (@medico, 1, @desde, @hasta)";
-                MySqlCommand cmdConsul = new MySqlCommand(insertConsultorio, conexionDB);
-                cmdConsul.Parameters.AddWithValue("@medico", medicoId);
-                cmdConsul.Parameters.AddWithValue("@desde", horaEntrada);
-                cmdConsul.Parameters.AddWithValue("@hasta", horaSalida);
+                string insertConsultation = "INSERT INTO assigned_doctors_office (medic_id, office_id, open_from, close_after) VALUES (@medic, 1, @open_from, @close_after)";
+                MySqlCommand cmdConsul = new MySqlCommand(insertConsultation, conexionDB);
+                cmdConsul.Parameters.AddWithValue("@medic_id", medicId);
+                cmdConsul.Parameters.AddWithValue("@open_from", timeEntry);
+                cmdConsul.Parameters.AddWithValue("@close_after", timeDeparture);
                 cmdConsul.ExecuteNonQuery();
 
                 // Insertar obra social (si no existe la crea)
-                string getObra = "SELECT id FROM obras_sociales WHERE nombre = @obra LIMIT 1";
+                string getObra = "SELECT id FROM social_works WHERE name = @obra LIMIT 1";
                 MySqlCommand cmdGetObra = new MySqlCommand(getObra, conexionDB);
-                cmdGetObra.Parameters.AddWithValue("@obra", obraSocial);
+                cmdGetObra.Parameters.AddWithValue("@obra", social_works);
                 object result = cmdGetObra.ExecuteScalar();
 
                 int obraId;
 
                 if (result == null)
                 {
-                    string insertObra = "INSERT INTO obras_sociales (nombre) VALUES (@obra)";
+                    string insertObra = "INSERT INTO social_work (name) VALUES (@obra)";
                     MySqlCommand cmdInsertObra = new MySqlCommand(insertObra, conexionDB);
-                    cmdInsertObra.Parameters.AddWithValue("@obra", obraSocial);
+                    cmdInsertObra.Parameters.AddWithValue("@obra", social_works);
                     cmdInsertObra.ExecuteNonQuery();
                     obraId = (int)cmdInsertObra.LastInsertedId;
                 }
@@ -122,10 +124,10 @@ namespace Turnera_Medica__TP_Final.GUI
                     obraId = Convert.ToInt32(result);
                 }
 
-                string insertMedicoObra = "INSERT INTO medico_obra_social (medico_id, obra_social_id) VALUES (@medico, @obra)";
-                MySqlCommand cmdMedObra = new MySqlCommand(insertMedicoObra, conexionDB);
-                cmdMedObra.Parameters.AddWithValue("@medico", medicoId);
-                cmdMedObra.Parameters.AddWithValue("@obra", obraId);
+                string medic_social_work = "INSERT INTO medic_social_work (medic_id, social_work_id) VALUES (@medic, @obraId)";
+                MySqlCommand cmdMedObra = new MySqlCommand(medic_social_work, conexionDB);
+                cmdMedObra.Parameters.AddWithValue("@medic", medicId);
+                cmdMedObra.Parameters.AddWithValue("@obraId", obraId);
                 cmdMedObra.ExecuteNonQuery();
 
                 MessageBox.Show("Registro de médico completado correctamente.");

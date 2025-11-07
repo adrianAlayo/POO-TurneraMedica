@@ -57,13 +57,15 @@
             this.registerM_entryTime_user = new System.Windows.Forms.TextBox();
             this.registerM_departureTime_user = new System.Windows.Forms.TextBox();
             this.registerM_name_user = new System.Windows.Forms.TextBox();
+            this.registerM_age_user = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // s
             // 
             this.s.AutoSize = true;
             this.s.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s.Location = new System.Drawing.Point(100, 76);
+            this.s.Location = new System.Drawing.Point(100, 66);
             this.s.Name = "s";
             this.s.Size = new System.Drawing.Size(55, 15);
             this.s.TabIndex = 6;
@@ -84,7 +86,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(126, 112);
+            this.label2.Location = new System.Drawing.Point(126, 130);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 15);
             this.label2.TabIndex = 9;
@@ -93,7 +95,7 @@
             // registerM_dni_user
             // 
             this.registerM_dni_user.BackColor = System.Drawing.Color.LightPink;
-            this.registerM_dni_user.Location = new System.Drawing.Point(161, 112);
+            this.registerM_dni_user.Location = new System.Drawing.Point(161, 130);
             this.registerM_dni_user.Name = "registerM_dni_user";
             this.registerM_dni_user.Size = new System.Drawing.Size(149, 20);
             this.registerM_dni_user.TabIndex = 8;
@@ -103,7 +105,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(35, 152);
+            this.label3.Location = new System.Drawing.Point(35, 170);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 15);
             this.label3.TabIndex = 13;
@@ -112,7 +114,7 @@
             // registerM_montConsul_user
             // 
             this.registerM_montConsul_user.BackColor = System.Drawing.Color.LightPink;
-            this.registerM_montConsul_user.Location = new System.Drawing.Point(161, 152);
+            this.registerM_montConsul_user.Location = new System.Drawing.Point(161, 170);
             this.registerM_montConsul_user.Name = "registerM_montConsul_user";
             this.registerM_montConsul_user.Size = new System.Drawing.Size(149, 20);
             this.registerM_montConsul_user.TabIndex = 12;
@@ -122,7 +124,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(114, 226);
+            this.label4.Location = new System.Drawing.Point(114, 244);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 15);
             this.label4.TabIndex = 11;
@@ -131,7 +133,7 @@
             // registerM_email_user
             // 
             this.registerM_email_user.BackColor = System.Drawing.Color.LightPink;
-            this.registerM_email_user.Location = new System.Drawing.Point(161, 226);
+            this.registerM_email_user.Location = new System.Drawing.Point(161, 244);
             this.registerM_email_user.Name = "registerM_email_user";
             this.registerM_email_user.Size = new System.Drawing.Size(149, 20);
             this.registerM_email_user.TabIndex = 10;
@@ -160,7 +162,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(80, 186);
+            this.label6.Location = new System.Drawing.Point(80, 204);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(75, 15);
             this.label6.TabIndex = 15;
@@ -169,7 +171,7 @@
             // registerM_office_user
             // 
             this.registerM_office_user.BackColor = System.Drawing.Color.LightPink;
-            this.registerM_office_user.Location = new System.Drawing.Point(161, 186);
+            this.registerM_office_user.Location = new System.Drawing.Point(161, 204);
             this.registerM_office_user.Name = "registerM_office_user";
             this.registerM_office_user.Size = new System.Drawing.Size(149, 20);
             this.registerM_office_user.TabIndex = 14;
@@ -179,7 +181,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(23, 265);
+            this.label7.Location = new System.Drawing.Point(23, 283);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(132, 15);
             this.label7.TabIndex = 29;
@@ -188,7 +190,7 @@
             // registerM_confirPassword_user
             // 
             this.registerM_confirPassword_user.BackColor = System.Drawing.Color.LightPink;
-            this.registerM_confirPassword_user.Location = new System.Drawing.Point(161, 263);
+            this.registerM_confirPassword_user.Location = new System.Drawing.Point(161, 281);
             this.registerM_confirPassword_user.Name = "registerM_confirPassword_user";
             this.registerM_confirPassword_user.Size = new System.Drawing.Size(149, 20);
             this.registerM_confirPassword_user.TabIndex = 28;
@@ -311,7 +313,7 @@
             this.ReturnPreRegister.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SpringGreen;
             this.ReturnPreRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
             this.ReturnPreRegister.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReturnPreRegister.Location = new System.Drawing.Point(129, 316);
+            this.ReturnPreRegister.Location = new System.Drawing.Point(161, 317);
             this.ReturnPreRegister.Name = "ReturnPreRegister";
             this.ReturnPreRegister.Size = new System.Drawing.Size(113, 37);
             this.ReturnPreRegister.TabIndex = 35;
@@ -340,17 +342,37 @@
             // registerM_name_user
             // 
             this.registerM_name_user.BackColor = System.Drawing.Color.LightPink;
-            this.registerM_name_user.Location = new System.Drawing.Point(161, 76);
+            this.registerM_name_user.Location = new System.Drawing.Point(161, 66);
             this.registerM_name_user.Name = "registerM_name_user";
             this.registerM_name_user.Size = new System.Drawing.Size(149, 20);
             this.registerM_name_user.TabIndex = 39;
             this.registerM_name_user.TextChanged += new System.EventHandler(this.registerM_name_user_TextChanged);
+            // 
+            // registerM_age_user
+            // 
+            this.registerM_age_user.BackColor = System.Drawing.Color.LightPink;
+            this.registerM_age_user.Location = new System.Drawing.Point(161, 99);
+            this.registerM_age_user.Name = "registerM_age_user";
+            this.registerM_age_user.Size = new System.Drawing.Size(149, 20);
+            this.registerM_age_user.TabIndex = 59;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(119, 101);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(38, 15);
+            this.label14.TabIndex = 58;
+            this.label14.Text = "Edad:";
             // 
             // RegisterMedic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.registerM_age_user);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.registerM_name_user);
             this.Controls.Add(this.registerM_departureTime_user);
             this.Controls.Add(this.registerM_entryTime_user);
@@ -418,5 +440,7 @@
         private System.Windows.Forms.TextBox registerM_entryTime_user;
         private System.Windows.Forms.TextBox registerM_departureTime_user;
         private System.Windows.Forms.TextBox registerM_name_user;
+        private System.Windows.Forms.TextBox registerM_age_user;
+        private System.Windows.Forms.Label label14;
     }
 }
