@@ -62,12 +62,14 @@ namespace Turnera_Medica__TP_Final.GUI
                 string email = login_email_user.Text.Trim();
                 string password = login_password_user.Text.Trim();
 
+                string hashedPassword = Utils.HashPassword(password);
+
                 // aca buscamons al usuario en la base de datos
                 string querylogin = "SELECT * FROM users WHERE email = @Email AND password_hash = @Password";
 
                 MySqlCommand cmdlogin = new MySqlCommand(querylogin, conexionDB);
                 cmdlogin.Parameters.AddWithValue("@Email", email);
-                cmdlogin.Parameters.AddWithValue("@Password", password);
+                cmdlogin.Parameters.AddWithValue("@Password", hashedPassword);
 
                 using (MySqlDataReader read = cmdlogin.ExecuteReader())
                 {

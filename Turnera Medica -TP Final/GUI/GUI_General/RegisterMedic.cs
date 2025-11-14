@@ -46,13 +46,13 @@ namespace Turnera_Medica__TP_Final.GUI
         {
             string name = registerM_name_user.Text.Trim();
             string last_name = registerM_lastName_user.Text.Trim();
-            double age = Convert.ToDouble(registerM_age_user.Text.Trim());
+            int age = Convert.ToInt32(registerM_age_user.Text.Trim());
             string dni = registerM_dni_user.Text.Trim();
             string telephone_number = registerM_numberPhone_user.Text.Trim();
             string email = registerM_email_user.Text.Trim();
             string password = registerM_password_user.Text.Trim();
             string confirmation = registerM_confirPassword_user.Text.Trim();
-            string speciality = registerM_especialty_user.Text.Trim();
+            string speciality = registerM_speciality_user.Text.Trim();
             string consult_amount = registerM_montConsul_user.Text.Trim();
             string offices = registerM_office_user.Text.Trim();
             string social_works = registerM_socialWork_user.Text.Trim();
@@ -72,7 +72,7 @@ namespace Turnera_Medica__TP_Final.GUI
                 string hash = Utils.HashPassword(password);
 
                 // Insertar en tabla users
-                string insertUser = "INSERT INTO users (dni, name, last_name, age, email, telephone_number, password_hash, rol) VALUES (@dni, @name, @last_name, @age, @email, @telephone_number, @password, 'medic')";
+                string insertUser = "INSERT INTO users (dni, name, last_name, age, email, telephone_number, password_hash, rol) VALUES (@dni, @name, @last_name, @age, @email, @telephone_number, @password, 'medico')";
                 MySqlCommand cmdUser = new MySqlCommand(insertUser, conexionDB);
                 cmdUser.Parameters.AddWithValue("@dni", dni);
                 cmdUser.Parameters.AddWithValue("@name", name);
@@ -85,20 +85,59 @@ namespace Turnera_Medica__TP_Final.GUI
 
                 int userId = (int)cmdUser.LastInsertedId;
 
+                string searchspecialityid = "SELECT id FROM specialities WHERE name = @speciality LIMIT 1";
+                MySqlCommand cmdSpeciality = new MySqlCommand(searchspecialityid, conexionDB);
+                cmdSpeciality.Parameters.AddWithValue("@speciality", speciality);
+
+                MySqlDataReader read1 = cmdSpeciality.ExecuteReader();
+                int specialityId = -1;
+
+                if (read1.Read())
+                {
+                    specialityId = Convert.ToInt32(read1["id"]);
+                }
+                else
+                {
+                    read1.Close();
+                    MessageBox.Show("La especialidad no existe.");
+                    return;
+                }
+                read1.Close();
+
                 // Insertar en tabla medicos
-                string insertMedic = "INSERT INTO medics (user_id, speciality_id, consult_amount) VALUES (@userId, @speciality, @mount)";
+                string insertMedic = "INSERT INTO medics (user_id, speciality_id, consult_amount) VALUES (@userId, @specialityId, @mount)";
                 MySqlCommand cmdMedic = new MySqlCommand(insertMedic, conexionDB);
                 cmdMedic.Parameters.AddWithValue("@userId", userId);
-                cmdMedic.Parameters.AddWithValue("@speciality", speciality);
+                cmdMedic.Parameters.AddWithValue("@specialityId", specialityId);
                 cmdMedic.Parameters.AddWithValue("@mount", consult_amount);
                 cmdMedic.ExecuteNonQuery();
 
                 int medicId = (int)cmdMedic.LastInsertedId;
 
+                string searchofficeid = "SELECT id FROM offices WHERE ubication = @off LIMIT 1";
+                MySqlCommand cmdOffice = new MySqlCommand(searchofficeid, conexionDB);
+                cmdOffice.Parameters.AddWithValue("@off", offices);
+
+                MySqlDataReader read2 = cmdOffice.ExecuteReader();
+                int officeId = -1;
+
+                if (read2.Read())
+                { 
+                    officeId = Convert.ToInt32(read2["id"]);
+                }
+                else
+                {
+                    read2.Close();
+                    MessageBox.Show("El consultorio no existe.");
+                    return;
+                }
+                read2.Close();
+
                 // Insertar consultorio asignado (simplificado)
-                string insertConsultation = "INSERT INTO assigned_doctors_office (medic_id, office_id, open_from, close_after) VALUES (@medic, 1, @open_from, @close_after)";
+                string insertConsultation = "INSERT INTO assigned_doctors_office (medic_id, office_id, open_from, close_after) VALUES (@medic_id, @officeId, @open_from, @close_after)";
                 MySqlCommand cmdConsul = new MySqlCommand(insertConsultation, conexionDB);
                 cmdConsul.Parameters.AddWithValue("@medic_id", medicId);
+                cmdConsul.Parameters.AddWithValue("@officeId", officeId);
                 cmdConsul.Parameters.AddWithValue("@open_from", timeEntry);
                 cmdConsul.Parameters.AddWithValue("@close_after", timeDeparture);
                 cmdConsul.ExecuteNonQuery();
@@ -113,7 +152,7 @@ namespace Turnera_Medica__TP_Final.GUI
 
                 if (result == null)
                 {
-                    string insertObra = "INSERT INTO social_work (name) VALUES (@obra)";
+                    string insertObra = "INSERT INTO social_works (name) VALUES (@obra)";
                     MySqlCommand cmdInsertObra = new MySqlCommand(insertObra, conexionDB);
                     cmdInsertObra.Parameters.AddWithValue("@obra", social_works);
                     cmdInsertObra.ExecuteNonQuery();
@@ -222,6 +261,36 @@ namespace Turnera_Medica__TP_Final.GUI
         }
 
         private void registerM_name_user_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registerM_speciality_user_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registerM_office_user_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registerM_departureTime_user_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registerM_entryTime_user_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }

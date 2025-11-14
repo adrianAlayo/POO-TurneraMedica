@@ -1,4 +1,4 @@
-/*/LINEA Q COMENTA TODO LA CONSULTA PARA QUE NO SALGA ERROR, HAY QUE ELIMINAR ESTA LINEA ANTES DE IMPORTART
+/*/LINEA Q COMENTA TODO LA CONSULTA PARA QUE NO SALGA ERROR, HAY QUE ELIMINAR ESTA LINEA ANTES DE IMPORTART 
 
 CREATE DATABASE IF NOT EXISTS tp_turneriamedica_db CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE tp_turneriamedica_db;
@@ -99,20 +99,23 @@ CREATE TABLE medic_social_work (
   FOREIGN KEY (social_work_id) REFERENCES social_works (id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Tabla turnos
+-- ======================
+-- ? NUEVA TABLA SHIFTS (fecha y hora separadas)
+-- ======================
 CREATE TABLE shifts (
   id INT NOT NULL AUTO_INCREMENT,
   medic_id INT NOT NULL,
   patient_id INT NULL,
   office_id INT NOT NULL,
-  date_time DATETIME NOT NULL,
+  shift_date DATE NOT NULL,
+  shift_time TIME NOT NULL,
   duration INT NOT NULL DEFAULT 30,
   original_price DECIMAL(10,2) NOT NULL,
   discount DECIMAL(5,2) NOT NULL DEFAULT 0.00,
   final_price DECIMAL(10,2) NOT NULL,
   state ENUM('programado','asistido','libre','cancelado') NOT NULL DEFAULT 'libre',
   PRIMARY KEY (id),
-  UNIQUE KEY uq_turno_medico_fecha (medic_id, date_time),
+  UNIQUE KEY uq_turno_medico_fecha_hora (medic_id, shift_date, shift_time),
   FOREIGN KEY (medic_id) REFERENCES medics (id) ON DELETE RESTRICT,
   FOREIGN KEY (patient_id) REFERENCES patients (id) ON DELETE SET NULL,
   FOREIGN KEY (office_id) REFERENCES offices (id) ON DELETE RESTRICT
@@ -123,11 +126,11 @@ CREATE TABLE shifts (
 -- ===================
 
 -- Usuarios
-INSERT INTO users (dni, name, last_name, age,email, telephone_number, password_hash, rol) VALUES 
-(30111222, 'Juan', 'Pérez', 45,'juan.perez@hospital.com', '1122334455', '1234', 'medico'), 
+INSERT INTO users (dni, name, last_name, age, email, telephone_number, password_hash, rol) VALUES 
+(30111222, 'Juan', 'Pérez', 45, 'juan.perez@hospital.com', '1122334455', '1234', 'medico'),
 (30999888, 'María', 'López', 38, 'maria.lopez@hospital.com', '1133445566', '1234', 'medico'),
-(40111222, 'Carlos', 'Gómez', 29,'carlos.gomez@gmail.com', '1144556677', '1234', 'paciente'), 
-(40999888, 'Lucía', 'Fernández', 35,'lucia.fernandez@gmail.com', '1155667788', '1234', 'paciente');
+(40111222, 'Carlos', 'Gómez', 29, 'carlos.gomez@gmail.com', '1144556677', '1234', 'paciente'),
+(40999888, 'Lucía', 'Fernández', 35, 'lucia.fernandez@gmail.com', '1155667788', '1234', 'paciente');
 
 -- Especialidades
 INSERT INTO specialities (name) VALUES 
@@ -140,52 +143,45 @@ INSERT INTO specialities (name) VALUES
 -- Consultorios
 INSERT INTO offices (ubication, open_time, close_time) VALUES
 ('Corrientes 1500', '08:00:00', '16:00:00'),
+('Corrientes 3200', '07:00:00', '15:00:00'),
 ('Carabobo 3000', '08:00:00', '16:00:00'),
-('México 2500', '09:00:00', '17:00:00'), 
-('Uruguay 4000', '09:00:00', '17:00:00'), 
-('Yrigoyen 3500', '07:00:00', '15:00:00'), 
-('Corrientes 3200 - Edificio B', '07:00:00', '15:00:00');
+('México 2500', '09:00:00', '17:00:00'),
+('Uruguay 4000', '09:00:00', '17:00:00'),
+('Yrigoyen 3500', '07:00:00', '15:00:00');
 
 -- Obras sociales
 INSERT INTO social_works (name) VALUES 
-('OSDE'), 
-('Swiss Medical'), 
-('Galeno'), 
-('PAMI'), 
-('IOMA'), 
+('OSDE'),
+('Swiss Medical'),
+('Galeno'),
+('PAMI'),
+('IOMA'),
 ('Medife');
 
--- Médicos (usando id de especialidades)
+-- Médicos
 INSERT INTO medics (user_id, speciality_id, consult_amount) VALUES 
-(1, 1, 5000.00),  -- Cardiología
-(2, 2, 6000.00);  -- Pediatría
+(1, 1, 5000.00),
+(2, 2, 6000.00);
 
 -- Pacientes
-INSERT INTO patients (user_id, social_work_id) VALUES 
-(3, 1), 
-(4, 4);
+INSERT INTO patients (user_id, social_work_id) VALUES (3, 1), (4, 4);
 
--- Asignación de consultorios
-INSERT INTO assigned_doctors_office (medic_id, office_id, open_from, close_after) VALUES 
-(1, 1, '08:00:00', '12:00:00'), 
+-- Asignación consultorios
+INSERT INTO assigned_doctors_office (medic_id, office_id, open_from, close_after) VALUES
+(1, 1, '08:00:00', '12:00:00'),
 (2, 3, '09:00:00', '13:00:00');
 
 -- Médico - Obra social
-INSERT INTO medic_social_work (medic_id, social_work_id) VALUES 
-(1, 1), 
-(1, 2), 
-(1, 3), 
-(2, 4), 
-(2, 5), 
-(2, 6);
+INSERT INTO medic_social_work (medic_id, social_work_id) VALUES
+(1, 1),(1, 2),(1, 3),
+(2, 4),(2, 5),(2, 6);
 
--- Turnos
-INSERT INTO shifts (medic_id, patient_id, office_id, date_time, duration, original_price, discount, final_price, state)
-VALUES
-(1, 1, 1, '2025-11-15 09:00:00', 30, 5000.00, 0.00, 5000.00, 'programado'),
-(1, 2, 1, '2025-11-15 09:30:00', 30, 5000.00, 10.00, 4500.00, 'programado'),
-(1, 1, 1, '2025-11-15 10:00:00', 30, 5000.00, 0.00, 5000.00, 'asistido'),
-(1, NULL, 1, '2025-11-15 10:30:00', 30, 5000.00, 0.00, 5000.00, 'libre'),
-(1, NULL, 2, '2025-11-15 11:00:00', 30, 5000.00, 0.00, 5000.00, 'libre'),
-(2, NULL, 3, '2025-11-16 09:30:00', 30, 6000.00, 0.00, 6000.00, 'libre'),
-(2, NULL, 4, '2025-11-16 10:00:00', 30, 6000.00, 0.00, 6000.00, 'libre');
+-- Turnos (hora/fecha separadas)
+INSERT INTO shifts (medic_id, patient_id, office_id, shift_date, shift_time, duration, original_price, discount, final_price, state) VALUES
+(1, 1, 1, '2025-11-15', '09:00:00', 30, 5000.00, 0.00, 5000.00, 'programado'),
+(1, 2, 1, '2025-11-15', '09:30:00', 30, 5000.00, 10.00, 4500.00, 'programado'),
+(1, 1, 1, '2025-11-15', '10:00:00', 30, 5000.00, 0.00, 5000.00, 'asistido'),
+(1, NULL, 1, '2025-11-15', '10:30:00', 30, 5000.00, 0.00, 5000.00, 'libre'),
+(1, NULL, 2, '2025-11-15', '11:00:00', 30, 5000.00, 0.00, 5000.00, 'libre'),
+(2, NULL, 3, '2025-11-16', '09:30:00', 30, 6000.00, 0.00, 6000.00, 'libre'),
+(2, NULL, 4, '2025-11-16', '10:00:00', 30, 6000.00, 0.00, 6000.00, 'libre');

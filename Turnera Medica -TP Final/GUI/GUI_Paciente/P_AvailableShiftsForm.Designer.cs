@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.ReturnPreRegister = new System.Windows.Forms.Button();
             this.lblEmail = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SelectSpeciality = new System.Windows.Forms.ComboBox();
             this.SearchShift_Send = new System.Windows.Forms.Button();
+            this.selectOffice = new System.Windows.Forms.ComboBox();
+            this.selectDate = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -48,22 +48,6 @@
             this.lblTitulo.Size = new System.Drawing.Size(491, 52);
             this.lblTitulo.TabIndex = 16;
             this.lblTitulo.Text = "TURNOS DISPONIBLES";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.LightPink;
-            this.textBox1.Location = new System.Drawing.Point(370, 204);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(149, 20);
-            this.textBox1.TabIndex = 18;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.LightPink;
-            this.textBox2.Location = new System.Drawing.Point(370, 257);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(149, 20);
-            this.textBox2.TabIndex = 19;
             // 
             // ReturnPreRegister
             // 
@@ -105,7 +89,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(281, 262);
+            this.label2.Location = new System.Drawing.Point(287, 262);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 15);
             this.label2.TabIndex = 39;
@@ -141,19 +125,49 @@
             this.SearchShift_Send.UseVisualStyleBackColor = false;
             this.SearchShift_Send.Click += new System.EventHandler(this.SearchShift_Send_Click);
             // 
+            // selectOffice
+            // 
+            this.selectOffice.BackColor = System.Drawing.Color.LightPink;
+            this.selectOffice.FormattingEnabled = true;
+            this.selectOffice.Items.AddRange(new object[] {
+            "Corrientes 1500",
+            "Corrientes 3200",
+            "Carabobo 3000",
+            "México 2500",
+            "Uruguay 4000",
+            "Yrigoyen 3500"});
+            this.selectOffice.Location = new System.Drawing.Point(370, 260);
+            this.selectOffice.Name = "selectOffice";
+            this.selectOffice.Size = new System.Drawing.Size(149, 21);
+            this.selectOffice.TabIndex = 56;
+            this.selectOffice.SelectedIndexChanged += new System.EventHandler(this.selectOffice_SelectedIndexChanged);
+            // 
+            // selectDate
+            // 
+            this.selectDate.CustomFormat = "dd/mm/yyyy";
+            this.selectDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.selectDate.Location = new System.Drawing.Point(370, 207);
+            this.selectDate.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
+            this.selectDate.MinDate = new System.DateTime(2025, 11, 10, 0, 0, 0, 0);
+            this.selectDate.Name = "selectDate";
+            this.selectDate.Size = new System.Drawing.Size(149, 20);
+            this.selectDate.TabIndex = 57;
+            this.selectDate.Value = new System.DateTime(2025, 11, 10, 0, 0, 0, 0);
+            this.selectDate.ValueChanged += new System.EventHandler(this.selectDate_ValueChanged);
+            // 
             // P_AvailableShiftsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.selectDate);
+            this.Controls.Add(this.selectOffice);
             this.Controls.Add(this.SearchShift_Send);
             this.Controls.Add(this.SelectSpeciality);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.ReturnPreRegister);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblTitulo);
             this.Name = "P_AvailableShiftsForm";
             this.Text = "P_AvailableShiftsForm";
@@ -166,13 +180,13 @@
         #endregion
 
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button ReturnPreRegister;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox SelectSpeciality;
         private System.Windows.Forms.Button SearchShift_Send;
+        private System.Windows.Forms.ComboBox selectOffice;
+        private System.Windows.Forms.DateTimePicker selectDate;
     }
 }

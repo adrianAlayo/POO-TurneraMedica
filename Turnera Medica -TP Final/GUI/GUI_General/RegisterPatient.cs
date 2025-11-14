@@ -39,7 +39,7 @@ namespace Turnera_Medica__TP_Final.GUI
         {
             string name = registerP_name_user.Text.Trim();
             string last_name = registerP_lastName_user.Text.Trim();
-            double age = Convert.ToDouble(registerP_age_user.Text.Trim());
+            int age = Convert.ToInt32(registerP_age_user.Text.Trim());
             string dni = registerP_dni_user.Text.Trim();
             string telephone_number = registerP_numberPhone_user.Text.Trim();
             string email = registerP_email_user.Text.Trim();
@@ -59,7 +59,7 @@ namespace Turnera_Medica__TP_Final.GUI
                 string hash = Utils.HashPassword(password);
 
                 // Insertar usuario
-                string insertUser = "INSERT INTO users (dni, name, last_name, email, telephone_number, password_hash, rol) VALUES (@dni, @name, @last_name, @email, @telephone_number, @password, 'patient')";
+                string insertUser = "INSERT INTO users (dni, name, last_name, email, telephone_number, password_hash, rol) VALUES (@dni, @name, @last_name, @email, @telephone_number, @password, 'paciente')";
                 MySqlCommand cmdUser = new MySqlCommand(insertUser, conexionDB);
                 cmdUser.Parameters.AddWithValue("@dni", dni);
                 cmdUser.Parameters.AddWithValue("@name", name);

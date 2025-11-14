@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using Turnera_Medica__TP_Final.Controller;
 
@@ -19,6 +20,7 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
             InitializeComponent();
             this.userpatient = userpatient;
         }
+        MySqlConnection conexionDB = Connection.conexion();
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -50,9 +52,37 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
 
         private void SearchShift_Send_Click(object sender, EventArgs e)
         {
-            P_AvailableShifts p_availableshifts = new P_AvailableShifts(userpatient);  // Abre la otra ventana de turnos
-            p_availableshifts.Show();
-            this.Hide();
+            try
+            {
+                conexionDB.Open();
+
+                string dateshift = selectDate.Text.Trim();
+                string speciality = SelectSpeciality.Text.Trim();
+                string office = selectOffice.Text.Trim();
+
+                P_AvailableShifts p_availableshifts = new P_AvailableShifts(userpatient, dateshift, office, speciality);  // Abre la otra ventana de turnos
+                p_availableshifts.Show();
+                this.Hide();
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("Error al buscar un turno: " + ex);
+            }
+            finally 
+            {
+                conexionDB.Close();
+            }
+            
+        }
+
+        private void selectDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void selectOffice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
