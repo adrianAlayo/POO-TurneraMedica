@@ -61,11 +61,14 @@ CREATE TABLE medics (
   user_id INT NOT NULL,
   speciality_id INT NOT NULL,
   consult_amount DECIMAL(10,2) NOT NULL,
+  entry_time TIME NOT NULL,
+  departure_time TIME NOT NULL,
   PRIMARY KEY (id),
   UNIQUE KEY user_id (user_id),
   FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE,
   FOREIGN KEY (speciality_id) REFERENCES specialities (id) ON DELETE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 -- Tabla pacientes
 CREATE TABLE patients (
@@ -127,10 +130,11 @@ CREATE TABLE shifts (
 
 -- Usuarios
 INSERT INTO users (dni, name, last_name, age, email, telephone_number, password_hash, rol) VALUES 
-(30111222, 'Juan', 'Pérez', 45, 'juan.perez@hospital.com', '1122334455', '1234', 'medico'),
-(30999888, 'María', 'López', 38, 'maria.lopez@hospital.com', '1133445566', '1234', 'medico'),
-(40111222, 'Carlos', 'Gómez', 29, 'carlos.gomez@gmail.com', '1144556677', '1234', 'paciente'),
-(40999888, 'Lucía', 'Fernández', 35, 'lucia.fernandez@gmail.com', '1155667788', '1234', 'paciente');
+(30111222, 'Juan', 'Pérez', 45, 'juan.perez@hospital.com', '1122334455', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 'medico'),
+(30999888, 'María', 'López', 38, 'maria.lopez@hospital.com', '1133445566', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 'medico'),
+(40111222, 'Carlos', 'Gómez', 29, 'carlos.gomez@gmail.com', '1144556677', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 'paciente'),
+(40999888, 'Lucía', 'Fernández', 35, 'lucia.fernandez@gmail.com', '1155667788', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 'paciente');
+
 
 -- Especialidades
 INSERT INTO specialities (name) VALUES 
@@ -159,9 +163,10 @@ INSERT INTO social_works (name) VALUES
 ('Medife');
 
 -- Médicos
-INSERT INTO medics (user_id, speciality_id, consult_amount) VALUES 
-(1, 1, 5000.00),
-(2, 2, 6000.00);
+INSERT INTO medics (user_id, speciality_id, consult_amount, entry_time, departure_time) VALUES 
+(1, 1, 5000.00, '08:00:00', '16:00:00'),
+(2, 2, 6000.00, '09:00:00', '17:00:00');
+
 
 -- Pacientes
 INSERT INTO patients (user_id, social_work_id) VALUES (3, 1), (4, 4);

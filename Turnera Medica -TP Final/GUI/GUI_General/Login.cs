@@ -102,14 +102,18 @@ namespace Turnera_Medica__TP_Final.GUI
                         int idmedic;
                         int idspeciality;
                         double consultamount;
+                        TimeSpan entryTime;
+                        TimeSpan departureTime;
 
                         using (MySqlDataReader read2 = cmdMedico.ExecuteReader())
                         {
                             if (read2.Read())
                             {
                                 idmedic = Convert.ToInt32(read2["id"]);
-                                idspeciality = Convert.ToInt32(read2["speciality_id"]);                            
+                                idspeciality = Convert.ToInt32(read2["speciality_id"]);
                                 consultamount = Convert.ToDouble(read2["consult_amount"]);
+                                entryTime = (TimeSpan)read2["entry_time"];
+                                departureTime = (TimeSpan)read2["departure_time"];
                             }
                             else
                             {
@@ -137,7 +141,7 @@ namespace Turnera_Medica__TP_Final.GUI
                             }
                         }
 
-                        // Crear objeto del médico y abrir interfaz
+                        // Crear objeto del médico con horarios incluidos
                         Medic usermedic = new Medic(
                             idmedic,
                             dni,
@@ -149,7 +153,9 @@ namespace Turnera_Medica__TP_Final.GUI
                             passwordHash,
                             idspeciality,
                             consultamount,
-                            officeId
+                            officeId,
+                            entryTime,
+                            departureTime
                         );
 
                         M_Start mStartForm = new M_Start(usermedic);
@@ -206,94 +212,7 @@ namespace Turnera_Medica__TP_Final.GUI
             { 
                 conexionDB.Close(); 
             }
-            /*
-            try
-            {
-                // Abro la conexión con la base de datos
-                conexionDB.Open();
-
-                // Guardo los datos escritos por el usuario en los TextBox
-                string email = login_email_user.Text.Trim();
-                string password = login_password_user.Text.Trim();
-
-                // Consulta SQL para buscar un usuario con ese email y contraseña
-                string query = "SELECT * FROM users WHERE email = @Email AND password_hash = @Password";
-
-                // Creo el comando SQL y paso los valores a los parámetros
-                MySqlCommand codigo = new MySqlCommand(query, conexionDB);
-                codigo.Parameters.AddWithValue("@Email", email);
-                codigo.Parameters.AddWithValue("@Password", password);
-
-                // Ejecuto la consulta y guardo el resultado
-                MySqlDataReader read = codigo.ExecuteReader();
-
-                // Si encontró un usuario, entra al if
-                if (read.Read())
-                {
-                    // Leo el rol del usuario (medico o paciente)
-                    string rolUsuario = read["rol"].ToString().Trim();
-
-                    // Si el rol es médico, abre la interfaz del médico
-                    if (rolUsuario == "medico")
-                    {
-                        int userId_m = Convert.ToInt32(read["id"]);
-                        int dni_m = Convert.ToInt32(read["dni"]);
-                        string name_m = read["nombre"].ToString();
-                        string lastName_m = read["apellido"].ToString();
-                        string email_m = read["email"].ToString();
-                        string tel_m = read["numero_tel"].ToString();
-                        string password_m = read["password_hash"].ToString();
-
-                        // Obtener datos de la tabla medicos
-                        string queryMedico = "SELECT * FROM medicos WHERE user_id = @userId";
-                        MySqlCommand cmdMed = new MySqlCommand(queryMedico, conexionDB);
-                        cmdMed.Parameters.AddWithValue("@userId", userId_m);
-                        MySqlDataReader leerMed = cmdMed.ExecuteReader();
-                        if (leerMed.Read())
-                        {
-                            string specialty = leerMed["especialidad"].ToString();
-                            double consultationAmount = Convert.ToDouble(leerMed["monto_consulta"]);
-                            Medico currentUser = new Medico(userId_m, dni_m, name_m, lastName_m, email_m, tel_m, password_m, specialty, consultationAmount, null);
-
-                            // Ahora puedes pasar currentUser a M_Start
-                            M_Start mStartForm = new M_Start(currentUser);
-                            mStartForm.Show();
-                            this.Hide();
-                        }
-                    }
-                    // Si el rol es paciente, abre la interfaz del paciente
-                    else if (rolUsuario == "paciente")
-                    {
-                        MessageBox.Show("Inicio de sesión correcto: Paciente");
-                        P_Start pStartForm = new P_Start();
-                        pStartForm.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        // Si tiene otro rol, muestra un aviso
-                        MessageBox.Show("Rol desconocido. Contacte al administrador.");
-                    }
-                }
-                else
-                {
-                    // Si no encontró usuario, limpia los campos y muestra error
-                    MessageBox.Show("Usuario o contraseña incorrecta.");
-                    login_email_user.Clear();
-                    login_password_user.Clear();
-                }
-            }
-            catch (Exception ex)
-            {
-                // Si hubo un error (por ejemplo, de conexión), lo muestra
-                MessageBox.Show("Error al iniciar sesión: " + ex.Message);
-            }
-            finally
-            {
-                // Cierro la conexión pase lo que pase
-                conexionDB.Close();
-            }
-            */
+            
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)

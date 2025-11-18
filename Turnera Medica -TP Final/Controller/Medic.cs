@@ -17,12 +17,17 @@ namespace Turnera_Medica__TP_Final.Controller
         //Consultorio/lugar donde trabaja
         public int OfficeAssigned { get; set; } //Guarda el ID del consultario, en la tabla que relaciona medico con consultorio
 
-        public Medic (int id, int dni, string name, string lastname, int age,string email, string telnumber, string password, int speciality_id, double consultationamount, int officeassigned) 
+        public TimeSpan entryTime { get; set; }
+        public TimeSpan departureTime { get; set; }
+
+        public Medic (int id, int dni, string name, string lastname, int age,string email, string telnumber, string password, int speciality_id, double consultationamount, int officeassigned, TimeSpan entrytime, TimeSpan departuretime) 
             : base(id, dni, name, lastname, age, email, telnumber, password)
         {
             Speciality_Id = speciality_id;
             ConsultationAmount = consultationamount;
             OfficeAssigned = officeassigned;
+            entryTime = entrytime;
+            departureTime = departuretime;
         }
 
         //Consultar un Turno especifico por fecha
