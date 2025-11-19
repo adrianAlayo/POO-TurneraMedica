@@ -156,6 +156,7 @@
             this.registerM_password_user.Name = "registerM_password_user";
             this.registerM_password_user.Size = new System.Drawing.Size(149, 20);
             this.registerM_password_user.TabIndex = 16;
+            this.registerM_password_user.UseSystemPasswordChar = true;
             this.registerM_password_user.TextChanged += new System.EventHandler(this.registerM_password_user_TextChanged);
             // 
             // label6
@@ -186,6 +187,7 @@
             this.registerM_confirPassword_user.Name = "registerM_confirPassword_user";
             this.registerM_confirPassword_user.Size = new System.Drawing.Size(149, 20);
             this.registerM_confirPassword_user.TabIndex = 28;
+            this.registerM_confirPassword_user.UseSystemPasswordChar = true;
             this.registerM_confirPassword_user.TextChanged += new System.EventHandler(this.registerM_confirPassword_user_TextChanged);
             // 
             // label8
@@ -354,7 +356,6 @@
             this.registerM_office_user.FormattingEnabled = true;
             this.registerM_office_user.Items.AddRange(new object[] {
             "Corrientes 1500",
-            "Corrientes 3200",
             "Carabobo 3000",
             "México 2500",
             "Uruguay 4000",

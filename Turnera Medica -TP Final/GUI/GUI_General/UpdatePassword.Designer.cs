@@ -96,6 +96,7 @@
             this.update_newPass_user.Name = "update_newPass_user";
             this.update_newPass_user.Size = new System.Drawing.Size(245, 20);
             this.update_newPass_user.TabIndex = 6;
+            this.update_newPass_user.UseSystemPasswordChar = true;
             this.update_newPass_user.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // update_confirmPass_user
@@ -105,6 +106,7 @@
             this.update_confirmPass_user.Name = "update_confirmPass_user";
             this.update_confirmPass_user.Size = new System.Drawing.Size(245, 20);
             this.update_confirmPass_user.TabIndex = 7;
+            this.update_confirmPass_user.UseSystemPasswordChar = true;
             this.update_confirmPass_user.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // update_password

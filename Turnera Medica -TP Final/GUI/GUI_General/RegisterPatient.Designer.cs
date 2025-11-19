@@ -96,6 +96,7 @@
             this.registerP_confirPassword_user.Name = "registerP_confirPassword_user";
             this.registerP_confirPassword_user.Size = new System.Drawing.Size(149, 20);
             this.registerP_confirPassword_user.TabIndex = 50;
+            this.registerP_confirPassword_user.UseSystemPasswordChar = true;
             this.registerP_confirPassword_user.TextChanged += new System.EventHandler(this.registerP_confirPassword_user_TextChanged);
             // 
             // label9
@@ -241,6 +242,7 @@
             this.registerP_password_user.Name = "registerP_password_user";
             this.registerP_password_user.Size = new System.Drawing.Size(149, 20);
             this.registerP_password_user.TabIndex = 55;
+            this.registerP_password_user.UseSystemPasswordChar = true;
             this.registerP_password_user.TextChanged += new System.EventHandler(this.registerP_password_user_TextChanged);
             // 
             // label3

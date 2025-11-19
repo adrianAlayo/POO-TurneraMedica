@@ -108,7 +108,7 @@
             this.lnkRegistro.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkRegistro.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.lnkRegistro.LinkColor = System.Drawing.Color.DarkBlue;
-            this.lnkRegistro.Location = new System.Drawing.Point(464, 275);
+            this.lnkRegistro.Location = new System.Drawing.Point(484, 284);
             this.lnkRegistro.Name = "lnkRegistro";
             this.lnkRegistro.Size = new System.Drawing.Size(74, 15);
             this.lnkRegistro.TabIndex = 7;
@@ -120,7 +120,7 @@
             // 
             this.SendLogin.BackColor = System.Drawing.Color.LightGreen;
             this.SendLogin.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SendLogin.Location = new System.Drawing.Point(343, 289);
+            this.SendLogin.Location = new System.Drawing.Point(353, 284);
             this.SendLogin.Name = "SendLogin";
             this.SendLogin.Size = new System.Drawing.Size(91, 40);
             this.SendLogin.TabIndex = 8;

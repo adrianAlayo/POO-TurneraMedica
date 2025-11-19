@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.return_start_M = new System.Windows.Forms.Button();
-            this.M_Shfts_list = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.M_Shfts_list)).BeginInit();
+            this.M_Shifts_list = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.M_Shifts_list)).BeginInit();
             this.SuspendLayout();
             // 
             // return_start_M
@@ -45,26 +45,27 @@
             this.return_start_M.UseVisualStyleBackColor = false;
             this.return_start_M.Click += new System.EventHandler(this.return_start_M_Click);
             // 
-            // M_Shfts_list
+            // M_Shifts_list
             // 
-            this.M_Shfts_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.M_Shfts_list.Location = new System.Drawing.Point(30, 83);
-            this.M_Shfts_list.Name = "M_Shfts_list";
-            this.M_Shfts_list.Size = new System.Drawing.Size(737, 277);
-            this.M_Shfts_list.TabIndex = 1;
-            this.M_Shfts_list.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.M_Shfts_list_CellContentClick);
+            this.M_Shifts_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.M_Shifts_list.Location = new System.Drawing.Point(32, 87);
+            this.M_Shifts_list.Name = "M_Shifts_list";
+            this.M_Shifts_list.ReadOnly = true;
+            this.M_Shifts_list.Size = new System.Drawing.Size(737, 277);
+            this.M_Shifts_list.TabIndex = 2;
+            this.M_Shifts_list.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.M_Shifts_list_CellContentClick);
             // 
             // M_Shifts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.M_Shfts_list);
+            this.Controls.Add(this.M_Shifts_list);
             this.Controls.Add(this.return_start_M);
             this.Name = "M_Shifts";
             this.Text = "Shifts";
             this.Load += new System.EventHandler(this.M_Shifts_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.M_Shfts_list)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.M_Shifts_list)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -72,6 +73,6 @@
         #endregion
 
         private System.Windows.Forms.Button return_start_M;
-        private System.Windows.Forms.DataGridView M_Shfts_list;
+        private System.Windows.Forms.DataGridView M_Shifts_list;
     }
 }

@@ -281,7 +281,7 @@
             this.M_MyInfo_email.Location = new System.Drawing.Point(495, 213);
             this.M_MyInfo_email.Name = "M_MyInfo_email";
             this.M_MyInfo_email.ReadOnly = true;
-            this.M_MyInfo_email.Size = new System.Drawing.Size(162, 20);
+            this.M_MyInfo_email.Size = new System.Drawing.Size(188, 20);
             this.M_MyInfo_email.TabIndex = 25;
             this.M_MyInfo_email.TextChanged += new System.EventHandler(this.M_MyInfo_email_TextChanged);
             // 

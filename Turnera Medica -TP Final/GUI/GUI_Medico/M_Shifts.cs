@@ -31,50 +31,25 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 
         private void M_Shifts_Load(object sender, EventArgs e)
         {
+            usermedic.Shifts();
+            M_Shifts_list.DataSource = usermedic.listTurno;
 
+            // ocultar columnas con objetos
+            M_Shifts_list.Columns["Id"].Visible = false;
+            M_Shifts_list.Columns["Assigned_Doctor"].Visible = false;
+            M_Shifts_list.Columns["PatientAssigned"].Visible = false;
+            M_Shifts_list.Columns["OfficeAssigned"].Visible = false;
+
+            M_Shifts_list.Columns["Date"].HeaderText = "Fecha";
+            M_Shifts_list.Columns["Hour"].HeaderText = "Hora";
+            M_Shifts_list.Columns["Duration"].HeaderText = "Duración";
+            M_Shifts_list.Columns["OriginalPrice"].HeaderText = "Precio";
+            M_Shifts_list.Columns["State"].HeaderText = "Estado";
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void M_Shifts_list_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-        }
-
-        private void M_Shfts_list_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                conexionDB.Open();
-
-                string query = "SELECT * FROM turnos WHERE medico_id = @id";
-                MySqlCommand cmd = new MySqlCommand(query, conexionDB);
-                cmd.Parameters.AddWithValue("@id", 1);
-
-                // Creamos el adaptador y la tabla
-                MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
-                DataTable table = new DataTable();
-
-                // Llenamos la tabla con los datos que trajo el adaptador
-                sda.Fill(table);
-
-                // Enlazamos la tabla al DataGridView
-                M_Shfts_list.DataSource = table;
-
-                // Si querés ajustar el ancho automáticamente
-                M_Shfts_list.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-                if (table.Rows.Count == 0)
-                {
-                    MessageBox.Show("No hay turnos disponibles por el momento.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al mostrar el listado de los turnos: " + ex.Message);
-            }
-            finally
-            {
-                conexionDB.Close();
-            }
         }
     }
 }

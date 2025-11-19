@@ -40,7 +40,55 @@ namespace Turnera_Medica__TP_Final.Controller
         //Consultar todos los turnos
         public override void Shifts()
         {
+            listTurno = new List<Shift>();
 
+            using (MySqlConnection conexionDB = Connection.conexion())
+            {
+                conexionDB.Open();
+
+                string query = @"
+            SELECT 
+                id, shift_date, shift_time, duration, original_price, state,
+                patient_id, office_id
+            FROM shifts
+            WHERE medic_id = @medicid
+            AND state NOT IN ('asistido', 'cancelado')
+            AND shift_date >= CURDATE()
+            ORDER BY shift_date, shift_time
+        ";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexionDB);
+                cmd.Parameters.AddWithValue("@medicid", this.Id);
+
+                using (MySqlDataReader read = cmd.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        int id = Convert.ToInt32(read["id"]);
+                        DateTime date = Convert.ToDateTime(read["shift_date"]);
+                        TimeSpan hour = TimeSpan.Parse(read["shift_time"].ToString());
+                        int duration = Convert.ToInt32(read["duration"]);
+                        double originalPrice = Convert.ToDouble(read["original_price"]);
+
+                        string stateStr = read["state"].ToString();
+                        StateShift stateEnum = (StateShift)Enum.Parse(typeof(StateShift), stateStr);
+
+                        Shift turno = new Shift(
+                            id,
+                            date,
+                            hour,
+                            duration,
+                            originalPrice,
+                            this,   // medico asignado
+                            null,   // paciente (lo podes cargar si queres)
+                            null,   // consultorio
+                            stateEnum
+                        );
+
+                        listTurno.Add(turno);
+                    }
+                }
+            }
         }
 
         //Calcular cuanto recaudo El medico en un rango de una fecha. 

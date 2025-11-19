@@ -73,7 +73,7 @@
             // 
             this.name.AutoSize = true;
             this.name.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name.Location = new System.Drawing.Point(151, 119);
+            this.name.Location = new System.Drawing.Point(151, 145);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(76, 19);
             this.name.TabIndex = 5;
@@ -83,7 +83,7 @@
             // 
             this.last_name.AutoSize = true;
             this.last_name.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.last_name.Location = new System.Drawing.Point(423, 119);
+            this.last_name.Location = new System.Drawing.Point(423, 143);
             this.last_name.Name = "last_name";
             this.last_name.Size = new System.Drawing.Size(77, 19);
             this.last_name.TabIndex = 6;
@@ -93,7 +93,7 @@
             // 
             this.dni.AutoSize = true;
             this.dni.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dni.Location = new System.Drawing.Point(184, 159);
+            this.dni.Location = new System.Drawing.Point(184, 189);
             this.dni.Name = "dni";
             this.dni.Size = new System.Drawing.Size(43, 19);
             this.dni.TabIndex = 7;
@@ -103,7 +103,7 @@
             // 
             this.age.AutoSize = true;
             this.age.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.age.Location = new System.Drawing.Point(445, 159);
+            this.age.Location = new System.Drawing.Point(445, 187);
             this.age.Name = "age";
             this.age.Size = new System.Drawing.Size(55, 19);
             this.age.TabIndex = 8;
@@ -113,7 +113,7 @@
             // 
             this.phone.AutoSize = true;
             this.phone.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phone.Location = new System.Drawing.Point(146, 198);
+            this.phone.Location = new System.Drawing.Point(146, 228);
             this.phone.Name = "phone";
             this.phone.Size = new System.Drawing.Size(81, 19);
             this.phone.TabIndex = 9;
@@ -123,7 +123,7 @@
             // 
             this.email.AutoSize = true;
             this.email.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.email.Location = new System.Drawing.Point(443, 198);
+            this.email.Location = new System.Drawing.Point(443, 228);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(57, 19);
             this.email.TabIndex = 10;
@@ -133,7 +133,7 @@
             // 
             this.social_work.AutoSize = true;
             this.social_work.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.social_work.Location = new System.Drawing.Point(124, 238);
+            this.social_work.Location = new System.Drawing.Point(124, 272);
             this.social_work.Name = "social_work";
             this.social_work.Size = new System.Drawing.Size(103, 19);
             this.social_work.TabIndex = 11;
@@ -141,7 +141,7 @@
             // 
             // P_MyInfo_name
             // 
-            this.P_MyInfo_name.Location = new System.Drawing.Point(233, 118);
+            this.P_MyInfo_name.Location = new System.Drawing.Point(233, 144);
             this.P_MyInfo_name.Name = "P_MyInfo_name";
             this.P_MyInfo_name.Size = new System.Drawing.Size(141, 20);
             this.P_MyInfo_name.TabIndex = 12;
@@ -149,7 +149,7 @@
             // 
             // P_MyInfo_dni
             // 
-            this.P_MyInfo_dni.Location = new System.Drawing.Point(233, 160);
+            this.P_MyInfo_dni.Location = new System.Drawing.Point(233, 188);
             this.P_MyInfo_dni.Name = "P_MyInfo_dni";
             this.P_MyInfo_dni.Size = new System.Drawing.Size(141, 20);
             this.P_MyInfo_dni.TabIndex = 13;
@@ -157,7 +157,7 @@
             // 
             // P_MyInfo_phone
             // 
-            this.P_MyInfo_phone.Location = new System.Drawing.Point(233, 199);
+            this.P_MyInfo_phone.Location = new System.Drawing.Point(233, 227);
             this.P_MyInfo_phone.Name = "P_MyInfo_phone";
             this.P_MyInfo_phone.Size = new System.Drawing.Size(141, 20);
             this.P_MyInfo_phone.TabIndex = 14;
@@ -165,7 +165,7 @@
             // 
             // P_MyInfo_social_work
             // 
-            this.P_MyInfo_social_work.Location = new System.Drawing.Point(233, 239);
+            this.P_MyInfo_social_work.Location = new System.Drawing.Point(233, 271);
             this.P_MyInfo_social_work.Name = "P_MyInfo_social_work";
             this.P_MyInfo_social_work.Size = new System.Drawing.Size(141, 20);
             this.P_MyInfo_social_work.TabIndex = 15;
@@ -173,7 +173,7 @@
             // 
             // P_MyInfo_last_name
             // 
-            this.P_MyInfo_last_name.Location = new System.Drawing.Point(506, 118);
+            this.P_MyInfo_last_name.Location = new System.Drawing.Point(506, 142);
             this.P_MyInfo_last_name.Name = "P_MyInfo_last_name";
             this.P_MyInfo_last_name.Size = new System.Drawing.Size(141, 20);
             this.P_MyInfo_last_name.TabIndex = 16;
@@ -181,7 +181,7 @@
             // 
             // P_MyInfo_age
             // 
-            this.P_MyInfo_age.Location = new System.Drawing.Point(506, 158);
+            this.P_MyInfo_age.Location = new System.Drawing.Point(506, 186);
             this.P_MyInfo_age.Name = "P_MyInfo_age";
             this.P_MyInfo_age.Size = new System.Drawing.Size(141, 20);
             this.P_MyInfo_age.TabIndex = 17;
@@ -189,9 +189,9 @@
             // 
             // P_MyInfo_email
             // 
-            this.P_MyInfo_email.Location = new System.Drawing.Point(506, 199);
+            this.P_MyInfo_email.Location = new System.Drawing.Point(506, 227);
             this.P_MyInfo_email.Name = "P_MyInfo_email";
-            this.P_MyInfo_email.Size = new System.Drawing.Size(141, 20);
+            this.P_MyInfo_email.Size = new System.Drawing.Size(173, 20);
             this.P_MyInfo_email.TabIndex = 18;
             this.P_MyInfo_email.TextChanged += new System.EventHandler(this.P_MyInfo_email_TextChanged);
             // 
