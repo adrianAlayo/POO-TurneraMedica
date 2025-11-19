@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,17 +21,92 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
             InitializeComponent();
             this.userpatient = userpatient;
         }
-
-        private void get_info_P_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }        
+        MySqlConnection conexionDB = Connection.conexion();
+        
         
         private void return_start_P_Click(object sender, EventArgs e)
         {
             P_Start p_start_form = new P_Start(userpatient);
             p_start_form.Show(); //abre de vuelta el form del menu para el paciente
             this.Hide(); // quitamos el form de ver mi informacion
+        }
+
+
+        private void P_MyInfo_name_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void P_MyInfo_dni_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void P_MyInfo_phone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void P_MyInfo_social_work_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void P_MyInfo_last_name_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void P_MyInfo_age_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void P_MyInfo_email_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void P_MyInfo_Load_1(object sender, EventArgs e)
+        {
+            conexionDB.Open();
+
+            // Datos directos
+            P_MyInfo_name.Text = userpatient.Name;
+            P_MyInfo_last_name.Text = userpatient.LastName;
+            P_MyInfo_age.Text = userpatient.Age.ToString();
+            P_MyInfo_dni.Text = userpatient.Dni.ToString();
+            P_MyInfo_phone.Text = userpatient.TelNumber;
+            P_MyInfo_email.Text = userpatient.Email;
+
+            
+            string querySocial = "SELECT name FROM social_works WHERE id = @id";
+
+            MySqlCommand cmdSocial = new MySqlCommand(querySocial, conexionDB);
+            cmdSocial.Parameters.AddWithValue("@id", userpatient.Social_work_id);
+
+            string socialName = "";
+
+            using (MySqlDataReader read1 = cmdSocial.ExecuteReader())
+            {
+                if (read1.Read())
+                {
+                    socialName = read1["name"].ToString();
+                }
+                else
+                {
+                    socialName = "Sin obra social";
+                }
+            }
+
+            P_MyInfo_social_work.Text = socialName;
+
+            conexionDB.Close();
         }
     }
 }

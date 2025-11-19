@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -49,9 +50,81 @@ namespace Turnera_Medica__TP_Final.Controller
         }
 
         //Sirve para que el medico agrega una obra social a su lista de Obras Sociales.
-        public void AddSocialWork(SocialWork Os)
+        public bool AddSocialWork(string socialWorkName)
         {
+            if (string.IsNullOrWhiteSpace(socialWorkName))
+                throw new Exception("El nombre de la obra social no puede estar vacío.");
 
+            using (MySqlConnection conexionDB = Connection.conexion())
+            {
+                conexionDB.Open();
+
+                // Queries
+                string queryAddSocial = "INSERT INTO social_works (name) VALUES (@namesocial)";
+                string queryGetSocial = "SELECT id FROM social_works WHERE name = @namesocial";
+                string queryCheckRel = "SELECT COUNT(*) FROM medic_social_work WHERE medic_id = @idmedic AND social_work_id = @idsocial";
+                string queryAddRel = "INSERT INTO medic_social_work (medic_id, social_work_id) VALUES (@idmedic, @idsocial)";
+
+                int idsocial = 0;
+
+                // 1) Intentar insertar la obra social (ignorar si ya existe)
+                try
+                {
+                    MySqlCommand cmdAdd = new MySqlCommand(queryAddSocial, conexionDB);
+                    cmdAdd.Parameters.AddWithValue("@namesocial", socialWorkName.Trim());
+                    cmdAdd.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    if (ex.Number != 1062) // Duplicado → ignorar
+                        throw;
+                }
+
+                // 2) Obtener el ID de la obra social
+                MySqlCommand cmdGet = new MySqlCommand(queryGetSocial, conexionDB);
+                cmdGet.Parameters.AddWithValue("@namesocial", socialWorkName.Trim());
+
+                using (MySqlDataReader read = cmdGet.ExecuteReader())
+                {
+                    if (read.Read())
+                    {
+                        idsocial = Convert.ToInt32(read["id"]);
+                    }
+                }
+
+                if (idsocial == 0)
+                    throw new Exception("No se pudo obtener el ID de la obra social.");
+
+                // 3) Verificar si ya está asociada al médico
+                MySqlCommand cmdCheck = new MySqlCommand(queryCheckRel, conexionDB);
+                cmdCheck.Parameters.AddWithValue("@idmedic", this.Id);
+                cmdCheck.Parameters.AddWithValue("@idsocial", idsocial);
+
+                int existe = Convert.ToInt32(cmdCheck.ExecuteScalar());
+
+                if (existe > 0)
+                    throw new Exception("Este médico ya tiene asociada esta obra social.");
+
+                // 4) Insertar relación medico–obra social
+                MySqlCommand cmdAddRel = new MySqlCommand(queryAddRel, conexionDB);
+                cmdAddRel.Parameters.AddWithValue("@idmedic", this.Id);
+                cmdAddRel.Parameters.AddWithValue("@idsocial", idsocial);
+
+                int filas = cmdAddRel.ExecuteNonQuery();
+
+                // IMPORTANTE ✔ actualizamos la lista interna del médico (si la usás después)
+                if (filas > 0)
+                {
+                    if (this.listObraSocial == null)
+                        this.listObraSocial = new List<SocialWork>();
+
+                    this.listObraSocial.Add(new SocialWork(idsocial, socialWorkName.Trim()));
+
+                    return true;
+                }
+
+                return false;
+            }
         }
         //Cuando el usuario elegiga que quiere hacer el turno con este medico, a el ese turno especifico se le actualizara el estado del turno
         public void ActualizarTurnoPorUsuario()

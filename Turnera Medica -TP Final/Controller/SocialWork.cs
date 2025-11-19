@@ -10,13 +10,11 @@ namespace Turnera_Medica__TP_Final.Controller
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public double Discount { get; set; }
 
-        public SocialWork(int id, string name, double discount)
+        public SocialWork(int id, string name)
         {
             Id = id;
             Name = name;
-            Discount = discount;
         }
 
         public double ApplyDiscount(decimal originalAmount)
