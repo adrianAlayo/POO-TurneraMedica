@@ -34,101 +34,72 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
             p_available_shiftform_form.Show(); //abre de vuelta el form del formulario para ver los turnos disponibles
             this.Hide(); // quitamos el form de ver turnos disponibles 
         }
-
-        private void loadAvailableShifts() 
+        private int GetOfficeId(string officeName)
         {
-            try
+            using (var conexionDB = Connection.conexion())
             {
                 conexionDB.Open();
+                string query = "SELECT id FROM offices WHERE ubication = @o";
+                MySqlCommand cmd = new MySqlCommand(query, conexionDB);
+                cmd.Parameters.AddWithValue("@o", officeName);
 
-                int idoffice = -1;
-                int idmedic = -1;
-                int idspeciality = -1;
-
-                // 1) Buscar ID de la oficina
-                string sqlOffice = "SELECT id FROM offices WHERE ubication = @office";
-                MySqlCommand cmdOffice = new MySqlCommand(sqlOffice, conexionDB);
-                cmdOffice.Parameters.AddWithValue("@office", office);
-
-                var r1 = cmdOffice.ExecuteReader();
-                if (r1.Read())
-                    idoffice = Convert.ToInt32(r1["id"]);
-                r1.Close();
-
-                // 2) Buscar ID de la especialidad
-                string sqlSpec = "SELECT id FROM specialities WHERE name = @spec";
-                MySqlCommand cmdSpec = new MySqlCommand(sqlSpec, conexionDB);
-                cmdSpec.Parameters.AddWithValue("@spec", speciality);
-
-                var r2 = cmdSpec.ExecuteReader();
-                if (r2.Read())
-                    idspeciality = Convert.ToInt32(r2["id"]);
-                r2.Close();
-
-                // 3) Buscar ID del médico segun especialidad y oficina asignada
-                string sqlMedic =
-                    "SELECT m.id " +
-                    "FROM medics m " +
-                    "INNER JOIN assigned_doctors_office ado ON ado.medic_id = m.id " +
-                    "WHERE m.speciality_id = @spec AND ado.office_id = @office";
-
-                MySqlCommand cmdMedic = new MySqlCommand(sqlMedic, conexionDB);
-                cmdMedic.Parameters.AddWithValue("@spec", idspeciality);
-                cmdMedic.Parameters.AddWithValue("@office", idoffice);
-
-                var r3 = cmdMedic.ExecuteReader();
-                if (r3.Read())
-                    idmedic = Convert.ToInt32(r3["id"]);
-                r3.Close();
-
-                // 4) Cargar turnos disponibles (JOIN correcto con users)
-                // 4) Buscar turnos disponibles con JOIN para obtener nombre del médico
-                string searchshifts =
-                    "SELECT " +
-                    "s.id, " +
-                    "CONCAT(u.name, ' ', u.last_name) AS medico, " +
-                    "s.shift_date, " +
-                    "s.shift_time, " +
-                    "s.duration, " +
-                    "s.state " +
-                    "FROM shifts s " +
-                    "INNER JOIN medics m ON s.medic_id = m.id " +
-                    "INNER JOIN users u ON m.user_id = u.id " +
-                    "WHERE s.medic_id = @idmedic " +
-                    "AND s.patient_id IS NULL " +
-                    "AND s.shift_date = @shiftdate " +
-                    "AND s.state = 'libre'";
-
-
-                MySqlCommand cmdshifts = new MySqlCommand(searchshifts, conexionDB);
-                cmdshifts.Parameters.AddWithValue("@idmedic", idmedic);
-                cmdshifts.Parameters.AddWithValue("@shiftdate", dateshift);
-
-                MySqlDataAdapter adaptador = new MySqlDataAdapter(cmdshifts);
-                DataTable dt = new DataTable();
-                adaptador.Fill(dt);
-
-                dataGridView_shifts_result.DataSource = dt;
-
-                // Ocultar columnas internas
-                dataGridView_shifts_result.Columns["id"].Visible = false;
-
-                // Renombrar columnas visibles
-                dataGridView_shifts_result.Columns["medico"].HeaderText = "Médico";
-                dataGridView_shifts_result.Columns["shift_date"].HeaderText = "Fecha";
-                dataGridView_shifts_result.Columns["shift_time"].HeaderText = "Hora";
-                dataGridView_shifts_result.Columns["duration"].HeaderText = "Duración";
-                dataGridView_shifts_result.Columns["state"].HeaderText = "Estado";
-
-                dataGridView_shifts_result.DataSource = dt;
-
-                conexionDB.Close();
+                var read = cmd.ExecuteReader();
+                if (read.Read()) return Convert.ToInt32(read["id"]);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al cargar turnos: " + ex.Message);
-            }
+            return -1;
         }
+
+        private int GetSpecialityId(string speciality)
+        {
+            using (var conexionDB = Connection.conexion())
+            {
+                conexionDB.Open();
+                string query = "SELECT id FROM specialities WHERE name = @speciality_name";
+                MySqlCommand cmd = new MySqlCommand(query, conexionDB);
+                cmd.Parameters.AddWithValue("@speciality_name", speciality);
+
+                var read = cmd.ExecuteReader();
+                if (read.Read()) return Convert.ToInt32(read["id"]);
+            }
+            return -1;
+        }
+
+
+        private void loadAvailableShifts()
+        {
+            DateTime d = DateTime.Parse(dateshift);
+
+            // Obtener IDs
+            int officeId = GetOfficeId(office);
+            int specialityId = GetSpecialityId(speciality);
+
+            List<Shift> shifts = userpatient.AvailableShifts(d, officeId, specialityId);
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ID");
+            dt.Columns.Add("Médico");
+            dt.Columns.Add("Fecha");
+            dt.Columns.Add("Hora");
+            dt.Columns.Add("Duración");
+            dt.Columns.Add("Estado");
+
+            foreach (var shift in shifts)
+            {
+                dt.Rows.Add(
+                    shift.Id,
+                    $"{shift.Assigned_Doctor.Name} {shift.Assigned_Doctor.LastName}",
+                    shift.Date.ToShortDateString(),
+                    shift.Hour.ToString(@"hh\:mm"),
+                    shift.Duration,
+                    shift.State.ToString()
+                );
+            }
+
+            dataGridView_shifts_result.DataSource = dt;
+            dataGridView_shifts_result.Columns["ID"].Visible = false;
+        }
+
+
 
         private void P_AvailableShifts_Load(object sender, EventArgs e)
         {
@@ -148,39 +119,23 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
                 return;
             }
 
-            int shiftId = Convert.ToInt32(dataGridView_shifts_result.SelectedRows[0].Cells["id"].Value);
+            int shiftId = Convert.ToInt32(
+                dataGridView_shifts_result.SelectedRows[0].Cells["ID"].Value
+            );
 
-            try
+            bool ok = userpatient.RequestAppointment(shiftId);
+
+            if (ok)
             {
-                conexionDB.Open();
-
-                string sqlUpdate =
-                    "UPDATE shifts " +
-                    "SET state = 'programado', patient_id = @pid " +
-                    "WHERE id = @sid AND state = 'libre' AND patient_id IS NULL";
-
-                MySqlCommand cmd = new MySqlCommand(sqlUpdate, conexionDB);
-                cmd.Parameters.AddWithValue("@pid", userpatient.Id);
-                cmd.Parameters.AddWithValue("@sid", shiftId);
-
-                int affected = cmd.ExecuteNonQuery();
-
-                conexionDB.Close();
-
-                if (affected > 0)
-                {
-                    MessageBox.Show("Turno reservado con éxito.");
-                    loadAvailableShifts();
-                }
-                else
-                {
-                    MessageBox.Show("El turno ya no está disponible.");
-                }
+                MessageBox.Show("Turno reservado con éxito.");
+                loadAvailableShifts();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error al reservar turno: " + ex.Message);
+                MessageBox.Show("El turno ya no está disponible.");
             }
         }
+
+
     }
 }

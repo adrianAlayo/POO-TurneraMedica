@@ -16,12 +16,12 @@ namespace Turnera_Medica__TP_Final.Controller
         public double OriginalPrice { get; set; }
         public Medic Assigned_Doctor { get; set; }
         public Patient PatientAssigned { get; set; } 
-        public Consultation OfficeAssigned { get; set; }
+        public Office OfficeAssigned { get; set; }
         public StateShift State { get; set; } 
 
 
 
-        public Shift (int id, DateTime date, TimeSpan hour, int duration, double originalprice, Medic assigned_doctor, Patient patientassigned, Consultation officeassigned, StateShift state)
+        public Shift (int id, DateTime date, TimeSpan hour, int duration, double originalprice, Medic assigned_doctor, Patient patientassigned, Office officeassigned, StateShift state)
         {
             Id = id;
             Date = date;
@@ -36,7 +36,7 @@ namespace Turnera_Medica__TP_Final.Controller
 
         public bool ValidateAvailability()
         {
-            return true;
+            return true; 
         }
 
         public void CalculateCost()

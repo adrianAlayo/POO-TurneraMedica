@@ -93,7 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Connection.cs" />
-    <Compile Include="Controller\Consultation.cs" />
+    <Compile Include="Controller\Office.cs" />
     <Compile Include="Controller\Medic.cs" />
     <Compile Include="Controller\SocialWork.cs" />
     <Compile Include="Controller\Patient.cs" />
