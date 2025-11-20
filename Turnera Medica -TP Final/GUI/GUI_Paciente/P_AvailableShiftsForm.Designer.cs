@@ -171,7 +171,11 @@
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.ReturnPreRegister);
             this.Controls.Add(this.lblTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "P_AvailableShiftsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario Turnos Disponibles";
             this.Load += new System.EventHandler(this.P_AvailableShiftsForm_Load);
             this.ResumeLayout(false);

@@ -95,7 +95,11 @@
             this.Controls.Add(this.take_turn_P);
             this.Controls.Add(this.dataGridView_shifts_result);
             this.Controls.Add(this.return_start_P);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "P_AvailableShifts";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Turnos Disponibles";
             this.Load += new System.EventHandler(this.P_AvailableShifts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_shifts_result)).EndInit();

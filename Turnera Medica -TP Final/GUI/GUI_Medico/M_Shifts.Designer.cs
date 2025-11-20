@@ -75,7 +75,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.M_Shifts_list);
             this.Controls.Add(this.return_start_M);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "M_Shifts";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mis Turnos";
             this.Load += new System.EventHandler(this.M_Shifts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.M_Shifts_list)).EndInit();

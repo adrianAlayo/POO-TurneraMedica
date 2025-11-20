@@ -166,7 +166,11 @@
             this.Controls.Add(this.SendLogin);
             this.Controls.Add(this.GetShifts);
             this.Controls.Add(this.lblTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "P_Start";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú Paciente";
             this.Load += new System.EventHandler(this.P_Start_Load);
             this.ResumeLayout(false);

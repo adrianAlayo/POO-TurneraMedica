@@ -167,7 +167,11 @@
             this.Controls.Add(this.GetShift);
             this.Controls.Add(this.GetInfo);
             this.Controls.Add(this.GetShifts);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "M_Start";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú Medico";
             this.Load += new System.EventHandler(this.M_Start_Load);
             this.ResumeLayout(false);

@@ -356,7 +356,11 @@
             this.Controls.Add(this.name);
             this.Controls.Add(this.return_start_M);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "M_MyInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mi Informacion";
             this.Load += new System.EventHandler(this.M_MyInfo_Load);
             this.ResumeLayout(false);

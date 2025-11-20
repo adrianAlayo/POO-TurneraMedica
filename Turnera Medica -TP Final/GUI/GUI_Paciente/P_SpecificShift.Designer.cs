@@ -105,7 +105,11 @@
             this.Controls.Add(this.selectDate);
             this.Controls.Add(this.P_SpecificShift_list);
             this.Controls.Add(this.return_start_P);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "P_SpecificShift";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Turno Especifico";
             this.Load += new System.EventHandler(this.P_SpecificShift_Load);
             ((System.ComponentModel.ISupportInitialize)(this.P_SpecificShift_list)).EndInit();

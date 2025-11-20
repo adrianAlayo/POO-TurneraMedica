@@ -101,7 +101,11 @@
             this.Controls.Add(this.socialwork_name_user);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "M_AddSocialWork";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddSocialWork";
             this.Load += new System.EventHandler(this.M_AddSocialWork_Load);
             this.ResumeLayout(false);
