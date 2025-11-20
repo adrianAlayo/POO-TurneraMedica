@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,15 +24,28 @@ namespace Turnera_Medica__TP_Final.Controller
             Assigned_Doctors = assigned_doctors;
         }
 
-        public bool CheckAvailability(DateTime date, TimeSpan hour)
+        public void AssignDoctor(Medic medic, TimeSpan open_from, TimeSpan close_after, MySqlConnection conexionDB)
         {
-            return true;
+            // Asegurar lista interna
+            if (Assigned_Doctors == null)
+                Assigned_Doctors = new List<Medic>();
+
+            Assigned_Doctors.Add(medic);
+
+            string query = "INSERT INTO assigned_doctors_office (medic_id, office_id, open_from, close_after) VALUES (@medic, @office, @open, @close)";
+
+            using (MySqlCommand cmd = new MySqlCommand(query, conexionDB))
+            {
+                cmd.Parameters.AddWithValue("@medic", medic.Id);
+                cmd.Parameters.AddWithValue("@office", this.Id);
+                cmd.Parameters.AddWithValue("@open", open_from);
+                cmd.Parameters.AddWithValue("@close", close_after);
+
+                cmd.ExecuteNonQuery();
+            }
         }
 
-        public void AssignDoctor(Medic m)
-        {
 
-        }
 
     }
 }

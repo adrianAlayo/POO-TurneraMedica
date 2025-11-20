@@ -137,13 +137,37 @@ namespace Turnera_Medica__TP_Final.GUI
                 read2.Close();
 
                 // Insertar consultorio asignado (simplificado)
-                string insertConsultation = "INSERT INTO assigned_doctors_office (medic_id, office_id, open_from, close_after) VALUES (@medic_id, @officeId, @open_from, @close_after)";
-                MySqlCommand cmdConsul = new MySqlCommand(insertConsultation, conexionDB);
-                cmdConsul.Parameters.AddWithValue("@medic_id", medicId);
-                cmdConsul.Parameters.AddWithValue("@officeId", officeId);
-                cmdConsul.Parameters.AddWithValue("@open_from", timeEntry);
-                cmdConsul.Parameters.AddWithValue("@close_after", timeDeparture);
-                cmdConsul.ExecuteNonQuery();
+                Medic newMedic = new Medic(
+                    medicId,
+                    userId,
+                    name,
+                    last_name,
+                    age,
+                    email,
+                    telephone_number,
+                    "",
+                    specialityId,
+                    Convert.ToDouble(consult_amount),
+                    officeId,
+                    TimeSpan.Parse(timeEntry),
+                    TimeSpan.Parse(timeDeparture)
+                );
+
+                Office office = new Office(
+                    officeId,
+                    offices,
+                    TimeSpan.Zero,
+                    TimeSpan.Zero,
+                    new List<Medic>()
+                );
+
+                office.AssignDoctor(
+                    newMedic,
+                    TimeSpan.Parse(timeEntry),
+                    TimeSpan.Parse(timeDeparture),
+                    conexionDB
+                );
+
 
                 // Insertar obra social (si no existe la crea)
                 string getObra = "SELECT id FROM social_works WHERE name = @obra LIMIT 1";
