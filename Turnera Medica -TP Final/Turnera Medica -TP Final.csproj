@@ -99,7 +99,6 @@
     <Compile Include="Controller\Patient.cs" />
     <Compile Include="Controller\Shift.cs" />
     <Compile Include="Controller\User.cs" />
-    <Compile Include="Controller\userLogin.cs" />
     <Compile Include="Controller\Utils.cs" />
     <Compile Include="GUI\GUI_Medico\M_AddSocialWork.cs">
       <SubType>Form</SubType>

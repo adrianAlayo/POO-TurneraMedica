@@ -8,18 +8,13 @@ namespace Turnera_Medica__TP_Final.Controller
 {
     public class SocialWork
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public int Id { get; set; } // guarda el id de la obra social
+        public string Name { get; set; } // guarda el nombre de la obra social
 
         public SocialWork(int id, string name)
         {
             Id = id;
             Name = name;
-        }
-
-        public double ApplyDiscount(decimal originalAmount)
-        {
-            return 0;
         }
     }
 }

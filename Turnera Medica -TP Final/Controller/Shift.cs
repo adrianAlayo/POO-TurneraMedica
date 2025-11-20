@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace Turnera_Medica__TP_Final.Controller
 {
-    public enum StateShift { programado, asistido, libre, cancelado }
+    public enum StateShift { programado, asistido, libre, cancelado } // creamos la lista de estados que puede tener el turno
     public class Shift
     {
-        public int Id { get; set; }
-        public DateTime Date { get; set; }
-        public TimeSpan Hour { get; set; }
-        public int Duration { get; set; }
-        public double OriginalPrice { get; set; }
-        public Medic Assigned_Doctor { get; set; }
-        public Patient PatientAssigned { get; set; } 
-        public Office OfficeAssigned { get; set; }
-        public StateShift State { get; set; } 
+        public int Id { get; set; } // guarda el id del turno
+        public DateTime Date { get; set; } // guarda la fecha del turno
+        public TimeSpan Hour { get; set; } // guarda la hora del turno
+        public int Duration { get; set; } // guarda cuanto tiempo dura el turno
+        public double OriginalPrice { get; set; } // guarda el precio del turno
+        public Medic Assigned_Doctor { get; set; } // guarda a que doctor esta asignado este turno
+        public Patient PatientAssigned { get; set; } // guarda a que paciente esta asignado este turno (si esta null es porque esta libre el turno)
+        public Office OfficeAssigned { get; set; } // guarda en que consultorio se realizara este turno
+        public StateShift State { get; set; } // guarda cual es el estado del turno
 
 
 
@@ -33,17 +33,5 @@ namespace Turnera_Medica__TP_Final.Controller
             OfficeAssigned = officeassigned;
             State = state;
         }
-
-        public bool ValidateAvailability()
-        {
-            return true; 
-        }
-
-        public void CalculateCost()
-        {
-
-        }
-
-
     }
 }
