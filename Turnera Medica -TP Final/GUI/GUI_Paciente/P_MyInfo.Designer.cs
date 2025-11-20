@@ -49,10 +49,10 @@
             // return_start_P
             // 
             this.return_start_P.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.return_start_P.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.return_start_P.Location = new System.Drawing.Point(325, 398);
+            this.return_start_P.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.return_start_P.Location = new System.Drawing.Point(365, 382);
             this.return_start_P.Name = "return_start_P";
-            this.return_start_P.Size = new System.Drawing.Size(150, 40);
+            this.return_start_P.Size = new System.Drawing.Size(110, 35);
             this.return_start_P.TabIndex = 0;
             this.return_start_P.Text = "Volver";
             this.return_start_P.UseVisualStyleBackColor = false;
@@ -73,7 +73,7 @@
             // 
             this.name.AutoSize = true;
             this.name.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name.Location = new System.Drawing.Point(151, 145);
+            this.name.Location = new System.Drawing.Point(128, 145);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(76, 19);
             this.name.TabIndex = 5;
@@ -93,7 +93,7 @@
             // 
             this.dni.AutoSize = true;
             this.dni.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dni.Location = new System.Drawing.Point(184, 189);
+            this.dni.Location = new System.Drawing.Point(161, 189);
             this.dni.Name = "dni";
             this.dni.Size = new System.Drawing.Size(43, 19);
             this.dni.TabIndex = 7;
@@ -113,7 +113,7 @@
             // 
             this.phone.AutoSize = true;
             this.phone.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phone.Location = new System.Drawing.Point(146, 228);
+            this.phone.Location = new System.Drawing.Point(123, 228);
             this.phone.Name = "phone";
             this.phone.Size = new System.Drawing.Size(81, 19);
             this.phone.TabIndex = 9;
@@ -133,7 +133,7 @@
             // 
             this.social_work.AutoSize = true;
             this.social_work.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.social_work.Location = new System.Drawing.Point(124, 272);
+            this.social_work.Location = new System.Drawing.Point(101, 272);
             this.social_work.Name = "social_work";
             this.social_work.Size = new System.Drawing.Size(103, 19);
             this.social_work.TabIndex = 11;
@@ -141,57 +141,64 @@
             // 
             // P_MyInfo_name
             // 
-            this.P_MyInfo_name.Location = new System.Drawing.Point(233, 144);
+            this.P_MyInfo_name.Font = new System.Drawing.Font("Arial", 9F);
+            this.P_MyInfo_name.Location = new System.Drawing.Point(210, 144);
             this.P_MyInfo_name.Name = "P_MyInfo_name";
-            this.P_MyInfo_name.Size = new System.Drawing.Size(141, 20);
+            this.P_MyInfo_name.Size = new System.Drawing.Size(188, 21);
             this.P_MyInfo_name.TabIndex = 12;
             this.P_MyInfo_name.TextChanged += new System.EventHandler(this.P_MyInfo_name_TextChanged);
             // 
             // P_MyInfo_dni
             // 
-            this.P_MyInfo_dni.Location = new System.Drawing.Point(233, 188);
+            this.P_MyInfo_dni.Font = new System.Drawing.Font("Arial", 9F);
+            this.P_MyInfo_dni.Location = new System.Drawing.Point(210, 188);
             this.P_MyInfo_dni.Name = "P_MyInfo_dni";
-            this.P_MyInfo_dni.Size = new System.Drawing.Size(141, 20);
+            this.P_MyInfo_dni.Size = new System.Drawing.Size(188, 21);
             this.P_MyInfo_dni.TabIndex = 13;
             this.P_MyInfo_dni.TextChanged += new System.EventHandler(this.P_MyInfo_dni_TextChanged);
             // 
             // P_MyInfo_phone
             // 
-            this.P_MyInfo_phone.Location = new System.Drawing.Point(233, 227);
+            this.P_MyInfo_phone.Font = new System.Drawing.Font("Arial", 9F);
+            this.P_MyInfo_phone.Location = new System.Drawing.Point(210, 227);
             this.P_MyInfo_phone.Name = "P_MyInfo_phone";
-            this.P_MyInfo_phone.Size = new System.Drawing.Size(141, 20);
+            this.P_MyInfo_phone.Size = new System.Drawing.Size(188, 21);
             this.P_MyInfo_phone.TabIndex = 14;
             this.P_MyInfo_phone.TextChanged += new System.EventHandler(this.P_MyInfo_phone_TextChanged);
             // 
             // P_MyInfo_social_work
             // 
-            this.P_MyInfo_social_work.Location = new System.Drawing.Point(233, 271);
+            this.P_MyInfo_social_work.Font = new System.Drawing.Font("Arial", 9F);
+            this.P_MyInfo_social_work.Location = new System.Drawing.Point(210, 273);
             this.P_MyInfo_social_work.Name = "P_MyInfo_social_work";
-            this.P_MyInfo_social_work.Size = new System.Drawing.Size(141, 20);
+            this.P_MyInfo_social_work.Size = new System.Drawing.Size(188, 21);
             this.P_MyInfo_social_work.TabIndex = 15;
             this.P_MyInfo_social_work.TextChanged += new System.EventHandler(this.P_MyInfo_social_work_TextChanged);
             // 
             // P_MyInfo_last_name
             // 
+            this.P_MyInfo_last_name.Font = new System.Drawing.Font("Arial", 9F);
             this.P_MyInfo_last_name.Location = new System.Drawing.Point(506, 142);
             this.P_MyInfo_last_name.Name = "P_MyInfo_last_name";
-            this.P_MyInfo_last_name.Size = new System.Drawing.Size(141, 20);
+            this.P_MyInfo_last_name.Size = new System.Drawing.Size(188, 21);
             this.P_MyInfo_last_name.TabIndex = 16;
             this.P_MyInfo_last_name.TextChanged += new System.EventHandler(this.P_MyInfo_last_name_TextChanged);
             // 
             // P_MyInfo_age
             // 
+            this.P_MyInfo_age.Font = new System.Drawing.Font("Arial", 9F);
             this.P_MyInfo_age.Location = new System.Drawing.Point(506, 186);
             this.P_MyInfo_age.Name = "P_MyInfo_age";
-            this.P_MyInfo_age.Size = new System.Drawing.Size(141, 20);
+            this.P_MyInfo_age.Size = new System.Drawing.Size(188, 21);
             this.P_MyInfo_age.TabIndex = 17;
             this.P_MyInfo_age.TextChanged += new System.EventHandler(this.P_MyInfo_age_TextChanged);
             // 
             // P_MyInfo_email
             // 
+            this.P_MyInfo_email.Font = new System.Drawing.Font("Arial", 9F);
             this.P_MyInfo_email.Location = new System.Drawing.Point(506, 227);
             this.P_MyInfo_email.Name = "P_MyInfo_email";
-            this.P_MyInfo_email.Size = new System.Drawing.Size(173, 20);
+            this.P_MyInfo_email.Size = new System.Drawing.Size(188, 21);
             this.P_MyInfo_email.TabIndex = 18;
             this.P_MyInfo_email.TextChanged += new System.EventHandler(this.P_MyInfo_email_TextChanged);
             // 
@@ -199,6 +206,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LimeGreen;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.P_MyInfo_email);
             this.Controls.Add(this.P_MyInfo_age);
@@ -217,7 +225,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.return_start_P);
             this.Name = "P_MyInfo";
-            this.Text = "P_MyInfo";
+            this.Text = "Mi Informacion";
             this.Load += new System.EventHandler(this.P_MyInfo_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();

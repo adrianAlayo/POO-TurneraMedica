@@ -30,16 +30,17 @@
         {
             this.return_start_M = new System.Windows.Forms.Button();
             this.M_Shifts_list = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.M_Shifts_list)).BeginInit();
             this.SuspendLayout();
             // 
             // return_start_M
             // 
             this.return_start_M.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.return_start_M.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.return_start_M.Location = new System.Drawing.Point(326, 398);
+            this.return_start_M.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.return_start_M.Location = new System.Drawing.Point(350, 394);
             this.return_start_M.Name = "return_start_M";
-            this.return_start_M.Size = new System.Drawing.Size(150, 40);
+            this.return_start_M.Size = new System.Drawing.Size(110, 35);
             this.return_start_M.TabIndex = 0;
             this.return_start_M.Text = "Volver";
             this.return_start_M.UseVisualStyleBackColor = false;
@@ -48,25 +49,38 @@
             // M_Shifts_list
             // 
             this.M_Shifts_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.M_Shifts_list.Location = new System.Drawing.Point(74, 72);
+            this.M_Shifts_list.Location = new System.Drawing.Point(68, 82);
             this.M_Shifts_list.Name = "M_Shifts_list";
             this.M_Shifts_list.ReadOnly = true;
             this.M_Shifts_list.Size = new System.Drawing.Size(660, 277);
             this.M_Shifts_list.TabIndex = 2;
             this.M_Shifts_list.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.M_Shifts_list_CellContentClick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Black", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(219, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(379, 52);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Todos Mis Turnos";
+            // 
             // M_Shifts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.M_Shifts_list);
             this.Controls.Add(this.return_start_M);
             this.Name = "M_Shifts";
-            this.Text = "Shifts";
+            this.Text = "Mis Turnos";
             this.Load += new System.EventHandler(this.M_Shifts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.M_Shifts_list)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -74,5 +88,6 @@
 
         private System.Windows.Forms.Button return_start_M;
         private System.Windows.Forms.DataGridView M_Shifts_list;
+        private System.Windows.Forms.Label label1;
     }
 }

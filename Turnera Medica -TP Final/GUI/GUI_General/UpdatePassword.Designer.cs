@@ -42,10 +42,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(91, 166);
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(94, 165);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 15);
+            this.label1.Size = new System.Drawing.Size(159, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = "Correo Electronico:";
             // 
@@ -53,20 +53,20 @@
             // 
             this.label2.AutoSize = true;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(93, 203);
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(96, 202);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 15);
+            this.label2.Size = new System.Drawing.Size(157, 19);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nueva Contraseña:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(71, 240);
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(69, 239);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 15);
+            this.label3.Size = new System.Drawing.Size(184, 19);
             this.label3.TabIndex = 3;
             this.label3.Text = "Confirmar Contraseña:";
             // 
@@ -82,29 +82,32 @@
             // 
             // update_email_user
             // 
-            this.update_email_user.BackColor = System.Drawing.Color.LightPink;
-            this.update_email_user.Location = new System.Drawing.Point(228, 164);
+            this.update_email_user.BackColor = System.Drawing.SystemColors.Control;
+            this.update_email_user.Font = new System.Drawing.Font("Arial", 9F);
+            this.update_email_user.Location = new System.Drawing.Point(259, 164);
             this.update_email_user.Name = "update_email_user";
-            this.update_email_user.Size = new System.Drawing.Size(245, 20);
+            this.update_email_user.Size = new System.Drawing.Size(208, 21);
             this.update_email_user.TabIndex = 5;
             this.update_email_user.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // update_newPass_user
             // 
-            this.update_newPass_user.BackColor = System.Drawing.Color.LightPink;
-            this.update_newPass_user.Location = new System.Drawing.Point(228, 201);
+            this.update_newPass_user.BackColor = System.Drawing.SystemColors.Control;
+            this.update_newPass_user.Font = new System.Drawing.Font("Arial", 9F);
+            this.update_newPass_user.Location = new System.Drawing.Point(259, 201);
             this.update_newPass_user.Name = "update_newPass_user";
-            this.update_newPass_user.Size = new System.Drawing.Size(245, 20);
+            this.update_newPass_user.Size = new System.Drawing.Size(208, 21);
             this.update_newPass_user.TabIndex = 6;
             this.update_newPass_user.UseSystemPasswordChar = true;
             this.update_newPass_user.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // update_confirmPass_user
             // 
-            this.update_confirmPass_user.BackColor = System.Drawing.Color.LightPink;
-            this.update_confirmPass_user.Location = new System.Drawing.Point(228, 238);
+            this.update_confirmPass_user.BackColor = System.Drawing.SystemColors.Control;
+            this.update_confirmPass_user.Font = new System.Drawing.Font("Arial", 9F);
+            this.update_confirmPass_user.Location = new System.Drawing.Point(259, 238);
             this.update_confirmPass_user.Name = "update_confirmPass_user";
-            this.update_confirmPass_user.Size = new System.Drawing.Size(245, 20);
+            this.update_confirmPass_user.Size = new System.Drawing.Size(208, 21);
             this.update_confirmPass_user.TabIndex = 7;
             this.update_confirmPass_user.UseSystemPasswordChar = true;
             this.update_confirmPass_user.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
@@ -112,10 +115,10 @@
             // update_password
             // 
             this.update_password.BackColor = System.Drawing.Color.LightGreen;
-            this.update_password.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.update_password.Location = new System.Drawing.Point(228, 284);
+            this.update_password.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update_password.Location = new System.Drawing.Point(259, 286);
             this.update_password.Name = "update_password";
-            this.update_password.Size = new System.Drawing.Size(245, 40);
+            this.update_password.Size = new System.Drawing.Size(208, 40);
             this.update_password.TabIndex = 10;
             this.update_password.Text = "Cambiar Contraseña";
             this.update_password.UseVisualStyleBackColor = false;
@@ -124,10 +127,10 @@
             // return_login
             // 
             this.return_login.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.return_login.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.return_login.Location = new System.Drawing.Point(40, 308);
+            this.return_login.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.return_login.Location = new System.Drawing.Point(37, 318);
             this.return_login.Name = "return_login";
-            this.return_login.Size = new System.Drawing.Size(100, 40);
+            this.return_login.Size = new System.Drawing.Size(110, 35);
             this.return_login.TabIndex = 11;
             this.return_login.Text = "Volver";
             this.return_login.UseVisualStyleBackColor = false;
@@ -137,6 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Firebrick;
             this.ClientSize = new System.Drawing.Size(710, 380);
             this.Controls.Add(this.return_login);
             this.Controls.Add(this.update_password);
@@ -148,7 +152,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "UpdatePassword";
-            this.Text = "UpdatePassword";
+            this.Text = "Cambiar Contraseña";
             this.Load += new System.EventHandler(this.UpdatePassword_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

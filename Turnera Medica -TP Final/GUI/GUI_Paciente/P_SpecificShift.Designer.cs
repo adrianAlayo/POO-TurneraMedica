@@ -39,10 +39,10 @@
             // return_start_P
             // 
             this.return_start_P.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.return_start_P.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.return_start_P.Location = new System.Drawing.Point(332, 398);
+            this.return_start_P.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.return_start_P.Location = new System.Drawing.Point(351, 403);
             this.return_start_P.Name = "return_start_P";
-            this.return_start_P.Size = new System.Drawing.Size(150, 40);
+            this.return_start_P.Size = new System.Drawing.Size(110, 35);
             this.return_start_P.TabIndex = 1;
             this.return_start_P.Text = "Volver";
             this.return_start_P.UseVisualStyleBackColor = false;
@@ -74,7 +74,7 @@
             // 
             // searchShift
             // 
-            this.searchShift.BackColor = System.Drawing.Color.LightGreen;
+            this.searchShift.BackColor = System.Drawing.Color.PaleGreen;
             this.searchShift.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchShift.Location = new System.Drawing.Point(494, 93);
             this.searchShift.Name = "searchShift";
@@ -98,6 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LimeGreen;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.searchShift);
@@ -105,7 +106,7 @@
             this.Controls.Add(this.P_SpecificShift_list);
             this.Controls.Add(this.return_start_P);
             this.Name = "P_SpecificShift";
-            this.Text = "P_SpecificShift";
+            this.Text = "Buscar Turno Especifico";
             this.Load += new System.EventHandler(this.P_SpecificShift_Load);
             ((System.ComponentModel.ISupportInitialize)(this.P_SpecificShift_list)).EndInit();
             this.ResumeLayout(false);

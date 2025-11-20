@@ -157,7 +157,7 @@ namespace Turnera_Medica__TP_Final.GUI
                             entryTime,
                             departureTime
                         );
-
+                        usermedic.Login();
                         M_Start mStartForm = new M_Start(usermedic);
                         mStartForm.Show();
                         this.Hide();
@@ -185,7 +185,7 @@ namespace Turnera_Medica__TP_Final.GUI
                                     passwordHash,
                                     Convert.ToInt32(read4["social_work_id"])
                                 );
-
+                                userpatient.Login();
                                 P_Start pStartForm = new P_Start(userpatient);
                                 pStartForm.Show();
                                 this.Hide();

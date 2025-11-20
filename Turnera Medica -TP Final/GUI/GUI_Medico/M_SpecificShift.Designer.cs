@@ -41,10 +41,10 @@
             // return_start_M
             // 
             this.return_start_M.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.return_start_M.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.return_start_M.Location = new System.Drawing.Point(325, 398);
+            this.return_start_M.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.return_start_M.Location = new System.Drawing.Point(348, 403);
             this.return_start_M.Name = "return_start_M";
-            this.return_start_M.Size = new System.Drawing.Size(150, 40);
+            this.return_start_M.Size = new System.Drawing.Size(110, 35);
             this.return_start_M.TabIndex = 0;
             this.return_start_M.Text = "Volver";
             this.return_start_M.UseVisualStyleBackColor = false;
@@ -99,7 +99,7 @@
             // 
             // attendedShift
             // 
-            this.attendedShift.BackColor = System.Drawing.Color.OrangeRed;
+            this.attendedShift.BackColor = System.Drawing.Color.Coral;
             this.attendedShift.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.attendedShift.Location = new System.Drawing.Point(12, 177);
             this.attendedShift.Name = "attendedShift";
@@ -111,7 +111,7 @@
             // 
             // canceledShift
             // 
-            this.canceledShift.BackColor = System.Drawing.Color.OrangeRed;
+            this.canceledShift.BackColor = System.Drawing.Color.Coral;
             this.canceledShift.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.canceledShift.Location = new System.Drawing.Point(12, 224);
             this.canceledShift.Name = "canceledShift";
@@ -125,6 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.canceledShift);
             this.Controls.Add(this.attendedShift);
@@ -134,7 +135,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.return_start_M);
             this.Name = "M_SpecificShift";
-            this.Text = "SpecificShift";
+            this.Text = "Buscar Turno Especifico";
             this.Load += new System.EventHandler(this.M_SpecificShift_Load);
             ((System.ComponentModel.ISupportInitialize)(this.M_SpecificShift_list)).EndInit();
             this.ResumeLayout(false);

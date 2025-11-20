@@ -60,5 +60,10 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

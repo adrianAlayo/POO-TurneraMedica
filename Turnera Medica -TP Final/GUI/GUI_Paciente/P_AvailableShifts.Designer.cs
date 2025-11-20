@@ -31,16 +31,17 @@
             this.return_start_P = new System.Windows.Forms.Button();
             this.dataGridView_shifts_result = new System.Windows.Forms.DataGridView();
             this.take_turn_P = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_shifts_result)).BeginInit();
             this.SuspendLayout();
             // 
             // return_start_P
             // 
             this.return_start_P.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.return_start_P.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.return_start_P.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.return_start_P.Location = new System.Drawing.Point(117, 385);
             this.return_start_P.Name = "return_start_P";
-            this.return_start_P.Size = new System.Drawing.Size(150, 40);
+            this.return_start_P.Size = new System.Drawing.Size(110, 35);
             this.return_start_P.TabIndex = 1;
             this.return_start_P.Text = "Volver";
             this.return_start_P.UseVisualStyleBackColor = false;
@@ -65,28 +66,41 @@
             // take_turn_P
             // 
             this.take_turn_P.BackColor = System.Drawing.Color.LightGreen;
-            this.take_turn_P.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.take_turn_P.Location = new System.Drawing.Point(534, 385);
+            this.take_turn_P.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.take_turn_P.Location = new System.Drawing.Point(554, 385);
             this.take_turn_P.Name = "take_turn_P";
-            this.take_turn_P.Size = new System.Drawing.Size(150, 40);
+            this.take_turn_P.Size = new System.Drawing.Size(130, 35);
             this.take_turn_P.TabIndex = 3;
             this.take_turn_P.Text = "Tomar Turno";
             this.take_turn_P.UseVisualStyleBackColor = false;
             this.take_turn_P.Click += new System.EventHandler(this.take_turn_P_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Black", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(198, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(411, 52);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Turnos Disponibles";
+            // 
             // P_AvailableShifts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LimeGreen;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.take_turn_P);
             this.Controls.Add(this.dataGridView_shifts_result);
             this.Controls.Add(this.return_start_P);
             this.Name = "P_AvailableShifts";
-            this.Text = "r";
+            this.Text = "Turnos Disponibles";
             this.Load += new System.EventHandler(this.P_AvailableShifts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_shifts_result)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -95,5 +109,6 @@
         private System.Windows.Forms.Button return_start_P;
         private System.Windows.Forms.DataGridView dataGridView_shifts_result;
         private System.Windows.Forms.Button take_turn_P;
+        private System.Windows.Forms.Label label1;
     }
 }
