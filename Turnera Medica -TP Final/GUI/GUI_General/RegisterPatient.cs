@@ -59,11 +59,12 @@ namespace Turnera_Medica__TP_Final.GUI
                 string hash = Utils.HashPassword(password);
 
                 // Insertar usuario
-                string insertUser = "INSERT INTO users (dni, name, last_name, email, telephone_number, password_hash, rol) VALUES (@dni, @name, @last_name, @email, @telephone_number, @password, 'paciente')";
+                string insertUser = "INSERT INTO users (dni, name, last_name, age, email, telephone_number, password_hash, rol) VALUES (@dni, @name, @last_name, @age, @email, @telephone_number, @password, 'paciente')";
                 MySqlCommand cmdUser = new MySqlCommand(insertUser, conexionDB);
                 cmdUser.Parameters.AddWithValue("@dni", dni);
                 cmdUser.Parameters.AddWithValue("@name", name);
                 cmdUser.Parameters.AddWithValue("@last_name", last_name);
+                cmdUser.Parameters.AddWithValue("@age", age);
                 cmdUser.Parameters.AddWithValue("@email", email);
                 cmdUser.Parameters.AddWithValue("@telephone_number", telephone_number);
                 cmdUser.Parameters.AddWithValue("@password", hash);
@@ -72,7 +73,7 @@ namespace Turnera_Medica__TP_Final.GUI
                 int userId = (int)cmdUser.LastInsertedId;
 
                 // Obtener o crear obra social
-                string getObra = "SELECT id FROM social_works WHERE nombre = @obra LIMIT 1";
+                string getObra = "SELECT id FROM social_works WHERE name = @obra LIMIT 1";
                 MySqlCommand cmdGetObra = new MySqlCommand(getObra, conexionDB);
                 cmdGetObra.Parameters.AddWithValue("@obra", social_works);
                 object result = cmdGetObra.ExecuteScalar();

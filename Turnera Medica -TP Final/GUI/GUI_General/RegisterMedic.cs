@@ -105,12 +105,15 @@ namespace Turnera_Medica__TP_Final.GUI
                 read1.Close();
 
                 // Insertar en tabla medicos
-                string insertMedic = "INSERT INTO medics (user_id, speciality_id, consult_amount) VALUES (@userId, @specialityId, @mount)";
+                string insertMedic = "INSERT INTO medics (user_id, speciality_id, consult_amount, entry_time, departure_time) VALUES (@userId, @specialityId, @mount, @entry, @departure)";
                 MySqlCommand cmdMedic = new MySqlCommand(insertMedic, conexionDB);
                 cmdMedic.Parameters.AddWithValue("@userId", userId);
                 cmdMedic.Parameters.AddWithValue("@specialityId", specialityId);
                 cmdMedic.Parameters.AddWithValue("@mount", consult_amount);
+                cmdMedic.Parameters.AddWithValue("@entry", TimeSpan.Parse(timeEntry));
+                cmdMedic.Parameters.AddWithValue("@departure", TimeSpan.Parse(timeDeparture));
                 cmdMedic.ExecuteNonQuery();
+
 
                 int medicId = (int)cmdMedic.LastInsertedId;
 

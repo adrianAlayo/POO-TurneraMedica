@@ -41,21 +41,15 @@ namespace Turnera_Medica__TP_Final.Controller
                 conexionDB.Open();
 
                 string query = @"
-            SELECT 
-                s.id,
-                s.shift_date,
-                s.shift_time,
-                s.duration,
-                s.original_price,
-                s.state,
-                u.name AS patient_name,
-                u.last_name AS patient_lastname
-            FROM shifts s
-            LEFT JOIN patients p ON p.id = s.patient_id
-            LEFT JOIN users u ON u.id = p.user_id
-            WHERE s.medic_id = @medicId
-              AND s.shift_date = @dateSelected
-            ORDER BY s.shift_time;
+                    SELECT 
+                        s.id, s.shift_date, s.shift_time, s.duration, s.original_price, s.state,
+                        
+                        u.name AS patient_name, u.last_name AS patient_lastname
+                    FROM shifts s
+                    LEFT JOIN patients p ON p.id = s.patient_id
+                    LEFT JOIN users u ON u.id = p.user_id
+                    WHERE s.medic_id = @medicId AND s.shift_date = @dateSelected
+                    ORDER BY s.shift_time;
         ";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexionDB);
@@ -108,20 +102,13 @@ namespace Turnera_Medica__TP_Final.Controller
 
                 string query = @"
                     SELECT 
-                        s.id,
-                        s.shift_date,
-                        s.shift_time,
-                        s.duration,
-                        s.original_price,
-                        s.state,
-                        u.name AS patient_name,
-                        u.last_name AS patient_lastname
+                        s.id, s.shift_date, s.shift_time, s.duration, s.original_price, s.state,
+                       
+                        u.name AS patient_name, u.last_name AS patient_lastname
                     FROM shifts s
                     LEFT JOIN patients p ON p.id = s.patient_id
                     LEFT JOIN users u ON u.id = p.user_id
-                    WHERE s.medic_id = @medicId
-                      AND s.state NOT IN ('asistido','cancelado')
-                      AND s.shift_date >= CURDATE()
+                    WHERE s.medic_id = @medicId AND s.state NOT IN ('asistido','cancelado') AND s.shift_date >= CURDATE()
                     ORDER BY s.shift_date, s.shift_time;
                 ";
 

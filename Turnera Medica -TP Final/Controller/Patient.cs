@@ -19,8 +19,81 @@ namespace Turnera_Medica__TP_Final.Controller
         //Consultar un Turno especifico por fecha
         public override void specificShift(DateTime date)
         {
+            listTurno = new List<Shift>();
 
+            using (MySqlConnection conexionDB = Connection.conexion())
+            {
+                conexionDB.Open();
+
+                string query = @"
+                    SELECT 
+                        s.id AS shift_id, s.shift_date, s.shift_time, s.duration, s.original_price, s.state,
+
+                        m.id AS medic_id,
+                        um.name AS medic_name, um.last_name AS medic_last_name,
+
+                        o.id AS office_id, o.ubication AS office_ubication
+
+                    FROM shifts s
+                    LEFT JOIN medics m ON s.medic_id = m.id
+                    LEFT JOIN users um ON um.id = m.user_id
+                    LEFT JOIN offices o ON o.id = s.office_id
+                    WHERE s.patient_id = @idpatient AND s.state = 'programado' AND s.shift_date = @date
+                    ORDER BY s.shift_time";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexionDB);
+                cmd.Parameters.AddWithValue("@idpatient", this.Id);
+                cmd.Parameters.AddWithValue("@date", date);
+
+                using (MySqlDataReader read = cmd.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        // Médico
+                        Medic doctor = new Medic(
+                            Convert.ToInt32(read["medic_id"]),
+                            0,
+                            read["medic_name"].ToString(),
+                            read["medic_last_name"].ToString(),
+                            0,
+                            "",
+                            "",
+                            "",
+                            0,
+                            0,
+                            Convert.ToInt32(read["office_id"]),
+                            TimeSpan.Zero,
+                            TimeSpan.Zero
+                        );
+
+                        // Consultorio
+                        Office office = new Office(
+                            Convert.ToInt32(read["office_id"]),
+                            read["office_ubication"].ToString(),
+                            TimeSpan.Zero,
+                            TimeSpan.Zero,
+                            null
+                        );
+
+                        // Turno
+                        Shift shift = new Shift(
+                            Convert.ToInt32(read["shift_id"]),
+                            Convert.ToDateTime(read["shift_date"]),
+                            TimeSpan.Parse(read["shift_time"].ToString()),
+                            Convert.ToInt32(read["duration"]),
+                            Convert.ToDouble(read["original_price"]),
+                            doctor,
+                            this,
+                            office,
+                            (StateShift)Enum.Parse(typeof(StateShift), read["state"].ToString())
+                        );
+
+                        listTurno.Add(shift);
+                    }
+                }
+            }
         }
+
 
         //Consultar todos los turnos
         public override void Shifts()
@@ -44,7 +117,6 @@ namespace Turnera_Medica__TP_Final.Controller
                     LEFT JOIN medics m ON s.medic_id = m.id
                     LEFT JOIN users um ON um.id = m.user_id
                     LEFT JOIN offices o ON o.id = s.office_id
-
                     WHERE s.patient_id = @idpatient AND s.state = 'programado'
                     ORDER BY s.shift_date, s.shift_time";
 

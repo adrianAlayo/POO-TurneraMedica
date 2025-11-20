@@ -66,11 +66,11 @@
             this.selectDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.selectDate.Location = new System.Drawing.Point(348, 99);
             this.selectDate.MaxDate = new System.DateTime(2025, 12, 12, 0, 0, 0, 0);
-            this.selectDate.MinDate = new System.DateTime(2025, 11, 10, 0, 0, 0, 0);
+            this.selectDate.MinDate = new System.DateTime(2025, 11, 20, 0, 0, 0, 0);
             this.selectDate.Name = "selectDate";
             this.selectDate.Size = new System.Drawing.Size(103, 20);
             this.selectDate.TabIndex = 2;
-            this.selectDate.Value = new System.DateTime(2025, 11, 10, 0, 0, 0, 0);
+            this.selectDate.Value = new System.DateTime(2025, 11, 20, 0, 0, 0, 0);
             this.selectDate.ValueChanged += new System.EventHandler(this.selectDate_ValueChanged);
             this.selectDate.Validating += new System.ComponentModel.CancelEventHandler(this.selectDate_Validating);
             // 
