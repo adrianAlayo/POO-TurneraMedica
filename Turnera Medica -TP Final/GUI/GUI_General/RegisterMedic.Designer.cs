@@ -162,6 +162,7 @@
             this.registerM_password_user.TabIndex = 16;
             this.registerM_password_user.UseSystemPasswordChar = true;
             this.registerM_password_user.TextChanged += new System.EventHandler(this.registerM_password_user_TextChanged);
+            this.registerM_password_user.DoubleClick += new System.EventHandler(this.registerM_password_user_DoubleClick);
             // 
             // label6
             // 
@@ -194,6 +195,7 @@
             this.registerM_confirPassword_user.TabIndex = 28;
             this.registerM_confirPassword_user.UseSystemPasswordChar = true;
             this.registerM_confirPassword_user.TextChanged += new System.EventHandler(this.registerM_confirPassword_user_TextChanged);
+            this.registerM_confirPassword_user.DoubleClick += new System.EventHandler(this.registerM_confirPassword_user_DoubleClick);
             // 
             // label8
             // 
@@ -417,7 +419,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Firebrick;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
             this.ClientSize = new System.Drawing.Size(800, 576);
             this.Controls.Add(this.registerM_departureTime_user);
             this.Controls.Add(this.registerM_entryTime_user);

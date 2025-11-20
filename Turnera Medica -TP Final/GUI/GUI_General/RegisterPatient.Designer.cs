@@ -99,6 +99,7 @@
             this.registerP_confirPassword_user.TabIndex = 50;
             this.registerP_confirPassword_user.UseSystemPasswordChar = true;
             this.registerP_confirPassword_user.TextChanged += new System.EventHandler(this.registerP_confirPassword_user_TextChanged);
+            this.registerP_confirPassword_user.DoubleClick += new System.EventHandler(this.registerP_confirPassword_user_DoubleClick);
             // 
             // label9
             // 
@@ -252,6 +253,7 @@
             this.registerP_password_user.TabIndex = 55;
             this.registerP_password_user.UseSystemPasswordChar = true;
             this.registerP_password_user.TextChanged += new System.EventHandler(this.registerP_password_user_TextChanged);
+            this.registerP_password_user.DoubleClick += new System.EventHandler(this.registerP_password_user_DoubleClick);
             // 
             // label3
             // 
@@ -276,7 +278,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Firebrick;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
             this.ClientSize = new System.Drawing.Size(800, 495);
             this.Controls.Add(this.registerP_age_user);
             this.Controls.Add(this.label3);

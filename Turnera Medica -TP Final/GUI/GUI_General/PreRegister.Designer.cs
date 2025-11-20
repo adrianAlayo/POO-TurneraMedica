@@ -47,15 +47,16 @@
             // 
             // medico_option_user
             // 
-            this.medico_option_user.BackColor = System.Drawing.Color.Pink;
+            this.medico_option_user.BackColor = System.Drawing.SystemColors.Control;
             this.medico_option_user.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.medico_option_user.FlatAppearance.BorderSize = 10;
             this.medico_option_user.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SpringGreen;
             this.medico_option_user.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
-            this.medico_option_user.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.medico_option_user.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.medico_option_user.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.medico_option_user.Location = new System.Drawing.Point(350, 177);
             this.medico_option_user.Name = "medico_option_user";
-            this.medico_option_user.Size = new System.Drawing.Size(113, 37);
+            this.medico_option_user.Size = new System.Drawing.Size(110, 35);
             this.medico_option_user.TabIndex = 1;
             this.medico_option_user.Text = "Medico";
             this.medico_option_user.UseVisualStyleBackColor = false;
@@ -63,15 +64,15 @@
             // 
             // paciente_option_user
             // 
-            this.paciente_option_user.BackColor = System.Drawing.Color.Pink;
+            this.paciente_option_user.BackColor = System.Drawing.SystemColors.Control;
             this.paciente_option_user.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.paciente_option_user.FlatAppearance.BorderSize = 10;
             this.paciente_option_user.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SpringGreen;
             this.paciente_option_user.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
-            this.paciente_option_user.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paciente_option_user.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.paciente_option_user.Location = new System.Drawing.Point(350, 261);
             this.paciente_option_user.Name = "paciente_option_user";
-            this.paciente_option_user.Size = new System.Drawing.Size(113, 37);
+            this.paciente_option_user.Size = new System.Drawing.Size(110, 35);
             this.paciente_option_user.TabIndex = 2;
             this.paciente_option_user.Text = "Paciente";
             this.paciente_option_user.UseVisualStyleBackColor = false;
@@ -84,10 +85,10 @@
             this.ReturnLogin.FlatAppearance.BorderSize = 10;
             this.ReturnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SpringGreen;
             this.ReturnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
-            this.ReturnLogin.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReturnLogin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReturnLogin.Location = new System.Drawing.Point(350, 376);
             this.ReturnLogin.Name = "ReturnLogin";
-            this.ReturnLogin.Size = new System.Drawing.Size(113, 37);
+            this.ReturnLogin.Size = new System.Drawing.Size(110, 35);
             this.ReturnLogin.TabIndex = 4;
             this.ReturnLogin.Text = "Volver";
             this.ReturnLogin.UseVisualStyleBackColor = false;
@@ -97,7 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Firebrick;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.ReturnLogin);
             this.Controls.Add(this.paciente_option_user);

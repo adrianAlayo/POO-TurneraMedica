@@ -104,5 +104,15 @@ namespace Turnera_Medica__TP_Final.GUI
         {
 
         }
+
+        private void update_newPass_user_DoubleClick(object sender, EventArgs e)
+        {
+            update_newPass_user.UseSystemPasswordChar = !update_newPass_user.UseSystemPasswordChar;
+        }
+
+        private void update_confirmPass_user_DoubleClick(object sender, EventArgs e)
+        {
+            update_confirmPass_user.UseSystemPasswordChar = !update_confirmPass_user.UseSystemPasswordChar;
+        }
     }
 }

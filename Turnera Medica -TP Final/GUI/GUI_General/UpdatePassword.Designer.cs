@@ -100,6 +100,7 @@
             this.update_newPass_user.TabIndex = 6;
             this.update_newPass_user.UseSystemPasswordChar = true;
             this.update_newPass_user.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.update_newPass_user.DoubleClick += new System.EventHandler(this.update_newPass_user_DoubleClick);
             // 
             // update_confirmPass_user
             // 
@@ -111,6 +112,7 @@
             this.update_confirmPass_user.TabIndex = 7;
             this.update_confirmPass_user.UseSystemPasswordChar = true;
             this.update_confirmPass_user.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.update_confirmPass_user.DoubleClick += new System.EventHandler(this.update_confirmPass_user_DoubleClick);
             // 
             // update_password
             // 
@@ -140,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Firebrick;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
             this.ClientSize = new System.Drawing.Size(710, 380);
             this.Controls.Add(this.return_login);
             this.Controls.Add(this.update_password);

@@ -167,5 +167,15 @@ namespace Turnera_Medica__TP_Final.GUI
         {
 
         }
+
+        private void registerP_password_user_DoubleClick(object sender, EventArgs e)
+        {
+            registerP_password_user.UseSystemPasswordChar = !registerP_password_user.UseSystemPasswordChar;
+        }
+
+        private void registerP_confirPassword_user_DoubleClick(object sender, EventArgs e)
+        {
+            registerP_confirPassword_user.UseSystemPasswordChar = !registerP_confirPassword_user.UseSystemPasswordChar;
+        }
     }
 }

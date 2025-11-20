@@ -59,15 +59,16 @@ namespace Turnera_Medica__TP_Final.GUI
             {
                 conexionDB.Open();
 
+                //traemos la informacion de los textboxs y los guardamos en variables
                 string email = login_email_user.Text.Trim();
                 string password = login_password_user.Text.Trim();
 
-                string hashedPassword = Utils.HashPassword(password);
+                string hashedPassword = Utils.HashPassword(password); //hasheamos la contraseña
 
                 // aca buscamons al usuario en la base de datos
                 string querylogin = "SELECT * FROM users WHERE email = @Email AND password_hash = @Password";
 
-                MySqlCommand cmdlogin = new MySqlCommand(querylogin, conexionDB);
+                MySqlCommand cmdlogin = new MySqlCommand(querylogin, conexionDB); //creamos un comando para ejecutar la query
                 cmdlogin.Parameters.AddWithValue("@Email", email);
                 cmdlogin.Parameters.AddWithValue("@Password", hashedPassword);
 
@@ -79,6 +80,7 @@ namespace Turnera_Medica__TP_Final.GUI
                         return;
                     }
 
+                    //guardamos los datos del usuario en variables
                     string roluser = read["rol"].ToString().Trim();
                     int iduser = Convert.ToInt32(read["id"]);
                     int dni = Convert.ToInt32(read["dni"]);
@@ -89,25 +91,25 @@ namespace Turnera_Medica__TP_Final.GUI
                     string telephone = read["telephone_number"].ToString().Trim();
                     string passwordHash = read["password_hash"].ToString().Trim();
 
-                    read.Close(); // Cerramos este reader antes de abrir otro
+                    read.Close(); // cerramos este reader antes de abrir otro
 
                     // logica para usuario si es medico
                     if (roluser == "medico")
                     {
-                        // Obtener info del médico
+                        // hacemos una query para obtener la info del medico
                         string queryMedico = "SELECT * FROM medics WHERE user_id = @userid";
                         MySqlCommand cmdMedico = new MySqlCommand(queryMedico, conexionDB);
                         cmdMedico.Parameters.AddWithValue("@userid", iduser);
 
-                        int idmedic;
+                        int idmedic;   //creamos unas variables para guardar datos de la tabla medics de nuestro medico
                         int idspeciality;
                         double consultamount;
                         TimeSpan entryTime;
                         TimeSpan departureTime;
 
-                        using (MySqlDataReader read2 = cmdMedico.ExecuteReader())
+                        using (MySqlDataReader read2 = cmdMedico.ExecuteReader()) //ejecutamos el reader 
                         {
-                            if (read2.Read())
+                            if (read2.Read()) //guardamos los resultados en las variables que creamos anteriormente
                             {
                                 idmedic = Convert.ToInt32(read2["id"]);
                                 idspeciality = Convert.ToInt32(read2["speciality_id"]);
@@ -115,19 +117,19 @@ namespace Turnera_Medica__TP_Final.GUI
                                 entryTime = (TimeSpan)read2["entry_time"];
                                 departureTime = (TimeSpan)read2["departure_time"];
                             }
-                            else
+                            else 
                             {
                                 MessageBox.Show("No se encontró información del médico.");
                                 return;
                             }
                         }
 
-                        // Obtener office_id desde assigned_doctors_office
+                        // ahora hacemos una query para obtener el office_id donde trabaja el medico de la tabla assigned_doctors_office
                         string queryOffice = "SELECT office_id FROM assigned_doctors_office WHERE medic_id = @medicid";
                         MySqlCommand cmdOffice = new MySqlCommand(queryOffice, conexionDB);
                         cmdOffice.Parameters.AddWithValue("@medicid", idmedic);
 
-                        int officeId;
+                        int officeId; //creamos la variable donde guardaremos el office_id
                         using (MySqlDataReader read3 = cmdOffice.ExecuteReader())
                         {
                             if (read3.Read())
@@ -141,7 +143,7 @@ namespace Turnera_Medica__TP_Final.GUI
                             }
                         }
 
-                        // Crear objeto del médico con horarios incluidos
+                        // creamos el objeto medico y le ponemos todos los datos que pide 
                         Medic usermedic = new Medic(
                             idmedic,
                             dni,
@@ -163,7 +165,7 @@ namespace Turnera_Medica__TP_Final.GUI
                         this.Hide();
                     }
 
-                    // 🔹 Lógica para paciente
+                    // logica para el usuario si es paciente
                     else if (roluser == "paciente")
                     {
                         string queryPaciente = "SELECT * FROM patients WHERE user_id = @userid";
@@ -228,6 +230,11 @@ namespace Turnera_Medica__TP_Final.GUI
         private void login_password_user_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void login_password_user_DoubleClick(object sender, EventArgs e)
+        {
+            login_password_user.UseSystemPasswordChar = !login_password_user.UseSystemPasswordChar;
         }
     }
 }

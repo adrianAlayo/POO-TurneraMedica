@@ -89,13 +89,14 @@
             this.login_password_user.TabIndex = 5;
             this.login_password_user.UseSystemPasswordChar = true;
             this.login_password_user.TextChanged += new System.EventHandler(this.login_password_user_TextChanged);
+            this.login_password_user.DoubleClick += new System.EventHandler(this.login_password_user_DoubleClick);
             // 
             // lnkOlvide
             // 
             this.lnkOlvide.AutoSize = true;
             this.lnkOlvide.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkOlvide.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.lnkOlvide.LinkColor = System.Drawing.Color.RoyalBlue;
+            this.lnkOlvide.LinkColor = System.Drawing.Color.Navy;
             this.lnkOlvide.Location = new System.Drawing.Point(415, 363);
             this.lnkOlvide.Name = "lnkOlvide";
             this.lnkOlvide.Size = new System.Drawing.Size(141, 15);
@@ -109,7 +110,7 @@
             this.lnkRegistro.AutoSize = true;
             this.lnkRegistro.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkRegistro.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.lnkRegistro.LinkColor = System.Drawing.Color.RoyalBlue;
+            this.lnkRegistro.LinkColor = System.Drawing.Color.Navy;
             this.lnkRegistro.Location = new System.Drawing.Point(263, 363);
             this.lnkRegistro.Name = "lnkRegistro";
             this.lnkRegistro.Size = new System.Drawing.Size(74, 15);
@@ -120,7 +121,7 @@
             // 
             // SendLogin
             // 
-            this.SendLogin.BackColor = System.Drawing.Color.Pink;
+            this.SendLogin.BackColor = System.Drawing.SystemColors.Control;
             this.SendLogin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SendLogin.Location = new System.Drawing.Point(328, 292);
             this.SendLogin.Name = "SendLogin";
@@ -134,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Firebrick;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.SendLogin);
             this.Controls.Add(this.lnkRegistro);
@@ -146,6 +147,7 @@
             this.Controls.Add(this.lblTitulo);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesion";
             this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
