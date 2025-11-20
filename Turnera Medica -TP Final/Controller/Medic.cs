@@ -34,7 +34,67 @@ namespace Turnera_Medica__TP_Final.Controller
         //Consultar un Turno especifico por fecha
         public override void specificShift(DateTime date)
         {
-            //CREAR LA LOGICA DE HACER LAS CONSULTAS
+            listTurno = new List<Shift>();
+
+            using (MySqlConnection conexionDB = Connection.conexion())
+            {
+                conexionDB.Open();
+
+                string query = @"
+            SELECT 
+                s.id,
+                s.shift_date,
+                s.shift_time,
+                s.duration,
+                s.original_price,
+                s.state,
+                u.name AS patient_name,
+                u.last_name AS patient_lastname
+            FROM shifts s
+            LEFT JOIN patients p ON p.id = s.patient_id
+            LEFT JOIN users u ON u.id = p.user_id
+            WHERE s.medic_id = @medicId
+              AND s.shift_date = @dateSelected
+            ORDER BY s.shift_time;
+        ";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexionDB);
+                cmd.Parameters.AddWithValue("@medicId", this.Id);
+                cmd.Parameters.AddWithValue("@dateSelected", date.Date);
+
+                using (MySqlDataReader read = cmd.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        Patient paciente = null;
+
+                        if (!string.IsNullOrEmpty(read["patient_name"].ToString()))
+                        {
+                            paciente = new Patient(
+                                0,
+                                0,
+                                read["patient_name"].ToString(),
+                                read["patient_lastname"].ToString(),
+                                0, "", "", "", 0
+                            );
+                        }
+
+                        Shift turno = new Shift(
+                            Convert.ToInt32(read["id"]),
+                            Convert.ToDateTime(read["shift_date"]),
+                            TimeSpan.Parse(read["shift_time"].ToString()),
+                            Convert.ToInt32(read["duration"]),
+                            Convert.ToDouble(read["original_price"]),
+                            this,
+                            paciente,
+                            null,
+                            (StateShift)Enum.Parse(typeof(StateShift), read["state"].ToString())
+                        );
+
+                        listTurno.Add(turno);
+                    }
+                }
+            }
         }
 
         //Consultar todos los turnos
@@ -47,42 +107,56 @@ namespace Turnera_Medica__TP_Final.Controller
                 conexionDB.Open();
 
                 string query = @"
-            SELECT 
-                id, shift_date, shift_time, duration, original_price, state,
-                patient_id, office_id
-            FROM shifts
-            WHERE medic_id = @medicid
-            AND state NOT IN ('asistido', 'cancelado')
-            AND shift_date >= CURDATE()
-            ORDER BY shift_date, shift_time
-        ";
+                    SELECT 
+                        s.id,
+                        s.shift_date,
+                        s.shift_time,
+                        s.duration,
+                        s.original_price,
+                        s.state,
+                        u.name AS patient_name,
+                        u.last_name AS patient_lastname
+                    FROM shifts s
+                    LEFT JOIN patients p ON p.id = s.patient_id
+                    LEFT JOIN users u ON u.id = p.user_id
+                    WHERE s.medic_id = @medicId
+                      AND s.state NOT IN ('asistido','cancelado')
+                      AND s.shift_date >= CURDATE()
+                    ORDER BY s.shift_date, s.shift_time;
+                ";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexionDB);
-                cmd.Parameters.AddWithValue("@medicid", this.Id);
+                cmd.Parameters.AddWithValue("@medicId", this.Id);
 
                 using (MySqlDataReader read = cmd.ExecuteReader())
                 {
                     while (read.Read())
                     {
-                        int id = Convert.ToInt32(read["id"]);
-                        DateTime date = Convert.ToDateTime(read["shift_date"]);
-                        TimeSpan hour = TimeSpan.Parse(read["shift_time"].ToString());
-                        int duration = Convert.ToInt32(read["duration"]);
-                        double originalPrice = Convert.ToDouble(read["original_price"]);
+                        // Crear paciente (si existe)
+                        Patient paciente = null;
 
-                        string stateStr = read["state"].ToString();
-                        StateShift stateEnum = (StateShift)Enum.Parse(typeof(StateShift), stateStr);
+                        if (!string.IsNullOrEmpty(read["patient_name"].ToString()))
+                        {
+                            paciente = new Patient(
+                                0,
+                                0,
+                                read["patient_name"].ToString(),
+                                read["patient_lastname"].ToString(),
+                                0, "", "", "", 0
+                            );
+                        }
 
+                        // Crear turno
                         Shift turno = new Shift(
-                            id,
-                            date,
-                            hour,
-                            duration,
-                            originalPrice,
-                            this,   // medico asignado
-                            null,   // paciente (lo podes cargar si queres)
-                            null,   // consultorio
-                            stateEnum
+                            Convert.ToInt32(read["id"]),
+                            Convert.ToDateTime(read["shift_date"]),
+                            TimeSpan.Parse(read["shift_time"].ToString()),
+                            Convert.ToInt32(read["duration"]),
+                            Convert.ToDouble(read["original_price"]),
+                            this,
+                            paciente,
+                            null,
+                            (StateShift)Enum.Parse(typeof(StateShift), read["state"].ToString())
                         );
 
                         listTurno.Add(turno);

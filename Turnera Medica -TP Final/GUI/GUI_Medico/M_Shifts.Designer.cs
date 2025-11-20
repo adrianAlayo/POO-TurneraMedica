@@ -48,10 +48,10 @@
             // M_Shifts_list
             // 
             this.M_Shifts_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.M_Shifts_list.Location = new System.Drawing.Point(32, 87);
+            this.M_Shifts_list.Location = new System.Drawing.Point(74, 72);
             this.M_Shifts_list.Name = "M_Shifts_list";
             this.M_Shifts_list.ReadOnly = true;
-            this.M_Shifts_list.Size = new System.Drawing.Size(737, 277);
+            this.M_Shifts_list.Size = new System.Drawing.Size(660, 277);
             this.M_Shifts_list.TabIndex = 2;
             this.M_Shifts_list.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.M_Shifts_list_CellContentClick);
             // 

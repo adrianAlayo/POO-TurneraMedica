@@ -31,20 +31,34 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 
         private void M_Shifts_Load(object sender, EventArgs e)
         {
-            usermedic.Shifts();
-            M_Shifts_list.DataSource = usermedic.listTurno;
+            usermedic.Shifts(); // carga la lista interna
 
-            // ocultar columnas con objetos
-            M_Shifts_list.Columns["Id"].Visible = false;
-            M_Shifts_list.Columns["Assigned_Doctor"].Visible = false;
-            M_Shifts_list.Columns["PatientAssigned"].Visible = false;
-            M_Shifts_list.Columns["OfficeAssigned"].Visible = false;
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Fecha");
+            dt.Columns.Add("Hora");
+            dt.Columns.Add("Duración");
+            dt.Columns.Add("Precio");
+            dt.Columns.Add("Estado");
+            dt.Columns.Add("Paciente");
 
-            M_Shifts_list.Columns["Date"].HeaderText = "Fecha";
-            M_Shifts_list.Columns["Hour"].HeaderText = "Hora";
-            M_Shifts_list.Columns["Duration"].HeaderText = "Duración";
-            M_Shifts_list.Columns["OriginalPrice"].HeaderText = "Precio";
-            M_Shifts_list.Columns["State"].HeaderText = "Estado";
+            foreach (var column in usermedic.listTurno)
+            {
+                string paciente = column.PatientAssigned != null
+                    ? $"{column.PatientAssigned.Name} {column.PatientAssigned.LastName}"
+                    : "";
+
+                dt.Rows.Add(
+                    column.Date.ToShortDateString(),
+                    column.Hour.ToString(@"hh\:mm"),
+                    column.Duration,
+                    column.OriginalPrice,
+                    column.State.ToString(),
+                    paciente
+                );
+            }
+            
+
+            M_Shifts_list.DataSource = dt;
         }
 
         private void M_Shifts_list_CellContentClick(object sender, DataGridViewCellEventArgs e)

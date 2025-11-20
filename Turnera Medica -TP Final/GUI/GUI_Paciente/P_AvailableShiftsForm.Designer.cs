@@ -144,16 +144,17 @@
             // 
             // selectDate
             // 
-            this.selectDate.CustomFormat = "yyyy-mm-dd";
+            this.selectDate.CustomFormat = "dd/MM/2025";
             this.selectDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.selectDate.Location = new System.Drawing.Point(370, 207);
-            this.selectDate.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
+            this.selectDate.MaxDate = new System.DateTime(2025, 12, 12, 0, 0, 0, 0);
             this.selectDate.MinDate = new System.DateTime(2025, 11, 10, 0, 0, 0, 0);
             this.selectDate.Name = "selectDate";
             this.selectDate.Size = new System.Drawing.Size(149, 20);
             this.selectDate.TabIndex = 57;
-            this.selectDate.Value = new System.DateTime(2025, 12, 5, 0, 0, 0, 0);
+            this.selectDate.Value = new System.DateTime(2025, 11, 10, 0, 0, 0, 0);
             this.selectDate.ValueChanged += new System.EventHandler(this.selectDate_ValueChanged);
+            this.selectDate.Validating += new System.ComponentModel.CancelEventHandler(this.selectDate_Validating);
             // 
             // P_AvailableShiftsForm
             // 

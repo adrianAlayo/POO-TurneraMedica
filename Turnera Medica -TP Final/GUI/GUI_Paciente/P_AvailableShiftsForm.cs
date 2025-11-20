@@ -84,5 +84,15 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
         {
 
         }
+
+        private void selectDate_Validating(object sender, CancelEventArgs e)
+        {
+            DateTime selectedDate = selectDate.Value.Date;
+            if (selectedDate.DayOfWeek == DayOfWeek.Saturday || selectedDate.DayOfWeek == DayOfWeek.Sunday)
+            {
+                e.Cancel = true; // Cancela la selección
+                MessageBox.Show("No se permiten fines de semana.");
+            }
+        }
     }
 }
