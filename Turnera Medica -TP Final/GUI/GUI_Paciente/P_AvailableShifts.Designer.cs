@@ -54,7 +54,9 @@
             this.dataGridView_shifts_result.AllowUserToResizeRows = false;
             this.dataGridView_shifts_result.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_shifts_result.Location = new System.Drawing.Point(117, 83);
+            this.dataGridView_shifts_result.MultiSelect = false;
             this.dataGridView_shifts_result.Name = "dataGridView_shifts_result";
+            this.dataGridView_shifts_result.ReadOnly = true;
             this.dataGridView_shifts_result.Size = new System.Drawing.Size(567, 254);
             this.dataGridView_shifts_result.StandardTab = true;
             this.dataGridView_shifts_result.TabIndex = 2;

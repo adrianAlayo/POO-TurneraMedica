@@ -33,6 +33,8 @@
             this.selectDate = new System.Windows.Forms.DateTimePicker();
             this.searchShifts = new System.Windows.Forms.Button();
             this.M_SpecificShift_list = new System.Windows.Forms.DataGridView();
+            this.attendedShift = new System.Windows.Forms.Button();
+            this.canceledShift = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.M_SpecificShift_list)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,7 +89,7 @@
             // M_SpecificShift_list
             // 
             this.M_SpecificShift_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.M_SpecificShift_list.Location = new System.Drawing.Point(67, 143);
+            this.M_SpecificShift_list.Location = new System.Drawing.Point(114, 143);
             this.M_SpecificShift_list.MultiSelect = false;
             this.M_SpecificShift_list.Name = "M_SpecificShift_list";
             this.M_SpecificShift_list.ReadOnly = true;
@@ -95,11 +97,37 @@
             this.M_SpecificShift_list.TabIndex = 4;
             this.M_SpecificShift_list.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.M_SpecificShift_list_CellContentClick);
             // 
+            // attendedShift
+            // 
+            this.attendedShift.BackColor = System.Drawing.Color.OrangeRed;
+            this.attendedShift.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.attendedShift.Location = new System.Drawing.Point(12, 177);
+            this.attendedShift.Name = "attendedShift";
+            this.attendedShift.Size = new System.Drawing.Size(90, 26);
+            this.attendedShift.TabIndex = 5;
+            this.attendedShift.Text = "Asistió";
+            this.attendedShift.UseVisualStyleBackColor = false;
+            this.attendedShift.Click += new System.EventHandler(this.attendedShift_Click);
+            // 
+            // canceledShift
+            // 
+            this.canceledShift.BackColor = System.Drawing.Color.OrangeRed;
+            this.canceledShift.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.canceledShift.Location = new System.Drawing.Point(12, 224);
+            this.canceledShift.Name = "canceledShift";
+            this.canceledShift.Size = new System.Drawing.Size(90, 26);
+            this.canceledShift.TabIndex = 6;
+            this.canceledShift.Text = "Canceló";
+            this.canceledShift.UseVisualStyleBackColor = false;
+            this.canceledShift.Click += new System.EventHandler(this.canceledShift_Click);
+            // 
             // M_SpecificShift
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.canceledShift);
+            this.Controls.Add(this.attendedShift);
             this.Controls.Add(this.M_SpecificShift_list);
             this.Controls.Add(this.searchShifts);
             this.Controls.Add(this.selectDate);
@@ -121,5 +149,7 @@
         private System.Windows.Forms.DateTimePicker selectDate;
         private System.Windows.Forms.Button searchShifts;
         private System.Windows.Forms.DataGridView M_SpecificShift_list;
+        private System.Windows.Forms.Button attendedShift;
+        private System.Windows.Forms.Button canceledShift;
     }
 }

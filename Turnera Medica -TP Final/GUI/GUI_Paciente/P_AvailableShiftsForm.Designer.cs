@@ -131,7 +131,6 @@
             this.selectOffice.FormattingEnabled = true;
             this.selectOffice.Items.AddRange(new object[] {
             "Corrientes 1500",
-            "Corrientes 3200",
             "Carabobo 3000",
             "México 2500",
             "Uruguay 4000",

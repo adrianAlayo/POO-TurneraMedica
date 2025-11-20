@@ -248,16 +248,35 @@ namespace Turnera_Medica__TP_Final.Controller
                 return false;
             }
         }
-        //Cuando el usuario elegiga que quiere hacer el turno con este medico, a el ese turno especifico se le actualizara el estado del turno
-        public void ActualizarTurnoPorUsuario()
-        {
-
-        }
 
         //Cuando el paciente no asista al turno el emdico tendra que actualizar el turno como no asistido de parte del paciente
-        public void ActulizarUsuarioNoAsistido()
+        public void UpdateShiftAttended(int shiftId)
         {
+            using (MySqlConnection conexionDB = Connection.conexion())
+            {
+                conexionDB.Open();
 
+                string query = "UPDATE shifts SET state = 'asistido' WHERE id = @id";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexionDB);
+                cmd.Parameters.AddWithValue("@id", shiftId);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+        public void UpdateShiftCanceled(int shiftId) 
+        {
+            using (MySqlConnection conexionDB = Connection.conexion())
+            {
+                conexionDB.Open();
+
+                string query = "UPDATE shifts SET state = 'cancelado' WHERE id = @id";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexionDB);
+                cmd.Parameters.AddWithValue("@id", shiftId);
+
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 }
