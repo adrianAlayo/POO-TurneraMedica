@@ -301,7 +301,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.s);
             this.Controls.Add(this.registerP_name_user);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "RegisterPatient";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Paciente";
             this.Load += new System.EventHandler(this.RegisterPatient_Load);
             this.ResumeLayout(false);

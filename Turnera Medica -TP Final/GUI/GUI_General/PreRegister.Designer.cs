@@ -104,7 +104,11 @@
             this.Controls.Add(this.paciente_option_user);
             this.Controls.Add(this.medico_option_user);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PreRegister";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";
             this.Load += new System.EventHandler(this.PreRegister_Load);
             this.ResumeLayout(false);

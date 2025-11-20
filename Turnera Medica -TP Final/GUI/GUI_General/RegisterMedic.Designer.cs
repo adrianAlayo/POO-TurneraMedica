@@ -452,7 +452,11 @@
             this.Controls.Add(this.registerM_dni_user);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.s);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "RegisterMedic";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Medico";
             this.Load += new System.EventHandler(this.RegisterMedic_Load);
             this.ResumeLayout(false);
