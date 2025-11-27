@@ -39,8 +39,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.P_name_user_guia = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.P_SpecificShift_list)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -77,11 +77,11 @@
             this.selectDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.selectDate.Location = new System.Drawing.Point(16, 71);
             this.selectDate.MaxDate = new System.DateTime(2025, 12, 12, 0, 0, 0, 0);
-            this.selectDate.MinDate = new System.DateTime(2025, 11, 20, 0, 0, 0, 0);
+            this.selectDate.MinDate = new System.DateTime(2025, 11, 27, 0, 0, 0, 0);
             this.selectDate.Name = "selectDate";
             this.selectDate.Size = new System.Drawing.Size(109, 20);
             this.selectDate.TabIndex = 3;
-            this.selectDate.Value = new System.DateTime(2025, 11, 20, 0, 0, 0, 0);
+            this.selectDate.Value = new System.DateTime(2025, 11, 27, 0, 0, 0, 0);
             this.selectDate.ValueChanged += new System.EventHandler(this.selectDate_ValueChanged);
             // 
             // searchShift
@@ -166,15 +166,6 @@
             this.panel2.Size = new System.Drawing.Size(776, 302);
             this.panel2.TabIndex = 21;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.MidnightBlue;
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(12, 81);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(776, 71);
-            this.panel3.TabIndex = 22;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -185,6 +176,15 @@
             this.label2.Size = new System.Drawing.Size(62, 19);
             this.label2.TabIndex = 5;
             this.label2.Text = "Fecha:";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Location = new System.Drawing.Point(12, 81);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(776, 71);
+            this.panel3.TabIndex = 22;
             // 
             // P_SpecificShift
             // 

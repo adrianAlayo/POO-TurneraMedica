@@ -46,11 +46,12 @@
             this.P_MyInfo_age = new System.Windows.Forms.TextBox();
             this.P_MyInfo_email = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.SendLogin = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.P_name_user_guia = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.SendLogin = new System.Windows.Forms.Button();
+            this.password = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -146,11 +147,12 @@
             // 
             this.social_work.AutoSize = true;
             this.social_work.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.social_work.Location = new System.Drawing.Point(229, 197);
+            this.social_work.Location = new System.Drawing.Point(228, 196);
             this.social_work.Name = "social_work";
             this.social_work.Size = new System.Drawing.Size(103, 19);
             this.social_work.TabIndex = 11;
             this.social_work.Text = "Obra Social:";
+            this.social_work.Click += new System.EventHandler(this.social_work_Click);
             // 
             // P_MyInfo_name
             // 
@@ -182,7 +184,7 @@
             // P_MyInfo_social_work
             // 
             this.P_MyInfo_social_work.Font = new System.Drawing.Font("Arial", 9F);
-            this.P_MyInfo_social_work.Location = new System.Drawing.Point(193, 219);
+            this.P_MyInfo_social_work.Location = new System.Drawing.Point(183, 218);
             this.P_MyInfo_social_work.Name = "P_MyInfo_social_work";
             this.P_MyInfo_social_work.Size = new System.Drawing.Size(188, 21);
             this.P_MyInfo_social_work.TabIndex = 15;
@@ -228,6 +230,18 @@
             this.panel1.Size = new System.Drawing.Size(800, 57);
             this.panel1.TabIndex = 19;
             // 
+            // SendLogin
+            // 
+            this.SendLogin.BackColor = System.Drawing.Color.Coral;
+            this.SendLogin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.SendLogin.Location = new System.Drawing.Point(609, 6);
+            this.SendLogin.Name = "SendLogin";
+            this.SendLogin.Size = new System.Drawing.Size(178, 41);
+            this.SendLogin.TabIndex = 21;
+            this.SendLogin.Text = "Cerrar Sesion";
+            this.SendLogin.UseVisualStyleBackColor = false;
+            this.SendLogin.Click += new System.EventHandler(this.SendLogin_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -263,6 +277,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.SlateGray;
+            this.panel3.Controls.Add(this.password);
             this.panel3.Controls.Add(this.name);
             this.panel3.Controls.Add(this.P_MyInfo_name);
             this.panel3.Controls.Add(this.last_name);
@@ -284,17 +299,14 @@
             this.panel3.TabIndex = 21;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // SendLogin
+            // password
             // 
-            this.SendLogin.BackColor = System.Drawing.Color.Coral;
-            this.SendLogin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.SendLogin.Location = new System.Drawing.Point(609, 6);
-            this.SendLogin.Name = "SendLogin";
-            this.SendLogin.Size = new System.Drawing.Size(178, 41);
-            this.SendLogin.TabIndex = 21;
-            this.SendLogin.Text = "Cerrar Sesion";
-            this.SendLogin.UseVisualStyleBackColor = false;
-            this.SendLogin.Click += new System.EventHandler(this.SendLogin_Click);
+            this.password.AutoSize = true;
+            this.password.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.password.Location = new System.Drawing.Point(313, 195);
+            this.password.Name = "password";
+            this.password.Size = new System.Drawing.Size(0, 19);
+            this.password.TabIndex = 20;
             // 
             // P_MyInfo
             // 
@@ -347,5 +359,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button SendLogin;
+        private System.Windows.Forms.Label password;
     }
 }

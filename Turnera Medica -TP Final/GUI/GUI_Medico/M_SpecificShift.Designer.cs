@@ -41,8 +41,8 @@
             this.M_name_user_guia = new System.Windows.Forms.Label();
             this.SendLogin = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.M_SpecificShift_list)).BeginInit();
             this.panel1.SuspendLayout();
@@ -194,15 +194,6 @@
             this.panel2.Size = new System.Drawing.Size(776, 320);
             this.panel2.TabIndex = 30;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(12, 73);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(776, 71);
-            this.panel3.TabIndex = 31;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -212,6 +203,15 @@
             this.label2.Size = new System.Drawing.Size(62, 19);
             this.label2.TabIndex = 7;
             this.label2.Text = "Fecha:";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Location = new System.Drawing.Point(12, 73);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(776, 71);
+            this.panel3.TabIndex = 31;
             // 
             // label3
             // 

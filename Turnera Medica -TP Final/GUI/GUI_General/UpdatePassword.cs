@@ -194,5 +194,10 @@ namespace Turnera_Medica__TP_Final.GUI
             update_newPass_user.UseSystemPasswordChar = !update_newPass_user.UseSystemPasswordChar;
 
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

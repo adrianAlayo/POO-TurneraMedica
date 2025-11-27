@@ -131,5 +131,10 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
             login_form.Show(); // Abro la pantalla de login
             this.Hide();
         }
+
+        private void social_work_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

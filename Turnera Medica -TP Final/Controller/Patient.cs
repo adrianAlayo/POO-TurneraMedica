@@ -114,10 +114,8 @@ namespace Turnera_Medica__TP_Final.Controller
                 string query = @"
                     SELECT 
                         s.id AS shift_id, s.shift_date, s.shift_time, s.duration, s.original_price, s.state,
-
                         m.id AS medic_id,
                         um.name AS medic_name, um.last_name AS medic_last_name,
-
                         o.id AS office_id, o.ubication AS office_location
 
                     FROM shifts s
