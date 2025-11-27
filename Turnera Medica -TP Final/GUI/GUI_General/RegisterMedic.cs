@@ -331,5 +331,45 @@ namespace Turnera_Medica__TP_Final.GUI
         {
             registerM_confirPassword_user.UseSystemPasswordChar = !registerM_confirPassword_user.UseSystemPasswordChar;
         }
+
+        private void lblTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registerM_montConsul_user_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registerM_speciality_user_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registerM_socialWork_user_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

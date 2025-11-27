@@ -177,5 +177,20 @@ namespace Turnera_Medica__TP_Final.GUI
         {
             registerP_confirPassword_user.UseSystemPasswordChar = !registerP_confirPassword_user.UseSystemPasswordChar;
         }
+
+        private void lblTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RegisterP_send_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

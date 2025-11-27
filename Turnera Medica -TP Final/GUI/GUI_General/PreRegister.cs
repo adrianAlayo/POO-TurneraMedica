@@ -17,11 +17,6 @@ namespace Turnera_Medica__TP_Final.GUI
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label1_Click_1(object sender, EventArgs e)
         {
 
@@ -62,6 +57,11 @@ namespace Turnera_Medica__TP_Final.GUI
             Login login_form = new Login();
             login_form.Show(); //Abre este form
             this.Hide(); // Oculto el Login
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
