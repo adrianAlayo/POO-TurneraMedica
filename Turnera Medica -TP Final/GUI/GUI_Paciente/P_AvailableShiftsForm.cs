@@ -94,5 +94,12 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
                 MessageBox.Show("No se permiten fines de semana.");
             }
         }
+
+        private void SendLogin_Click(object sender, EventArgs e)
+        {
+            Login login_form = new Login();
+            login_form.Show(); // Abro la pantalla de login
+            this.Hide();
+        }
     }
 }

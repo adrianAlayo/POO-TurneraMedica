@@ -50,6 +50,7 @@
             this.P_name_user_guia = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.SendLogin = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -218,6 +219,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.SendLogin);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.P_name_user_guia);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -282,6 +284,18 @@
             this.panel3.TabIndex = 21;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
+            // SendLogin
+            // 
+            this.SendLogin.BackColor = System.Drawing.Color.Coral;
+            this.SendLogin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.SendLogin.Location = new System.Drawing.Point(609, 6);
+            this.SendLogin.Name = "SendLogin";
+            this.SendLogin.Size = new System.Drawing.Size(178, 41);
+            this.SendLogin.TabIndex = 21;
+            this.SendLogin.Text = "Cerrar Sesion";
+            this.SendLogin.UseVisualStyleBackColor = false;
+            this.SendLogin.Click += new System.EventHandler(this.SendLogin_Click);
+            // 
             // P_MyInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,5 +346,6 @@
         private System.Windows.Forms.Label P_name_user_guia;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button SendLogin;
     }
 }

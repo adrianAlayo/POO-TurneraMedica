@@ -65,5 +65,10 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
         {
 
         }
+
+        private void lblEmail_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

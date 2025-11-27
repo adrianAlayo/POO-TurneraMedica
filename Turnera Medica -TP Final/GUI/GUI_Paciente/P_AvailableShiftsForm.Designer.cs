@@ -41,6 +41,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.P_name_user_guia = new System.Windows.Forms.Label();
+            this.SendLogin = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -166,6 +167,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.SendLogin);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.P_name_user_guia);
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -194,11 +196,23 @@
             this.P_name_user_guia.TabIndex = 10;
             this.P_name_user_guia.Text = "Paciente:";
             // 
+            // SendLogin
+            // 
+            this.SendLogin.BackColor = System.Drawing.Color.Coral;
+            this.SendLogin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.SendLogin.Location = new System.Drawing.Point(609, 6);
+            this.SendLogin.Name = "SendLogin";
+            this.SendLogin.Size = new System.Drawing.Size(178, 41);
+            this.SendLogin.TabIndex = 21;
+            this.SendLogin.Text = "Cerrar Sesion";
+            this.SendLogin.UseVisualStyleBackColor = false;
+            this.SendLogin.Click += new System.EventHandler(this.SendLogin_Click);
+            // 
             // P_AvailableShiftsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LimeGreen;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.selectDate);
@@ -239,5 +253,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label P_name_user_guia;
+        private System.Windows.Forms.Button SendLogin;
     }
 }
