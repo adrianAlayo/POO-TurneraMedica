@@ -112,7 +112,7 @@
             this.lnkOlvide.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkOlvide.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lnkOlvide.LinkColor = System.Drawing.Color.Navy;
-            this.lnkOlvide.Location = new System.Drawing.Point(188, 298);
+            this.lnkOlvide.Location = new System.Drawing.Point(188, 285);
             this.lnkOlvide.Name = "lnkOlvide";
             this.lnkOlvide.Size = new System.Drawing.Size(141, 15);
             this.lnkOlvide.TabIndex = 6;
@@ -126,7 +126,7 @@
             this.lnkRegistro.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkRegistro.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lnkRegistro.LinkColor = System.Drawing.Color.Navy;
-            this.lnkRegistro.Location = new System.Drawing.Point(70, 298);
+            this.lnkRegistro.Location = new System.Drawing.Point(70, 285);
             this.lnkRegistro.Name = "lnkRegistro";
             this.lnkRegistro.Size = new System.Drawing.Size(74, 15);
             this.lnkRegistro.TabIndex = 7;
@@ -189,16 +189,16 @@
             this.panel2.Controls.Add(this.SendLogin);
             this.panel2.Controls.Add(this.lnkOlvide);
             this.panel2.Controls.Add(this.login_password_user);
-            this.panel2.Location = new System.Drawing.Point(224, 115);
+            this.panel2.Location = new System.Drawing.Point(232, 100);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(348, 344);
+            this.panel2.Size = new System.Drawing.Size(348, 323);
             this.panel2.TabIndex = 12;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Gray;
-            this.panel4.Location = new System.Drawing.Point(163, 283);
+            this.panel4.Location = new System.Drawing.Point(163, 270);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(10, 40);
             this.panel4.TabIndex = 9;
@@ -208,7 +208,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.lblTitulo);
-            this.panel3.Location = new System.Drawing.Point(224, 115);
+            this.panel3.Location = new System.Drawing.Point(232, 100);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(348, 51);
             this.panel3.TabIndex = 13;

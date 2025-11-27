@@ -82,7 +82,7 @@
             this.panel2.Controls.Add(this.update_password);
             this.panel2.Location = new System.Drawing.Point(140, 86);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(480, 312);
+            this.panel2.Size = new System.Drawing.Size(480, 294);
             this.panel2.TabIndex = 14;
             // 
             // update_confirmPass_user
@@ -153,7 +153,7 @@
             // 
             this.return_login.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.return_login.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.return_login.Location = new System.Drawing.Point(20, 245);
+            this.return_login.Location = new System.Drawing.Point(20, 234);
             this.return_login.Name = "return_login";
             this.return_login.Size = new System.Drawing.Size(178, 41);
             this.return_login.TabIndex = 13;
@@ -165,7 +165,7 @@
             // 
             this.update_password.BackColor = System.Drawing.Color.LightGreen;
             this.update_password.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.update_password.Location = new System.Drawing.Point(286, 245);
+            this.update_password.Location = new System.Drawing.Point(286, 234);
             this.update_password.Name = "update_password";
             this.update_password.Size = new System.Drawing.Size(178, 41);
             this.update_password.TabIndex = 12;

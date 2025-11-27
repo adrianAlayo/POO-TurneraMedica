@@ -36,8 +36,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblTitulo = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -88,7 +88,7 @@
             this.ReturnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SpringGreen;
             this.ReturnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
             this.ReturnLogin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReturnLogin.Location = new System.Drawing.Point(89, 276);
+            this.ReturnLogin.Location = new System.Drawing.Point(89, 254);
             this.ReturnLogin.Name = "ReturnLogin";
             this.ReturnLogin.Size = new System.Drawing.Size(178, 41);
             this.ReturnLogin.TabIndex = 4;
@@ -137,8 +137,17 @@
             this.panel2.Controls.Add(this.paciente_option_user);
             this.panel2.Location = new System.Drawing.Point(251, 121);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(348, 329);
+            this.panel2.Size = new System.Drawing.Size(348, 308);
             this.panel2.TabIndex = 14;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel3.Controls.Add(this.lblTitulo);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(348, 51);
+            this.panel3.TabIndex = 15;
             // 
             // lblTitulo
             // 
@@ -151,15 +160,6 @@
             this.lblTitulo.TabIndex = 1;
             this.lblTitulo.Text = "Elegir Rol";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel3.Controls.Add(this.lblTitulo);
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(348, 51);
-            this.panel3.TabIndex = 15;
             // 
             // PreRegister
             // 

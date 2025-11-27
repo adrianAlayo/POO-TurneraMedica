@@ -70,7 +70,7 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 
         private void M_SpecificShift_Load(object sender, EventArgs e)
         {
-
+            M_name_user_guia.Text += " " + usermedic.Name + " " + usermedic.LastName;
         }
 
         private void selectDate_Validating(object sender, CancelEventArgs e)
@@ -144,6 +144,13 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
             usermedic.specificShift(selectDate.Value.Date);
             LoadTable();
 
+        }
+
+        private void SendLogin_Click(object sender, EventArgs e)
+        {
+            Login login_form = new Login();
+            login_form.Show(); // Abro la pantalla de login
+            this.Hide();
         }
     }
 }

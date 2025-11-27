@@ -51,6 +51,7 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 
         private void M_MyInfo_Load(object sender, EventArgs e)
         {
+            M_name_user_guia.Text += " " + usermedic.Name + " " + usermedic.LastName;
             M_MyInfo_name.Text = usermedic.Name;
             M_MyInfo_last_name.Text = usermedic.LastName;
             M_MyInfo_dni.Text = Convert.ToString(usermedic.Dni);
@@ -186,6 +187,53 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SendLogin_Click(object sender, EventArgs e)
+        {
+            Login login_form = new Login();
+            login_form.Show(); // Abro la pantalla de login
+            this.Hide();
+        }
+
+        private void consult_amount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void age_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dni_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void phone_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M_MyInfo_lastName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M_MyInfo_ChekOutTime_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void email_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
         {
 
         }

@@ -28,27 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(M_Start));
             this.GetShifts = new System.Windows.Forms.Button();
             this.GetShift = new System.Windows.Forms.Button();
             this.GetSocialWork = new System.Windows.Forms.Button();
-            this.SendLogin = new System.Windows.Forms.Button();
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.GetInfo = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.M_name_user_guia = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // GetShifts
             // 
             this.GetShifts.BackColor = System.Drawing.SystemColors.Control;
             this.GetShifts.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.GetShifts.Location = new System.Drawing.Point(188, 151);
+            this.GetShifts.Location = new System.Drawing.Point(55, 34);
             this.GetShifts.Name = "GetShifts";
-            this.GetShifts.Size = new System.Drawing.Size(91, 40);
+            this.GetShifts.Size = new System.Drawing.Size(178, 41);
             this.GetShifts.TabIndex = 9;
-            this.GetShifts.Text = "Ver";
+            this.GetShifts.Text = "Turnos";
             this.GetShifts.UseVisualStyleBackColor = false;
             this.GetShifts.Click += new System.EventHandler(this.GetShifts_Click);
             // 
@@ -56,11 +62,11 @@
             // 
             this.GetShift.BackColor = System.Drawing.SystemColors.Control;
             this.GetShift.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.GetShift.Location = new System.Drawing.Point(188, 302);
+            this.GetShift.Location = new System.Drawing.Point(55, 134);
             this.GetShift.Name = "GetShift";
-            this.GetShift.Size = new System.Drawing.Size(91, 40);
+            this.GetShift.Size = new System.Drawing.Size(178, 41);
             this.GetShift.TabIndex = 11;
-            this.GetShift.Text = "Ver";
+            this.GetShift.Text = "Turno Especifico";
             this.GetShift.UseVisualStyleBackColor = false;
             this.GetShift.Click += new System.EventHandler(this.GetShift_Click);
             // 
@@ -68,105 +74,113 @@
             // 
             this.GetSocialWork.BackColor = System.Drawing.SystemColors.Control;
             this.GetSocialWork.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.GetSocialWork.Location = new System.Drawing.Point(507, 302);
+            this.GetSocialWork.Location = new System.Drawing.Point(322, 134);
             this.GetSocialWork.Name = "GetSocialWork";
-            this.GetSocialWork.Size = new System.Drawing.Size(91, 40);
+            this.GetSocialWork.Size = new System.Drawing.Size(178, 41);
             this.GetSocialWork.TabIndex = 12;
-            this.GetSocialWork.Text = "Ver";
+            this.GetSocialWork.Text = "Añadir Obra Social";
             this.GetSocialWork.UseVisualStyleBackColor = false;
             this.GetSocialWork.Click += new System.EventHandler(this.GetSocialWork_Click);
-            // 
-            // SendLogin
-            // 
-            this.SendLogin.BackColor = System.Drawing.Color.Coral;
-            this.SendLogin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.SendLogin.Location = new System.Drawing.Point(329, 375);
-            this.SendLogin.Name = "SendLogin";
-            this.SendLogin.Size = new System.Drawing.Size(140, 35);
-            this.SendLogin.TabIndex = 13;
-            this.SendLogin.Text = "Cerrar Sesion";
-            this.SendLogin.UseVisualStyleBackColor = false;
-            this.SendLogin.Click += new System.EventHandler(this.SendLogin_Click);
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Arial Black", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(252, 36);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(291, 52);
-            this.lblTitulo.TabIndex = 14;
-            this.lblTitulo.Text = "Menú Medico";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.lblEmail.Location = new System.Drawing.Point(152, 125);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(167, 19);
-            this.lblEmail.TabIndex = 15;
-            this.lblEmail.Text = "Ver todos los Turnos";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(152, 280);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 19);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Ver Turno especifico";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(491, 125);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 19);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Mi Informacion";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(477, 280);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 19);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Añadir obra social";
             // 
             // GetInfo
             // 
             this.GetInfo.BackColor = System.Drawing.SystemColors.Control;
             this.GetInfo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.GetInfo.Location = new System.Drawing.Point(507, 151);
+            this.GetInfo.Location = new System.Drawing.Point(346, 34);
             this.GetInfo.Name = "GetInfo";
-            this.GetInfo.Size = new System.Drawing.Size(91, 40);
+            this.GetInfo.Size = new System.Drawing.Size(178, 41);
             this.GetInfo.TabIndex = 10;
-            this.GetInfo.Text = "Ver";
+            this.GetInfo.Text = "Mi Informacion";
             this.GetInfo.UseVisualStyleBackColor = false;
             this.GetInfo.Click += new System.EventHandler(this.GetInfo_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.M_name_user_guia);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(813, 57);
+            this.panel1.TabIndex = 29;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(54, 42);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // M_name_user_guia
+            // 
+            this.M_name_user_guia.AutoSize = true;
+            this.M_name_user_guia.Font = new System.Drawing.Font("Arial Black", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.M_name_user_guia.Location = new System.Drawing.Point(59, 7);
+            this.M_name_user_guia.Name = "M_name_user_guia";
+            this.M_name_user_guia.Size = new System.Drawing.Size(87, 40);
+            this.M_name_user_guia.TabIndex = 10;
+            this.M_name_user_guia.Text = "Hola";
+            this.M_name_user_guia.Click += new System.EventHandler(this.P_name_user_guia_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Coral;
+            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.button1.Location = new System.Drawing.Point(609, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(178, 41);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Cerrar Sesion";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.SlateGray;
+            this.panel3.Controls.Add(this.GetShifts);
+            this.panel3.Controls.Add(this.GetShift);
+            this.panel3.Controls.Add(this.GetSocialWork);
+            this.panel3.Controls.Add(this.GetInfo);
+            this.panel3.Location = new System.Drawing.Point(126, 157);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(547, 213);
+            this.panel3.TabIndex = 33;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Location = new System.Drawing.Point(126, 92);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(547, 71);
+            this.panel2.TabIndex = 32;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Black", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label4.Location = new System.Drawing.Point(124, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(323, 52);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Menú Principal";
             // 
             // M_Start
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkCyan;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.lblTitulo);
-            this.Controls.Add(this.SendLogin);
-            this.Controls.Add(this.GetSocialWork);
-            this.Controls.Add(this.GetShift);
-            this.Controls.Add(this.GetInfo);
-            this.Controls.Add(this.GetShifts);
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ClientSize = new System.Drawing.Size(800, 391);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -174,8 +188,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú Medico";
             this.Load += new System.EventHandler(this.M_Start_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -184,12 +203,13 @@
         private System.Windows.Forms.Button GetShifts;
         private System.Windows.Forms.Button GetShift;
         private System.Windows.Forms.Button GetSocialWork;
-        private System.Windows.Forms.Button SendLogin;
-        private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button GetInfo;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label M_name_user_guia;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label4;
     }
 }

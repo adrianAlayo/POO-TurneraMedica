@@ -22,7 +22,7 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
 
         private void P_SpecificShift_Load(object sender, EventArgs e)
         {
-
+            P_name_user_guia.Text += " " + userpatient.Name + " " + userpatient.LastName;
         }
 
         private void return_start_P_Click(object sender, EventArgs e)
@@ -73,6 +73,18 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
 
 
         private void P_SpecificShift_list_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void SendLogin_Click(object sender, EventArgs e)
+        {
+            Login login_form = new Login();
+            login_form.Show(); // Abro la pantalla de login
+            this.Hide();
+        }
+
+        private void P_name_user_guia_Click(object sender, EventArgs e)
         {
 
         }

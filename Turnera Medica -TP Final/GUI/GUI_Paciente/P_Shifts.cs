@@ -62,11 +62,24 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
         private void P_Shifts_Load(object sender, EventArgs e)
         {
             LoadTable();
+            P_name_user_guia.Text += " " + userpatient.Name + " " + userpatient.LastName;
         }
 
         private void P_Shifts_list_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SendLogin_Click(object sender, EventArgs e)
+        {
+            Login login_form = new Login();
+            login_form.Show(); // Abro la pantalla de login
+            this.Hide();
         }
     }
 }
