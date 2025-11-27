@@ -23,7 +23,7 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
 
         private void P_Start_Load(object sender, EventArgs e)
         {
-
+            P_name_user_guia.Text += " " + userpatient.Name + " " + userpatient.LastName;
         }
 
         private void GetShifts_Click(object sender, EventArgs e)
@@ -59,6 +59,11 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
             Login login_form = new Login();
             login_form.Show(); // Abro la pantalla de login
             this.Hide();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

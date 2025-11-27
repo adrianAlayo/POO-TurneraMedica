@@ -28,12 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(P_SpecificShift));
             this.return_start_P = new System.Windows.Forms.Button();
             this.P_SpecificShift_list = new System.Windows.Forms.DataGridView();
             this.selectDate = new System.Windows.Forms.DateTimePicker();
             this.searchShift = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.P_name_user_guia = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.P_SpecificShift_list)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // return_start_P
@@ -51,7 +57,7 @@
             // P_SpecificShift_list
             // 
             this.P_SpecificShift_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.P_SpecificShift_list.Location = new System.Drawing.Point(83, 145);
+            this.P_SpecificShift_list.Location = new System.Drawing.Point(83, 167);
             this.P_SpecificShift_list.MultiSelect = false;
             this.P_SpecificShift_list.Name = "P_SpecificShift_list";
             this.P_SpecificShift_list.ReadOnly = true;
@@ -63,7 +69,7 @@
             // 
             this.selectDate.CustomFormat = "dd/MM/yyyy";
             this.selectDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.selectDate.Location = new System.Drawing.Point(352, 94);
+            this.selectDate.Location = new System.Drawing.Point(342, 127);
             this.selectDate.MaxDate = new System.DateTime(2025, 12, 12, 0, 0, 0, 0);
             this.selectDate.MinDate = new System.DateTime(2025, 11, 20, 0, 0, 0, 0);
             this.selectDate.Name = "selectDate";
@@ -76,7 +82,7 @@
             // 
             this.searchShift.BackColor = System.Drawing.Color.PaleGreen;
             this.searchShift.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchShift.Location = new System.Drawing.Point(494, 93);
+            this.searchShift.Location = new System.Drawing.Point(484, 126);
             this.searchShift.Name = "searchShift";
             this.searchShift.Size = new System.Drawing.Size(90, 26);
             this.searchShift.TabIndex = 4;
@@ -88,11 +94,43 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Black", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(161, 9);
+            this.label1.Location = new System.Drawing.Point(172, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(520, 52);
             this.label1.TabIndex = 5;
             this.label1.Text = "Buscar Turno Especifico";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.P_name_user_guia);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(813, 57);
+            this.panel1.TabIndex = 20;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(54, 42);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // P_name_user_guia
+            // 
+            this.P_name_user_guia.AutoSize = true;
+            this.P_name_user_guia.Font = new System.Drawing.Font("Arial Black", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.P_name_user_guia.Location = new System.Drawing.Point(59, 7);
+            this.P_name_user_guia.Name = "P_name_user_guia";
+            this.P_name_user_guia.Size = new System.Drawing.Size(162, 40);
+            this.P_name_user_guia.TabIndex = 10;
+            this.P_name_user_guia.Text = "Paciente:";
             // 
             // P_SpecificShift
             // 
@@ -100,6 +138,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LimeGreen;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.searchShift);
             this.Controls.Add(this.selectDate);
@@ -113,6 +152,9 @@
             this.Text = "Buscar Turno Especifico";
             this.Load += new System.EventHandler(this.P_SpecificShift_Load);
             ((System.ComponentModel.ISupportInitialize)(this.P_SpecificShift_list)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,5 +167,8 @@
         private System.Windows.Forms.DateTimePicker selectDate;
         private System.Windows.Forms.Button searchShift;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label P_name_user_guia;
     }
 }

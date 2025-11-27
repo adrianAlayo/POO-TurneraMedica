@@ -77,6 +77,7 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
             conexionDB.Open();
 
             // Datos directos
+            P_name_user_guia.Text += " " + userpatient.Name + " " + userpatient.LastName;
             P_MyInfo_name.Text = userpatient.Name;
             P_MyInfo_last_name.Text = userpatient.LastName;
             P_MyInfo_age.Text = userpatient.Age.ToString();
@@ -107,6 +108,21 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
             P_MyInfo_social_work.Text = socialName;
 
             conexionDB.Close();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

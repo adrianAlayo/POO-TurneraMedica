@@ -22,7 +22,7 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
 
         private void P_SpecificShift_Load(object sender, EventArgs e)
         {
-
+            P_name_user_guia.Text += " " + userpatient.Name + " " + userpatient.LastName;
         }
 
         private void return_start_P_Click(object sender, EventArgs e)

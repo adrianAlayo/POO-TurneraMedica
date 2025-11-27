@@ -29,7 +29,7 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
 
         private void P_AvailableShiftsForm_Load(object sender, EventArgs e)
         {
-
+            P_name_user_guia.Text += " " + userpatient.Name + " " + userpatient.LastName;
         }
 
         private void ReturnPreRegister_Click(object sender, EventArgs e)

@@ -104,6 +104,7 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Paciente
         private void P_AvailableShifts_Load(object sender, EventArgs e)
         {
             loadAvailableShifts();
+            P_name_user_guia.Text += " " + userpatient.Name + " " + userpatient.LastName;
         }
 
         private void dataGridView_shifts_result_CellContentClick(object sender, DataGridViewCellEventArgs e)

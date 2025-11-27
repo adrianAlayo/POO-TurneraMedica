@@ -234,7 +234,7 @@
             this.ReturnPreRegister.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SpringGreen;
             this.ReturnPreRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
             this.ReturnPreRegister.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReturnPreRegister.Location = new System.Drawing.Point(87, 395);
+            this.ReturnPreRegister.Location = new System.Drawing.Point(87, 379);
             this.ReturnPreRegister.Name = "ReturnPreRegister";
             this.ReturnPreRegister.Size = new System.Drawing.Size(178, 41);
             this.ReturnPreRegister.TabIndex = 35;
@@ -503,7 +503,7 @@
             this.panel2.Controls.Add(this.label13);
             this.panel2.Location = new System.Drawing.Point(12, 132);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(776, 446);
+            this.panel2.Size = new System.Drawing.Size(776, 432);
             this.panel2.TabIndex = 65;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -511,7 +511,7 @@
             // 
             this.RegisterM_send.BackColor = System.Drawing.Color.LightGreen;
             this.RegisterM_send.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegisterM_send.Location = new System.Drawing.Point(522, 391);
+            this.RegisterM_send.Location = new System.Drawing.Point(523, 379);
             this.RegisterM_send.Name = "RegisterM_send";
             this.RegisterM_send.Size = new System.Drawing.Size(178, 41);
             this.RegisterM_send.TabIndex = 81;

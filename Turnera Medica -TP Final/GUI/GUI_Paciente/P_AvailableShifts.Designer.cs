@@ -28,11 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(P_AvailableShifts));
             this.return_start_P = new System.Windows.Forms.Button();
             this.dataGridView_shifts_result = new System.Windows.Forms.DataGridView();
             this.take_turn_P = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.P_name_user_guia = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_shifts_result)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // return_start_P
@@ -54,7 +60,7 @@
             this.dataGridView_shifts_result.AllowUserToResizeColumns = false;
             this.dataGridView_shifts_result.AllowUserToResizeRows = false;
             this.dataGridView_shifts_result.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_shifts_result.Location = new System.Drawing.Point(117, 83);
+            this.dataGridView_shifts_result.Location = new System.Drawing.Point(134, 125);
             this.dataGridView_shifts_result.MultiSelect = false;
             this.dataGridView_shifts_result.Name = "dataGridView_shifts_result";
             this.dataGridView_shifts_result.ReadOnly = true;
@@ -79,11 +85,43 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Black", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(198, 18);
+            this.label1.Location = new System.Drawing.Point(197, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(411, 52);
             this.label1.TabIndex = 4;
             this.label1.Text = "Turnos Disponibles";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.P_name_user_guia);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(813, 57);
+            this.panel1.TabIndex = 20;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(54, 42);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // P_name_user_guia
+            // 
+            this.P_name_user_guia.AutoSize = true;
+            this.P_name_user_guia.Font = new System.Drawing.Font("Arial Black", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.P_name_user_guia.Location = new System.Drawing.Point(59, 7);
+            this.P_name_user_guia.Name = "P_name_user_guia";
+            this.P_name_user_guia.Size = new System.Drawing.Size(162, 40);
+            this.P_name_user_guia.TabIndex = 10;
+            this.P_name_user_guia.Text = "Paciente:";
             // 
             // P_AvailableShifts
             // 
@@ -91,6 +129,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LimeGreen;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.take_turn_P);
             this.Controls.Add(this.dataGridView_shifts_result);
@@ -103,6 +142,9 @@
             this.Text = "Turnos Disponibles";
             this.Load += new System.EventHandler(this.P_AvailableShifts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_shifts_result)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,5 +156,8 @@
         private System.Windows.Forms.DataGridView dataGridView_shifts_result;
         private System.Windows.Forms.Button take_turn_P;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label P_name_user_guia;
     }
 }
