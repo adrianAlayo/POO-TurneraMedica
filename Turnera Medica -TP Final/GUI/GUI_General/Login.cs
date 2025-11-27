@@ -236,5 +236,30 @@ namespace Turnera_Medica__TP_Final.GUI
         {
             login_password_user.UseSystemPasswordChar = !login_password_user.UseSystemPasswordChar;
         }
+
+        private void lblEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPassword_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void materialFlatButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
