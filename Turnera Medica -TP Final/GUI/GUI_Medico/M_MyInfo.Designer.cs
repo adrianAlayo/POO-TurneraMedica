@@ -34,31 +34,31 @@
             this.M_name_user_guia = new System.Windows.Forms.Label();
             this.SendLogin = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.M_MyInfo_last_name = new System.Windows.Forms.TextBox();
             this.return_start_M = new System.Windows.Forms.Button();
+            this.M_MyInfo_departure_time = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.Label();
+            this.M_MyInfo_entry_time = new System.Windows.Forms.TextBox();
             this.M_MyInfo_lastName = new System.Windows.Forms.Label();
+            this.M_MyInfo_social_works = new System.Windows.Forms.TextBox();
             this.email = new System.Windows.Forms.Label();
+            this.M_MyInfo_email = new System.Windows.Forms.TextBox();
             this.M_MyInfo_socialWorck = new System.Windows.Forms.Label();
+            this.M_MyInfo_age = new System.Windows.Forms.TextBox();
             this.dni = new System.Windows.Forms.Label();
             this.age = new System.Windows.Forms.Label();
-            this.phone = new System.Windows.Forms.Label();
-            this.office = new System.Windows.Forms.Label();
-            this.speciality = new System.Windows.Forms.Label();
-            this.consult_amount = new System.Windows.Forms.Label();
-            this.M_MyInfo_ChekInTime = new System.Windows.Forms.Label();
-            this.M_MyInfo_ChekOutTime = new System.Windows.Forms.Label();
-            this.M_MyInfo_dni = new System.Windows.Forms.TextBox();
-            this.M_MyInfo_phone = new System.Windows.Forms.TextBox();
-            this.M_MyInfo_speciality = new System.Windows.Forms.TextBox();
-            this.M_MyInfo_office = new System.Windows.Forms.TextBox();
-            this.M_MyInfo_name = new System.Windows.Forms.TextBox();
             this.M_MyInfo_consult_price = new System.Windows.Forms.TextBox();
-            this.M_MyInfo_last_name = new System.Windows.Forms.TextBox();
-            this.M_MyInfo_age = new System.Windows.Forms.TextBox();
-            this.M_MyInfo_email = new System.Windows.Forms.TextBox();
-            this.M_MyInfo_social_works = new System.Windows.Forms.TextBox();
-            this.M_MyInfo_entry_time = new System.Windows.Forms.TextBox();
-            this.M_MyInfo_departure_time = new System.Windows.Forms.TextBox();
+            this.phone = new System.Windows.Forms.Label();
+            this.M_MyInfo_name = new System.Windows.Forms.TextBox();
+            this.office = new System.Windows.Forms.Label();
+            this.M_MyInfo_office = new System.Windows.Forms.TextBox();
+            this.speciality = new System.Windows.Forms.Label();
+            this.M_MyInfo_speciality = new System.Windows.Forms.TextBox();
+            this.consult_amount = new System.Windows.Forms.Label();
+            this.M_MyInfo_phone = new System.Windows.Forms.TextBox();
+            this.M_MyInfo_ChekInTime = new System.Windows.Forms.Label();
+            this.M_MyInfo_dni = new System.Windows.Forms.TextBox();
+            this.M_MyInfo_ChekOutTime = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -114,7 +114,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.SlateGray;
+            this.panel3.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel3.Controls.Add(this.M_MyInfo_last_name);
             this.panel3.Controls.Add(this.return_start_M);
             this.panel3.Controls.Add(this.M_MyInfo_departure_time);
@@ -145,6 +145,16 @@
             this.panel3.Size = new System.Drawing.Size(685, 404);
             this.panel3.TabIndex = 31;
             // 
+            // M_MyInfo_last_name
+            // 
+            this.M_MyInfo_last_name.Font = new System.Drawing.Font("Arial", 9F);
+            this.M_MyInfo_last_name.Location = new System.Drawing.Point(289, 55);
+            this.M_MyInfo_last_name.Name = "M_MyInfo_last_name";
+            this.M_MyInfo_last_name.ReadOnly = true;
+            this.M_MyInfo_last_name.Size = new System.Drawing.Size(162, 21);
+            this.M_MyInfo_last_name.TabIndex = 23;
+            this.M_MyInfo_last_name.TextChanged += new System.EventHandler(this.M_MyInfo_last_name_TextChanged);
+            // 
             // return_start_M
             // 
             this.return_start_M.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -157,6 +167,16 @@
             this.return_start_M.UseVisualStyleBackColor = false;
             this.return_start_M.Click += new System.EventHandler(this.return_start_M_Click);
             // 
+            // M_MyInfo_departure_time
+            // 
+            this.M_MyInfo_departure_time.Font = new System.Drawing.Font("Arial", 9F);
+            this.M_MyInfo_departure_time.Location = new System.Drawing.Point(289, 309);
+            this.M_MyInfo_departure_time.Name = "M_MyInfo_departure_time";
+            this.M_MyInfo_departure_time.ReadOnly = true;
+            this.M_MyInfo_departure_time.Size = new System.Drawing.Size(162, 21);
+            this.M_MyInfo_departure_time.TabIndex = 28;
+            this.M_MyInfo_departure_time.TextChanged += new System.EventHandler(this.M_MyInfo_departure_time_TextChanged);
+            // 
             // name
             // 
             this.name.AutoSize = true;
@@ -167,6 +187,16 @@
             this.name.TabIndex = 4;
             this.name.Text = "Nombre:";
             this.name.Click += new System.EventHandler(this.lblEmail_Click);
+            // 
+            // M_MyInfo_entry_time
+            // 
+            this.M_MyInfo_entry_time.Font = new System.Drawing.Font("Arial", 9F);
+            this.M_MyInfo_entry_time.Location = new System.Drawing.Point(95, 309);
+            this.M_MyInfo_entry_time.Name = "M_MyInfo_entry_time";
+            this.M_MyInfo_entry_time.ReadOnly = true;
+            this.M_MyInfo_entry_time.Size = new System.Drawing.Size(162, 21);
+            this.M_MyInfo_entry_time.TabIndex = 27;
+            this.M_MyInfo_entry_time.TextChanged += new System.EventHandler(this.M_MyInfo_entry_time_TextChanged);
             // 
             // M_MyInfo_lastName
             // 
@@ -179,6 +209,16 @@
             this.M_MyInfo_lastName.Text = "Apellido:";
             this.M_MyInfo_lastName.Click += new System.EventHandler(this.M_MyInfo_lastName_Click);
             // 
+            // M_MyInfo_social_works
+            // 
+            this.M_MyInfo_social_works.Font = new System.Drawing.Font("Arial", 9F);
+            this.M_MyInfo_social_works.Location = new System.Drawing.Point(95, 241);
+            this.M_MyInfo_social_works.Name = "M_MyInfo_social_works";
+            this.M_MyInfo_social_works.ReadOnly = true;
+            this.M_MyInfo_social_works.Size = new System.Drawing.Size(356, 21);
+            this.M_MyInfo_social_works.TabIndex = 26;
+            this.M_MyInfo_social_works.TextChanged += new System.EventHandler(this.M_MyInfo_social_works_TextChanged);
+            // 
             // email
             // 
             this.email.AutoSize = true;
@@ -190,6 +230,16 @@
             this.email.Text = "Email:";
             this.email.Click += new System.EventHandler(this.email_Click);
             // 
+            // M_MyInfo_email
+            // 
+            this.M_MyInfo_email.Font = new System.Drawing.Font("Arial", 9F);
+            this.M_MyInfo_email.Location = new System.Drawing.Point(478, 117);
+            this.M_MyInfo_email.Name = "M_MyInfo_email";
+            this.M_MyInfo_email.ReadOnly = true;
+            this.M_MyInfo_email.Size = new System.Drawing.Size(162, 21);
+            this.M_MyInfo_email.TabIndex = 25;
+            this.M_MyInfo_email.TextChanged += new System.EventHandler(this.M_MyInfo_email_TextChanged);
+            // 
             // M_MyInfo_socialWorck
             // 
             this.M_MyInfo_socialWorck.AutoSize = true;
@@ -200,6 +250,16 @@
             this.M_MyInfo_socialWorck.TabIndex = 7;
             this.M_MyInfo_socialWorck.Text = "Obras Sociales:";
             this.M_MyInfo_socialWorck.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // M_MyInfo_age
+            // 
+            this.M_MyInfo_age.Font = new System.Drawing.Font("Arial", 9F);
+            this.M_MyInfo_age.Location = new System.Drawing.Point(478, 55);
+            this.M_MyInfo_age.Name = "M_MyInfo_age";
+            this.M_MyInfo_age.ReadOnly = true;
+            this.M_MyInfo_age.Size = new System.Drawing.Size(162, 21);
+            this.M_MyInfo_age.TabIndex = 24;
+            this.M_MyInfo_age.TextChanged += new System.EventHandler(this.M_MyInfo_age_TextChanged);
             // 
             // dni
             // 
@@ -223,6 +283,16 @@
             this.age.Text = "Edad:";
             this.age.Click += new System.EventHandler(this.age_Click);
             // 
+            // M_MyInfo_consult_price
+            // 
+            this.M_MyInfo_consult_price.Font = new System.Drawing.Font("Arial", 9F);
+            this.M_MyInfo_consult_price.Location = new System.Drawing.Point(478, 178);
+            this.M_MyInfo_consult_price.Name = "M_MyInfo_consult_price";
+            this.M_MyInfo_consult_price.ReadOnly = true;
+            this.M_MyInfo_consult_price.Size = new System.Drawing.Size(162, 21);
+            this.M_MyInfo_consult_price.TabIndex = 22;
+            this.M_MyInfo_consult_price.TextChanged += new System.EventHandler(this.M_MyInfo_consult_price_TextChanged);
+            // 
             // phone
             // 
             this.phone.AutoSize = true;
@@ -233,6 +303,16 @@
             this.phone.TabIndex = 10;
             this.phone.Text = "Telefeno:";
             this.phone.Click += new System.EventHandler(this.phone_Click);
+            // 
+            // M_MyInfo_name
+            // 
+            this.M_MyInfo_name.Font = new System.Drawing.Font("Arial", 9F);
+            this.M_MyInfo_name.Location = new System.Drawing.Point(95, 55);
+            this.M_MyInfo_name.Name = "M_MyInfo_name";
+            this.M_MyInfo_name.ReadOnly = true;
+            this.M_MyInfo_name.Size = new System.Drawing.Size(162, 21);
+            this.M_MyInfo_name.TabIndex = 21;
+            this.M_MyInfo_name.TextChanged += new System.EventHandler(this.M_MyInfo_name_TextChanged);
             // 
             // office
             // 
@@ -245,6 +325,16 @@
             this.office.Text = "Consultorio:";
             this.office.Click += new System.EventHandler(this.M_MyInfo_office_Click);
             // 
+            // M_MyInfo_office
+            // 
+            this.M_MyInfo_office.Font = new System.Drawing.Font("Arial", 9F);
+            this.M_MyInfo_office.Location = new System.Drawing.Point(289, 178);
+            this.M_MyInfo_office.Name = "M_MyInfo_office";
+            this.M_MyInfo_office.ReadOnly = true;
+            this.M_MyInfo_office.Size = new System.Drawing.Size(162, 21);
+            this.M_MyInfo_office.TabIndex = 20;
+            this.M_MyInfo_office.TextChanged += new System.EventHandler(this.M_MyInfo_office_TextChanged_1);
+            // 
             // speciality
             // 
             this.speciality.AutoSize = true;
@@ -255,6 +345,16 @@
             this.speciality.TabIndex = 12;
             this.speciality.Text = "Especialidad:";
             this.speciality.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // M_MyInfo_speciality
+            // 
+            this.M_MyInfo_speciality.Font = new System.Drawing.Font("Arial", 9F);
+            this.M_MyInfo_speciality.Location = new System.Drawing.Point(95, 178);
+            this.M_MyInfo_speciality.Name = "M_MyInfo_speciality";
+            this.M_MyInfo_speciality.ReadOnly = true;
+            this.M_MyInfo_speciality.Size = new System.Drawing.Size(162, 21);
+            this.M_MyInfo_speciality.TabIndex = 19;
+            this.M_MyInfo_speciality.TextChanged += new System.EventHandler(this.M_MyInfo_speciality_TextChanged_1);
             // 
             // consult_amount
             // 
@@ -267,6 +367,16 @@
             this.consult_amount.Text = "Cobro por Consulta:";
             this.consult_amount.Click += new System.EventHandler(this.consult_amount_Click);
             // 
+            // M_MyInfo_phone
+            // 
+            this.M_MyInfo_phone.Font = new System.Drawing.Font("Arial", 9F);
+            this.M_MyInfo_phone.Location = new System.Drawing.Point(289, 117);
+            this.M_MyInfo_phone.Name = "M_MyInfo_phone";
+            this.M_MyInfo_phone.ReadOnly = true;
+            this.M_MyInfo_phone.Size = new System.Drawing.Size(162, 21);
+            this.M_MyInfo_phone.TabIndex = 18;
+            this.M_MyInfo_phone.TextChanged += new System.EventHandler(this.M_MyInfo_phone_TextChanged_1);
+            // 
             // M_MyInfo_ChekInTime
             // 
             this.M_MyInfo_ChekInTime.AutoSize = true;
@@ -277,6 +387,16 @@
             this.M_MyInfo_ChekInTime.TabIndex = 14;
             this.M_MyInfo_ChekInTime.Text = "Horario de Entrada:";
             this.M_MyInfo_ChekInTime.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // M_MyInfo_dni
+            // 
+            this.M_MyInfo_dni.Font = new System.Drawing.Font("Arial", 9F);
+            this.M_MyInfo_dni.Location = new System.Drawing.Point(95, 117);
+            this.M_MyInfo_dni.Name = "M_MyInfo_dni";
+            this.M_MyInfo_dni.ReadOnly = true;
+            this.M_MyInfo_dni.Size = new System.Drawing.Size(162, 21);
+            this.M_MyInfo_dni.TabIndex = 17;
+            this.M_MyInfo_dni.TextChanged += new System.EventHandler(this.M_MyInfo_dni_TextChanged_1);
             // 
             // M_MyInfo_ChekOutTime
             // 
@@ -289,129 +409,9 @@
             this.M_MyInfo_ChekOutTime.Text = "Horario de Salida:";
             this.M_MyInfo_ChekOutTime.Click += new System.EventHandler(this.M_MyInfo_ChekOutTime_Click);
             // 
-            // M_MyInfo_dni
-            // 
-            this.M_MyInfo_dni.Font = new System.Drawing.Font("Arial", 9F);
-            this.M_MyInfo_dni.Location = new System.Drawing.Point(95, 117);
-            this.M_MyInfo_dni.Name = "M_MyInfo_dni";
-            this.M_MyInfo_dni.ReadOnly = true;
-            this.M_MyInfo_dni.Size = new System.Drawing.Size(162, 21);
-            this.M_MyInfo_dni.TabIndex = 17;
-            this.M_MyInfo_dni.TextChanged += new System.EventHandler(this.M_MyInfo_dni_TextChanged_1);
-            // 
-            // M_MyInfo_phone
-            // 
-            this.M_MyInfo_phone.Font = new System.Drawing.Font("Arial", 9F);
-            this.M_MyInfo_phone.Location = new System.Drawing.Point(289, 117);
-            this.M_MyInfo_phone.Name = "M_MyInfo_phone";
-            this.M_MyInfo_phone.ReadOnly = true;
-            this.M_MyInfo_phone.Size = new System.Drawing.Size(162, 21);
-            this.M_MyInfo_phone.TabIndex = 18;
-            this.M_MyInfo_phone.TextChanged += new System.EventHandler(this.M_MyInfo_phone_TextChanged_1);
-            // 
-            // M_MyInfo_speciality
-            // 
-            this.M_MyInfo_speciality.Font = new System.Drawing.Font("Arial", 9F);
-            this.M_MyInfo_speciality.Location = new System.Drawing.Point(95, 178);
-            this.M_MyInfo_speciality.Name = "M_MyInfo_speciality";
-            this.M_MyInfo_speciality.ReadOnly = true;
-            this.M_MyInfo_speciality.Size = new System.Drawing.Size(162, 21);
-            this.M_MyInfo_speciality.TabIndex = 19;
-            this.M_MyInfo_speciality.TextChanged += new System.EventHandler(this.M_MyInfo_speciality_TextChanged_1);
-            // 
-            // M_MyInfo_office
-            // 
-            this.M_MyInfo_office.Font = new System.Drawing.Font("Arial", 9F);
-            this.M_MyInfo_office.Location = new System.Drawing.Point(289, 178);
-            this.M_MyInfo_office.Name = "M_MyInfo_office";
-            this.M_MyInfo_office.ReadOnly = true;
-            this.M_MyInfo_office.Size = new System.Drawing.Size(162, 21);
-            this.M_MyInfo_office.TabIndex = 20;
-            this.M_MyInfo_office.TextChanged += new System.EventHandler(this.M_MyInfo_office_TextChanged_1);
-            // 
-            // M_MyInfo_name
-            // 
-            this.M_MyInfo_name.Font = new System.Drawing.Font("Arial", 9F);
-            this.M_MyInfo_name.Location = new System.Drawing.Point(95, 55);
-            this.M_MyInfo_name.Name = "M_MyInfo_name";
-            this.M_MyInfo_name.ReadOnly = true;
-            this.M_MyInfo_name.Size = new System.Drawing.Size(162, 21);
-            this.M_MyInfo_name.TabIndex = 21;
-            this.M_MyInfo_name.TextChanged += new System.EventHandler(this.M_MyInfo_name_TextChanged);
-            // 
-            // M_MyInfo_consult_price
-            // 
-            this.M_MyInfo_consult_price.Font = new System.Drawing.Font("Arial", 9F);
-            this.M_MyInfo_consult_price.Location = new System.Drawing.Point(478, 178);
-            this.M_MyInfo_consult_price.Name = "M_MyInfo_consult_price";
-            this.M_MyInfo_consult_price.ReadOnly = true;
-            this.M_MyInfo_consult_price.Size = new System.Drawing.Size(162, 21);
-            this.M_MyInfo_consult_price.TabIndex = 22;
-            this.M_MyInfo_consult_price.TextChanged += new System.EventHandler(this.M_MyInfo_consult_price_TextChanged);
-            // 
-            // M_MyInfo_last_name
-            // 
-            this.M_MyInfo_last_name.Font = new System.Drawing.Font("Arial", 9F);
-            this.M_MyInfo_last_name.Location = new System.Drawing.Point(289, 55);
-            this.M_MyInfo_last_name.Name = "M_MyInfo_last_name";
-            this.M_MyInfo_last_name.ReadOnly = true;
-            this.M_MyInfo_last_name.Size = new System.Drawing.Size(162, 21);
-            this.M_MyInfo_last_name.TabIndex = 23;
-            this.M_MyInfo_last_name.TextChanged += new System.EventHandler(this.M_MyInfo_last_name_TextChanged);
-            // 
-            // M_MyInfo_age
-            // 
-            this.M_MyInfo_age.Font = new System.Drawing.Font("Arial", 9F);
-            this.M_MyInfo_age.Location = new System.Drawing.Point(478, 55);
-            this.M_MyInfo_age.Name = "M_MyInfo_age";
-            this.M_MyInfo_age.ReadOnly = true;
-            this.M_MyInfo_age.Size = new System.Drawing.Size(162, 21);
-            this.M_MyInfo_age.TabIndex = 24;
-            this.M_MyInfo_age.TextChanged += new System.EventHandler(this.M_MyInfo_age_TextChanged);
-            // 
-            // M_MyInfo_email
-            // 
-            this.M_MyInfo_email.Font = new System.Drawing.Font("Arial", 9F);
-            this.M_MyInfo_email.Location = new System.Drawing.Point(478, 117);
-            this.M_MyInfo_email.Name = "M_MyInfo_email";
-            this.M_MyInfo_email.ReadOnly = true;
-            this.M_MyInfo_email.Size = new System.Drawing.Size(162, 21);
-            this.M_MyInfo_email.TabIndex = 25;
-            this.M_MyInfo_email.TextChanged += new System.EventHandler(this.M_MyInfo_email_TextChanged);
-            // 
-            // M_MyInfo_social_works
-            // 
-            this.M_MyInfo_social_works.Font = new System.Drawing.Font("Arial", 9F);
-            this.M_MyInfo_social_works.Location = new System.Drawing.Point(95, 241);
-            this.M_MyInfo_social_works.Name = "M_MyInfo_social_works";
-            this.M_MyInfo_social_works.ReadOnly = true;
-            this.M_MyInfo_social_works.Size = new System.Drawing.Size(356, 21);
-            this.M_MyInfo_social_works.TabIndex = 26;
-            this.M_MyInfo_social_works.TextChanged += new System.EventHandler(this.M_MyInfo_social_works_TextChanged);
-            // 
-            // M_MyInfo_entry_time
-            // 
-            this.M_MyInfo_entry_time.Font = new System.Drawing.Font("Arial", 9F);
-            this.M_MyInfo_entry_time.Location = new System.Drawing.Point(95, 309);
-            this.M_MyInfo_entry_time.Name = "M_MyInfo_entry_time";
-            this.M_MyInfo_entry_time.ReadOnly = true;
-            this.M_MyInfo_entry_time.Size = new System.Drawing.Size(133, 21);
-            this.M_MyInfo_entry_time.TabIndex = 27;
-            this.M_MyInfo_entry_time.TextChanged += new System.EventHandler(this.M_MyInfo_entry_time_TextChanged);
-            // 
-            // M_MyInfo_departure_time
-            // 
-            this.M_MyInfo_departure_time.Font = new System.Drawing.Font("Arial", 9F);
-            this.M_MyInfo_departure_time.Location = new System.Drawing.Point(289, 309);
-            this.M_MyInfo_departure_time.Name = "M_MyInfo_departure_time";
-            this.M_MyInfo_departure_time.ReadOnly = true;
-            this.M_MyInfo_departure_time.Size = new System.Drawing.Size(133, 21);
-            this.M_MyInfo_departure_time.TabIndex = 28;
-            this.M_MyInfo_departure_time.TextChanged += new System.EventHandler(this.M_MyInfo_departure_time_TextChanged);
-            // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel2.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(57, 79);
             this.panel2.Name = "panel2";

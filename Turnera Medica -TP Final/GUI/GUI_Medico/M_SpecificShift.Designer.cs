@@ -40,18 +40,24 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.M_name_user_guia = new System.Windows.Forms.Label();
             this.SendLogin = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.M_SpecificShift_list)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // return_start_M
             // 
             this.return_start_M.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.return_start_M.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.return_start_M.Location = new System.Drawing.Point(348, 403);
+            this.return_start_M.Location = new System.Drawing.Point(295, 265);
             this.return_start_M.Name = "return_start_M";
-            this.return_start_M.Size = new System.Drawing.Size(110, 35);
+            this.return_start_M.Size = new System.Drawing.Size(178, 41);
             this.return_start_M.TabIndex = 0;
             this.return_start_M.Text = "Volver";
             this.return_start_M.UseVisualStyleBackColor = false;
@@ -71,11 +77,11 @@
             // 
             this.selectDate.CustomFormat = "dd/MM/yyyy";
             this.selectDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.selectDate.Location = new System.Drawing.Point(348, 99);
+            this.selectDate.Location = new System.Drawing.Point(6, 72);
             this.selectDate.MaxDate = new System.DateTime(2025, 12, 12, 0, 0, 0, 0);
             this.selectDate.MinDate = new System.DateTime(2025, 11, 10, 0, 0, 0, 0);
             this.selectDate.Name = "selectDate";
-            this.selectDate.Size = new System.Drawing.Size(103, 20);
+            this.selectDate.Size = new System.Drawing.Size(91, 20);
             this.selectDate.TabIndex = 2;
             this.selectDate.Value = new System.DateTime(2025, 11, 10, 0, 0, 0, 0);
             this.selectDate.ValueChanged += new System.EventHandler(this.selectDate_ValueChanged);
@@ -85,7 +91,7 @@
             // 
             this.searchShifts.BackColor = System.Drawing.Color.LightGreen;
             this.searchShifts.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchShifts.Location = new System.Drawing.Point(486, 98);
+            this.searchShifts.Location = new System.Drawing.Point(5, 98);
             this.searchShifts.Name = "searchShifts";
             this.searchShifts.Size = new System.Drawing.Size(90, 26);
             this.searchShifts.TabIndex = 3;
@@ -96,7 +102,7 @@
             // M_SpecificShift_list
             // 
             this.M_SpecificShift_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.M_SpecificShift_list.Location = new System.Drawing.Point(114, 143);
+            this.M_SpecificShift_list.Location = new System.Drawing.Point(101, 16);
             this.M_SpecificShift_list.MultiSelect = false;
             this.M_SpecificShift_list.Name = "M_SpecificShift_list";
             this.M_SpecificShift_list.ReadOnly = true;
@@ -108,7 +114,7 @@
             // 
             this.attendedShift.BackColor = System.Drawing.Color.Coral;
             this.attendedShift.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.attendedShift.Location = new System.Drawing.Point(12, 177);
+            this.attendedShift.Location = new System.Drawing.Point(6, 159);
             this.attendedShift.Name = "attendedShift";
             this.attendedShift.Size = new System.Drawing.Size(90, 26);
             this.attendedShift.TabIndex = 5;
@@ -120,7 +126,7 @@
             // 
             this.canceledShift.BackColor = System.Drawing.Color.Coral;
             this.canceledShift.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.canceledShift.Location = new System.Drawing.Point(12, 224);
+            this.canceledShift.Location = new System.Drawing.Point(6, 192);
             this.canceledShift.Name = "canceledShift";
             this.canceledShift.Size = new System.Drawing.Size(90, 26);
             this.canceledShift.TabIndex = 6;
@@ -173,20 +179,62 @@
             this.SendLogin.UseVisualStyleBackColor = false;
             this.SendLogin.Click += new System.EventHandler(this.SendLogin_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.M_SpecificShift_list);
+            this.panel2.Controls.Add(this.selectDate);
+            this.panel2.Controls.Add(this.attendedShift);
+            this.panel2.Controls.Add(this.searchShifts);
+            this.panel2.Controls.Add(this.return_start_M);
+            this.panel2.Controls.Add(this.canceledShift);
+            this.panel2.Location = new System.Drawing.Point(12, 143);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(776, 320);
+            this.panel2.TabIndex = 30;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Location = new System.Drawing.Point(12, 73);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(776, 71);
+            this.panel3.TabIndex = 31;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(4, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 19);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Fecha:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Black", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(139, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(520, 52);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Buscar Turno Especifico";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
             // M_SpecificShift
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 475);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.canceledShift);
-            this.Controls.Add(this.attendedShift);
-            this.Controls.Add(this.M_SpecificShift_list);
-            this.Controls.Add(this.searchShifts);
-            this.Controls.Add(this.selectDate);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.return_start_M);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -198,6 +246,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,5 +268,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label M_name_user_guia;
         private System.Windows.Forms.Button SendLogin;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -137,7 +137,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.SlateGray;
+            this.panel3.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel3.Controls.Add(this.return_start_M);
             this.panel3.Controls.Add(this.sent_socialwork);
             this.panel3.Controls.Add(this.label2);
@@ -149,7 +149,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel2.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(115, 80);
             this.panel2.Name = "panel2";

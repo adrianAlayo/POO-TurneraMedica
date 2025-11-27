@@ -36,18 +36,23 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.M_name_user_guia = new System.Windows.Forms.Label();
             this.SendLogin = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.M_Shifts_list)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // return_start_M
             // 
             this.return_start_M.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.return_start_M.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.return_start_M.Location = new System.Drawing.Point(350, 394);
+            this.return_start_M.Location = new System.Drawing.Point(255, 302);
             this.return_start_M.Name = "return_start_M";
-            this.return_start_M.Size = new System.Drawing.Size(110, 35);
+            this.return_start_M.Size = new System.Drawing.Size(178, 41);
             this.return_start_M.TabIndex = 0;
             this.return_start_M.Text = "Volver";
             this.return_start_M.UseVisualStyleBackColor = false;
@@ -56,7 +61,7 @@
             // M_Shifts_list
             // 
             this.M_Shifts_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.M_Shifts_list.Location = new System.Drawing.Point(68, 82);
+            this.M_Shifts_list.Location = new System.Drawing.Point(16, 16);
             this.M_Shifts_list.Name = "M_Shifts_list";
             this.M_Shifts_list.ReadOnly = true;
             this.M_Shifts_list.Size = new System.Drawing.Size(660, 277);
@@ -118,16 +123,46 @@
             this.SendLogin.UseVisualStyleBackColor = false;
             this.SendLogin.Click += new System.EventHandler(this.SendLogin_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Location = new System.Drawing.Point(54, 73);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(691, 71);
+            this.panel2.TabIndex = 30;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel3.Controls.Add(this.M_Shifts_list);
+            this.panel3.Controls.Add(this.return_start_M);
+            this.panel3.Location = new System.Drawing.Point(54, 143);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(691, 356);
+            this.panel3.TabIndex = 31;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Black", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(223, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(245, 52);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Mis Turnos";
+            // 
             // M_Shifts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 511);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.M_Shifts_list);
-            this.Controls.Add(this.return_start_M);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -139,6 +174,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,5 +191,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label M_name_user_guia;
         private System.Windows.Forms.Button SendLogin;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -86,7 +86,7 @@
             // 
             this.GetInfo.BackColor = System.Drawing.SystemColors.Control;
             this.GetInfo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.GetInfo.Location = new System.Drawing.Point(346, 34);
+            this.GetInfo.Location = new System.Drawing.Point(322, 34);
             this.GetInfo.Name = "GetInfo";
             this.GetInfo.Size = new System.Drawing.Size(178, 41);
             this.GetInfo.TabIndex = 10;
@@ -142,7 +142,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.SlateGray;
+            this.panel3.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel3.Controls.Add(this.GetShifts);
             this.panel3.Controls.Add(this.GetShift);
             this.panel3.Controls.Add(this.GetSocialWork);
@@ -154,7 +154,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel2.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(126, 92);
             this.panel2.Name = "panel2";
