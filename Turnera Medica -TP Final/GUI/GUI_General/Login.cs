@@ -261,5 +261,10 @@ namespace Turnera_Medica__TP_Final.GUI
         {
 
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
