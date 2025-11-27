@@ -133,6 +133,7 @@
             this.P_name_user_guia.Size = new System.Drawing.Size(162, 40);
             this.P_name_user_guia.TabIndex = 10;
             this.P_name_user_guia.Text = "Paciente:";
+            this.P_name_user_guia.Click += new System.EventHandler(this.P_name_user_guia_Click);
             // 
             // SendLogin
             // 

@@ -25,7 +25,7 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 
         private void M_AddSocialWork_Load(object sender, EventArgs e)
         {
-            
+            M_name_user_guia.Text += " " + usermedic.Name + " " + usermedic.LastName;
         }
 
         private void socialwork_name_user_TextChanged(object sender, EventArgs e)
@@ -61,6 +61,13 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void SendLogin_Click(object sender, EventArgs e)
+        {
+            Login login_form = new Login();
+            login_form.Show(); // Abro la pantalla de login
+            this.Hide();
         }
     }
 }

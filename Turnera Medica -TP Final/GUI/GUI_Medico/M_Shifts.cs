@@ -31,6 +31,7 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 
         private void M_Shifts_Load(object sender, EventArgs e)
         {
+            M_name_user_guia.Text += " " + usermedic.Name + " " + usermedic.LastName;
             usermedic.Shifts(); // carga la lista interna
 
             DataTable dt = new DataTable();
@@ -64,6 +65,13 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
         private void M_Shifts_list_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void SendLogin_Click(object sender, EventArgs e)
+        {
+            Login login_form = new Login();
+            login_form.Show(); // Abro la pantalla de login
+            this.Hide();
         }
     }
 }

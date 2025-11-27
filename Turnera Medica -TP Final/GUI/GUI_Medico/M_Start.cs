@@ -58,10 +58,27 @@ namespace Turnera_Medica__TP_Final.GUI.GUI_Medico
 
         private void M_Start_Load(object sender, EventArgs e)
         {
-
+            M_name_user_guia.Text += " " + usermedic.Name + " " + usermedic.LastName;
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Login login_form = new Login();
+            login_form.Show(); // Abro la pantalla de login
+            this.Hide();
+        }
+
+        private void P_name_user_guia_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
