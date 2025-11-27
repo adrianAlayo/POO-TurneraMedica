@@ -371,5 +371,298 @@ namespace Turnera_Medica__TP_Final.GUI
         {
 
         }
+
+        private void RegisterM_send_Click_1(object sender, EventArgs e)
+        {
+            // -----------------------------
+            // VALIDACIONES (antes de enviar)
+            // -----------------------------
+
+            // 1) Campos TextBox obligatorios
+            TextBox[] requiredTextBoxes =
+            {
+                registerM_name_user,
+                registerM_lastName_user,
+                registerM_age_user,
+                registerM_dni_user,
+                registerM_numberPhone_user,
+                registerM_email_user,
+                registerM_password_user,
+                registerM_confirPassword_user,
+                registerM_montConsul_user
+            };
+
+            foreach (var field in requiredTextBoxes)
+            {
+                if (string.IsNullOrWhiteSpace(field.Text))
+                {
+                    MessageBox.Show("Debes completar todos los campos.", "Campos incompletos",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    field.Focus();
+                    return; // NO continúa si falta alguno
+                }
+            }
+
+            // 2) ComboBoxes obligatorios (especialidad, consultorio, obra social)
+            if (string.IsNullOrWhiteSpace(registerM_speciality_user.Text))
+            {
+                MessageBox.Show("Debes elegir una especialidad.");
+                registerM_speciality_user.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(registerM_office_user.Text))
+            {
+                MessageBox.Show("Debes elegir un consultorio.");
+                registerM_office_user.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(registerM_socialWork_user.Text))
+            {
+                MessageBox.Show("Debes elegir / completar la obra social.");
+                registerM_socialWork_user.Focus();
+                return;
+            }
+
+            // 3) Edad numérica
+            if (!int.TryParse(registerM_age_user.Text.Trim(), out int _ageTmp))
+            {
+                MessageBox.Show("La edad debe ser un número válido.", "Error de formato",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                registerM_age_user.Focus();
+                return;
+            }
+
+            // 4) DNI numérico
+            if (!long.TryParse(registerM_dni_user.Text.Trim(), out long _dniTmp))
+            {
+                MessageBox.Show("El DNI debe contener solo números.", "Error de formato",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                registerM_dni_user.Focus();
+                return;
+            }
+
+            // 5) Monto de consulta numérico
+            if (!double.TryParse(registerM_montConsul_user.Text.Trim(), out double _consultTmp))
+            {
+                MessageBox.Show("El monto de consulta debe ser un número válido.", "Error de formato",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                registerM_montConsul_user.Focus();
+                return;
+            }
+
+            // 6) Horarios válidos (si los está mostrando como texto) -> Validamos parseo a TimeSpan
+            if (!TimeSpan.TryParse(registerM_entryTime_user.Text.Trim(), out TimeSpan _entryTmp))
+            {
+                MessageBox.Show("El horario de entrada no es válido (formato HH:mm).", "Error de formato",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                registerM_entryTime_user.Focus();
+                return;
+            }
+
+            if (!TimeSpan.TryParse(registerM_departureTime_user.Text.Trim(), out TimeSpan _departureTmp))
+            {
+                MessageBox.Show("El horario de salida no es válido (formato HH:mm).", "Error de formato",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                registerM_departureTime_user.Focus();
+                return;
+            }
+
+            // 7) Entrada < Salida
+            if (_entryTmp >= _departureTmp)
+            {
+                MessageBox.Show("La hora de entrada debe ser menor que la hora de salida.", "Horario incorrecto",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                registerM_entryTime_user.Focus();
+                return;
+            }
+
+            // 8) Contraseñas coincidentes (comprobación temprana; después hay otra similar en tu código original y no la toco)
+            if (registerM_password_user.Text.Trim() != registerM_confirPassword_user.Text.Trim())
+            {
+                MessageBox.Show("Las contraseñas no coinciden.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                registerM_confirPassword_user.Focus();
+                return;
+            }
+
+            string name = registerM_name_user.Text.Trim();
+            string last_name = registerM_lastName_user.Text.Trim();
+            int age = Convert.ToInt32(registerM_age_user.Text.Trim());
+            string dni = registerM_dni_user.Text.Trim();
+            string telephone_number = registerM_numberPhone_user.Text.Trim();
+            string email = registerM_email_user.Text.Trim();
+            string password = registerM_password_user.Text.Trim();
+            string confirmation = registerM_confirPassword_user.Text.Trim();
+            string speciality = registerM_speciality_user.Text.Trim();
+            string consult_amount = registerM_montConsul_user.Text.Trim();
+            string offices = registerM_office_user.Text.Trim();
+            string social_works = registerM_socialWork_user.Text.Trim();
+            string timeEntry = registerM_entryTime_user.Text.Trim();
+            string timeDeparture = registerM_departureTime_user.Text.Trim();
+
+            if (password != confirmation)
+            {
+                MessageBox.Show("Las contraseñas no coinciden.");
+                return;
+            }
+
+            try
+            {
+                conexionDB.Open();
+
+                string hash = Utils.HashPassword(password);
+
+                // Insertar en tabla users
+                string insertUser = "INSERT INTO users (dni, name, last_name, age, email, telephone_number, password_hash, rol) VALUES (@dni, @name, @last_name, @age, @email, @telephone_number, @password, 'medico')";
+                MySqlCommand cmdUser = new MySqlCommand(insertUser, conexionDB);
+                cmdUser.Parameters.AddWithValue("@dni", dni);
+                cmdUser.Parameters.AddWithValue("@name", name);
+                cmdUser.Parameters.AddWithValue("@last_name", last_name);
+                cmdUser.Parameters.AddWithValue("@age", age);
+                cmdUser.Parameters.AddWithValue("@email", email);
+                cmdUser.Parameters.AddWithValue("@telephone_number", telephone_number);
+                cmdUser.Parameters.AddWithValue("@password", hash);
+                cmdUser.ExecuteNonQuery();
+
+                int userId = (int)cmdUser.LastInsertedId;
+
+                string searchspecialityid = "SELECT id FROM specialities WHERE name = @speciality LIMIT 1";
+                MySqlCommand cmdSpeciality = new MySqlCommand(searchspecialityid, conexionDB);
+                cmdSpeciality.Parameters.AddWithValue("@speciality", speciality);
+
+                MySqlDataReader read1 = cmdSpeciality.ExecuteReader();
+                int specialityId = -1;
+
+                if (read1.Read())
+                {
+                    specialityId = Convert.ToInt32(read1["id"]);
+                }
+                else
+                {
+                    read1.Close();
+                    MessageBox.Show("La especialidad no existe.");
+                    return;
+                }
+                read1.Close();
+
+                // Insertar en tabla medicos
+                string insertMedic = "INSERT INTO medics (user_id, speciality_id, consult_amount, entry_time, departure_time) VALUES (@userId, @specialityId, @mount, @entry, @departure)";
+                MySqlCommand cmdMedic = new MySqlCommand(insertMedic, conexionDB);
+                cmdMedic.Parameters.AddWithValue("@userId", userId);
+                cmdMedic.Parameters.AddWithValue("@specialityId", specialityId);
+                cmdMedic.Parameters.AddWithValue("@mount", consult_amount);
+                cmdMedic.Parameters.AddWithValue("@entry", TimeSpan.Parse(timeEntry));
+                cmdMedic.Parameters.AddWithValue("@departure", TimeSpan.Parse(timeDeparture));
+                cmdMedic.ExecuteNonQuery();
+
+
+                int medicId = (int)cmdMedic.LastInsertedId;
+
+                string searchofficeid = "SELECT id FROM offices WHERE ubication = @off LIMIT 1";
+                MySqlCommand cmdOffice = new MySqlCommand(searchofficeid, conexionDB);
+                cmdOffice.Parameters.AddWithValue("@off", offices);
+
+                MySqlDataReader read2 = cmdOffice.ExecuteReader();
+                int officeId = -1;
+
+                if (read2.Read())
+                {
+                    officeId = Convert.ToInt32(read2["id"]);
+                }
+                else
+                {
+                    read2.Close();
+                    MessageBox.Show("El consultorio no existe.");
+                    return;
+                }
+                read2.Close();
+
+                // Insertar consultorio asignado (simplificado)
+                Medic newMedic = new Medic(
+                    medicId,
+                    userId,
+                    name,
+                    last_name,
+                    age,
+                    email,
+                    telephone_number,
+                    "",
+                    specialityId,
+                    Convert.ToDouble(consult_amount),
+                    officeId,
+                    TimeSpan.Parse(timeEntry),
+                    TimeSpan.Parse(timeDeparture)
+                );
+
+                Office office = new Office(
+                    officeId,
+                    offices,
+                    TimeSpan.Zero,
+                    TimeSpan.Zero,
+                    new List<Medic>()
+                );
+
+                office.AssignDoctor(
+                    newMedic,
+                    TimeSpan.Parse(timeEntry),
+                    TimeSpan.Parse(timeDeparture),
+                    conexionDB
+                );
+
+
+                // Insertar obra social (si no existe la crea)
+                string getObra = "SELECT id FROM social_works WHERE name = @obra LIMIT 1";
+                MySqlCommand cmdGetObra = new MySqlCommand(getObra, conexionDB);
+                cmdGetObra.Parameters.AddWithValue("@obra", social_works);
+                object result = cmdGetObra.ExecuteScalar();
+
+                int obraId;
+
+                if (result == null)
+                {
+                    string insertObra = "INSERT INTO social_works (name) VALUES (@obra)";
+                    MySqlCommand cmdInsertObra = new MySqlCommand(insertObra, conexionDB);
+                    cmdInsertObra.Parameters.AddWithValue("@obra", social_works);
+                    cmdInsertObra.ExecuteNonQuery();
+                    obraId = (int)cmdInsertObra.LastInsertedId;
+                }
+                else
+                {
+                    obraId = Convert.ToInt32(result);
+                }
+
+                string medic_social_work = "INSERT INTO medic_social_work (medic_id, social_work_id) VALUES (@medic, @obraId)";
+                MySqlCommand cmdMedObra = new MySqlCommand(medic_social_work, conexionDB);
+                cmdMedObra.Parameters.AddWithValue("@medic", medicId);
+                cmdMedObra.Parameters.AddWithValue("@obraId", obraId);
+                cmdMedObra.ExecuteNonQuery();
+
+                MessageBox.Show("Registro de médico completado correctamente.");
+
+                PreRegister pre = new PreRegister();
+                pre.Show();
+                this.Hide();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al registrar médico: " + ex.Message);
+            }
+            finally
+            {
+                conexionDB.Close();
+            }
+        }
+
+        private void registerM_password_user_DoubleClick_1(object sender, EventArgs e)
+        {
+            registerM_password_user.UseSystemPasswordChar = !registerM_password_user.UseSystemPasswordChar;
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

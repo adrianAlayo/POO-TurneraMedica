@@ -175,7 +175,7 @@ namespace Turnera_Medica__TP_Final.GUI
 
         private void registerP_confirPassword_user_DoubleClick(object sender, EventArgs e)
         {
-            registerP_confirPassword_user.UseSystemPasswordChar = !registerP_confirPassword_user.UseSystemPasswordChar;
+            
         }
 
         private void lblTitulo_Click(object sender, EventArgs e)
@@ -185,12 +185,164 @@ namespace Turnera_Medica__TP_Final.GUI
 
         private void RegisterP_send_Click_1(object sender, EventArgs e)
         {
+            // =========================
+            // VALIDACIONES DE CAMPOS
+            // =========================
 
+            // 1. Verificar que ningún campo esté vacío
+            if (string.IsNullOrWhiteSpace(registerP_name_user.Text) ||
+                string.IsNullOrWhiteSpace(registerP_lastName_user.Text) ||
+                string.IsNullOrWhiteSpace(registerP_age_user.Text) ||
+                string.IsNullOrWhiteSpace(registerP_dni_user.Text) ||
+                string.IsNullOrWhiteSpace(registerP_numberPhone_user.Text) ||
+                string.IsNullOrWhiteSpace(registerP_email_user.Text) ||
+                string.IsNullOrWhiteSpace(registerP_password_user.Text) ||
+                string.IsNullOrWhiteSpace(registerP_confirPassword_user.Text) ||
+                string.IsNullOrWhiteSpace(registerP_socialWork_user.Text))
+            {
+                MessageBox.Show("Todos los campos son obligatorios.");
+                return;
+            }
+
+            // 2. Validar edad
+            if (!int.TryParse(registerP_age_user.Text.Trim(), out int age))
+            {
+                MessageBox.Show("La edad debe ser un número válido.");
+                return;
+            }
+
+            // 3. Validar teléfono
+            if (!long.TryParse(registerP_numberPhone_user.Text.Trim(), out _))
+            {
+                MessageBox.Show("El número de teléfono debe contener solo números.");
+                return;
+            }
+            // 3. Validar DNI
+            if (!long.TryParse(registerP_dni_user.Text.Trim(), out _))
+            {
+                MessageBox.Show("El DNI debe contener solo números.");
+                return;
+            }
+
+            // 4. Validar email con expresión regular
+            string email = registerP_email_user.Text.Trim();
+            var emailRegex = new System.Text.RegularExpressions.Regex(@"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+
+            if (!emailRegex.IsMatch(email))
+            {
+                MessageBox.Show("El correo electrónico no es válido.");
+                return;
+            }
+
+            // 5. Validar coincidencia de contraseñas
+            string password = registerP_password_user.Text.Trim();
+            string confirmation = registerP_confirPassword_user.Text.Trim();
+
+            if (password != confirmation)
+            {
+                MessageBox.Show("Las contraseñas no coinciden.");
+                return;
+            }
+
+            // =========================
+            // SI TODO ESTÁ OK, SIGUE TU CÓDIGO ORIGINAL
+            // =========================
+
+            string name = registerP_name_user.Text.Trim();
+            string last_name = registerP_lastName_user.Text.Trim();
+            string dni = registerP_dni_user.Text.Trim();
+            string telephone_number = registerP_numberPhone_user.Text.Trim();
+            string social_works = registerP_socialWork_user.Text.Trim();
+
+            try
+            {
+                conexionDB.Open();
+                string hash = Utils.HashPassword(password);
+
+                // Insertar usuario
+                string insertUser = "INSERT INTO users (dni, name, last_name, age, email, telephone_number, password_hash, rol) VALUES (@dni, @name, @last_name, @age, @email, @telephone_number, @password, 'paciente')";
+                MySqlCommand cmdUser = new MySqlCommand(insertUser, conexionDB);
+                cmdUser.Parameters.AddWithValue("@dni", dni);
+                cmdUser.Parameters.AddWithValue("@name", name);
+                cmdUser.Parameters.AddWithValue("@last_name", last_name);
+                cmdUser.Parameters.AddWithValue("@age", age);
+                cmdUser.Parameters.AddWithValue("@email", email);
+                cmdUser.Parameters.AddWithValue("@telephone_number", telephone_number);
+                cmdUser.Parameters.AddWithValue("@password", hash);
+                cmdUser.ExecuteNonQuery();
+
+                int userId = (int)cmdUser.LastInsertedId;
+
+                // Obtener o crear obra social
+                string getObra = "SELECT id FROM social_works WHERE name = @obra LIMIT 1";
+                MySqlCommand cmdGetObra = new MySqlCommand(getObra, conexionDB);
+                cmdGetObra.Parameters.AddWithValue("@obra", social_works);
+                object result = cmdGetObra.ExecuteScalar();
+
+                int obraId = 0;
+                if (result == null && !string.IsNullOrEmpty(social_works))
+                {
+                    string insertObra = "INSERT INTO social_works (name) VALUES (@obra)";
+                    MySqlCommand cmdInsertObra = new MySqlCommand(insertObra, conexionDB);
+                    cmdInsertObra.Parameters.AddWithValue("@obra", social_works);
+                    cmdInsertObra.ExecuteNonQuery();
+                    obraId = (int)cmdInsertObra.LastInsertedId;
+                }
+                else if (result != null)
+                {
+                    obraId = Convert.ToInt32(result);
+                }
+
+                // Insertar paciente
+                string insertPatient = "INSERT INTO patients (user_id, social_work_id) VALUES (@user, @obra)";
+                MySqlCommand cmdPac = new MySqlCommand(insertPatient, conexionDB);
+                cmdPac.Parameters.AddWithValue("@user", userId);
+                cmdPac.Parameters.AddWithValue("@obra", obraId == 0 ? DBNull.Value : (object)obraId);
+                cmdPac.ExecuteNonQuery();
+
+                MessageBox.Show("Registro de paciente completado correctamente.");
+
+                PreRegister pre = new PreRegister();
+                pre.Show();
+                this.Hide();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al registrar paciente: " + ex.Message);
+            }
+            finally
+            {
+                conexionDB.Close();
+            }
         }
+
 
         private void label12_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ReturnPreRegister_Click_1(object sender, EventArgs e)
+        {
+             //Llamo el form o ventana Login
+    PreRegister PreRegister_form = new PreRegister();
+    PreRegister_form.Show(); //Abre este form
+    this.Hide(); // Oculto el Login
+        }
+
+        private void registerP_confirPassword_user_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registerP_password_user_DoubleClick_1(object sender, EventArgs e)
+        {
+            registerP_password_user.UseSystemPasswordChar = !registerP_password_user.UseSystemPasswordChar;
+        }
+
+        private void registerP_confirPassword_user_DoubleClick_1(object sender, EventArgs e)
+        {
+            registerP_confirPassword_user.UseSystemPasswordChar = !registerP_confirPassword_user.UseSystemPasswordChar;
         }
     }
 }

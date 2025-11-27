@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterMedic));
             System.Windows.Forms.Panel panel3;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterMedic));
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblTitulo = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.registerM_confirPassword_user = new System.Windows.Forms.TextBox();
@@ -67,11 +67,33 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.RegisterM_send = new System.Windows.Forms.Button();
             panel3 = new System.Windows.Forms.Panel();
+            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel3
+            // 
+            panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            panel3.Controls.Add(this.lblTitulo);
+            panel3.Location = new System.Drawing.Point(12, 90);
+            panel3.Name = "panel3";
+            panel3.Size = new System.Drawing.Size(776, 51);
+            panel3.TabIndex = 15;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Arial", 16.25F, System.Drawing.FontStyle.Bold);
+            this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTitulo.Location = new System.Drawing.Point(294, 13);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(199, 26);
+            this.lblTitulo.TabIndex = 1;
+            this.lblTitulo.Text = "Formulario Medico";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitulo.Click += new System.EventHandler(this.lblTitulo_Click);
             // 
             // pictureBox1
             // 
@@ -104,28 +126,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(814, 78);
             this.panel1.TabIndex = 64;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            panel3.Controls.Add(this.lblTitulo);
-            panel3.Location = new System.Drawing.Point(12, 90);
-            panel3.Name = "panel3";
-            panel3.Size = new System.Drawing.Size(776, 51);
-            panel3.TabIndex = 15;
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Arial", 16.25F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTitulo.Location = new System.Drawing.Point(294, 13);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(199, 26);
-            this.lblTitulo.TabIndex = 1;
-            this.lblTitulo.Text = "Formulario Medico";
-            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblTitulo.Click += new System.EventHandler(this.lblTitulo_Click);
             // 
             // label13
             // 
@@ -301,6 +301,7 @@
             this.registerM_password_user.Size = new System.Drawing.Size(188, 21);
             this.registerM_password_user.TabIndex = 69;
             this.registerM_password_user.UseSystemPasswordChar = true;
+            this.registerM_password_user.DoubleClick += new System.EventHandler(this.registerM_password_user_DoubleClick_1);
             // 
             // label5
             // 
@@ -504,6 +505,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(776, 446);
             this.panel2.TabIndex = 65;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // RegisterM_send
             // 
@@ -515,6 +517,7 @@
             this.RegisterM_send.TabIndex = 81;
             this.RegisterM_send.Text = "Registrarse";
             this.RegisterM_send.UseVisualStyleBackColor = false;
+            this.RegisterM_send.Click += new System.EventHandler(this.RegisterM_send_Click_1);
             // 
             // RegisterMedic
             // 
@@ -532,11 +535,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Medico";
             this.Load += new System.EventHandler(this.RegisterMedic_Load);
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);

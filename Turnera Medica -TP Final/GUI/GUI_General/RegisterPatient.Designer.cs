@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterPatient));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.registerP_age_user = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.registerP_password_user = new System.Windows.Forms.TextBox();
@@ -53,6 +52,7 @@
             this.registerP_dni_user = new System.Windows.Forms.TextBox();
             this.s = new System.Windows.Forms.Label();
             this.registerP_name_user = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -115,14 +115,6 @@
             this.panel2.Size = new System.Drawing.Size(776, 404);
             this.panel2.TabIndex = 67;
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.IndianRed;
-            this.panel4.Location = new System.Drawing.Point(90, 257);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(623, 8);
-            this.panel4.TabIndex = 80;
-            // 
             // registerP_age_user
             // 
             this.registerP_age_user.BackColor = System.Drawing.SystemColors.Control;
@@ -151,6 +143,7 @@
             this.registerP_password_user.Size = new System.Drawing.Size(188, 21);
             this.registerP_password_user.TabIndex = 98;
             this.registerP_password_user.UseSystemPasswordChar = true;
+            this.registerP_password_user.DoubleClick += new System.EventHandler(this.registerP_password_user_DoubleClick_1);
             // 
             // registerP_socialWork_user
             // 
@@ -175,6 +168,7 @@
             this.ReturnPreRegister.TabIndex = 96;
             this.ReturnPreRegister.Text = "Volver";
             this.ReturnPreRegister.UseVisualStyleBackColor = false;
+            this.ReturnPreRegister.Click += new System.EventHandler(this.ReturnPreRegister_Click_1);
             // 
             // RegisterP_send
             // 
@@ -207,6 +201,8 @@
             this.registerP_confirPassword_user.Size = new System.Drawing.Size(188, 21);
             this.registerP_confirPassword_user.TabIndex = 93;
             this.registerP_confirPassword_user.UseSystemPasswordChar = true;
+            this.registerP_confirPassword_user.TextChanged += new System.EventHandler(this.registerP_confirPassword_user_TextChanged_1);
+            this.registerP_confirPassword_user.DoubleClick += new System.EventHandler(this.registerP_confirPassword_user_DoubleClick_1);
             // 
             // label9
             // 
@@ -323,6 +319,14 @@
             this.registerP_name_user.Name = "registerP_name_user";
             this.registerP_name_user.Size = new System.Drawing.Size(188, 21);
             this.registerP_name_user.TabIndex = 81;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.IndianRed;
+            this.panel4.Location = new System.Drawing.Point(90, 257);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(623, 8);
+            this.panel4.TabIndex = 80;
             // 
             // panel1
             // 
